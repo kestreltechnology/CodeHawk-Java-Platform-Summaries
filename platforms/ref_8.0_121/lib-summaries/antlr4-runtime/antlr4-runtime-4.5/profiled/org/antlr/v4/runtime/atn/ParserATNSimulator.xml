@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 17:36:46"/>
+  <class name="ParserATNSimulator" package="org.antlr.v4.runtime.atn">
+    <superclass>org.antlr.v4.runtime.atn.ATNSimulator</superclass>
+    <interfaces/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.antlr.v4.runtime.atn.ATN,org.antlr.v4.runtime.dfa.DFA[],org.antlr.v4.runtime.atn.PredictionContextCache) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATN</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.antlr.v4.runtime.dfa.DFA</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.atn.PredictionContextCache</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (org.antlr.v4.runtime.Parser,org.antlr.v4.runtime.atn.ATN,org.antlr.v4.runtime.dfa.DFA[],org.antlr.v4.runtime.atn.PredictionContextCache) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.Parser</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ATN</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>org.antlr.v4.runtime.dfa.DFA</object>
+            </array>
+          </arg>
+          <arg nr="4">
+            <object>org.antlr.v4.runtime.atn.PredictionContextCache</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ actionTransition -->
+      <method access="protected" name="actionTransition">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ActionTransition</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ adaptivePredict -->
+      <method access="public" name="adaptivePredict">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addDFAEdge -->
+      <method access="protected" name="addDFAEdge">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addDFAState -->
+      <method access="protected" name="addDFAState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ applyPrecedenceFilter -->
+      <method access="protected" name="applyPrecedenceFilter">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearDFA -->
+      <method access="public" name="clearDFA">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ closure -->
+      <method access="protected" name="closure">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Set</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ closureCheckingStopState -->
+      <method access="protected" name="closureCheckingStopState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Set</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ closure_ -->
+      <method access="protected" name="closure_">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Set</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ computeReachSet -->
+      <method access="protected" name="computeReachSet">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ computeStartState -->
+      <method access="protected" name="computeStartState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNState</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.RuleContext</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ computeTargetState -->
+      <method access="protected" name="computeTargetState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dumpDeadEndConfigs -->
+      <method access="public" name="dumpDeadEndConfigs">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.NoViableAltException</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ evalSemanticContext -->
+      <method access="protected" name="evalSemanticContext">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.antlr.v4.runtime.dfa.DFAState$PredPrediction</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.BitSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ evalSemanticContext -->
+      <method access="protected" name="evalSemanticContext">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.SemanticContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ execATN -->
+      <method access="protected" name="execATN">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ execATNWithFullContext -->
+      <method access="protected" name="execATNWithFullContext">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="4">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAltThatFinishedDecisionEntryRule -->
+      <method access="protected" name="getAltThatFinishedDecisionEntryRule">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConflictingAlts -->
+      <method access="protected" name="getConflictingAlts">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <return>
+            <object>java.util.BitSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConflictingAltsOrUniqueAlt -->
+      <method access="protected" name="getConflictingAltsOrUniqueAlt">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <return>
+            <object>java.util.BitSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEpsilonTarget -->
+      <method access="protected" name="getEpsilonTarget">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExistingTargetState -->
+      <method access="protected" name="getExistingTargetState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLookaheadName -->
+      <method access="public" name="getLookaheadName">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParser -->
+      <method access="public" name="getParser">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Parser</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPredicatePredictions -->
+      <method access="protected" name="getPredicatePredictions">
+        <signature>
+          <arg nr="1">
+            <object>java.util.BitSet</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.antlr.v4.runtime.atn.SemanticContext</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>org.antlr.v4.runtime.dfa.DFAState$PredPrediction</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPredictionMode -->
+      <method access="public" final="yes" name="getPredictionMode">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.atn.PredictionMode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPredsForAmbigAlts -->
+      <method access="protected" name="getPredsForAmbigAlts">
+        <signature>
+          <arg nr="1">
+            <object>java.util.BitSet</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <object>org.antlr.v4.runtime.atn.SemanticContext</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReachableTarget -->
+      <method access="protected" name="getReachableTarget">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRuleName -->
+      <method access="public" name="getRuleName">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~ getSynValidOrSemInvalidAltThatFinishedDecisionEntryRule -->
+      <method access="protected" name="getSynValidOrSemInvalidAltThatFinishedDecisionEntryRule">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTokenName -->
+      <method access="public" name="getTokenName">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUniqueAlt -->
+      <method access="protected" name="getUniqueAlt" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ noViableAlt -->
+      <method access="protected" name="noViableAlt">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.NoViableAltException</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ precedenceTransition -->
+      <method access="public" name="precedenceTransition">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.PrecedencePredicateTransition</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ predTransition -->
+      <method access="protected" name="predTransition">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.PredicateTransition</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ predicateDFAState -->
+      <method access="protected" name="predicateDFAState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.DecisionState</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAllConfigsNotInRuleStopState -->
+      <method access="protected" name="removeAllConfigsNotInRuleStopState">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reportAmbiguity -->
+      <method access="protected" name="reportAmbiguity">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.dfa.DFAState</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <object>java.util.BitSet</object>
+          </arg>
+          <arg nr="7">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reportAttemptingFullContext -->
+      <method access="protected" name="reportAttemptingFullContext">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.BitSet</object>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reportContextSensitivity -->
+      <method access="protected" name="reportContextSensitivity">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.dfa.DFA</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reset -->
+      <method access="public" name="reset">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ruleTransition -->
+      <method access="protected" name="ruleTransition">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.RuleTransition</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATNConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPredictionMode -->
+      <method access="public" final="yes" name="setPredictionMode">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.PredictionMode</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ splitAccordingToSemanticValidity -->
+      <method access="protected" name="splitAccordingToSemanticValidity">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.misc.Pair</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

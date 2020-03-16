@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 17:36:33"/>
+  <class abstract="yes" name="Lexer" package="org.antlr.v4.runtime">
+    <superclass>org.antlr.v4.runtime.Recognizer</superclass>
+    <interfaces>
+      <implements>org.antlr.v4.runtime.TokenSource</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.antlr.v4.runtime.CharStream) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.CharStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ emit -->
+      <method access="public" name="emit">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.Token</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_token"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ emit -->
+      <method access="public" name="emit">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ emitEOF -->
+      <method access="public" name="emitEOF">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAllTokens -->
+      <method access="public" name="getAllTokens">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getChannel -->
+      <method access="public" name="getChannel">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this field="_channel"/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math xpr="return  =  localvar:var0">
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCharErrorDisplay -->
+      <method access="public" name="getCharErrorDisplay" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCharIndex -->
+      <method access="public" name="getCharIndex">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCharPositionInLine -->
+      <method access="public" name="getCharPositionInLine">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorDisplay -->
+      <method access="public" name="getErrorDisplay" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorDisplay -->
+      <method access="public" name="getErrorDisplay" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" name="getInputStream">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.CharStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_input"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" bridge="yes" name="getInputStream">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.IntStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLine -->
+      <method access="public" name="getLine">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getModeNames -->
+      <method access="public" name="getModeNames">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSourceName -->
+      <method access="public" name="getSourceName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getText -->
+      <method access="public" name="getText">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getToken -->
+      <method access="public" name="getToken">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_token"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTokenFactory -->
+      <method access="public" name="getTokenFactory">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.TokenFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_factory"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTokenNames -->
+      <method access="public" name="getTokenNames">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getType -->
+      <method access="public" name="getType">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this field="_type"/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math xpr="return  =  localvar:var0">
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mode -->
+      <method access="public" name="mode">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_mode"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ more -->
+      <method access="public" name="more">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextToken -->
+      <method access="public" name="nextToken">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyListeners -->
+      <method access="public" name="notifyListeners">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.LexerNoViableAltException</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ popMode -->
+      <method access="public" name="popMode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pushMode -->
+      <method access="public" name="pushMode">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ recover -->
+      <method access="public" name="recover">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.LexerNoViableAltException</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ recover -->
+      <method access="public" name="recover">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.RecognitionException</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reset -->
+      <method access="public" name="reset">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setChannel -->
+      <method access="public" name="setChannel">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_channel"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCharPositionInLine -->
+      <method access="public" name="setCharPositionInLine">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInputStream -->
+      <method access="public" name="setInputStream">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.IntStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setLine -->
+      <method access="public" name="setLine">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setText -->
+      <method access="public" name="setText">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_text"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setToken -->
+      <method access="public" name="setToken">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.Token</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_token"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTokenFactory -->
+      <method access="public" name="setTokenFactory">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_factory"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setType -->
+      <method access="public" name="setType">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_type"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ skip -->
+      <method access="public" name="skip">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

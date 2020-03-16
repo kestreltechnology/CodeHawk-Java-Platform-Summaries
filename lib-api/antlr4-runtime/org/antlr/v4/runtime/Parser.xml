@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 17:36:34"/>
+  <class abstract="yes" name="Parser" package="org.antlr.v4.runtime">
+    <superclass>org.antlr.v4.runtime.Recognizer</superclass>
+    <interfaces/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.antlr.v4.runtime.TokenStream) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addContextToParseTree -->
+      <method access="protected" name="addContextToParseTree">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addParseListener -->
+      <method access="public" name="addParseListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.tree.ParseTreeListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compileParseTreePattern -->
+      <method access="public" name="compileParseTreePattern" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.tree.pattern.ParseTreePattern</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compileParseTreePattern -->
+      <method access="public" name="compileParseTreePattern" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.Lexer</object>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.tree.pattern.ParseTreePattern</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ consume -->
+      <method access="public" name="consume">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dumpDFA -->
+      <method access="public" name="dumpDFA" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enterOuterAlt -->
+      <method access="public" name="enterOuterAlt">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enterRecursionRule -->
+      <method access="public" name="enterRecursionRule">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enterRecursionRule -->
+      <method access="public" name="enterRecursionRule">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="3"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="4"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enterRule -->
+      <method access="public" name="enterRule">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="3"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exitRule -->
+      <method access="public" name="exitRule">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getATNWithBypassAlts -->
+      <method access="public" name="getATNWithBypassAlts" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ATN</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBuildParseTree -->
+      <method access="public" name="getBuildParseTree">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this field="_buildParseTrees"/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math xpr="return  =  localvar:var0">
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContext -->
+      <method access="public" name="getContext">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_ctx"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrentToken -->
+      <method access="public" name="getCurrentToken" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDFAStrings -->
+      <method access="public" name="getDFAStrings" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorHandler -->
+      <method access="public" name="getErrorHandler">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.ANTLRErrorStrategy</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_errHandler"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpectedTokens -->
+      <method access="public" name="getExpectedTokens" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.misc.IntervalSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpectedTokensWithinCurrentRule -->
+      <method access="public" name="getExpectedTokensWithinCurrentRule" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.misc.IntervalSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" name="getInputStream" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" bridge="yes" name="getInputStream" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.IntStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInvokingContext -->
+      <method access="public" name="getInvokingContext" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumberOfSyntaxErrors -->
+      <method access="public" name="getNumberOfSyntaxErrors">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this field="_syntaxErrors"/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math xpr="return  =  localvar:var0">
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParseInfo -->
+      <method access="public" name="getParseInfo" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.atn.ParseInfo</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParseListeners -->
+      <method access="public" name="getParseListeners" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPrecedence -->
+      <method access="public" final="yes" name="getPrecedence" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRuleContext -->
+      <method access="public" name="getRuleContext">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_ctx"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRuleIndex -->
+      <method access="public" name="getRuleIndex" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRuleInvocationStack -->
+      <method access="public" name="getRuleInvocationStack" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRuleInvocationStack -->
+      <method access="public" name="getRuleInvocationStack" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.RuleContext</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSourceName -->
+      <method access="public" name="getSourceName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTokenFactory -->
+      <method access="public" name="getTokenFactory" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.TokenFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTokenStream -->
+      <method access="public" name="getTokenStream">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this field="_input"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTrimParseTree -->
+      <method access="public" name="getTrimParseTree" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ inContext -->
+      <method access="public" name="inContext">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+          <postconditions>
+            <post>
+              <math xpr="return  =  0">
+                <apply>
+                  <eq/>
+                  <return/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isExpectedToken -->
+      <method access="public" name="isExpectedToken" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTrace -->
+      <method access="public" name="isTrace">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ match -->
+      <method access="public" name="match">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.antlr.v4.runtime.RecognitionException</throws>
+          <throws>org.antlr.v4.runtime.RecognitionException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ matchWildcard -->
+      <method access="public" name="matchWildcard" valid="no">
+        <signature>
+          <return>
+            <object>org.antlr.v4.runtime.Token</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.antlr.v4.runtime.RecognitionException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyErrorListeners -->
+      <method access="public" final="yes" name="notifyErrorListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyErrorListeners -->
+      <method access="public" name="notifyErrorListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.Token</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>org.antlr.v4.runtime.RecognitionException</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ precpred -->
+      <method access="public" name="precpred">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.RuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pushNewRecursionContext -->
+      <method access="public" name="pushNewRecursionContext">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="3"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeParseListener -->
+      <method access="public" name="removeParseListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.tree.ParseTreeListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeParseListeners -->
+      <method access="public" name="removeParseListeners">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reset -->
+      <method access="public" name="reset" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setBuildParseTree -->
+      <method access="public" name="setBuildParseTree">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_buildParseTrees"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContext -->
+      <method access="public" name="setContext">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_ctx"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setErrorHandler -->
+      <method access="public" name="setErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ANTLRErrorStrategy</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this field="_errHandler"/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInputStream -->
+      <method access="public" final="yes" name="setInputStream" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.IntStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setProfile -->
+      <method access="public" name="setProfile" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTokenFactory -->
+      <method access="public" name="setTokenFactory" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTokenStream -->
+      <method access="public" name="setTokenStream" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.TokenStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTrace -->
+      <method access="public" name="setTrace" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTrimParseTree -->
+      <method access="public" name="setTrimParseTree" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ triggerEnterRuleEvent -->
+      <method access="protected" name="triggerEnterRuleEvent">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ triggerExitRuleEvent -->
+      <method access="protected" name="triggerExitRuleEvent">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unrollRecursionContexts -->
+      <method access="public" name="unrollRecursionContexts">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.ParserRuleContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
