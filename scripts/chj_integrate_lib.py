@@ -34,7 +34,6 @@ import FileEnvironment as F
 
 def parse():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('libname',help='name of library')
     parser.add_argument('libversion',help='name of library version')
     args = parser.parse_args()
     return args
@@ -43,7 +42,10 @@ if __name__ == '__main__':
 
     args = parse()
 
-    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',args.libname,args.libversion)
+    fenv = F.FileEnvironment()
+    libname = fenv.get_libname(args.libversion + '.jar')
+
+    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
     
     deps = fenv.get_dependencies(fenv.refjar)
 
@@ -52,10 +54,20 @@ if __name__ == '__main__':
     result = subprocess.check_output(jartfcmd)
     result = result.split('\n')
 
+    # collect classnames from library jar
+    jartfcmd = [ 'jar', 'tf', fenv.refjar ]
+    refresult = subprocess.check_output(jartfcmd)
+    refresult = refresult.split('\n')
+
     classnames = []
     for n in result:
         if n.endswith('xml'):
             classnames.append(n.replace('/','.')[:-4])
+
+    refclassnames = []
+    for n in refresult:
+        if n.endswith('class'):
+            refclassnames.append(n.replace('/','.')[:-6])
 
     # call CodeHawk on each api summary to combine the three summaries into one
     basecmd = [ fenv.integratecmd,
@@ -75,6 +87,7 @@ if __name__ == '__main__':
     os.chdir(fenv.libsumintegrateddir)
 
     for classname in classnames:
+        if not classname in refclassnames: continue
         cmd = basecmd + [ classname ]
         targetdir = fenv.get_target_dir(classname)
         targetname = fenv.get_target_name(classname)
@@ -103,3 +116,6 @@ if __name__ == '__main__':
         print('Error in creating integrated jar')
         print('*' * 80)
         exit(1)
+
+    exportdir = os.path.join(fenv.exportdir,fenv.get_export(fenv.refjar))
+    os.rename(fenv.libsumjar,os.path.join(exportdir,os.path.basename(fenv.libsumjar)))

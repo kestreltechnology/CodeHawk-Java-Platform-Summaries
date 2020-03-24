@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # ------------------------------------------------------------------------------
-"""Create a new summary template for a third-party library method."""
+"""Create a new summary template for a third-party library class."""
 
 import argparse
 import json
@@ -35,21 +35,20 @@ import FileEnvironment as F
 
 def parse():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('libname',help='name of library')
     parser.add_argument('libversion',help='name of library version')
     parser.add_argument('classname',help='fully qualified classname')
     parser.add_argument('--legacysummaries',
                             help='use legacy summaries as starting point')
     parser.add_argument('--move',action='store_true',
-                            help='move profile/supplement summary file to target directory')
+                            help='move profile/supplement template file to target directory')
     parser.add_argument('--apimove',action='store_true',
-                            help='move api summary file to target directory')
+                            help='move api template file to target directory')
     parser.add_argument('--api',action='store_true',
-                            help='only create api summary')
+                            help='only create api template')
     parser.add_argument('--profile',action='store_true',
-                            help='only create profile summary')
+                            help='only create profile template')
     parser.add_argument('--supplement',action='store_true',
-                            help='only create supplement summary')
+                            help='only create supplement template')
     args = parser.parse_args()
     return args
 
@@ -57,7 +56,10 @@ if __name__ == '__main__':
 
     args = parse()
 
-    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',args.libname,args.libversion)
+    fenv = F.FileEnvironment()
+    libname = fenv.get_libname(args.libversion + '.jar')
+
+    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
 
     allsummaries = not (args.api or args.profile or args.supplement)
 
@@ -79,7 +81,7 @@ if __name__ == '__main__':
         basecmd.extend([ '-classpath', d ])
 
     if allsummaries or args.api:
-        apidir = fenv.get_lib_api_dir(args.libname)
+        apidir = fenv.get_lib_api_dir(libname)
         if not os.path.isdir(apidir):
             os.makedirs(apidir)
         os.chdir(apidir)

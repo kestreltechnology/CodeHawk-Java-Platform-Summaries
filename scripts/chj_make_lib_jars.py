@@ -34,8 +34,7 @@ import FileEnvironment as F
 
 def parse():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('libname',help='name of library')
-    parser.add_argument('libversion',help='name of library version')
+    parser.add_argument('libversion',help='name of library library jar')
     parser.add_argument('--api',action='store_true',
                             help='only create api jar')
     parser.add_argument('--profile',action='store_true',
@@ -51,14 +50,17 @@ if __name__ == '__main__':
 
     args = parse()
 
-    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',args.libname,args.libversion)
+    fenv = F.FileEnvironment()
+    libname = fenv.get_libname(args.libversion + '.jar')
+
+    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
 
     allsupport = not (args.integrate or args.api or args.supplement or args.profile)
 
     directories = fenv.get_directories(fenv.refjar)
 
     if allsupport or args.api:
-        apidir = fenv.get_lib_api_dir(args.libname)
+        apidir = fenv.get_lib_api_dir(libname)
         os.chdir(apidir)
         cmd = [ 'jar', 'cfm', fenv.apijar, fenv.manifestfile, '-C', apidir ]
         cmd.extend(directories)
@@ -103,5 +105,5 @@ if __name__ == '__main__':
         if not (result == 0):
             print('*' * 80)
             print('Error in creating integrated jar')
-            print(;*' * 80)
+            print('*' * 80)
             exit(1)

@@ -51,7 +51,7 @@ class FileEnvironment(object):
         self.integratecmd = os.path.join(self.bindir,'chj_integrate')
         self.inspectcmd = os.path.join(self.bindir,'chj_inspect')
         self.dependencies = self._load_dependencies()
-        self.manifestfile = os.path.join(self.thisdir,'Manifest.txt')        
+        self.manifestfile = os.path.join(self.thisdir,'Manifest.txt')
 
     def get_dependencies(self,jar):
         jarname = os.path.basename(jar)
@@ -60,11 +60,11 @@ class FileEnvironment(object):
             if 'deps' in jarrec:
                 result = []
                 for d in jarrec['deps']:
-                    if d in self.dependencies:
-                        deprec = self.dependencies[d]
-                        deploc = os.path.join(deprec['path'],deprec['file'])
-                        deploc = os.path.join(self.jchsummariesdir,deploc)
-                        result.append(deploc)
+                    depjar = os.path.join(self.librefdir,d)
+                    if not os.path.isfile(depjar):
+                        print('Dependent jar: ' + depjar + ' not found')
+                        exit(1)
+                    result.append(depjar)
                 return result
         return []
 
@@ -79,6 +79,44 @@ class FileEnvironment(object):
                 print('No directories specified for ' + jarname)
                 print('*' * 80)
                 exit(1)
+        else:
+            print('*' * 80)
+            print('No dependencies record found for '  + jarname)
+            print('*' * 80)
+            exit(1)
+
+    def get_libname(self,jarname):
+        if jarname in self.dependencies:
+            jarrec = self.dependencies[jarname]
+            if 'path' in jarrec:
+                return jarrec['path']
+            else:
+                print('*' * 80)
+                print('No path specified for ' + jarname)
+                print('*' * 80)
+                exit(1)
+        else:
+            print('*' * 80)
+            print('No dependencies record found for '  + jarname)
+            print('*' * 80)
+            exit(1)
+
+    def get_export(self,jar):
+        jarname = os.path.basename(jar)
+        if jarname in self.dependencies:
+            jarrec = self.dependencies[jarname]
+            if 'export' in jarrec:
+                return jarrec['export']
+            else:
+                print('*' * 80)
+                print('No export path specified for ' + jarname)
+                print('*' * 80)
+                exit(1)
+        else:
+            print('*' * 80)
+            print('No dependencies record found for '  + jarname)
+            print('*' * 80)
+            exit(1)
 
     def get_lib_api_dir(self,libname):
         return os.path.join(self.libapidir,libname)
@@ -116,6 +154,8 @@ class PlatformEnvironment(FileEnvironment):
         self.libsumprofiled = os.path.join(self.libsumdir,'profiled')
         self.libsumsupplement = os.path.join(self.libsumdir,'supplement')
 
+        self.exportdir = os.path.join(self.platformdir,'export')
+
 class PlatformLibFileEnvironment(PlatformEnvironment):
 
     def __init__(self,name,libname,libversion):
@@ -139,3 +179,4 @@ class PlatformLibFileEnvironment(PlatformEnvironment):
         self.libsumsupplementdir = os.path.join(self.libversiondir,'supplement')
         self.libsumsupplementjar = os.path.join(self.libsumsupplementdir,
                                                     self.libversion + '-supplement.jar')
+
