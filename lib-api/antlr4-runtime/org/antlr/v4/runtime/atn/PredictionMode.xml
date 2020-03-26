@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codehawk-java-analyzer>
-  <header info="class" time="2019-01-14 17:41:06"/>
-  <class final="yes" name="PredictionMode" package="org.antlr.v4.runtime.atn">
+  <header info="class" time="2020-03-25 13:29:50"/>
+  <class final="yes" immutable="yes" name="PredictionMode" package="org.antlr.v4.runtime.atn">
     <superclass>java.lang.Enum</superclass>
     <interfaces>
       <implements>java.lang.Comparable</implements>
       <implements>java.io.Serializable</implements>
     </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SLL -->
+      <field access="public" final="yes" name="SLL" not-null="yes" static="yes">
+        <signature>
+          <object>org.antlr.v4.runtime.atn.PredictionMode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LL -->
+      <field access="public" final="yes" name="LL" not-null="yes" static="yes">
+        <signature>
+          <object>org.antlr.v4.runtime.atn.PredictionMode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LL_EXACT_AMBIG_DETECTION -->
+      <field access="public" final="yes" name="LL_EXACT_AMBIG_DETECTION" not-null="yes" static="yes">
+        <signature>
+          <object>org.antlr.v4.runtime.atn.PredictionMode</object>
+        </signature>
+      </field>
+    </fields>
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors/>
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ allConfigsInRuleStopStates -->
-      <method access="public" name="allConfigsInRuleStopStates" static="yes" valid="no">
+      <method access="public" name="allConfigsInRuleStopStates" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
@@ -23,11 +44,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ allSubsetsConflict -->
-      <method access="public" name="allSubsetsConflict" static="yes" valid="no">
+      <method access="public" name="allSubsetsConflict" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -38,11 +64,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ allSubsetsEqual -->
-      <method access="public" name="allSubsetsEqual" static="yes" valid="no">
+      <method access="public" name="allSubsetsEqual" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -53,11 +84,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAlts -->
-      <method access="public" name="getAlts" static="yes" valid="no">
+      <method access="public" name="getAlts" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -68,11 +104,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConflictingAltSubsets -->
-      <method access="public" name="getConflictingAltSubsets" static="yes" valid="no">
+      <method access="public" name="getConflictingAltSubsets" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
@@ -83,11 +124,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSingleViableAlt -->
-      <method access="public" name="getSingleViableAlt" static="yes" valid="no">
+      <method access="public" name="getSingleViableAlt" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -98,11 +144,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStateToAltMap -->
-      <method access="public" name="getStateToAltMap" static="yes" valid="no">
+      <method access="public" name="getStateToAltMap" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
@@ -113,11 +164,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUniqueAlt -->
-      <method access="public" name="getUniqueAlt" static="yes" valid="no">
+      <method access="public" name="getUniqueAlt" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -128,11 +184,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasConfigInRuleStopState -->
-      <method access="public" name="hasConfigInRuleStopState" static="yes" valid="no">
+      <method access="public" name="hasConfigInRuleStopState" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
@@ -143,11 +204,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasConflictingAltSet -->
-      <method access="public" name="hasConflictingAltSet" static="yes" valid="no">
+      <method access="public" name="hasConflictingAltSet" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -158,11 +224,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasNonConflictingAltSet -->
-      <method access="public" name="hasNonConflictingAltSet" static="yes" valid="no">
+      <method access="public" name="hasNonConflictingAltSet" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -173,11 +244,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasSLLConflictTerminatingPrediction -->
-      <method access="public" name="hasSLLConflictTerminatingPrediction" static="yes" valid="no">
+      <method access="public" name="hasSLLConflictTerminatingPrediction" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.PredictionMode</object>
@@ -191,11 +267,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasStateAssociatedWithOneAlt -->
-      <method access="public" name="hasStateAssociatedWithOneAlt" static="yes" valid="no">
+      <method access="public" name="hasStateAssociatedWithOneAlt" static="yes">
         <signature>
           <arg nr="1">
             <object>org.antlr.v4.runtime.atn.ATNConfigSet</object>
@@ -206,11 +291,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ resolvesToJustOneViableAlt -->
-      <method access="public" name="resolvesToJustOneViableAlt" static="yes" valid="no">
+      <method access="public" name="resolvesToJustOneViableAlt" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -221,11 +311,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueOf -->
-      <method access="public" name="valueOf" static="yes" valid="no">
+      <method access="public" name="valueOf" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -234,13 +329,29 @@
             <object>org.antlr.v4.runtime.atn.PredictionMode</object>
           </return>
         </signature>
-        <exceptions/>
+        <exceptions>
+	  <throws>java.lang.IllegalArgumentException</throws>
+	  <c-throws>
+	    <cnp arg="1"/>
+	  </c-throws>
+	</exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink dest="enum value" arg="1" form="enum constant"
+		  type="string">
+	      <throws>java.lang.IllegalArgumentException</throws>
+	    </sink>
+	  </sinks>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ values -->
-      <method access="public" name="values" static="yes" valid="no">
+      <method access="public" name="values" static="yes">
         <signature>
           <return>
             <array>
@@ -253,7 +364,145 @@
           <taint/>
         </summary>
       </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Enum" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) compareTo -->
+      <method from="java.lang.Enum" inherited="yes" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) compareTo -->
+      <method from="java.lang.Enum" inherited="yes" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Enum</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Enum" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Enum" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDeclaringClass -->
+      <method from="java.lang.Enum" inherited="yes" name="getDeclaringClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Enum" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) name -->
+      <method from="java.lang.Enum" inherited="yes" name="name">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) ordinal -->
+      <method from="java.lang.Enum" inherited="yes" name="ordinal">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Enum" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) valueOf -->
+      <method from="java.lang.Enum" inherited="yes" name="valueOf">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Enum</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
     </methods>
   </class>
-  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
 </codehawk-java-analyzer>

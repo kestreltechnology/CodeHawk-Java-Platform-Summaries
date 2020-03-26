@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codehawk-java-analyzer>
-  <header info="class" time="2019-01-14 17:40:59"/>
+  <header info="class" time="2020-03-25 13:29:51"/>
   <class name="BufferedTokenStream" package="org.antlr.v4.runtime">
     <interfaces>
       <implements>org.antlr.v4.runtime.TokenStream</implements>
@@ -15,6 +15,33 @@
         </signature>
       </cprop>
     </class-properties>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:tokenSource -->
+      <field access="protected" name="tokenSource">
+        <signature>
+          <object>org.antlr.v4.runtime.TokenSource</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:tokens -->
+      <field access="protected" name="tokens">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:p -->
+      <field access="protected" name="p">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:fetchedEOF -->
+      <field access="protected" name="fetchedEOF">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+    </fields>
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.antlr.v4.runtime.TokenSource) -->
@@ -133,7 +160,7 @@
           </taint>
           <postconditions>
             <post>
-              <math xpr="return  =  localvar:var1">
+              <math>
                 <apply>
                   <eq/>
                   <return/>
@@ -165,9 +192,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><return/></transfer>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fill -->
@@ -212,9 +245,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><return/></transfer>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
@@ -299,9 +338,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><return/></transfer>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSourceName -->
@@ -314,8 +359,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getText -->
@@ -328,8 +376,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getText -->
@@ -345,8 +396,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getText -->
@@ -362,8 +416,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getText -->
@@ -503,7 +560,7 @@
           </taint>
           <postconditions>
             <post>
-              <math xpr="return  =  localvar:var0">
+              <math>
                 <apply>
                   <eq/>
                   <return/>
@@ -534,7 +591,7 @@
           <taint/>
           <postconditions>
             <post>
-              <math xpr="return  =  0">
+              <math>
                 <apply>
                   <eq/>
                   <return/>
@@ -591,8 +648,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reset -->
@@ -613,8 +673,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTokenSource -->
@@ -627,8 +690,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setup -->
@@ -648,20 +714,23 @@
         </signature>
         <exceptions/>
         <summary>
-	  <postconditions>
-	    <post>
-	      <math>
-		<apply>
-		  <geq/>
-		  <return/>
-		  <cn>0</cn>
-		</apply>
-	      </math>
-	    </post>
-	  </postconditions>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <geq/>
+                  <return/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sync -->
@@ -679,7 +748,85 @@
           <taint/>
         </summary>
       </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
     </methods>
   </class>
-  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
 </codehawk-java-analyzer>

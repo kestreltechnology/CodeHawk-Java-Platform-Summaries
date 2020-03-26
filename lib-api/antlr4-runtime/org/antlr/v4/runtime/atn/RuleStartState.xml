@@ -1,24 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codehawk-java-analyzer>
-  <header info="class" time="2019-01-14 17:41:06"/>
-  <class final="yes" name="RuleStartState" package="org.antlr.v4.runtime.atn">
+  <header info="class" time="2020-03-25 13:29:50"/>
+  <class final="yes" immutable="yes" name="RuleStartState" package="org.antlr.v4.runtime.atn">
     <superclass>org.antlr.v4.runtime.atn.ATNState</superclass>
     <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:stopState -->
+      <field access="public" name="stopState">
+        <signature>
+          <object>org.antlr.v4.runtime.atn.RuleStopState</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:isPrecedenceRule -->
+      <field access="public" name="isPrecedenceRule">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:nextTokenWithinRule -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="nextTokenWithinRule">
+        <signature>
+          <object>org.antlr.v4.runtime.misc.IntervalSet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:INVALID_STATE_NUMBER -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="INVALID_STATE_NUMBER">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:LOOP_END -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="LOOP_END">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:PLUS_LOOP_BACK -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="PLUS_LOOP_BACK">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STAR_LOOP_ENTRY -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="STAR_LOOP_ENTRY">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STAR_LOOP_BACK -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="STAR_LOOP_BACK">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:BLOCK_END -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="BLOCK_END">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RULE_STOP -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="RULE_STOP">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:TOKEN_START -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="TOKEN_START">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STAR_BLOCK_START -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="STAR_BLOCK_START">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:PLUS_BLOCK_START -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="PLUS_BLOCK_START">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:BLOCK_START -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="BLOCK_START">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RULE_START -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="RULE_START">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:BASIC -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="BASIC">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:INVALID_TYPE -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="INVALID_TYPE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:INITIAL_NUM_TRANSITIONS -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="INITIAL_NUM_TRANSITIONS">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serializationNames -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="serializationNames">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ruleIndex -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="ruleIndex">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:epsilonOnlyTransitions -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="epsilonOnlyTransitions">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stateNumber -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="stateNumber">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:atn -->
+      <field from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="atn">
+        <signature>
+          <object>org.antlr.v4.runtime.atn.ATN</object>
+        </signature>
+      </field>
+    </fields>
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
-      <method access="public" valid="no">
+      <constructor access="public">
         <signature/>
         <exceptions/>
         <summary>
           <taint/>
         </summary>
-      </method>
+      </constructor>
     </constructors>
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStateType -->
-      <method access="public" name="getStateType" valid="no">
+      <method access="public" name="getStateType">
         <signature>
           <return>
             <int/>
@@ -26,10 +167,187 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addTransition -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="addTransition">
+        <signature>
+          <arg nr="1">
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addTransition -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="addTransition">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getNumberOfTransitions -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="getNumberOfTransitions">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getTransitions -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="getTransitions">
+        <signature>
+          <return>
+            <array>
+              <object>org.antlr.v4.runtime.atn.Transition</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isNonGreedyExitState -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="isNonGreedyExitState">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) onlyHasEpsilonTransitions -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="onlyHasEpsilonTransitions">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeTransition -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="removeTransition">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setRuleIndex -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="setRuleIndex">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setTransition -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="setTransition">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) transition -->
+      <method from="org.antlr.v4.runtime.atn.ATNState" inherited="yes" name="transition">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.antlr.v4.runtime.atn.Transition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
       </method>
     </methods>
   </class>
-  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
 </codehawk-java-analyzer>
