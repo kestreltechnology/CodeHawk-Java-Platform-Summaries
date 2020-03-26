@@ -1,0 +1,12 @@
+#### Classes included
+- org.apache.commons.compress.archivers.ArchiveEntry
+- org.apache.commons.compress.archivers.ArchiveInputStream
+- org.apache.commons.compress.archivers.tar.TarArchiveEntry
+- org.apache.commons.compress.archivers.tar.TarArchiveInputStream
+- org.apache.commons.compress.archivers.tar.TarBuffer
+- org.apache.commons.compress.archivers.tar.TarConstants
+- org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream$Data
+- org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream
+- org.apache.commons.compress.compressors.bzip2.BZip2Constants
+- org.apache.commons.compress.compressors.bzip2.CRC
+- org.apache.commons.compress.compressors.CompressorInputStream
