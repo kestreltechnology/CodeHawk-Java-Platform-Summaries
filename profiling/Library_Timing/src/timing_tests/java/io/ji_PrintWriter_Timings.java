@@ -1,0 +1,196 @@
+/*-----------------------------------------------------------------------------
+Tool to profile Java library methods
+  Author: Andrew McGraw
+  ------------------------------------------------------------------------------
+  The MIT License (MIT)
+  Copyright (c) 2016-2017 Kestrel Technology LLC
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+ */
+
+package Java_Timing;
+
+public class ji_PrintWriter_Timings extends Java_Timings{
+	public ji_PrintWriter_Timings(boolean verbose) {
+		super(verbose);
+	}
+
+	public long get_timing(int repeats, String selection, Value_Store values){
+		double[] nvals = values.numeric_vals;
+		String[] svals = values.string_vals;
+
+		long total_time = 0;
+		switch(selection) {
+			case "emptyloop":
+				total_time = run_emptyloop(repeats);
+				break;
+			case "init_OutputStream" :
+				total_time = run_init_OutputStream(repeats);
+				break;
+			case "init_Writer" :
+				total_time = run_init_Writer(repeats);
+				break;
+			case "append_CharSequence" :
+				total_time = run_append_CharSequence(repeats);
+				break;
+			case "close" :
+				total_time = run_close(repeats);
+				break;
+			case "flush" :
+				total_time = run_flush(repeats);
+				break;
+			case "print_char" :
+				total_time = run_print_char(repeats);
+				break;
+			case "print_String" :
+				total_time = run_print_String(repeats);
+				break;
+			case "println" :
+				total_time = run_println(repeats);
+				break;
+			case "println_Object" :
+				total_time = run_println_Object(repeats);
+				break;
+			case "println_String" :
+				total_time = run_println_String(repeats);
+				break;
+			default:
+				break;
+		}
+
+		if(selection == "emptyloop")
+		{
+			return total_time;
+		}
+		else
+		{
+			return total_time - get_timing(repeats, "emptyloop", values);
+		}
+	}
+
+	public static long run_init_OutputStream(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_init_Writer(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_append_CharSequence(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_close(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_flush(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_print_char(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_print_String(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_println(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_println_Object(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+
+	public static long run_println_String(int count) {
+		long start_time, end_time, total_time = 0;
+		for(int i = 0; i < count; i++) {
+			start_time = System.nanoTime();
+		
+			end_time = System.nanoTime();
+			total_time += end_time - start_time;
+		}
+		return total_time / count;
+	}
+}
