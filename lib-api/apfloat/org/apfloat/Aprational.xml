@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-25 18:58:38"/>
+  <class name="Aprational" immutable="yes" package="org.apfloat">
+    <superclass>org.apfloat.Apfloat</superclass>
+    <interfaces>
+      <implements>java.lang.Comparable</implements>
+      <implements>java.util.Formattable</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DEFAULT -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="DEFAULT">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:INFINITE -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="INFINITE">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:I -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="I">
+        <signature>
+          <object>org.apfloat.Apcomplex</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ZERO -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="ZERO">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ONE -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="ONE">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="protected" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apfloat.Apint) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apint</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apfloat.Apint,org.apfloat.Apint) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apint</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apfloat.Apint</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.io.PushbackReader) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PushbackReader</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.io.PushbackReader,int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PushbackReader</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.math.BigInteger) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.math.BigInteger,int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceil -->
+      <method access="public" name="ceil" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" bridge="yes" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ denominator -->
+      <method access="public" name="denominator" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divide -->
+      <method access="public" name="divide" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArithmeticException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floor -->
+      <method access="public" name="floor" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ formatTo -->
+      <method access="public" name="formatTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Formatter</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ frac -->
+      <method access="public" name="frac" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ frac -->
+      <method access="public" bridge="yes" name="frac" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getImpl -->
+      <method access="protected" name="getImpl" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.spi.ApfloatImpl</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShort -->
+      <method access="public" name="isShort" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mod -->
+      <method access="public" name="mod" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" name="multiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" bridge="yes" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" bridge="yes" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ numerator -->
+      <method access="public" name="numerator" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ precision -->
+      <method access="public" name="precision" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preferCompare -->
+      <method access="public" name="preferCompare" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ radix -->
+      <method access="public" name="radix" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scale -->
+      <method access="public" name="scale" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signum -->
+      <method access="public" name="signum" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" name="size" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" bridge="yes" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" bridge="yes" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ truncate -->
+      <method access="public" name="truncate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="public" name="writeTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.Writer</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="public" name="writeTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) add -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apcomplex</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) add -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) byteValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="byteValue">
+        <signature>
+          <return>
+            <byte/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) conj -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="conj">
+        <signature>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) divide -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="divide">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apcomplex</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) divide -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="divide">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doubleValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="doubleValue">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equalDigits -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="equalDigits">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apcomplex</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equalDigits -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="equalDigits">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) floatValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="floatValue">
+        <signature>
+          <return>
+            <float/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) imag -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="imag">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) intValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="intValue">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) longValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="longValue">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) mod -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="mod">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) multiply -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apcomplex</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) multiply -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) precision -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="precision">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) precision -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="precision">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) real -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="real">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) shortValue -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="shortValue">
+        <signature>
+          <return>
+            <short/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) subtract -->
+      <method from="org.apfloat.Apcomplex" inherited="yes" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apcomplex</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) subtract -->
+      <method from="org.apfloat.Apfloat" inherited="yes" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
