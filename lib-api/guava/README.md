@@ -1,0 +1,13 @@
+#### Classes included
+- com.google.common.base.Function
+- com.google.common.base.MoreObjects$ToStringHelper$ValueHolder
+- com.google.common.base.MoreObjects$ToStringHelper
+- com.google.common.base.MoreObjects
+- com.google.common.base.Preconditions
+- com.google.common.cache.Cache
+- com.google.common.cache.LoadingCache
+- com.google.common.collect.Multimap
+- com.google.common.collect.SetMultimap
+- com.google.common.eventbus.EventBus
+- com.google.common.eventbus.SubscriberExceptionHandler
+- com.google.common.eventbus.SubscriberFindingStrategy
