@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 15:23:28"/>
+  <class abstract="yes" name="RealVector" package="org.apache.commons.math3.linear">
+    <interfaces/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addToEntry -->
+      <method access="public" name="addToEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method abstract="yes" access="public" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method abstract="yes" access="public" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkIndex -->
+      <method access="protected" name="checkIndex" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkIndices -->
+      <method access="protected" name="checkIndices" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkVectorDimensions -->
+      <method access="protected" name="checkVectorDimensions" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkVectorDimensions -->
+      <method access="protected" name="checkVectorDimensions" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combine -->
+      <method access="public" name="combine" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combineToSelf -->
+      <method access="public" name="combineToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method abstract="yes" access="public" name="copy" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cosine -->
+      <method access="public" name="cosine" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.MathArithmeticException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dotProduct -->
+      <method access="public" name="dotProduct" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeDivide -->
+      <method abstract="yes" access="public" name="ebeDivide" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeMultiply -->
+      <method abstract="yes" access="public" name="ebeMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.MathUnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDimension -->
+      <method abstract="yes" access="public" name="getDimension" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDistance -->
+      <method access="public" name="getDistance" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method abstract="yes" access="public" name="getEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getL1Distance -->
+      <method access="public" name="getL1Distance" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getL1Norm -->
+      <method access="public" name="getL1Norm" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLInfDistance -->
+      <method access="public" name="getLInfDistance" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLInfNorm -->
+      <method access="public" name="getLInfNorm" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMaxIndex -->
+      <method access="public" name="getMaxIndex" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMaxValue -->
+      <method access="public" name="getMaxValue" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinIndex -->
+      <method access="public" name="getMinIndex" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinValue -->
+      <method access="public" name="getMinValue" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNorm -->
+      <method access="public" name="getNorm" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSubVector -->
+      <method abstract="yes" access="public" name="getSubVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NotPositiveException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.MathUnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInfinite -->
+      <method abstract="yes" access="public" name="isInfinite" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNaN -->
+      <method abstract="yes" access="public" name="isNaN" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ map -->
+      <method access="public" name="map" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapAdd -->
+      <method access="public" name="mapAdd" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapAddToSelf -->
+      <method access="public" name="mapAddToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapDivide -->
+      <method access="public" name="mapDivide" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapDivideToSelf -->
+      <method access="public" name="mapDivideToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapMultiply -->
+      <method access="public" name="mapMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapMultiplyToSelf -->
+      <method access="public" name="mapMultiplyToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapSubtract -->
+      <method access="public" name="mapSubtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapSubtractToSelf -->
+      <method access="public" name="mapSubtractToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapToSelf -->
+      <method access="public" name="mapToSelf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ outerProduct -->
+      <method access="public" name="outerProduct" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ projection -->
+      <method access="public" name="projection" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.MathArithmeticException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ set -->
+      <method access="public" name="set" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEntry -->
+      <method abstract="yes" access="public" name="setEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubVector -->
+      <method abstract="yes" access="public" name="setSubVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sparseIterator -->
+      <method access="public" name="sparseIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" name="toArray" valid="no">
+        <signature>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unitVector -->
+      <method access="public" name="unitVector" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.MathArithmeticException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unitize -->
+      <method access="public" name="unitize" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.MathArithmeticException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unmodifiableRealVector -->
+      <method access="public" name="unmodifiableRealVector" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

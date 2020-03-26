@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 15:23:26"/>
+  <class name="Array2DRowRealMatrix" package="org.apache.commons.math3.linear">
+    <superclass>org.apache.commons.math3.linear.AbstractRealMatrix</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+      <implements>org.apache.commons.math3.linear.RealMatrix</implements>
+      <implements>org.apache.commons.math3.linear.AnyMatrix</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NotStrictlyPositiveException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[][]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <double/>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[][],boolean) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <double/>
+              </array>
+            </array>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addToEntry -->
+      <method access="public" name="addToEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" name="copy">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.RealMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createMatrix -->
+      <method access="public" name="createMatrix">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NotStrictlyPositiveException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getColumnDimension -->
+      <method access="public" name="getColumnDimension">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getData -->
+      <method access="public" name="getData">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <double/>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataRef -->
+      <method access="public" name="getDataRef">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <double/>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method access="public" name="getEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRowDimension -->
+      <method access="public" name="getRowDimension">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyEntry -->
+      <method access="public" name="multiplyEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ operate -->
+      <method access="public" name="operate">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preMultiply -->
+      <method access="public" name="preMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEntry -->
+      <method access="public" name="setEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubMatrix -->
+      <method access="public" name="setSubMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <double/>
+              </array>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowRealMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

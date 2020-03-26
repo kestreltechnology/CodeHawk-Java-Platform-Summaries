@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-28 22:53:07"/>
+  <interface name="FieldMatrix" package="org.apache.commons.math3.linear">
+    <superinterfaces>
+      <superinterface>org.apache.commons.math3.linear.AnyMatrix</superinterface>
+    </superinterfaces>
+    <default-implementations>
+      <class>org.apache.commons.math3.linear.Array2DRowFieldMatrix</class>
+    </default-implementations>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method abstract="yes" access="public" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addToEntry -->
+      <method abstract="yes" access="public" name="addToEntry"  valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method abstract="yes" access="public" name="copy" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copySubMatrix -->
+      <method abstract="yes" access="public" name="copySubMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><arg nr="5"/></transfer>
+	    <transfer><arg nr="2"/><arg nr="5"/></transfer>
+	    <transfer><arg nr="3"/><arg nr="5"/></transfer>
+	    <transfer><arg nr="4"/><arg nr="5"/></transfer>
+	    <transfer><this/><arg nr="5"/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copySubMatrix -->
+      <method abstract="yes" access="public" name="copySubMatrix"  valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><arg nr="3"/></transfer>
+	    <transfer><arg nr="2"/><arg nr="3"/></transfer>
+	    <transfer><this/><arg nr="3"/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createMatrix -->
+      <method abstract="yes" access="public" name="createMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NotStrictlyPositiveException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getColumn -->
+      <method abstract="yes" access="public" name="getColumn" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getColumnMatrix -->
+      <method abstract="yes" access="public" name="getColumnMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getColumnVector -->
+      <method abstract="yes" access="public" name="getColumnVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getData -->
+      <method abstract="yes" access="public" name="getData" valid="no">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method abstract="yes" access="public" name="getEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getField -->
+      <method abstract="yes" access="public" name="getField" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.Field</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRow -->
+      <method abstract="yes" access="public" name="getRow" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRowMatrix -->
+      <method abstract="yes" access="public" name="getRowMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRowVector -->
+      <method abstract="yes" access="public" name="getRowVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSubMatrix -->
+      <method abstract="yes" access="public" name="getSubMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	    <transfer><arg nr="3"/><return/></transfer>
+	    <transfer><arg nr="4"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSubMatrix -->
+      <method abstract="yes" access="public" name="getSubMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTrace -->
+      <method abstract="yes" access="public" name="getTrace" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.NonSquareMatrixException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method abstract="yes" access="public" name="multiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyEntry -->
+      <method abstract="yes" access="public" name="multiplyEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ operate -->
+      <method abstract="yes" access="public" name="operate" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ operate -->
+      <method abstract="yes" access="public" name="operate" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ power -->
+      <method abstract="yes" access="public" name="power" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.NonSquareMatrixException</throws>
+          <throws>org.apache.commons.math3.exception.NotPositiveException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preMultiply -->
+      <method abstract="yes" access="public" name="preMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preMultiply -->
+      <method abstract="yes" access="public" name="preMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preMultiply -->
+      <method abstract="yes" access="public" name="preMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scalarAdd -->
+      <method abstract="yes" access="public" name="scalarAdd" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scalarMultiply -->
+      <method abstract="yes" access="public" name="scalarMultiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setColumn -->
+      <method abstract="yes" access="public" name="setColumn" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setColumnMatrix -->
+      <method abstract="yes" access="public" name="setColumnMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setColumnVector -->
+      <method abstract="yes" access="public" name="setColumnVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEntry -->
+      <method abstract="yes" access="public" name="setEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRow -->
+      <method abstract="yes" access="public" name="setRow" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRowMatrix -->
+      <method abstract="yes" access="public" name="setRowMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRowVector -->
+      <method abstract="yes" access="public" name="setRowVector" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.FieldVector</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubMatrix -->
+      <method abstract="yes" access="public" name="setSubMatrix" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NoDataException</throws>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	    <transfer><arg nr="2"/><this/></transfer>
+	    <transfer><arg nr="3"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method abstract="yes" access="public" name="subtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.linear.MatrixDimensionMismatchException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ transpose -->
+      <method abstract="yes" access="public" name="transpose" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method abstract="yes" access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method abstract="yes" access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer><this/><return/></transfer>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method abstract="yes" access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method abstract="yes" access="public" name="walkInColumnOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method abstract="yes" access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method abstract="yes" access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method abstract="yes" access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method abstract="yes" access="public" name="walkInOptimizedOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method abstract="yes" access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method abstract="yes" access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method abstract="yes" access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method abstract="yes" access="public" name="walkInRowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
