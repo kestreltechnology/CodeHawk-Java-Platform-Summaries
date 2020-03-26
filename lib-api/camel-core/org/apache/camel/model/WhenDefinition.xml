@@ -1,0 +1,3242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-25 22:36:49"/>
+  <class name="WhenDefinition" package="org.apache.camel.model">
+    <superclass>org.apache.camel.model.ExpressionNode</superclass>
+    <interfaces>
+      <implements>org.apache.camel.model.Block</implements>
+      <implements>org.apache.camel.model.OtherAttributesAware</implements>
+      <implements>org.apache.camel.NamedNode</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.camel.Predicate) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Predicate</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~ (org.apache.camel.model.language.ExpressionDefinition) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.language.ExpressionDefinition</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createProcessor -->
+      <method access="public" name="createProcessor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.processor.FilterProcessor</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createProcessor -->
+      <method access="public" bridge="yes" name="createProcessor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ description -->
+      <method access="protected" name="description" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ endParent -->
+      <method access="public" name="endParent" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLabel -->
+      <method access="public" name="getLabel" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setExpression -->
+      <method access="public" name="setExpression" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.language.ExpressionDefinition</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addInterceptStrategies -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="addInterceptStrategies">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Channel</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addInterceptStrategy -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="addInterceptStrategy">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.InterceptStrategy</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addOutput -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="addOutput">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addRoutes -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="addRoutes">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) aggregate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="aggregate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.AggregateDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) aggregate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="aggregate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.AggregateDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) aggregate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="aggregate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) aggregate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="aggregate">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) aop -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="aop">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.AOPDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) attribute -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="attribute">
+        <signature>
+          <arg nr="1">
+            <object>javax.xml.namespace.QName</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) bean -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="bean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beanRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="beanRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beanRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="beanRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beanRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="beanRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beanRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="beanRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beanRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="beanRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) choice -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="choice">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ChoiceDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clearOutput -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="clearOutput">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) configureChild -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="configureChild">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) convertBodyTo -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="convertBodyTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) convertBodyTo -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="convertBodyTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createChannel -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createChannel">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ModelChannel</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createChildProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createChildProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createCompositeProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createCompositeProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createFilterProcessor -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="createFilterProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.processor.FilterProcessor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createOutputsProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createOutputsProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createOutputsProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createOutputsProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createOutputsProcessorImpl -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createOutputsProcessorImpl">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createPredicate -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="createPredicate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Predicate</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="createProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) delay -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="delay">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.DelayDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) delay -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="delay">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) delay -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="delay">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.DelayDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) description -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="description">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) description -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="description">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doTry -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="doTry">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.TryDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dynamicRouter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="dynamicRouter">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dynamicRouter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="dynamicRouter">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.DynamicRouterDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) end -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="end">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) endChoice -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="endChoice">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ChoiceDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) endDoTry -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="endDoTry">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.TryDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) endHystrix -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="endHystrix">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.HystrixDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) endRest -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="endRest">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrich">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="enrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) filter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="filter">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.FilterDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) filter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="filter">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Predicate</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.FilterDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) filter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="filter">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) filter -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="filter">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.language.ExpressionDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.FilterDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCustomId -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="getCustomId">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDescription -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="getDescription">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.DescriptionDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDescriptionText -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="getDescriptionText">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getExpression -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="getExpression">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.language.ExpressionDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getId -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="getId">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getIndex -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="getIndex">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInterceptStrategies -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="getInterceptStrategies">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getOtherAttributes -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="getOtherAttributes">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getOutputs -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="getOutputs">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getParent -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="getParent">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getShortName -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="getShortName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hasCustomIdAssigned -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="hasCustomIdAssigned">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hystrix -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="hystrix">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.HystrixDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) id -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="id">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) id -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="id">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) idOrCreate -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="idOrCreate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.NodeIdFactory</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) idempotentConsumer -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="idempotentConsumer">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.IdempotentRepository</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) idempotentConsumer -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="idempotentConsumer">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.spi.IdempotentRepository</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.IdempotentConsumerDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) idempotentConsumer -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="idempotentConsumer">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.IdempotentConsumerDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) idempotentConsumer -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="idempotentConsumer">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Iterable</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.camel.Endpoint</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOnly">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Iterable</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.camel.Endpoint</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inOut -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inOut">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) inheritErrorHandler -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="inheritErrorHandler">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isAbstract -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="isAbstract">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isInheritErrorHandler -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="isInheritErrorHandler">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isOutputSupported -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="isOutputSupported">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isTopLevelOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="isTopLevelOnly">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loadBalance -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loadBalance">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.LoadBalanceDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loadBalance -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loadBalance">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.processor.loadbalancer.LoadBalancer</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.LoadBalanceDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.LoggingLevel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.slf4j.Logger</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.LoggingLevel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.LoggingLevel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.slf4j.Logger</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.LoggingLevel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.LoggingLevel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loop -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loop">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.LoopDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loop -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loop">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.LoopDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loop -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loop">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loopDoWhile -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loopDoWhile">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loopDoWhile -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="loopDoWhile">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Predicate</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.LoopDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) makeProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="makeProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) markRollbackOnly -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="markRollbackOnly">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) markRollbackOnlyLast -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="markRollbackOnlyLast">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) marshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="marshal">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) marshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="marshal">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.DataFormat</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) marshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="marshal">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.DataFormatClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) marshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="marshal">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.DataFormatDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) multicast -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="multicast">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.MulticastDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) multicast -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="multicast">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.MulticastDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) multicast -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="multicast">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.MulticastDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) onCompletion -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="onCompletion">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.OnCompletionDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) onException -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="onException">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Class</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OnExceptionDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) onException -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="onException">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OnExceptionDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pipeline -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pipeline">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pipeline -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pipeline">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.camel.Endpoint</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pipeline -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pipeline">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pipeline -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pipeline">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.PipelineDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) placeholder -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="placeholder">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) policy -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="policy">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.PolicyDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) policy -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="policy">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.Policy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.PolicyDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrich -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrich">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrichRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrichRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrichRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrichRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) pollEnrichWith -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="pollEnrichWith">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.EnrichClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) preCreateProcessor -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="preCreateProcessor">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) process -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="process">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ProcessClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) process -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="process">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) process -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="process">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) processRef -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="processRef">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) recipientList -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="recipientList">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) recipientList -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="recipientList">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) recipientList -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="recipientList">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.RecipientListDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) recipientList -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="recipientList">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.RecipientListDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeFaultHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeFaultHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeHeaders -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeHeaders">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeHeaders -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeHeaders">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeProperties -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeProperties">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeProperties -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeProperties">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeProperty -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="removeProperty">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) resequence -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="resequence">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ResequenceDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) resequence -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="resequence">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) rollback -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="rollback">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) rollback -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="rollback">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routeDescription -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routeDescription">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routeId -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routeId">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.RoutingSlipDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.RoutingSlipDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) routingSlip -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="routingSlip">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sample -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sample">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.SamplingDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sample -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sample">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.SamplingDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sample -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sample">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.SamplingDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) script -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="script">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) script -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="script">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) serviceCall -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="serviceCall">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) serviceCall -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="serviceCall">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) serviceCall -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="serviceCall">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.cloud.ServiceCallDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setBody -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setBody">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setBody -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setBody">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setCustomId -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="setCustomId">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setDescription -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="setDescription">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.DescriptionDefinition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setExchangePattern -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setExchangePattern">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setFaultBody -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setFaultBody">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setFaultHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setFaultHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.function.Supplier</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setId -->
+      <method from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="setId">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setInheritErrorHandler -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setInheritErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setOtherAttributes -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setOtherAttributes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setOutHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setOutHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setOutHeader -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setOutHeader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setOutputs -->
+      <method from="org.apache.camel.model.ExpressionNode" inherited="yes" name="setOutputs">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setParent -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setParent">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setProperty -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setProperty">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setProperty -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="setProperty">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sort -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sort">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sort -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sort">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sort -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="sort">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) split -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="split">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.aggregate.AggregationStrategy</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.SplitDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) split -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="split">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.SplitDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) split -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="split">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) startupOrder -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="startupOrder">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) stop -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="stop">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) threads -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="threads">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ThreadsDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) threads -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="threads">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ThreadsDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) threads -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="threads">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ThreadsDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) threads -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="threads">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.ThreadsDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) throttle -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="throttle">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ThrottleDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) throttle -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="throttle">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) throttle -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="throttle">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ThrottleDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) throwException -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="throwException">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) throwException -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="throwException">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Exception</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Iterable</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.camel.Endpoint</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Iterable</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.apache.camel.Endpoint</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) to -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="to">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toD -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="toD">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toD -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="toD">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toF -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="toF">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) transacted -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="transacted">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.TransactedDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) transacted -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="transacted">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.TransactedDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) transform -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="transform">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) transform -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="transform">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unmarshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="unmarshal">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unmarshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="unmarshal">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.DataFormat</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unmarshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="unmarshal">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.DataFormatClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unmarshal -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="unmarshal">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.DataFormatDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) validate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="validate">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ExpressionClause</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) validate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="validate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Predicate</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ValidateDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) validate -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="validate">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.ValidateDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ExecutorService</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wireTap -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wireTap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.Expression</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.WireTapDefinition</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wrapChannel -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wrapChannel">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Boolean</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wrapChannel -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wrapChannel">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.camel.model.ProcessorDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wrapInErrorHandler -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wrapInErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wrapProcessor -->
+      <method from="org.apache.camel.model.ProcessorDefinition" inherited="yes" name="wrapProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.Processor</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.Processor</object>
+          </return>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
