@@ -1,0 +1,12 @@
+#### Classnames included
+- org.apache.commons.fileupload.disk.DiskFileItemFactory
+- org.apache.commons.fileupload.FileItem
+- org.apache.commons.fileupload.FileItemFactory
+- org.apache.commons.fileupload.FileItemHeadersSupport
+- org.apache.commons.fileupload.FileItemIterator
+- org.apache.commons.fileupload.FileItemStream
+- org.apache.commons.fileupload.FileUpload
+- org.apache.commons.fileupload.FileUploadBase
+- org.apache.commons.fileupload.FileUploadException
+- org.apache.commons.fileupload.ProgressListener
+- org.apache.commons.fileupload.RequestContext
