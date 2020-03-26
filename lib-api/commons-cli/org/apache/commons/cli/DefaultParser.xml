@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-25 23:02:52"/>
+  <class name="DefaultParser" package="org.apache.commons.cli">
+    <interfaces>
+      <implements>org.apache.commons.cli.CommandLineParser</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cmd -->
+      <field access="protected" name="cmd">
+        <signature>
+          <object>org.apache.commons.cli.CommandLine</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:options -->
+      <field access="protected" name="options">
+        <signature>
+          <object>org.apache.commons.cli.Options</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:stopAtNonOption -->
+      <field access="protected" name="stopAtNonOption">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:currentToken -->
+      <field access="protected" name="currentToken">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:currentOption -->
+      <field access="protected" name="currentOption">
+        <signature>
+          <object>org.apache.commons.cli.Option</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:skipParsing -->
+      <field access="protected" name="skipParsing">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expectedOpts -->
+      <field access="protected" name="expectedOpts">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleConcatenatedOptions -->
+      <method access="protected" name="handleConcatenatedOptions" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" name="parse">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+            <defput>
+              <return/>
+            </defput>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" name="parse">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Properties</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+            <defput>
+              <return/>
+            </defput>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" name="parse">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+            <defput>
+              <return/>
+            </defput>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" name="parse">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Properties</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+            <defput>
+              <return/>
+            </defput>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
