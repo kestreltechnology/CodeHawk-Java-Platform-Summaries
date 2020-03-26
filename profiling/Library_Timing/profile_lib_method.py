@@ -8,7 +8,7 @@ import sys
 # So that we can use negative numbers as input arguments, we use @ instead of - as our argument prefix
 #
 # Therefore run : 
-# > ./do_profiling_from_inputs.sh @h
+# > ./profile_lib_method.py @h
 # to see a full help message
 
 def parse():
