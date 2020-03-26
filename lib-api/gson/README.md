@@ -1,0 +1,25 @@
+#### Classes included
+- com.google.gson.FieldNamingStrategy
+- com.google.gson.Gson
+- com.google.gson.GsonBuilder
+- com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory
+- com.google.gson.internal.ConstructorConstructor
+- com.google.gson.internal.Excluder
+- com.google.gson.internal.LinkedTreeMap$EntrySet
+- com.google.gson.internal.LinkedTreeMap$KeySet
+- com.google.gson.internal.LinkedTreeMap$Node
+- com.google.gson.internal.LinkedTreeMap
+- com.google.gson.JsonArray
+- com.google.gson.JsonDeserializationContext
+- com.google.gson.JsonDeserializer
+- com.google.gson.JsonElement
+- com.google.gson.JsonObject
+- com.google.gson.JsonParseException
+- com.google.gson.JsonParser
+- com.google.gson.JsonPrimitive
+- com.google.gson.JsonSyntaxException
+- com.google.gson.LongSerializationPolicy
+- com.google.gson.reflect.TypeToken
+- com.google.gson.stream.JsonReader
+- com.google.gson.stream.JsonWriter
+- com.google.gson.TypeAdapterFactory
