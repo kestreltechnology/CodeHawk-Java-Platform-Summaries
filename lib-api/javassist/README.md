@@ -1,0 +1,21 @@
+#### Classes included
+- javassist.bytecode.ConstPool
+- javassist.bytecode.LongVector
+- javassist.bytecode.MethodInfo
+- javassist.bytecode.SignatureAttribute$ClassType
+- javassist.bytecode.SignatureAttribute$MethodSignature
+- javassist.bytecode.SignatureAttribute$ObjectType
+- javassist.bytecode.SignatureAttribute$Type
+- javassist.bytecode.SignatureAttribute$TypeArgument
+- javassist.bytecode.SignatureAttribute$TypeParameter
+- javassist.ClassClassPath
+- javassist.ClassPath
+- javassist.ClassPathList
+- javassist.ClassPool
+- javassist.ClassPoolTail
+- javassist.CtBehavior
+- javassist.CtClass
+- javassist.CtConstructor
+- javassist.CtMember
+- javassist.CtMethod
+- javassist.CtNewConstructor
