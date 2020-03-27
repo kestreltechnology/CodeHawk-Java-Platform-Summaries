@@ -4,14 +4,9 @@ import argparse
 import sys
 
 def parse():
-    #usage = ('')
-    #description = ('')
     parser = argparse.ArgumentParser()
-    #parser = argparse.ArgumentParser(prefix_chars='@')
-    #parser = argparse.ArgumentParser(usage=usage,description=description,prefix_chars='@')
     parser.add_argument('repeats',help='Number of iterations to run')
-    parser.add_argument('bytecode',help='Fully qualified classname of interest')
-    #parser.add_argument('method',help='Method of interest')
+    parser.add_argument('bytecode',help='ByteCode of interest')
     parser.add_argument('--values',nargs='*',default=[],help='Input arguments to pass to the method')
     args = parser.parse_args()
     return args
