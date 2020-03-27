@@ -3,19 +3,19 @@
 ## Scripts to profile bytecodes and library methods
 
 ### Overview
-- [profile\_bytecode.py] (#ByteCode\_Timing/profile_bytecode.py)
-- [profile\_lib\_method.py] (#Library\_Timing/profile_lib_method.py)
+- [profile\_bytecode.py] (ByteCode\_Timing/profile_bytecode.py)
+- [profile\_lib\_method.py] (Library\_Timing/profile_lib_method.py)
 
-###Scripts
+### Scripts
 
-####profile\_bytecode
+#### profile\_bytecode
 Executes a very small method designed to exercise a particular bytecode many times, and then uses some logic to separate the execution time of that bytecode from surrounding bytecodes. This is only intended to determine the execution time of a bytecode without JIT enabled.
 
 - positional arguments:
   - *repeats*: Number of times to execute the loop that exercises a particular bytecode. 10,000 is typical.
   - *bytecode*: Name of the java bytecode to examine.    Example : iload_1
 
-####profile\_lib\_method
+#### profile\_lib\_method
 Executes calls to a method with given arguments in a small loop. This is only intended to determine the execution time of a method without JIT enabled.
 
 - positional arguments:
