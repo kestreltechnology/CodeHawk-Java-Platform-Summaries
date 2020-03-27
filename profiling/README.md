@@ -3,8 +3,8 @@
 ## Scripts to profile bytecodes and library methods
 
 ### Overview
-- [profile\_bytecode.py] (ByteCode\_Timing/profile_bytecode.py)
-- [profile\_lib\_method.py] (Library\_Timing/profile_lib_method.py)
+- [profile_bytecode.py](ByteCode_Timing/profile_bytecode.py)
+- [profile_lib_method.py](Library_Timing/profile_lib_method.py)
 
 ### Scripts
 
