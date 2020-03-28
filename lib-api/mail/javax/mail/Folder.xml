@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-28 15:32:07"/>
+  <class abstract="yes" name="Folder" package="javax.mail">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:store -->
+      <field access="protected" name="store">
+        <signature>
+          <object>javax.mail.Store</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:mode -->
+      <field access="protected" name="mode">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HOLDS_MESSAGES -->
+      <field access="public" final="yes" name="HOLDS_MESSAGES" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HOLDS_FOLDERS -->
+      <field access="public" final="yes" name="HOLDS_FOLDERS" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:READ_ONLY -->
+      <field access="public" final="yes" name="READ_ONLY" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:READ_WRITE -->
+      <field access="public" final="yes" name="READ_WRITE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (javax.mail.Store) -->
+      <constructor access="protected" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.Store</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addConnectionListener -->
+      <method access="public" name="addConnectionListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.ConnectionListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFolderListener -->
+      <method access="public" name="addFolderListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.FolderListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addMessageChangedListener -->
+      <method access="public" name="addMessageChangedListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.MessageChangedListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addMessageCountListener -->
+      <method access="public" name="addMessageCountListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.MessageCountListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ appendMessages -->
+      <method abstract="yes" access="public" name="appendMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copyMessages -->
+      <method access="public" name="copyMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>javax.mail.Folder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ create -->
+      <method abstract="yes" access="public" name="create" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method abstract="yes" access="public" name="delete" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exists -->
+      <method abstract="yes" access="public" name="exists" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expunge -->
+      <method abstract="yes" access="public" name="expunge" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fetch -->
+      <method access="public" name="fetch" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>javax.mail.FetchProfile</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ finalize -->
+      <method access="protected" name="finalize" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Throwable</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDeletedMessageCount -->
+      <method access="public" name="getDeletedMessageCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFolder -->
+      <method abstract="yes" access="public" name="getFolder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>javax.mail.Folder</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFullName -->
+      <method abstract="yes" access="public" name="getFullName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMessage -->
+      <method abstract="yes" access="public" name="getMessage" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>javax.mail.Message</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMessageCount -->
+      <method abstract="yes" access="public" name="getMessageCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMessages -->
+      <method access="public" name="getMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMessages -->
+      <method access="public" name="getMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMessages -->
+      <method access="public" name="getMessages" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMode -->
+      <method access="public" name="getMode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getName -->
+      <method abstract="yes" access="public" name="getName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNewMessageCount -->
+      <method access="public" name="getNewMessageCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParent -->
+      <method abstract="yes" access="public" name="getParent" valid="no">
+        <signature>
+          <return>
+            <object>javax.mail.Folder</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPermanentFlags -->
+      <method abstract="yes" access="public" name="getPermanentFlags" valid="no">
+        <signature>
+          <return>
+            <object>javax.mail.Flags</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSeparator -->
+      <method abstract="yes" access="public" name="getSeparator" valid="no">
+        <signature>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStore -->
+      <method access="public" name="getStore" valid="no">
+        <signature>
+          <return>
+            <object>javax.mail.Store</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getType -->
+      <method abstract="yes" access="public" name="getType" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getURLName -->
+      <method access="public" name="getURLName" valid="no">
+        <signature>
+          <return>
+            <object>javax.mail.URLName</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUnreadMessageCount -->
+      <method access="public" name="getUnreadMessageCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasNewMessages -->
+      <method abstract="yes" access="public" name="hasNewMessages" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method abstract="yes" access="public" name="isOpen" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSubscribed -->
+      <method access="public" name="isSubscribed" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ list -->
+      <method abstract="yes" access="public" name="list" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Folder</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ list -->
+      <method access="public" name="list" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>javax.mail.Folder</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listSubscribed -->
+      <method access="public" name="listSubscribed" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Folder</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listSubscribed -->
+      <method access="public" name="listSubscribed" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>javax.mail.Folder</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyConnectionListeners -->
+      <method access="protected" name="notifyConnectionListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyFolderListeners -->
+      <method access="protected" name="notifyFolderListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyFolderRenamedListeners -->
+      <method access="protected" name="notifyFolderRenamedListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.Folder</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyMessageAddedListeners -->
+      <method access="protected" name="notifyMessageAddedListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyMessageChangedListeners -->
+      <method access="protected" name="notifyMessageChangedListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>javax.mail.Message</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyMessageRemovedListeners -->
+      <method access="protected" name="notifyMessageRemovedListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method abstract="yes" access="public" name="open" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeConnectionListener -->
+      <method access="public" name="removeConnectionListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.ConnectionListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeFolderListener -->
+      <method access="public" name="removeFolderListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.FolderListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeMessageChangedListener -->
+      <method access="public" name="removeMessageChangedListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.MessageChangedListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeMessageCountListener -->
+      <method access="public" name="removeMessageCountListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.event.MessageCountListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ renameTo -->
+      <method abstract="yes" access="public" name="renameTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.Folder</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ search -->
+      <method access="public" name="search" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.search.SearchTerm</object>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ search -->
+      <method access="public" name="search" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.search.SearchTerm</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFlags -->
+      <method access="public" name="setFlags" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.mail.Message</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>javax.mail.Flags</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFlags -->
+      <method access="public" name="setFlags" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>javax.mail.Flags</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFlags -->
+      <method access="public" name="setFlags" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>javax.mail.Flags</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubscribed -->
+      <method access="public" name="setSubscribed" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

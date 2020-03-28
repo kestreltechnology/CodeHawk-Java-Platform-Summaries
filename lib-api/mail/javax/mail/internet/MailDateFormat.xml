@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-28 15:32:08"/>
+  <class name="MailDateFormat" package="javax.mail.internet">
+    <superclass>java.text.SimpleDateFormat</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+      <implements>java.lang.Cloneable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DEFAULT -->
+      <field from="java.text.DateFormat" inherited="yes" name="DEFAULT">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SHORT -->
+      <field from="java.text.DateFormat" inherited="yes" name="SHORT">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MEDIUM -->
+      <field from="java.text.DateFormat" inherited="yes" name="MEDIUM">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:LONG -->
+      <field from="java.text.DateFormat" inherited="yes" name="LONG">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FULL -->
+      <field from="java.text.DateFormat" inherited="yes" name="FULL">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:TIMEZONE_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="TIMEZONE_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:HOUR0_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="HOUR0_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:HOUR1_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="HOUR1_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:AM_PM_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="AM_PM_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:WEEK_OF_MONTH_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="WEEK_OF_MONTH_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:WEEK_OF_YEAR_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="WEEK_OF_YEAR_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DAY_OF_WEEK_IN_MONTH_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="DAY_OF_WEEK_IN_MONTH_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DAY_OF_YEAR_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="DAY_OF_YEAR_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DAY_OF_WEEK_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="DAY_OF_WEEK_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MILLISECOND_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="MILLISECOND_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SECOND_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="SECOND_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MINUTE_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="MINUTE_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:HOUR_OF_DAY0_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="HOUR_OF_DAY0_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:HOUR_OF_DAY1_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="HOUR_OF_DAY1_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DATE_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="DATE_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MONTH_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="MONTH_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:YEAR_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="YEAR_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ERA_FIELD -->
+      <field from="java.text.DateFormat" inherited="yes" name="ERA_FIELD">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ format -->
+      <method access="public" name="format" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Date</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.StringBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.text.FieldPosition</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" name="parse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.text.ParsePosition</object>
+          </arg>
+          <return>
+            <object>java.util.Date</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCalendar -->
+      <method access="public" name="setCalendar" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Calendar</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setNumberFormat -->
+      <method access="public" name="setNumberFormat" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.text.NumberFormat</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) applyLocalizedPattern -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="applyLocalizedPattern">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) applyPattern -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="applyPattern">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) format -->
+      <method from="java.text.Format" inherited="yes" name="format">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) format -->
+      <method from="java.text.DateFormat" inherited="yes" name="format">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Date</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) format -->
+      <method from="java.text.DateFormat" inherited="yes" name="format">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.StringBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.text.FieldPosition</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) formatToCharacterIterator -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="formatToCharacterIterator">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.text.AttributedCharacterIterator</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) get2DigitYearStart -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="get2DigitYearStart">
+        <signature>
+          <return>
+            <object>java.util.Date</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAvailableLocales -->
+      <method from="java.text.DateFormat" inherited="yes" name="getAvailableLocales">
+        <signature>
+          <return>
+            <array>
+              <object>java.util.Locale</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCalendar -->
+      <method from="java.text.DateFormat" inherited="yes" name="getCalendar">
+        <signature>
+          <return>
+            <object>java.util.Calendar</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateFormatSymbols -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="getDateFormatSymbols">
+        <signature>
+          <return>
+            <object>java.text.DateFormatSymbols</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateInstance">
+        <signature>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateTimeInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateTimeInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDateTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getDateTimeInstance">
+        <signature>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getInstance">
+        <signature>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getNumberFormat -->
+      <method from="java.text.DateFormat" inherited="yes" name="getNumberFormat">
+        <signature>
+          <return>
+            <object>java.text.NumberFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getTimeInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getTimeInstance">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getTimeInstance -->
+      <method from="java.text.DateFormat" inherited="yes" name="getTimeInstance">
+        <signature>
+          <return>
+            <object>java.text.DateFormat</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getTimeZone -->
+      <method from="java.text.DateFormat" inherited="yes" name="getTimeZone">
+        <signature>
+          <return>
+            <object>java.util.TimeZone</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isLenient -->
+      <method from="java.text.DateFormat" inherited="yes" name="isLenient">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) parse -->
+      <method from="java.text.DateFormat" inherited="yes" name="parse">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.util.Date</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) parseObject -->
+      <method from="java.text.Format" inherited="yes" name="parseObject">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) parseObject -->
+      <method from="java.text.DateFormat" inherited="yes" name="parseObject">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.text.ParsePosition</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) set2DigitYearStart -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="set2DigitYearStart">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Date</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setDateFormatSymbols -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="setDateFormatSymbols">
+        <signature>
+          <arg nr="1">
+            <object>java.text.DateFormatSymbols</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setLenient -->
+      <method from="java.text.DateFormat" inherited="yes" name="setLenient">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setTimeZone -->
+      <method from="java.text.DateFormat" inherited="yes" name="setTimeZone">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TimeZone</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toLocalizedPattern -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="toLocalizedPattern">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toPattern -->
+      <method from="java.text.SimpleDateFormat" inherited="yes" name="toPattern">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
