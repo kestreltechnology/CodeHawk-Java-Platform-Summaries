@@ -36,3 +36,9 @@ and postconditions, as well as string sinks and resource sinks.
 | httpcore | 1 | 2 | 2 | 0 | 0 | 0 | 0 |
 | ieee-odm-schema | 102 | 1105 | 150 | 0 | 0 | 48 | 0 |
 | javassist | 20 | 340 | 52 | 0 | 12 | 4 | 0 |
+| jetty-http | 13 | 214 | 159 | 0 | 2 | 14 | 1 |
+| jetty-io |  4 |  66 | 17 | 0 | 1 | 0 | 0 |
+| jetty-security | 7 | 58 | 22 | 0 | 0 | 0 | 0 |
+| jetty-server | 56 | 1156 | 116 | 0 | 1 | 6 | 0 |
+| jetty-servlet | 15 | 249 | 31 | 0 | 0 | 2 | 0 |
+| jetty-util  | 37 | 449 | 79 | 0 | 2 | 0 | 0 |
