@@ -1,0 +1,18 @@
+#### Classes included
+- jline.console.completer.AggregateCompleter
+- jline.console.completer.ArgumentCompleter$ArgumentDelimiter
+- jline.console.completer.ArgumentCompleter
+- jline.console.completer.Completer
+- jline.console.completer.CompletionHandler
+- jline.console.completer.FileNameCompleter
+- jline.console.completer.StringsCompleter
+- jline.console.ConsoleKeys
+- jline.console.ConsoleReader$State
+- jline.console.ConsoleReader
+- jline.console.CursorBuffer
+- jline.console.history.History
+- jline.console.KeyMap
+- jline.console.KillRing
+- jline.internal.NonBlockingInputStream
+- jline.Terminal
+- jline.Terminal2
