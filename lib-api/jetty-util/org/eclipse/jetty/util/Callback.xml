@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2020-03-27 23:43:47"/>
+  <interface name="Callback" package="org.eclipse.jetty.util">
+    <superinterfaces>
+      <superinterface>org.eclipse.jetty.util.thread.Invocable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NOOP -->
+      <field access="public" final="yes" name="NOOP" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.Callback</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ failed -->
+      <method access="public" name="failed" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ from -->
+      <method access="public" name="from" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.CompletableFuture</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.Callback</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ from -->
+      <method access="public" name="from" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.CompletableFuture</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Invocable$InvocationType</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.Callback</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ succeeded -->
+      <method access="public" name="succeeded" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

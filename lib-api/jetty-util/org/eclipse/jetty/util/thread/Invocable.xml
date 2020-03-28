@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2020-03-27 23:43:53"/>
+  <interface name="Invocable" package="org.eclipse.jetty.util.thread">
+    <superinterfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__nonBlocking -->
+      <field access="public" final="yes" name="__nonBlocking" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.ThreadLocal</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ asPreferred -->
+      <method access="public" name="asPreferred" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Invocable$InvocationType</object>
+          </arg>
+          <return>
+            <object>java.lang.Runnable</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInvocationType -->
+      <method access="public" name="getInvocationType" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.thread.Invocable$InvocationType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInvocationType -->
+      <method access="public" name="getInvocationType" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.thread.Invocable$InvocationType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeNonBlocking -->
+      <method access="public" name="invokeNonBlocking" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokePreferNonBlocking -->
+      <method access="public" name="invokePreferNonBlocking" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokePreferred -->
+      <method access="public" name="invokePreferred" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Invocable$InvocationType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNonBlockingInvocation -->
+      <method access="public" name="isNonBlockingInvocation" static="yes" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$asPreferred$0 -->
+      <method access="private" name="lambda$asPreferred$0" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
