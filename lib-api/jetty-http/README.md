@@ -1,0 +1,14 @@
+#### Classes included
+- org.eclipse.jetty.http.CookieCompliance
+- org.eclipse.jetty.http.HttpCompliance
+- org.eclipse.jetty.http.HttpField
+- org.eclipse.jetty.http.HttpFields
+- org.eclipse.jetty.http.HttpHeader
+- org.eclipse.jetty.http.HttpURI
+- org.eclipse.jetty.http.HttpVersion
+- org.eclipse.jetty.http.MetaData$Request
+- org.eclipse.jetty.http.MetaData$Response
+- org.eclipse.jetty.http.MetaData
+- org.eclipse.jetty.http.MimeTypes$Type
+- org.eclipse.jetty.http.MimeTypes
+- org.eclipse.jetty.http.pathmap.PathMappings
