@@ -1,0 +1,2334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-27 23:20:44"/>
+  <class name="ServletContextHandler" package="org.eclipse.jetty.servlet">
+    <superclass>org.eclipse.jetty.server.handler.ContextHandler</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.util.Attributes</implements>
+      <implements>org.eclipse.jetty.util.component.Graceful</implements>
+      <implements>org.eclipse.jetty.server.HandlerContainer</implements>
+      <implements>org.eclipse.jetty.server.Handler</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SESSIONS -->
+      <field access="public" final="yes" name="SESSIONS" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SECURITY -->
+      <field access="public" final="yes" name="SECURITY" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:GZIP -->
+      <field access="public" final="yes" name="GZIP" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="4"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NO_SESSIONS -->
+      <field access="public" final="yes" name="NO_SESSIONS" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NO_SECURITY -->
+      <field access="public" final="yes" name="NO_SECURITY" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_objFactory -->
+      <field access="protected" final="yes" name="_objFactory">
+        <signature>
+          <object>org.eclipse.jetty.util.DecoratedObjectFactory</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_defaultSecurityHandlerClass -->
+      <field access="protected" name="_defaultSecurityHandlerClass">
+        <signature>
+          <object>java.lang.Class</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionHandler -->
+      <field access="protected" name="_sessionHandler">
+        <signature>
+          <object>org.eclipse.jetty.server.session.SessionHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_securityHandler -->
+      <field access="protected" name="_securityHandler">
+        <signature>
+          <object>org.eclipse.jetty.security.SecurityHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_servletHandler -->
+      <field access="protected" name="_servletHandler">
+        <signature>
+          <object>org.eclipse.jetty.servlet.ServletHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_gzipHandler -->
+      <field access="protected" name="_gzipHandler">
+        <signature>
+          <object>org.eclipse.jetty.server.handler.gzip.GzipHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_options -->
+      <field access="protected" name="_options">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_jspConfig -->
+      <field access="protected" name="_jspConfig">
+        <signature>
+          <object>javax.servlet.descriptor.JspConfigDescriptor</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RUNNING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="RUNNING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="FAILED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOP_ON_FAILURE -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOP_ON_FAILURE">
+        <signature>
+          <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MANAGED_ATTRIBUTES -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="MANAGED_ATTRIBUTES">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:EXTENDED_LISTENER_TYPE_INDEX -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="EXTENDED_LISTENER_TYPE_INDEX">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DEFAULT_LISTENER_TYPE_INDEX -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="DEFAULT_LISTENER_TYPE_INDEX">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SERVLET_MINOR_VERSION -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="SERVLET_MINOR_VERSION">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SERVLET_MAJOR_VERSION -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="SERVLET_MAJOR_VERSION">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SERVLET_LISTENER_TYPES -->
+      <field from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="SERVLET_LISTENER_TYPES">
+        <signature>
+          <array>
+            <object>java.lang.Class</object>
+          </array>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~ (org.eclipse.jetty.server.HandlerContainer,java.lang.String) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!-- ~~~~ (org.eclipse.jetty.server.HandlerContainer,java.lang.String,int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.HandlerContainer,java.lang.String,boolean,boolean) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.HandlerContainer,org.eclipse.jetty.server.session.SessionHandler,org.eclipse.jetty.security.SecurityHandler,org.eclipse.jetty.servlet.ServletHandler,org.eclipse.jetty.server.handler.ErrorHandler) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </arg>
+          <arg nr="5">
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.HandlerContainer,java.lang.String,org.eclipse.jetty.server.session.SessionHandler,org.eclipse.jetty.security.SecurityHandler,org.eclipse.jetty.servlet.ServletHandler,org.eclipse.jetty.server.handler.ErrorHandler) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </arg>
+          <arg nr="5">
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </arg>
+          <arg nr="6">
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.HandlerContainer,java.lang.String,org.eclipse.jetty.server.session.SessionHandler,org.eclipse.jetty.security.SecurityHandler,org.eclipse.jetty.servlet.ServletHandler,org.eclipse.jetty.server.handler.ErrorHandler,int) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </arg>
+          <arg nr="5">
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </arg>
+          <arg nr="6">
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </arg>
+          <arg nr="7">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addDecorator -->
+      <method access="public" name="addDecorator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.servlet.ServletContextHandler$Decorator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" name="addFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.servlet.FilterHolder</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.EnumSet</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" name="addFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.EnumSet</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.servlet.FilterHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" name="addFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.EnumSet</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.servlet.FilterHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addRoles -->
+      <method access="protected" name="addRoles" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addServlet -->
+      <method access="public" name="addServlet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.servlet.ServletHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addServlet -->
+      <method access="public" name="addServlet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.servlet.ServletHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addServlet -->
+      <method access="public" name="addServlet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.servlet.ServletHolder</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ callContextDestroyed -->
+      <method access="public" name="callContextDestroyed" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletContextListener</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletContextEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ callContextInitialized -->
+      <method access="public" name="callContextInitialized" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletContextListener</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletContextEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" name="doStart" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStop -->
+      <method access="protected" name="doStop" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dynamicHolderAdded -->
+      <method access="protected" name="dynamicHolderAdded" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.servlet.ServletHolder</object>
+          </arg>
+          <return>
+            <object>javax.servlet.ServletRegistration$Dynamic</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDecorators -->
+      <method access="public" name="getDecorators" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDefaultSecurityHandlerClass -->
+      <method access="public" name="getDefaultSecurityHandlerClass" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getGzipHandler -->
+      <method access="public" name="getGzipHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.gzip.GzipHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getObjectFactory -->
+      <method access="public" name="getObjectFactory" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.DecoratedObjectFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSecurityHandler -->
+      <method access="public" name="getSecurityHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletHandler -->
+      <method access="public" name="getServletHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionHandler -->
+      <method access="public" name="getSessionHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insertHandler -->
+      <method access="public" name="insertHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.HandlerWrapper</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSecurityHandler -->
+      <method access="protected" name="newSecurityHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newServletHandler -->
+      <method access="protected" name="newServletHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSessionHandler -->
+      <method access="protected" name="newSessionHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDecorators -->
+      <method access="public" name="setDecorators" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDefaultSecurityHandlerClass -->
+      <method access="public" name="setDefaultSecurityHandlerClass" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setGzipHandler -->
+      <method access="public" name="setGzipHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.gzip.GzipHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHandler -->
+      <method access="public" name="setHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Handler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecurityHandler -->
+      <method access="public" name="setSecurityHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.security.SecurityHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setServletHandler -->
+      <method access="public" name="setServletHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.servlet.ServletHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setServletSecurity -->
+      <method access="public" name="setServletSecurity" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletRegistration$Dynamic</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletSecurityElement</object>
+          </arg>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionHandler -->
+      <method access="public" name="setSessionHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ startContext -->
+      <method access="protected" name="startContext" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ stopContext -->
+      <method access="protected" name="stopContext" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addAliasCheck -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="addAliasCheck">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.ContextHandler$AliasCheck</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="addBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="addBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="addBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.component.ContainerLifeCycle$Managed</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addEventListener -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="addEventListener">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.Container$Listener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addEventListener -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="addEventListener">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addLifeCycleListener -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="addLifeCycleListener">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addLocaleEncoding -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="addLocaleEncoding">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addManaged -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="addManaged">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addProgrammaticListener -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="addProgrammaticListener">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addVirtualHosts -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="addVirtualHosts">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) checkAlias -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="checkAlias">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) checkContext -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="checkContext">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) checkContextPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="checkContextPath">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) checkVirtualHost -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="checkVirtualHost">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clearAliasChecks -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="clearAliasChecks">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clearAttributes -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="clearAttributes">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) contains -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="contains">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) destroy -->
+      <method from="org.eclipse.jetty.server.handler.HandlerWrapper" inherited="yes" name="destroy">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doError -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="doError">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doHandle -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="doHandle">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doScope -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="doScope">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dump -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dump">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.util.Collection</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dump -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dump">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dump -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dump">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.Dumpable</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dump -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dump">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dump -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="dump">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dumpBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dumpBeans">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.util.Collection</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dumpObject -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dumpObject">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dumpStdErr -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="dumpStdErr">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) dumpThis -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="dumpThis">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) enterScope -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="enterScope">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) exitScope -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="exitScope">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) expandChildren -->
+      <method from="org.eclipse.jetty.server.handler.HandlerWrapper" inherited="yes" name="expandChildren">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) expandHandler -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandlerContainer" inherited="yes" name="expandHandler">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Handler</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) findContainerOf -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandlerContainer" inherited="yes" name="findContainerOf">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.server.Handler</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAliasChecks -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getAliasChecks">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAllowNullPathInfo -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getAllowNullPathInfo">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAttribute -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAttributeNames -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getAttributeNames">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAttributes -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getAttributes">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.Attributes</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getBaseResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getBaseResource">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="getBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="getBeans">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="getBeans">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getChildHandlerByClass -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandlerContainer" inherited="yes" name="getChildHandlerByClass">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.Handler</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getChildHandlers -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandlerContainer" inherited="yes" name="getChildHandlers">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Handler</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getChildHandlersByClass -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandlerContainer" inherited="yes" name="getChildHandlersByClass">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Handler</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClassLoader -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getClassLoader">
+        <signature>
+          <return>
+            <object>java.lang.ClassLoader</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClassPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getClassPath">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getContextHandler -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getContextHandler">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletContext</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ContextHandler</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getContextPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getContextPath">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getContextPathEncoded -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getContextPathEncoded">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCurrentContext -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getCurrentContext">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDisplayName -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getDisplayName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getErrorHandler -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getErrorHandler">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getEventListeners -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getEventListeners">
+        <signature>
+          <return>
+            <array>
+              <object>java.util.EventListener</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getHandler -->
+      <method from="org.eclipse.jetty.server.handler.HandlerWrapper" inherited="yes" name="getHandler">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.Handler</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getHandlers -->
+      <method from="org.eclipse.jetty.server.handler.HandlerWrapper" inherited="yes" name="getHandlers">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Handler</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInitParameter -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getInitParameter">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInitParameterNames -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getInitParameterNames">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInitParams -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getInitParams">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLocaleEncoding -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getLocaleEncoding">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLocaleEncoding -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getLocaleEncoding">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLocaleEncodings -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getLocaleEncodings">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLogger -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getLogger">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.log.Logger</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getMaxFormContentSize -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getMaxFormContentSize">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getMaxFormKeys -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getMaxFormKeys">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getMimeTypes -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getMimeTypes">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.MimeTypes</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getProtectedTargets -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getProtectedTargets">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getResource">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getResourceBase -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getResourceBase">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getResourcePaths -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getResourcePaths">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServer -->
+      <method from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="getServer">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.Server</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServerInfo -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getServerInfo">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServletContext -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getServletContext">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getState -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="getState">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getState -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="getState">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getStopTimeout -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="getStopTimeout">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getVirtualHosts -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getVirtualHosts">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getWelcomeFiles -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="getWelcomeFiles">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handle -->
+      <method from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="handle">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handle -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="handle">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handle -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="handle">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isAvailable -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isAvailable">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isCompactPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isCompactPath">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isFailed -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isFailed">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isManaged -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="isManaged">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isProgrammaticListener -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isProgrammaticListener">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isProtectedTarget -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isProtectedTarget">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isRunning -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isRunning">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isShutdown -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isShutdown">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isStarted -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isStarted">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isStarting -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isStarting">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isStopped -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isStopped">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isStopping -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="isStopping">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isUsingSecurityManager -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="isUsingSecurityManager">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loadClass -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="loadClass">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) manage -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="manage">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) newResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="newResource">
+        <signature>
+          <arg nr="1">
+            <object>java.net.URI</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) newResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="newResource">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) newResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="newResource">
+        <signature>
+          <arg nr="1">
+            <object>java.net.URL</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) nextHandle -->
+      <method from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="nextHandle">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) nextScope -->
+      <method from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="nextScope">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeAttribute -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="removeAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="removeBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="removeBeans">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeEventListener -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="removeEventListener">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.Container$Listener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeEventListener -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="removeEventListener">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeLifeCycleListener -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="removeLifeCycleListener">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeVirtualHosts -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="removeVirtualHosts">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestDestroyed -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="requestDestroyed">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestInitialized -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="requestInitialized">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setAliasChecks -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setAliasChecks">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setAllowNullPathInfo -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setAllowNullPathInfo">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setAttribute -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setAttributes -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setAttributes">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.Attributes</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setAvailable -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setAvailable">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setBaseResource -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setBaseResource">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.resource.Resource</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="setBeans">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setClassLoader -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setClassLoader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.ClassLoader</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setCompactPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setCompactPath">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setContextPath -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setContextPath">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setDisplayName -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setDisplayName">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setErrorHandler -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setEventListeners -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setEventListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.util.EventListener</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setInitParameter -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setInitParameter">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setLogger -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setLogger">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.log.Logger</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setManagedAttribute -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setManagedAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setMaxFormContentSize -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setMaxFormContentSize">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setMaxFormKeys -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setMaxFormKeys">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setMimeTypes -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setMimeTypes">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.http.MimeTypes</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setProtectedTargets -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setProtectedTargets">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setResourceBase -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setResourceBase">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setServer -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setServer">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setServerInfo -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setServerInfo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setStopTimeout -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="setStopTimeout">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setUsingSecurityManager -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setUsingSecurityManager">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setVirtualHosts -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setVirtualHosts">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setWelcomeFiles -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="setWelcomeFiles">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) shutdown -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="shutdown">
+        <signature>
+          <return>
+            <object>java.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) start -->
+      <method from="org.eclipse.jetty.util.component.LifeCycle" inherited="yes" name="start">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) start -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="start">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) start -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="start">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) stop -->
+      <method from="org.eclipse.jetty.util.component.LifeCycle" inherited="yes" name="stop">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) stop -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="stop">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) stop -->
+      <method from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="stop">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="org.eclipse.jetty.server.handler.ContextHandler" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unmanage -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="unmanage">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) updateBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="updateBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) updateBean -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="updateBean">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) updateBeans -->
+      <method from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="updateBeans">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
