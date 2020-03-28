@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codehawk-java-analyzer>
-  <header info="class" time="2019-01-16 19:29:18"/>
+  <header info="class" time="2020-03-24 16:12:39"/>
   <class name="FloatLargeArray" package="pl.edu.icm.jlargearrays">
     <superclass>pl.edu.icm.jlargearrays.LargeArray</superclass>
     <interfaces>
       <implements>java.io.Serializable</implements>
       <implements>java.lang.Cloneable</implements>
     </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:LARGEST_SUBARRAY -->
+      <field from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="LARGEST_SUBARRAY">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (long) -->
@@ -19,8 +28,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </constructor>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (long,boolean) -->
@@ -36,9 +48,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	    <transfer><arg nr="2"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </constructor>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (long,float) -->
@@ -54,9 +72,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	    <transfer><arg nr="2"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </constructor>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (float[]) -->
@@ -71,8 +95,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><arg nr="1"/><this/></transfer>
-	  </taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
         </summary>
       </constructor>
     </constructors>
@@ -88,8 +115,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
@@ -102,8 +132,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
@@ -119,9 +152,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	    <transfer><arg nr="1"/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
@@ -137,9 +176,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	    <transfer><arg nr="1"/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
@@ -155,9 +200,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	    <transfer><arg nr="1"/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBoolean -->
@@ -173,9 +224,15 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	    <transfer><arg nr="1"/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBooleanData -->
@@ -190,8 +247,11 @@
         <exceptions/>
         <summary>
           <taint>
-	    <transfer><this/><return/></transfer>
-	  </taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBooleanData -->
@@ -223,7 +283,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getByte -->
-      <method access="public" final="yes" name="getByte" valid="no">
+      <method access="public" final="yes" name="getByte">
         <signature>
           <arg nr="1">
             <long/>
@@ -234,11 +294,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getByteData -->
-      <method access="public" final="yes" name="getByteData" valid="no">
+      <method access="public" final="yes" name="getByteData">
         <signature>
           <return>
             <array>
@@ -248,7 +317,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getByteData -->
@@ -280,7 +354,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getData -->
-      <method access="public" final="yes" name="getData" valid="no">
+      <method access="public" final="yes" name="getData">
         <signature>
           <return>
             <array>
@@ -290,11 +364,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getData -->
-      <method access="public" bridge="yes" name="getData" valid="no">
+      <method access="public" bridge="yes" name="getData">
         <signature>
           <return>
             <object>java.lang.Object</object>
@@ -302,11 +381,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDouble -->
-      <method access="public" final="yes" name="getDouble" valid="no">
+      <method access="public" final="yes" name="getDouble">
         <signature>
           <arg nr="1">
             <long/>
@@ -317,11 +401,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDoubleData -->
-      <method access="public" final="yes" name="getDoubleData" valid="no">
+      <method access="public" final="yes" name="getDoubleData">
         <signature>
           <return>
             <array>
@@ -331,7 +424,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDoubleData -->
@@ -363,7 +461,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFloat -->
-      <method access="public" final="yes" name="getFloat" valid="no">
+      <method access="public" final="yes" name="getFloat">
         <signature>
           <arg nr="1">
             <long/>
@@ -374,11 +472,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFloatData -->
-      <method access="public" final="yes" name="getFloatData" valid="no">
+      <method access="public" final="yes" name="getFloatData">
         <signature>
           <return>
             <array>
@@ -388,7 +495,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFloatData -->
@@ -782,7 +894,339 @@
           <taint/>
         </summary>
       </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getBoolean_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getBoolean_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getByte_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getByte_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <byte/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDouble_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getDouble_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getFloat_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getFloat_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <float/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInt_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getInt_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLong_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getLong_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getMaxSizeOf32bitArray -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getMaxSizeOf32bitArray">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getShort_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getShort_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <short/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getType -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getType">
+        <signature>
+          <return>
+            <object>pl.edu.icm.jlargearrays.LargeArrayType</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getUnsignedByte_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="getUnsignedByte_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <short/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) get_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="get_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isConstant -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="isConstant">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isLarge -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="isLarge">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isNumeric -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="isNumeric">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) length -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="length">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) nativePointer -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="nativePointer">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) set -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="set">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setBoolean_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setBoolean_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setByte_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setByte_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <byte/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setDouble_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setDouble_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setFloat_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setFloat_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <float/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setInt_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setInt_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setLong_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setLong_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setMaxSizeOf32bitArray -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setMaxSizeOf32bitArray">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setShort_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setShort_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <short/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setUnsignedByte_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="setUnsignedByte_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <byte/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) set_safe -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="set_safe">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) zeroNativeMemory -->
+      <method from="pl.edu.icm.jlargearrays.LargeArray" inherited="yes" name="zeroNativeMemory">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
     </methods>
   </class>
-  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
 </codehawk-java-analyzer>
