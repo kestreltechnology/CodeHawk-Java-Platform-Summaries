@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2020-03-27 19:11:38"/>
+  <interface name="EndPoint" package="org.eclipse.jetty.io">
+    <superinterfaces>
+      <superinterface>java.io.Closeable</superinterface>
+      <superinterface>java.lang.AutoCloseable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fill -->
+      <method abstract="yes" access="public" name="fill" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fillInterested -->
+      <method abstract="yes" access="public" name="fillInterested" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.Callback</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.nio.channels.ReadPendingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flush -->
+      <method abstract="yes" access="public" name="flush" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.nio.ByteBuffer</object>
+            </array>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConnection -->
+      <method abstract="yes" access="public" name="getConnection" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.io.Connection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCreatedTimeStamp -->
+      <method abstract="yes" access="public" name="getCreatedTimeStamp" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIdleTimeout -->
+      <method abstract="yes" access="public" name="getIdleTimeout" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalAddress -->
+      <method abstract="yes" access="public" name="getLocalAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.InetSocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteAddress -->
+      <method abstract="yes" access="public" name="getRemoteAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.InetSocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTransport -->
+      <method abstract="yes" access="public" name="getTransport" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isFillInterested -->
+      <method abstract="yes" access="public" name="isFillInterested" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInputShutdown -->
+      <method abstract="yes" access="public" name="isInputShutdown" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method abstract="yes" access="public" name="isOpen" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOptimizedForDirectBuffers -->
+      <method abstract="yes" access="public" name="isOptimizedForDirectBuffers" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOutputShutdown -->
+      <method abstract="yes" access="public" name="isOutputShutdown" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ onClose -->
+      <method abstract="yes" access="public" name="onClose" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ onOpen -->
+      <method abstract="yes" access="public" name="onOpen" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setConnection -->
+      <method abstract="yes" access="public" name="setConnection" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.Connection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIdleTimeout -->
+      <method abstract="yes" access="public" name="setIdleTimeout" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdownOutput -->
+      <method abstract="yes" access="public" name="shutdownOutput" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tryFillInterested -->
+      <method abstract="yes" access="public" name="tryFillInterested" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.Callback</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ upgrade -->
+      <method abstract="yes" access="public" name="upgrade" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.Connection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method abstract="yes" access="public" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.Callback</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.nio.ByteBuffer</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.nio.channels.WritePendingException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
