@@ -16,7 +16,7 @@ and postconditions, as well as string sinks and resource sinks.
 
 
 | Library | classes | methods | taint transfer | pre | post | string sinks | resource sinks |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | antlr4-runtime | 64 | 739 |  488 |  2 | 30 | 0 | 0 |
 | apfloat |         5 | 300 |   88 |  0 |  3 | 4 | 0 |
 |  bcprov-jdk15on | 3 | 19 | 9 | 0 | 0 | 0 | 0 |
@@ -42,3 +42,14 @@ and postconditions, as well as string sinks and resource sinks.
 | jetty-server | 56 | 1156 | 116 | 0 | 1 | 6 | 0 |
 | jetty-servlet | 15 | 249 | 31 | 0 | 0 | 2 | 0 |
 | jetty-util  | 37 | 449 | 79 | 0 | 2 | 0 | 0 |
+| JLargeArrays  | 4 | 164 | 35 | 0 | 0 | 0 | 0 |
+| jline | 17 | 221 | 143 | 0  | 1 | 1 | 0 |
+| jsoup | 12 | 321 | 73 | 0 | 1 | 14 | 0 |
+| JTransforms | 2 | 29 | 5 | 0 | 0 | 1 | 0 |
+| junit-platform-commons | 5 | 37 | 8 | 4 | 0 | 0 | 0 |
+| junit | 7 | 161 | 142 | 0 | 1 | 0 | 0 |
+| log4j | 4 | 72 | 72 | 0 | 0 | 0 | 0 |
+| mail | 28 | 475 | 235 | 0 | 4 | 0 | 0 |
+| mapdb | 51 | 762 | 171 | 0 | 25 | 0 | 0 |
+| nanohttpd | 10 | 76 | 54 | 0 | 0 | 1 | 0 |
+| netty-all | 118 | 1747 | 265 | 0 | 41 | 0 | 0 |
