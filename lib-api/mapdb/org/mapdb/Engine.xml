@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-17 14:48:45"/>
+  <interface name="Engine" package="org.mapdb">
+    <superinterfaces>
+      <superinterface>java.io.Closeable</superinterface>
+      <superinterface>java.lang.AutoCloseable</superinterface>
+    </superinterfaces>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ canRollback -->
+      <method abstract="yes" access="public" name="canRollback" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ canSnapshot -->
+      <method abstract="yes" access="public" name="canSnapshot" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearCache -->
+      <method abstract="yes" access="public" name="clearCache" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ commit -->
+      <method abstract="yes" access="public" name="commit" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compact -->
+      <method abstract="yes" access="public" name="compact" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareAndSwap -->
+      <method abstract="yes" access="public" name="compareAndSwap" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method abstract="yes" access="public" name="delete" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method abstract="yes" access="public" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getWrappedEngine -->
+      <method abstract="yes" access="public" name="getWrappedEngine" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.Engine</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isClosed -->
+      <method abstract="yes" access="public" name="isClosed" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isReadOnly -->
+      <method abstract="yes" access="public" name="isReadOnly" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preallocate -->
+      <method abstract="yes" access="public" name="preallocate" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method abstract="yes" access="public" name="put" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rollback -->
+      <method abstract="yes" access="public" name="rollback" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ snapshot -->
+      <method abstract="yes" access="public" name="snapshot" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.Engine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ update -->
+      <method abstract="yes" access="public" name="update" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

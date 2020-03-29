@@ -1,0 +1,2087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-28 16:21:39"/>
+  <class final="yes" name="BTreeMap" package="org.mapdb">
+    <interfaces>
+      <implements>org.mapdb.Verifiable</implements>
+      <implements>java.io.Closeable</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>org.mapdb.ConcurrencyAware</implements>
+      <implements>java.util.concurrent.ConcurrentNavigableMap</implements>
+      <implements>org.mapdb.ConcurrentNavigableMapExtra</implements>
+      <implements>java.lang.AutoCloseable</implements>
+      <implements>java.util.concurrent.ConcurrentMap</implements>
+      <implements>java.util.NavigableMap</implements>
+      <implements>org.mapdb.MapExtra</implements>
+      <implements>org.mapdb.BTreeMapJava$ConcurrentNavigableMap2</implements>
+    </interfaces>
+    <class-properties>
+      <cprop method="getSize" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </cprop>
+    </class-properties>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:Companion -->
+      <field access="public" final="yes" name="Companion" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.BTreeMap$Companion</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.mapdb.serializer.GroupSerializer,org.mapdb.serializer.GroupSerializer,long,org.mapdb.Store,boolean,int,java.util.Comparator,boolean,long,boolean,org.mapdb.MapModificationListener[]) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </arg>
+          <arg nr="3">
+            <long/>
+          </arg>
+          <arg nr="4">
+            <object>org.mapdb.Store</object>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <object>java.util.Comparator</object>
+          </arg>
+          <arg nr="8">
+            <boolean/>
+          </arg>
+          <arg nr="9">
+            <long/>
+          </arg>
+          <arg nr="10">
+            <boolean/>
+          </arg>
+          <arg nr="11">
+            <array>
+              <object>org.mapdb.MapModificationListener</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$getNO_VAL_SERIALIZER$cp -->
+      <method access="public" final="yes" name="access$getNO_VAL_SERIALIZER$cp" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$getNode -->
+      <method access="public" final="yes" name="access$getNode" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.BTreeMap</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.BTreeMapJava$Node</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$nodeToString -->
+      <method access="public" final="yes" name="access$nodeToString" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.BTreeMap</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Long</object>
+          </arg>
+          <arg nr="3">
+            <object>org.mapdb.BTreeMapJava$Node</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ assertCurrentThreadUnlocked -->
+      <method access="public" final="yes" name="assertCurrentThreadUnlocked" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ btreeEntry -->
+      <method access="protected" final="yes" name="btreeEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceilingEntry -->
+      <method access="public" name="ceilingEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceilingKey -->
+      <method access="public" name="ceilingKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkThreadSafe -->
+      <method access="public" name="checkThreadSafe" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" name="clear">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" name="close">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparator -->
+      <method access="public" name="comparator">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsKey -->
+      <method access="public" name="containsKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsValue -->
+      <method access="public" name="containsValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingEntryIterator -->
+      <method access="public" name="descendingEntryIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingEntryIterator -->
+      <method access="public" name="descendingEntryIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeyIterator -->
+      <method access="public" name="descendingKeyIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeyIterator -->
+      <method access="public" name="descendingKeyIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeySet -->
+      <method access="public" name="descendingKeySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingLeafIterator -->
+      <method access="public" final="yes" name="descendingLeafIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingMap -->
+      <method access="public" name="descendingMap" valid="no">
+        <signature>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingMap -->
+      <method access="public" bridge="yes" name="descendingMap" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingValueIterator -->
+      <method access="public" name="descendingValueIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingValueIterator -->
+      <method access="public" name="descendingValueIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ entryIterator -->
+      <method access="public" final="yes" name="entryIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ entryIterator -->
+      <method access="public" name="entryIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ entrySet -->
+      <method access="public" bridge="yes" final="yes" name="entrySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findHigher -->
+      <method access="public" name="findHigher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findHigherKey -->
+      <method access="public" name="findHigherKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findLower -->
+      <method access="public" name="findLower" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findLowerKey -->
+      <method access="public" name="findLowerKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstEntry -->
+      <method access="public" name="firstEntry" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstKey -->
+      <method access="public" name="firstKey" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstKey2 -->
+      <method access="public" name="firstKey2" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floorEntry -->
+      <method access="public" name="floorEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floorKey -->
+      <method access="public" name="floorKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
+      <method access="public" name="forEach" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.BiConsumer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEachKey -->
+      <method access="public" name="forEachKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEachValue -->
+      <method access="public" name="forEachValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getComparator -->
+      <method access="public" final="yes" name="getComparator">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCounterRecid -->
+      <method access="public" final="yes" name="getCounterRecid">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntries -->
+      <method access="public" name="getEntries">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHasValues -->
+      <method access="public" name="getHasValues">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKeySerializer -->
+      <method access="public" name="getKeySerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKeySerializer -->
+      <method access="public" bridge="yes" name="getKeySerializer">
+        <signature>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKeys -->
+      <method access="public" name="getKeys">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLeftEdges -->
+      <method access="protected" final="yes" name="getLeftEdges">
+        <signature>
+          <return>
+            <object>org.eclipse.collections.api.list.primitive.MutableLongList</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocks -->
+      <method access="protected" final="yes" name="getLocks">
+        <signature>
+          <return>
+            <object>java.util.concurrent.ConcurrentHashMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMaxNodeSize -->
+      <method access="public" final="yes" name="getMaxNodeSize">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNodeSerializer -->
+      <method access="protected" final="yes" name="getNodeSerializer">
+        <signature>
+          <return>
+            <object>org.mapdb.BTreeMapJava$NodeSerializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRootRecid -->
+      <method access="protected" final="yes" name="getRootRecid" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRootRecidRecid -->
+      <method access="public" final="yes" name="getRootRecidRecid">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSize -->
+      <method access="public" name="getSize">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStore -->
+      <method access="public" final="yes" name="getStore">
+        <signature>
+          <return>
+            <object>org.mapdb.Store</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueInline -->
+      <method access="public" final="yes" name="getValueInline">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueNodeSerializer -->
+      <method access="protected" final="yes" name="getValueNodeSerializer">
+        <signature>
+          <return>
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueSerializer -->
+      <method access="public" name="getValueSerializer">
+        <signature>
+          <return>
+            <object>org.mapdb.serializer.GroupSerializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueSerializer -->
+      <method access="public" bridge="yes" name="getValueSerializer">
+        <signature>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValues -->
+      <method access="public" name="getValues">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" name="headMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" bridge="yes" name="headMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" name="headMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" bridge="yes" name="headMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ higherEntry -->
+      <method access="public" name="higherEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ higherKey -->
+      <method access="public" name="higherKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isClosed -->
+      <method access="public" name="isClosed">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isEmpty -->
+      <method access="public" name="isEmpty">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isThreadSafe -->
+      <method access="public" name="isThreadSafe">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keyIterator -->
+      <method access="public" name="keyIterator">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keyIterator -->
+      <method access="public" name="keyIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySet -->
+      <method access="public" bridge="yes" name="keySet">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySet -->
+      <method access="public" bridge="yes" final="yes" name="keySet">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastEntry -->
+      <method access="public" name="lastEntry" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastKey -->
+      <method access="public" name="lastKey">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastKey2 -->
+      <method access="public" name="lastKey2">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listenerNotify -->
+      <method access="protected" final="yes" name="listenerNotify" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lock -->
+      <method access="public" final="yes" name="lock" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lowerEntry -->
+      <method access="public" name="lowerEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lowerKey -->
+      <method access="public" name="lowerKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ navigableKeySet -->
+      <method access="public" name="navigableKeySet">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollFirstEntry -->
+      <method access="public" name="pollFirstEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollLastEntry -->
+      <method access="public" name="pollLastEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ prefixSubMap -->
+      <method access="public" final="yes" name="prefixSubMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ prefixSubMap -->
+      <method access="public" final="yes" name="prefixSubMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ printStructure -->
+      <method access="public" final="yes" name="printStructure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PrintStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" name="put">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put2 -->
+      <method access="protected" final="yes" name="put2">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="2"/>
+              <return/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <arg nr="3"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="3"/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putAll -->
+      <method access="public" name="putAll">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putIfAbsent -->
+      <method access="public" name="putIfAbsent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putIfAbsentBoolean -->
+      <method access="public" name="putIfAbsentBoolean" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeOrReplace -->
+      <method access="protected" final="yes" name="removeOrReplace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" bridge="yes" final="yes" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <taint/>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sizeLong -->
+      <method access="public" name="sizeLong">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <taint/>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" name="subMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" bridge="yes" name="subMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" name="subMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" bridge="yes" name="subMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" name="tailMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" bridge="yes" name="tailMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" name="tailMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ConcurrentNavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" bridge="yes" name="tailMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unlock -->
+      <method access="public" final="yes" name="unlock" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unlockAllCurrentThread -->
+      <method access="public" final="yes" name="unlockAllCurrentThread" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueExpand -->
+      <method access="protected" final="yes" name="valueExpand" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueIterator -->
+      <method access="public" final="yes" name="valueIterator">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueIterator -->
+      <method access="public" name="valueIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ values -->
+      <method access="public" bridge="yes" final="yes" name="values">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ verify -->
+      <method access="public" name="verify">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

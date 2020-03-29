@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-28 16:21:41"/>
+  <class final="yes" name="DB$HashMapMaker" package="org.mapdb">
+    <superclass>org.mapdb.DB$Maker</superclass>
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.mapdb.DB,java.lang.String,boolean,kotlin.jvm.functions.Function1) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DB</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+      <!--  (org.mapdb.DB,java.lang.String,boolean,kotlin.jvm.functions.Function1,int,kotlin.jvm.internal.DefaultConstructorMarker) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DB</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <object>kotlin.jvm.internal.DefaultConstructorMarker</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$get_valueSerializer$p -->
+      <method access="public" final="yes" name="access$get_valueSerializer$p" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </arg>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$set_valueSerializer$p -->
+      <method access="public" final="yes" name="access$set_valueSerializer$p" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ counterEnable -->
+      <method access="public" final="yes" name="counterEnable">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ create -->
+      <method access="public" name="create">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ create -->
+      <method access="public" bridge="yes" name="create">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ create2 -->
+      <method access="protected" name="create2" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ create2 -->
+      <method access="public" bridge="yes" name="create2" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createOrOpen -->
+      <method access="public" name="createOrOpen">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createOrOpen -->
+      <method access="public" bridge="yes" name="createOrOpen">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterCreate -->
+      <method access="public" final="yes" name="expireAfterCreate">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterCreate -->
+      <method access="public" final="yes" name="expireAfterCreate">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterCreate -->
+      <method access="public" final="yes" name="expireAfterCreate" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterGet -->
+      <method access="public" final="yes" name="expireAfterGet">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterGet -->
+      <method access="public" final="yes" name="expireAfterGet">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterGet -->
+      <method access="public" final="yes" name="expireAfterGet" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterUpdate -->
+      <method access="public" final="yes" name="expireAfterUpdate">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterUpdate -->
+      <method access="public" final="yes" name="expireAfterUpdate" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireAfterUpdate -->
+      <method access="public" final="yes" name="expireAfterUpdate">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireCompactThreshold -->
+      <method access="public" final="yes" name="expireCompactThreshold" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireExecutor -->
+      <method access="public" final="yes" name="expireExecutor">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.ScheduledExecutorService</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireExecutorPeriod -->
+      <method access="public" final="yes" name="expireExecutorPeriod">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireMaxSize -->
+      <method access="public" final="yes" name="expireMaxSize" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireOverflow -->
+      <method access="public" final="yes" name="expireOverflow" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireStoreSize -->
+      <method access="public" final="yes" name="expireStoreSize">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+            <transfer>
+              <arg nr="1"/>
+              <this/>
+            </transfer>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDb -->
+      <method access="protected" name="getDb">
+        <signature>
+          <return>
+            <object>org.mapdb.DB</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHasValues -->
+      <method access="protected" final="yes" name="getHasValues">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getName -->
+      <method access="protected" name="getName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getType -->
+      <method access="protected" name="getType">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+          </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get_storeFactory -->
+      <method access="protected" final="yes" name="get_storeFactory" valid="no">
+        <signature>
+          <return>
+            <object>kotlin.jvm.functions.Function1</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashSeed -->
+      <method access="public" final="yes" name="hashSeed" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySerializer -->
+      <method access="public" final="yes" name="keySerializer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ layout -->
+      <method access="public" final="yes" name="layout" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ modificationListener -->
+      <method access="public" final="yes" name="modificationListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.MapModificationListener</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" name="open" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" bridge="yes" name="open" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open2 -->
+      <method access="protected" name="open2" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open2 -->
+      <method access="public" bridge="yes" name="open2" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeCollapsesIndexTreeDisable -->
+      <method access="public" final="yes" name="removeCollapsesIndexTreeDisable">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueInline -->
+      <method access="public" final="yes" name="valueInline">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+            <transfer>
+              <this/>
+              <return/>
+            </transfer>
+            <transfer>
+              <return/>
+              <this/>
+            </transfer>
+          </taint>
+          <postconditions>
+            <post>
+              <math>
+                <apply>
+                  <eq/>
+                  <return/>
+                  <this/>
+                </apply>
+              </math>
+            </post>
+          </postconditions>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueLoader -->
+      <method access="public" final="yes" name="valueLoader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueSerializer -->
+      <method access="public" final="yes" name="valueSerializer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HashMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ verify -->
+      <method access="protected" name="verify" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) %%%create2$mapdb -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="%%%create2$mapdb">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) %%%open2$mapdb -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="%%%open2$mapdb">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) %%%verify$mapdb -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="%%%verify$mapdb">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) make -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="make">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) make2 -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="make2">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) makeOrGet -->
+      <method from="org.mapdb.DB$Maker" inherited="yes" name="makeOrGet">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
