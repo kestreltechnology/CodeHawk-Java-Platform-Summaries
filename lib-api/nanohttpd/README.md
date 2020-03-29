@@ -1,0 +1,11 @@
+#### Classes included
+- fi.iki.elonen.NanoHTTPD$AsyncRunner
+- fi.iki.elonen.NanoHTTPD$IHTTPSession
+- fi.iki.elonen.NanoHTTPD$Method
+- fi.iki.elonen.NanoHTTPD$Response$IStatus
+- fi.iki.elonen.NanoHTTPD$Response$Status
+- fi.iki.elonen.NanoHTTPD$Response
+- fi.iki.elonen.NanoHTTPD$ResponseException
+- fi.iki.elonen.NanoHTTPD$ServerSocketFactory
+- fi.iki.elonen.NanoHTTPD$TempFileManagerFactory
+- fi.iki.elonen.NanoHTTPD
