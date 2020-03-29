@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-28 18:38:35"/>
+  <class final="yes" name="AbstractChannel$CloseFuture" package="io.netty.channel">
+    <superclass>io.netty.channel.DefaultChannelPromise</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelPromise</implements>
+      <implements>io.netty.channel.ChannelFlushPromiseNotifier$FlushCheckpoint</implements>
+      <implements>io.netty.util.concurrent.Promise</implements>
+      <implements>io.netty.util.concurrent.Future</implements>
+      <implements>java.util.concurrent.Future</implements>
+      <implements>io.netty.channel.ChannelFuture</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFailure -->
+      <method access="public" name="setFailure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFailure -->
+      <method access="public" bridge="yes" name="setFailure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSuccess -->
+      <method access="public" name="setSuccess" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tryFailure -->
+      <method access="public" name="tryFailure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trySuccess -->
+      <method access="public" name="trySuccess" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="await">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="await">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) await -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) awaitUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) cancel -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="cancel">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) cause -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="cause">
+        <signature>
+          <return>
+            <object>java.lang.Throwable</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) channel -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="channel">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) checkDeadLock -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="checkDeadLock">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) executor -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="executor">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) flushCheckpoint -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="flushCheckpoint">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) flushCheckpoint -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="flushCheckpoint">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) get -->
+      <method from="io.netty.util.concurrent.AbstractFuture" inherited="yes" name="get">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) get -->
+      <method from="io.netty.util.concurrent.AbstractFuture" inherited="yes" name="get">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getNow -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="getNow">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isCancellable -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="isCancellable">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isCancelled -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="isCancelled">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isDone -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="isDone">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isSuccess -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="isSuccess">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isVoid -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="isVoid">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyListener -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="notifyListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.util.concurrent.Future</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) promise -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="promise">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListeners -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setSuccess -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="setSuccess">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setSuccess -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="setSuccess">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Void</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setUncancellable -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="setUncancellable">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sync -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sync -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sync -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) sync -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) syncUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) syncUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) syncUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) syncUninterruptibly -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toStringBuilder -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="toStringBuilder">
+        <signature>
+          <return>
+            <object>java.lang.StringBuilder</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) trySuccess -->
+      <method from="io.netty.util.concurrent.DefaultPromise" inherited="yes" name="trySuccess">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unvoid -->
+      <method from="io.netty.channel.DefaultChannelPromise" inherited="yes" name="unvoid">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
