@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-20 22:51:48"/>
+  <class name="BigInteger" package="java.math">
+    <superclass>java.lang.Number</superclass>
+    <interfaces>
+      <implements>java.lang.Comparable</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <class-properties>
+      <cprop method="bitLength" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </cprop>
+    </class-properties>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (byte[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int[]) -->
+      <constructor access="private">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,byte[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int[]) -->
+      <constructor access="private">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,int) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>7100</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (char[],int,int) -->
+      <constructor access="default">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>7100</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,java.util.Random) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Random</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>2700</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int,java.util.Random) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Random</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int[],int) -->
+      <constructor access="default">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (byte[],int) -->
+      <constructor access="private">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (long) -->
+      <constructor access="private">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ abs -->
+      <method access="public" name="abs">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>1000</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="default" name="add">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="private" name="add" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="private" name="add" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addOne -->
+      <method access="default" name="addOne" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ and -->
+      <method access="public" name="and">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ andNot -->
+      <method access="public" name="andNot">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bitCount -->
+      <method access="public" name="bitCount">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bitLength -->
+      <method access="private" name="bitLength" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bitLength -->
+      <method access="public" name="bitLength">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>160</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bitLengthForInt -->
+      <method access="default" name="bitLengthForInt" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ byteValueExact -->
+      <method access="public" name="byteValueExact">
+        <signature>
+          <return>
+            <byte/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkRange -->
+      <method access="private" name="checkRange">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearBit -->
+      <method access="public" name="clearBit">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareMagnitude -->
+      <method access="default" final="yes" name="compareMagnitude">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareMagnitude -->
+      <method access="default" final="yes" name="compareMagnitude">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>360</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" bridge="yes" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ destructiveMulAdd -->
+      <method access="private" name="destructiveMulAdd" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divide -->
+      <method access="public" name="divide">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divideAndRemainder -->
+      <method access="public" name="divideAndRemainder">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.math.BigInteger</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divideAndRemainderBurnikelZiegler -->
+      <method access="private" name="divideAndRemainderBurnikelZiegler">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.math.BigInteger</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divideAndRemainderKnuth -->
+      <method access="private" name="divideAndRemainderKnuth">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.math.BigInteger</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divideBurnikelZiegler -->
+      <method access="private" name="divideBurnikelZiegler">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divideKnuth -->
+      <method access="private" name="divideKnuth">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doubleValue -->
+      <method access="public" name="doubleValue">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exactDivideBy3 -->
+      <method access="private" name="exactDivideBy3">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstNonzeroIntNum -->
+      <method access="private" name="firstNonzeroIntNum">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flipBit -->
+      <method access="public" name="flipBit">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floatValue -->
+      <method access="public" name="floatValue">
+        <signature>
+          <return>
+            <float/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ gcd -->
+      <method access="public" name="gcd">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>9000</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInt -->
+      <method access="private" name="getInt">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLower -->
+      <method access="private" name="getLower">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLowestSetBit -->
+      <method access="public" name="getLowestSetBit">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPrimeSearchLen -->
+      <method access="private" name="getPrimeSearchLen" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRadixConversionCache -->
+      <method access="private" name="getRadixConversionCache" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getToomSlice -->
+      <method access="private" name="getToomSlice">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUpper -->
+      <method access="private" name="getUpper">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>180</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implMontgomeryMultiply -->
+      <method access="private" name="implMontgomeryMultiply" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <long/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implMontgomeryMultiplyChecks -->
+      <method access="private" name="implMontgomeryMultiplyChecks" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implMontgomerySquare -->
+      <method access="private" name="implMontgomerySquare" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <long/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implMulAdd -->
+      <method access="private" name="implMulAdd" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implMulAddCheck -->
+      <method access="private" name="implMulAddCheck" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implSquareToLen -->
+      <method access="private" final="yes" name="implSquareToLen" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ implSquareToLenChecks -->
+      <method access="private" name="implSquareToLenChecks" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intArrayCmpToLen -->
+      <method access="private" name="intArrayCmpToLen" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intLength -->
+      <method access="private" name="intLength">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intValue -->
+      <method access="public" name="intValue">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>350</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intValueExact -->
+      <method access="public" name="intValueExact">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isProbablePrime -->
+      <method access="public" name="isProbablePrime">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ jacobiSymbol -->
+      <method access="private" name="jacobiSymbol" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ javaIncrement -->
+      <method access="default" name="javaIncrement">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ largePrime -->
+      <method access="private" name="largePrime" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leftShift -->
+      <method access="private" name="leftShift" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ longValue -->
+      <method access="public" name="longValue">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ longValueExact -->
+      <method access="public" name="longValueExact">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lucasLehmerSequence -->
+      <method access="private" name="lucasLehmerSequence" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="3">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ magSerializedForm -->
+      <method access="private" name="magSerializedForm">
+        <signature>
+          <return>
+            <array>
+              <byte/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ makePositive -->
+      <method access="private" name="makePositive" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ makePositive -->
+      <method access="private" name="makePositive" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ materialize -->
+      <method access="private" name="materialize" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ max -->
+      <method access="public" name="max">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
+      <method access="public" name="min">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mod -->
+      <method access="public" name="mod">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>3400</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mod2 -->
+      <method access="private" name="mod2">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ modInverse -->
+      <method access="public" name="modInverse">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ modPow -->
+      <method access="public" name="modPow">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ modPow2 -->
+      <method access="private" name="modPow2">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ montReduce -->
+      <method access="private" name="montReduce" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ montgomeryMultiply -->
+      <method access="private" name="montgomeryMultiply" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <long/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ montgomerySquare -->
+      <method access="private" name="montgomerySquare" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <long/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mulAdd -->
+      <method access="default" name="mulAdd" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>2100</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="default" name="multiply">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyByInt -->
+      <method access="private" name="multiplyByInt" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyKaratsuba -->
+      <method access="private" name="multiplyKaratsuba" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyToLen -->
+      <method access="private" name="multiplyToLen" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyToomCook3 -->
+      <method access="private" name="multiplyToomCook3" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" name="negate">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextProbablePrime -->
+      <method access="public" name="nextProbablePrime">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ not -->
+      <method access="public" name="not">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ oddModPow -->
+      <method access="private" name="oddModPow">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ or -->
+      <method access="public" name="or">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseInt -->
+      <method access="private" name="parseInt">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ passesLucasLehmer -->
+      <method access="private" name="passesLucasLehmer">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ passesMillerRabin -->
+      <method access="private" name="passesMillerRabin">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pow -->
+      <method access="public" name="pow">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ primeToCertainty -->
+      <method access="default" name="primeToCertainty">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ primitiveLeftShift -->
+      <method access="default" name="primitiveLeftShift" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ primitiveRightShift -->
+      <method access="default" name="primitiveRightShift" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ probablePrime -->
+      <method access="public" name="probablePrime" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>3000000</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ randomBits -->
+      <method access="private" name="randomBits" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <array>
+              <byte/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" name="readObject">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remainder -->
+      <method access="public" name="remainder">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remainderBurnikelZiegler -->
+      <method access="private" name="remainderBurnikelZiegler">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remainderKnuth -->
+      <method access="private" name="remainderKnuth">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reportOverflow -->
+      <method access="private" name="reportOverflow" static="yes">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setBit -->
+      <method access="public" name="setBit">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shiftLeft -->
+      <method access="public" name="shiftLeft">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>950</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shiftLeft -->
+      <method access="private" name="shiftLeft" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shiftRight -->
+      <method access="public" name="shiftRight">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>950</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shiftRightImpl -->
+      <method access="private" name="shiftRightImpl">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shortValueExact -->
+      <method access="public" name="shortValueExact">
+        <signature>
+          <return>
+            <short/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signBit -->
+      <method access="private" name="signBit">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signInt -->
+      <method access="private" name="signInt">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signum -->
+      <method access="public" name="signum">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ smallPrime -->
+      <method access="private" name="smallPrime" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Random</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ smallToString -->
+      <method access="private" name="smallToString">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ square -->
+      <method access="private" name="square">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ squareKaratsuba -->
+      <method access="private" name="squareKaratsuba">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ squareToLen -->
+      <method access="private" final="yes" name="squareToLen" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ squareToomCook3 -->
+      <method access="private" name="squareToomCook3">
+        <signature>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ stripLeadingZeroBytes -->
+      <method access="private" name="stripLeadingZeroBytes" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ stripLeadingZeroInts -->
+      <method access="private" name="stripLeadingZeroInts" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subN -->
+      <method access="private" name="subN" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="private" name="subtract" static="yes">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="private" name="subtract" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>1340</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="private" name="subtract" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ testBit -->
+      <method access="public" name="testBit">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>350</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toByteArray -->
+      <method access="public" name="toByteArray">
+        <signature>
+          <return>
+            <array>
+              <byte/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>800</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>12000</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="private" name="toString" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.StringBuilder</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>12000</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trustedStripLeadingZeroInts -->
+      <method access="private" name="trustedStripLeadingZeroInts" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueOf -->
+      <method access="public" name="valueOf" static="yes">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <time-cost>
+            <cost>
+              <cn>2800</cn>
+            </cost>
+          </time-cost>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueOf -->
+      <method access="private" name="valueOf" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" name="writeObject">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ xor -->
+      <method access="public" name="xor">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <return>
+            <object>java.math.BigInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-18 18:47:19"/>
+  <class name="ArrayList" package="java.util">
+    <superclass>java.util.AbstractList</superclass>
+    <interfaces>
+      <implements>java.util.List</implements>
+      <implements>java.util.RandomAccess</implements>
+      <implements>java.lang.Cloneable</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>java.util.Collection</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="8683452581122892189"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULT_CAPACITY -->
+      <field access="private" final="yes" name="DEFAULT_CAPACITY" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="10"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EMPTY_ELEMENTDATA -->
+      <field access="private" final="yes" name="EMPTY_ELEMENTDATA" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.Object</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULTCAPACITY_EMPTY_ELEMENTDATA -->
+      <field access="private" final="yes" name="DEFAULTCAPACITY_EMPTY_ELEMENTDATA" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.Object</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:elementData -->
+      <field access="default" name="elementData">
+        <signature>
+          <array>
+            <object>java.lang.Object</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:size -->
+      <field access="private" name="size">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_ARRAY_SIZE -->
+      <field access="private" final="yes" name="MAX_ARRAY_SIZE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2147483639"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:modCount -->
+      <field from="java.util.AbstractList" inherited="yes" name="modCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <constructor access="public" instrs="28">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost lb="217" ub="5830"/>
+	  </time-cost>
+	</summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="6">
+        <signature/>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>206</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Collection) -->
+      <constructor access="public" instrs="31" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" instrs="3" name="access$100" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.ArrayList</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" instrs="19" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" instrs="34" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAll -->
+      <method access="public" instrs="32" name="addAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IllegalStateException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAll -->
+      <method access="public" instrs="51" name="addAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ batchRemove -->
+      <method access="private" instrs="135" name="batchRemove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" instrs="23" name="clear" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="22" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
+      <method access="public" instrs="8" name="contains" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ elementData -->
+      <method access="default" instrs="5" name="elementData">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost>
+	      <cn>9</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ensureCapacity -->
+      <method access="public" instrs="15" name="ensureCapacity" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ensureCapacityInternal -->
+      <method access="private" instrs="12" name="ensureCapacityInternal" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ensureExplicitCapacity -->
+      <method access="private" instrs="16" name="ensureExplicitCapacity" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fastRemove -->
+      <method access="private" instrs="37" name="fastRemove" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
+      <method access="public" instrs="38" name="forEach" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Consumer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" instrs="7" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ grow -->
+      <method access="private" instrs="30" name="grow" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hugeCapacity -->
+      <method access="private" instrs="13" name="hugeCapacity" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ indexOf -->
+      <method access="public" instrs="37" name="indexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.ClassCastException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isEmpty -->
+      <method access="public" instrs="7" name="isEmpty">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>11</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" instrs="6" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastIndexOf -->
+      <method access="public" instrs="39" name="lastIndexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.ClassCastException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listIterator -->
+      <method access="public" instrs="24" name="listIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.util.ListIterator</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listIterator -->
+      <method access="public" instrs="6" name="listIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.ListIterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ outOfBoundsMsg -->
+      <method access="private" instrs="14" name="outOfBoundsMsg" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rangeCheck -->
+      <method access="private" instrs="12" name="rangeCheck" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rangeCheckForAdd -->
+      <method access="private" instrs="14" name="rangeCheckForAdd" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" instrs="32" name="readObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="45" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="43" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAll -->
+      <method access="public" instrs="8" name="removeAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeIf -->
+      <method access="public" instrs="117" name="removeIf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Predicate</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeRange -->
+      <method access="protected" instrs="43" name="removeRange" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replaceAll -->
+      <method access="public" instrs="45" name="replaceAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.UnaryOperator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retainAll -->
+      <method access="public" instrs="8" name="retainAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ set -->
+      <method access="public" instrs="14" name="set" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="3" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sort -->
+      <method access="public" instrs="26" name="sort" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
+      <method access="public" instrs="8" name="spliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subList -->
+      <method access="public" instrs="14" name="subList" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IllegalArgumentException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subListRangeCheck -->
+      <method access="default" instrs="51" name="subListRangeCheck" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" instrs="6" name="toArray" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" instrs="34" name="toArray" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayStoreException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trimToSize -->
+      <method access="public" instrs="25" name="trimToSize" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" instrs="32" name="writeObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

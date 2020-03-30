@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-27 21:25:17"/>
+  <class final="yes" name="HashMap$Values" package="java.util">
+    <superclass>java.util.AbstractCollection</superclass>
+    <interfaces>
+      <implements>java.util.Collection</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:this$0 -->
+      <field access="default" final="yes" name="this$0">
+        <signature>
+          <object>java.util.HashMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_ARRAY_SIZE -->
+      <field from="java.util.AbstractCollection" inherited="yes" name="MAX_ARRAY_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.HashMap) -->
+      <constructor access="default" instrs="6">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost>
+	      <cn>179</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" final="yes" instrs="4" name="clear" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
+      <method access="public" final="yes" instrs="5" name="contains" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
+      <method access="public" final="yes" instrs="52" name="forEach" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Consumer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" final="yes" instrs="6" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" final="yes" instrs="4" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>6</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
+      <method access="public" final="yes" instrs="10" name="spliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

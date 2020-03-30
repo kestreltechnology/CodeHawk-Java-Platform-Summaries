@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-19 11:38:22"/>
+  <class name="TreeSet" package="java.util">
+    <superclass>java.util.AbstractSet</superclass>
+    <interfaces>
+      <implements>java.util.NavigableSet</implements>
+      <implements>java.lang.Cloneable</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>java.util.Set</implements>
+      <implements>java.util.Collection</implements>
+      <implements>java.lang.Iterable</implements>
+      <implements>java.util.SortedSet</implements>
+    </interfaces>
+    <class-properties>
+      <cprop method="size" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </cprop>
+    </class-properties>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:m -->
+      <field access="private" name="m">
+        <signature>
+          <object>java.util.NavigableMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PRESENT -->
+      <field access="private" final="yes" name="PRESENT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="-2479143000061671589"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_ARRAY_SIZE -->
+      <field from="java.util.AbstractCollection" inherited="yes" name="MAX_ARRAY_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.NavigableMap) -->
+      <constructor access="default" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.NavigableMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="6" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Comparator) -->
+      <constructor access="public" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Collection) -->
+      <constructor access="public" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.ClassCastException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.SortedSet) -->
+      <constructor access="public" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedSet</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" instrs="10" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAll -->
+      <method access="public" instrs="46" name="addAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IllegalStateException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceiling -->
+      <method access="public" instrs="5" name="ceiling" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" instrs="4" name="clear">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>59</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="20" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparator -->
+      <method access="public" instrs="4" name="comparator">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
+      <method access="public" instrs="5" name="contains" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingIterator -->
+      <method access="public" instrs="5" name="descendingIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingSet -->
+      <method access="public" instrs="7" name="descendingSet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ first -->
+      <method access="public" instrs="4" name="first" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.util.NoSuchElementException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floor -->
+      <method access="public" instrs="5" name="floor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headSet -->
+      <method access="public" instrs="9" name="headSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headSet -->
+      <method access="public" instrs="5" name="headSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ higher -->
+      <method access="public" instrs="5" name="higher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isEmpty -->
+      <method access="public" instrs="4" name="isEmpty" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" instrs="5" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ last -->
+      <method access="public" instrs="4" name="last" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.util.NoSuchElementException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lower -->
+      <method access="public" instrs="5" name="lower" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollFirst -->
+      <method access="public" instrs="11" name="pollFirst" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollLast -->
+      <method access="public" instrs="11" name="pollLast" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" instrs="23" name="readObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="10" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="4" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
+      <method access="public" instrs="4" name="spliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subSet -->
+      <method access="public" instrs="11" name="subSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subSet -->
+      <method access="public" instrs="7" name="subSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailSet -->
+      <method access="public" instrs="9" name="tailSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailSet -->
+      <method access="public" instrs="5" name="tailSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedSet</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" instrs="28" name="writeObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

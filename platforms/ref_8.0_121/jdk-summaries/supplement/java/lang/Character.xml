@@ -1,0 +1,2247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-20 22:51:43"/>
+  <class final="yes" name="Character" package="java.lang">
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+      <implements>java.lang.Comparable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_RADIX -->
+      <field access="public" final="yes" name="MIN_RADIX" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_RADIX -->
+      <field access="public" final="yes" name="MAX_RADIX" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="36"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_VALUE -->
+      <field access="public" final="yes" name="MIN_VALUE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_VALUE -->
+      <field access="public" final="yes" name="MAX_VALUE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="65535"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TYPE -->
+      <field access="public" final="yes" name="TYPE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.Class</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNASSIGNED -->
+      <field access="public" final="yes" name="UNASSIGNED" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UPPERCASE_LETTER -->
+      <field access="public" final="yes" name="UPPERCASE_LETTER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOWERCASE_LETTER -->
+      <field access="public" final="yes" name="LOWERCASE_LETTER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TITLECASE_LETTER -->
+      <field access="public" final="yes" name="TITLECASE_LETTER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="3"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MODIFIER_LETTER -->
+      <field access="public" final="yes" name="MODIFIER_LETTER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="4"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:OTHER_LETTER -->
+      <field access="public" final="yes" name="OTHER_LETTER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="5"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NON_SPACING_MARK -->
+      <field access="public" final="yes" name="NON_SPACING_MARK" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="6"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ENCLOSING_MARK -->
+      <field access="public" final="yes" name="ENCLOSING_MARK" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="7"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:COMBINING_SPACING_MARK -->
+      <field access="public" final="yes" name="COMBINING_SPACING_MARK" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="8"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DECIMAL_DIGIT_NUMBER -->
+      <field access="public" final="yes" name="DECIMAL_DIGIT_NUMBER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="9"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LETTER_NUMBER -->
+      <field access="public" final="yes" name="LETTER_NUMBER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="10"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:OTHER_NUMBER -->
+      <field access="public" final="yes" name="OTHER_NUMBER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="11"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SPACE_SEPARATOR -->
+      <field access="public" final="yes" name="SPACE_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="12"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LINE_SEPARATOR -->
+      <field access="public" final="yes" name="LINE_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="13"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PARAGRAPH_SEPARATOR -->
+      <field access="public" final="yes" name="PARAGRAPH_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="14"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTROL -->
+      <field access="public" final="yes" name="CONTROL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="15"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FORMAT -->
+      <field access="public" final="yes" name="FORMAT" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="16"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PRIVATE_USE -->
+      <field access="public" final="yes" name="PRIVATE_USE" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="18"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SURROGATE -->
+      <field access="public" final="yes" name="SURROGATE" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="19"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DASH_PUNCTUATION -->
+      <field access="public" final="yes" name="DASH_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="20"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:START_PUNCTUATION -->
+      <field access="public" final="yes" name="START_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="21"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:END_PUNCTUATION -->
+      <field access="public" final="yes" name="END_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="22"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONNECTOR_PUNCTUATION -->
+      <field access="public" final="yes" name="CONNECTOR_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="23"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:OTHER_PUNCTUATION -->
+      <field access="public" final="yes" name="OTHER_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="24"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MATH_SYMBOL -->
+      <field access="public" final="yes" name="MATH_SYMBOL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="25"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CURRENCY_SYMBOL -->
+      <field access="public" final="yes" name="CURRENCY_SYMBOL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="26"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MODIFIER_SYMBOL -->
+      <field access="public" final="yes" name="MODIFIER_SYMBOL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="27"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:OTHER_SYMBOL -->
+      <field access="public" final="yes" name="OTHER_SYMBOL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="28"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INITIAL_QUOTE_PUNCTUATION -->
+      <field access="public" final="yes" name="INITIAL_QUOTE_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="29"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FINAL_QUOTE_PUNCTUATION -->
+      <field access="public" final="yes" name="FINAL_QUOTE_PUNCTUATION" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="30"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ERROR -->
+      <field access="default" final="yes" name="ERROR" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="-1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_UNDEFINED -->
+      <field access="public" final="yes" name="DIRECTIONALITY_UNDEFINED" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="-1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_LEFT_TO_RIGHT -->
+      <field access="public" final="yes" name="DIRECTIONALITY_LEFT_TO_RIGHT" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_RIGHT_TO_LEFT -->
+      <field access="public" final="yes" name="DIRECTIONALITY_RIGHT_TO_LEFT" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC -->
+      <field access="public" final="yes" name="DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_EUROPEAN_NUMBER -->
+      <field access="public" final="yes" name="DIRECTIONALITY_EUROPEAN_NUMBER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="3"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR -->
+      <field access="public" final="yes" name="DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="4"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR -->
+      <field access="public" final="yes" name="DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="5"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_ARABIC_NUMBER -->
+      <field access="public" final="yes" name="DIRECTIONALITY_ARABIC_NUMBER" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="6"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_COMMON_NUMBER_SEPARATOR -->
+      <field access="public" final="yes" name="DIRECTIONALITY_COMMON_NUMBER_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="7"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_NONSPACING_MARK -->
+      <field access="public" final="yes" name="DIRECTIONALITY_NONSPACING_MARK" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="8"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_BOUNDARY_NEUTRAL -->
+      <field access="public" final="yes" name="DIRECTIONALITY_BOUNDARY_NEUTRAL" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="9"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_PARAGRAPH_SEPARATOR -->
+      <field access="public" final="yes" name="DIRECTIONALITY_PARAGRAPH_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="10"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_SEGMENT_SEPARATOR -->
+      <field access="public" final="yes" name="DIRECTIONALITY_SEGMENT_SEPARATOR" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="11"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_WHITESPACE -->
+      <field access="public" final="yes" name="DIRECTIONALITY_WHITESPACE" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="12"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_OTHER_NEUTRALS -->
+      <field access="public" final="yes" name="DIRECTIONALITY_OTHER_NEUTRALS" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="13"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING -->
+      <field access="public" final="yes" name="DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="14"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE -->
+      <field access="public" final="yes" name="DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="15"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING -->
+      <field access="public" final="yes" name="DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="16"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE -->
+      <field access="public" final="yes" name="DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="17"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIRECTIONALITY_POP_DIRECTIONAL_FORMAT -->
+      <field access="public" final="yes" name="DIRECTIONALITY_POP_DIRECTIONAL_FORMAT" static="yes">
+        <signature>
+          <byte/>
+        </signature>
+        <value>
+          <int value="18"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_HIGH_SURROGATE -->
+      <field access="public" final="yes" name="MIN_HIGH_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="55296"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_HIGH_SURROGATE -->
+      <field access="public" final="yes" name="MAX_HIGH_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="56319"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_LOW_SURROGATE -->
+      <field access="public" final="yes" name="MIN_LOW_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="56320"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_LOW_SURROGATE -->
+      <field access="public" final="yes" name="MAX_LOW_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="57343"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_SURROGATE -->
+      <field access="public" final="yes" name="MIN_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="55296"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_SURROGATE -->
+      <field access="public" final="yes" name="MAX_SURROGATE" static="yes">
+        <signature>
+          <char/>
+        </signature>
+        <value>
+          <int value="57343"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_SUPPLEMENTARY_CODE_POINT -->
+      <field access="public" final="yes" name="MIN_SUPPLEMENTARY_CODE_POINT" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="65536"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIN_CODE_POINT -->
+      <field access="public" final="yes" name="MIN_CODE_POINT" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_CODE_POINT -->
+      <field access="public" final="yes" name="MAX_CODE_POINT" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1114111"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:value -->
+      <field access="private" final="yes" name="value">
+        <signature>
+          <char/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="3786198910865385080"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SIZE -->
+      <field access="public" final="yes" name="SIZE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="16"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTES -->
+      <field access="public" final="yes" name="BYTES" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:$assertionsDisabled -->
+      <field access="default" final="yes" name="$assertionsDisabled" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (char) -->
+      <constructor access="public" instrs="6">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>22</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ charCount -->
+      <method access="public" instrs="7" name="charCount" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>10</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ charValue -->
+      <method access="public" instrs="3" name="charValue">
+        <signature>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointAt -->
+      <method access="public" instrs="25" name="codePointAt" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointAt -->
+      <method access="public" instrs="6" name="codePointAt" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <arg nr="1"/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointAt -->
+      <method access="public" instrs="18" name="codePointAt" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost lb="349" ub="738"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointAtImpl -->
+      <method access="default" instrs="24" name="codePointAtImpl" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointBefore -->
+      <method access="public" instrs="24" name="codePointBefore" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="350" ub="737"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointBefore -->
+      <method access="public" instrs="5" name="codePointBefore" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointBefore -->
+      <method access="public" instrs="18" name="codePointBefore" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointBeforeImpl -->
+      <method access="default" instrs="25" name="codePointBeforeImpl" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointCount -->
+      <method access="public" instrs="43" name="codePointCount" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointCount -->
+      <method access="public" instrs="19" name="codePointCount" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointCountImpl -->
+      <method access="default" instrs="30" name="codePointCountImpl"
+	      static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
+      <method access="public" instrs="4" name="compare" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>6</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" instrs="6" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Character</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>172</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" bridge="yes" instrs="5" name="compareTo">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>198</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ digit -->
+      <method access="public" instrs="4" name="digit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ digit -->
+      <method access="public" instrs="6" name="digit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" instrs="15" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="13" ub="49"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forDigit -->
+      <method access="public" instrs="28" name="forDigit" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="12" ub="50"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDirectionality -->
+      <method access="public" instrs="3" name="getDirectionality" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <byte/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDirectionality -->
+      <method access="public" instrs="5" name="getDirectionality" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <byte/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getName -->
+      <method access="public" instrs="47" name="getName" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumericValue -->
+      <method access="public" instrs="3" name="getNumericValue" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumericValue -->
+      <method access="public" instrs="5" name="getNumericValue" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getType -->
+      <method access="public" instrs="3" name="getType" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getType -->
+      <method access="public" instrs="5" name="getType" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="4" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>164</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="2" name="hashCode" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>2</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ highSurrogate -->
+      <method access="public" instrs="7" name="highSurrogate" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>11</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAlphabetic -->
+      <method access="public" instrs="16" name="isAlphabetic" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isBmpCodePoint -->
+      <method access="public" instrs="8" name="isBmpCodePoint" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>13</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDefined -->
+      <method access="public" instrs="3" name="isDefined" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDefined -->
+      <method access="public" instrs="7" name="isDefined" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDigit -->
+      <method access="public" instrs="3" name="isDigit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDigit -->
+      <method access="public" instrs="8" name="isDigit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isHighSurrogate -->
+      <method access="public" instrs="10" name="isHighSurrogate" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="20"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isISOControl -->
+      <method access="public" instrs="3" name="isISOControl" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="170" ub="191"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isISOControl -->
+      <method access="public" instrs="14" name="isISOControl" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="31"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isIdentifierIgnorable -->
+      <method access="public" instrs="3" name="isIdentifierIgnorable" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isIdentifierIgnorable -->
+      <method access="public" instrs="5" name="isIdentifierIgnorable" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isIdeographic -->
+      <method access="public" instrs="5" name="isIdeographic" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaIdentifierPart -->
+      <method access="public" instrs="3" name="isJavaIdentifierPart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaIdentifierPart -->
+      <method access="public" instrs="5" name="isJavaIdentifierPart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaIdentifierStart -->
+      <method access="public" instrs="3" name="isJavaIdentifierStart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaIdentifierStart -->
+      <method access="public" instrs="5" name="isJavaIdentifierStart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaLetter -->
+      <method access="public" instrs="3" name="isJavaLetter" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaLetterOrDigit -->
+      <method access="public" instrs="3" name="isJavaLetterOrDigit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLetter -->
+      <method access="public" instrs="3" name="isLetter" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLetter -->
+      <method access="public" instrs="11" name="isLetter" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLetterOrDigit -->
+      <method access="public" instrs="3" name="isLetterOrDigit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLetterOrDigit -->
+      <method access="public" instrs="11" name="isLetterOrDigit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLowSurrogate -->
+      <method access="public" instrs="10" name="isLowSurrogate" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="20"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLowerCase -->
+      <method access="public" instrs="3" name="isLowerCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLowerCase -->
+      <method access="public" instrs="13" name="isLowerCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMirrored -->
+      <method access="public" instrs="3" name="isMirrored" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMirrored -->
+      <method access="public" instrs="5" name="isMirrored" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSpace -->
+      <method access="public" instrs="15" name="isSpace" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="42"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSpaceChar -->
+      <method access="public" instrs="3" name="isSpaceChar" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSpaceChar -->
+      <method access="public" instrs="11" name="isSpaceChar" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSupplementaryCodePoint -->
+      <method access="public" instrs="10" name="isSupplementaryCodePoint" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="20"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSurrogate -->
+      <method access="public" instrs="10" name="isSurrogate" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="20"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSurrogatePair -->
+      <method access="public" instrs="10" name="isSurrogatePair" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="176" ub="368"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTitleCase -->
+      <method access="public" instrs="3" name="isTitleCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTitleCase -->
+      <method access="public" instrs="8" name="isTitleCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUnicodeIdentifierPart -->
+      <method access="public" instrs="3" name="isUnicodeIdentifierPart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUnicodeIdentifierPart -->
+      <method access="public" instrs="5" name="isUnicodeIdentifierPart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUnicodeIdentifierStart -->
+      <method access="public" instrs="3" name="isUnicodeIdentifierStart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUnicodeIdentifierStart -->
+      <method access="public" instrs="5" name="isUnicodeIdentifierStart" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUpperCase -->
+      <method access="public" instrs="3" name="isUpperCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUpperCase -->
+      <method access="public" instrs="13" name="isUpperCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isValidCodePoint -->
+      <method access="public" instrs="11" name="isValidCodePoint" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isWhitespace -->
+      <method access="public" instrs="3" name="isWhitespace" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isWhitespace -->
+      <method access="public" instrs="5" name="isWhitespace" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lowSurrogate -->
+      <method access="public" instrs="7" name="lowSurrogate" static="yes">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>11</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offsetByCodePoints -->
+      <method access="public" instrs="81" name="offsetByCodePoints" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offsetByCodePoints -->
+      <method access="public" instrs="29" name="offsetByCodePoints" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offsetByCodePointsImpl -->
+      <method access="default" instrs="75" name="offsetByCodePointsImpl" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reverseBytes -->
+      <method access="public" instrs="11" name="reverseBytes" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toChars -->
+      <method access="public" instrs="23" name="toChars" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toChars -->
+      <method access="public" instrs="27" name="toChars" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <char/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toCodePoint -->
+      <method access="public" instrs="8" name="toCodePoint" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>15</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toLowerCase -->
+      <method access="public" instrs="4" name="toLowerCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toLowerCase -->
+      <method access="public" instrs="5" name="toLowerCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="11" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="3" name="toString" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>378</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toSurrogates -->
+      <method access="default" instrs="13" name="toSurrogates" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toTitleCase -->
+      <method access="public" instrs="4" name="toTitleCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toTitleCase -->
+      <method access="public" instrs="5" name="toTitleCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toUpperCase -->
+      <method access="public" instrs="4" name="toUpperCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toUpperCase -->
+      <method access="public" instrs="5" name="toUpperCase" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toUpperCaseCharArray -->
+      <method access="default" instrs="14" name="toUpperCaseCharArray" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <array>
+              <char/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toUpperCaseEx -->
+      <method access="default" instrs="14" name="toUpperCaseEx" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueOf -->
+      <method access="public" instrs="12" name="valueOf" static="yes">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.Character</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="19" ub="56"/>
+	  </time-cost>
+	</summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

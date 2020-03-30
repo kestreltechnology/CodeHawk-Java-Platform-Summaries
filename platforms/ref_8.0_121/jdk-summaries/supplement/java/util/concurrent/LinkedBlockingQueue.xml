@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-19 19:16:12"/>
+  <class name="LinkedBlockingQueue" package="java.util.concurrent">
+    <superclass>java.util.AbstractQueue</superclass>
+    <interfaces>
+      <implements>java.util.concurrent.BlockingQueue</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>java.util.Queue</implements>
+      <implements>java.util.Collection</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="-6903933977591709194"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:capacity -->
+      <field access="private" final="yes" name="capacity">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:count -->
+      <field access="private" final="yes" name="count">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:head -->
+      <field access="default" name="head">
+        <signature>
+          <object>java.util.concurrent.LinkedBlockingQueue$Node</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:last -->
+      <field access="private" name="last">
+        <signature>
+          <object>java.util.concurrent.LinkedBlockingQueue$Node</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:takeLock -->
+      <field access="private" final="yes" name="takeLock">
+        <signature>
+          <object>java.util.concurrent.locks.ReentrantLock</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:notEmpty -->
+      <field access="private" final="yes" name="notEmpty">
+        <signature>
+          <object>java.util.concurrent.locks.Condition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:putLock -->
+      <field access="private" final="yes" name="putLock">
+        <signature>
+          <object>java.util.concurrent.locks.ReentrantLock</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:notFull -->
+      <field access="private" final="yes" name="notFull">
+        <signature>
+          <object>java.util.concurrent.locks.Condition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_ARRAY_SIZE -->
+      <field from="java.util.AbstractCollection" inherited="yes" name="MAX_ARRAY_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="4">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <constructor access="public" instrs="46" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IllegalArgumentException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Collection) -->
+      <constructor access="public" instrs="55" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" instrs="42" name="clear" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
+      <method access="public" instrs="38" name="contains" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dequeue -->
+      <method access="private" instrs="20" name="dequeue">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><this/><return/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost>
+	      <cn>57</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ drainTo -->
+      <method access="public" instrs="5" name="drainTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ drainTo -->
+      <method access="public" instrs="112" name="drainTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enqueue -->
+      <method access="private" instrs="8" name="enqueue">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.LinkedBlockingQueue$Node</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><this/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fullyLock -->
+      <method access="default" instrs="7" name="fullyLock" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fullyUnlock -->
+      <method access="default" instrs="7" name="fullyUnlock" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" instrs="5" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offer -->
+      <method access="public" instrs="73" name="offer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.InterruptedException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.InterruptedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offer -->
+      <method access="public" instrs="66" name="offer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ peek -->
+      <method access="public" instrs="35" name="peek" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ poll -->
+      <method access="public" instrs="63" name="poll" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.InterruptedException</throws>
+          <throws>java.lang.InterruptedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ poll -->
+      <method access="public" instrs="48" name="poll" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" instrs="58" name="put" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.InterruptedException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.InterruptedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" instrs="27" name="readObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remainingCapacity -->
+      <method access="public" instrs="7" name="remainingCapacity">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>26</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="46" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signalNotEmpty -->
+      <method access="private" instrs="17" name="signalNotEmpty" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signalNotFull -->
+      <method access="private" instrs="17" name="signalNotFull" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="4" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>57</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
+      <method access="public" instrs="5" name="spliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ take -->
+      <method access="public" instrs="45" name="take" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.InterruptedException</throws>
+          <throws>java.lang.InterruptedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" instrs="38" name="toArray" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" instrs="55" name="toArray" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayStoreException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="60" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unlink -->
+      <method access="default" instrs="24" name="unlink" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.LinkedBlockingQueue$Node</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.LinkedBlockingQueue$Node</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" instrs="30" name="writeObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

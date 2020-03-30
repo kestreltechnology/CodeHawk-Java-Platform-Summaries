@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-12 13:27:11"/>
+  <class final="yes" name="System" package="java.lang">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:in -->
+      <field access="public" final="yes" name="in" not-null="yes" static="yes">
+        <signature>
+          <object>java.io.InputStream</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:out -->
+      <field access="public" final="yes" name="out" not-null="yes" static="yes">
+        <signature>
+          <object>java.io.PrintStream</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:err -->
+      <field access="public" final="yes" name="err" not-null="yes" static="yes">
+        <signature>
+          <object>java.io.PrintStream</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:security -->
+      <field access="private" name="security" static="yes">
+        <signature>
+          <object>java.lang.SecurityManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cons -->
+      <field access="private" name="cons" static="yes">
+        <signature>
+          <object>java.io.Console</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:props -->
+      <field access="private" name="props" static="yes">
+        <signature>
+          <object>java.util.Properties</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lineSeparator -->
+      <field access="private" name="lineSeparator" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="private" instrs="3">
+        <signature/>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>14</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ arraycopy -->
+      <method access="public" name="arraycopy" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IndexOutOfBoundsException</throws>
+          <throws>java.lang.ArrayStoreException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkIO -->
+      <method access="private" instrs="11" name="checkIO" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkKey -->
+      <method access="private" instrs="17" name="checkKey" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearProperty -->
+      <method access="public" instrs="18" name="clearProperty" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ console -->
+      <method access="public" instrs="19" name="console" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.io.Console</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ currentTimeMillis -->
+      <method access="public" name="currentTimeMillis" native="yes" static="yes" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exit -->
+      <method access="public" instrs="4" name="exit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ gc -->
+      <method access="public" instrs="3" name="gc" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperties -->
+      <method access="public" instrs="8" name="getProperties" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Properties</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method access="public" instrs="13" name="getProperty" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method access="public" instrs="14" name="getProperty" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSecurityManager -->
+      <method access="public" instrs="2" name="getSecurityManager" static="yes">
+        <signature>
+          <return>
+            <object>java.lang.SecurityManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>2</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getenv -->
+      <method access="public" instrs="20" name="getenv" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getenv -->
+      <method access="public" instrs="12" name="getenv" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ identityHashCode -->
+      <method access="public" name="identityHashCode" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ inheritedChannel -->
+      <method access="public" instrs="3" name="inheritedChannel" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.nio.channels.Channel</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initProperties -->
+      <method access="private" name="initProperties" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Properties</object>
+          </arg>
+          <return>
+            <object>java.util.Properties</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initializeSystemClass -->
+      <method access="private" instrs="59" name="initializeSystemClass" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lineSeparator -->
+      <method access="public" instrs="2" name="lineSeparator" static="yes">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>6</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ load -->
+      <method access="public" instrs="5" name="load" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.UnsatisfiedLinkError</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loadLibrary -->
+      <method access="public" instrs="5" name="loadLibrary" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.UnsatisfiedLinkError</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapLibraryName -->
+      <method access="public" name="mapLibraryName" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nanoTime -->
+      <method access="public" name="nanoTime" native="yes" static="yes" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newPrintStream -->
+      <method access="private" instrs="24" name="newPrintStream" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.FileOutputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.io.PrintStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ registerNatives -->
+      <method access="private" name="registerNatives" native="yes" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ runFinalization -->
+      <method access="public" instrs="3" name="runFinalization" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ runFinalizersOnExit -->
+      <method access="public" instrs="3" name="runFinalizersOnExit" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setErr -->
+      <method access="public" instrs="4" name="setErr" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PrintStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setErr0 -->
+      <method access="private" name="setErr0" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PrintStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIn -->
+      <method access="public" instrs="4" name="setIn" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIn0 -->
+      <method access="private" name="setIn0" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setJavaLangAccess -->
+      <method access="private" instrs="5" name="setJavaLangAccess" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setOut -->
+      <method access="public" instrs="4" name="setOut" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PrintStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setOut0 -->
+      <method access="private" name="setOut0" native="yes" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PrintStream</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setProperties -->
+      <method access="public" instrs="18" name="setProperties" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Properties</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setProperty -->
+      <method access="public" instrs="19" name="setProperty" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="1"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <not-null/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NullPointerException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecurityManager -->
+      <method access="public" instrs="8" name="setSecurityManager" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.SecurityManager</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.SecurityException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecurityManager0 -->
+      <method access="private" instrs="25" name="setSecurityManager0" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.SecurityManager</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

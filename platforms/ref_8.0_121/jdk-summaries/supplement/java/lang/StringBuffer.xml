@@ -1,0 +1,2070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-20 22:51:42"/>
+  <class final="yes" name="StringBuffer" package="java.lang">
+    <superclass>java.lang.AbstractStringBuilder</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+      <implements>java.lang.CharSequence</implements>
+      <implements>java.lang.Appendable</implements>
+    </interfaces>
+    <class-properties>
+      <cprop method="length" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </cprop>
+    </class-properties>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:toStringCache -->
+      <field access="private" name="toStringCache">
+        <signature>
+          <array>
+            <char/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="default" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="3388685877147921107"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialPersistentFields -->
+      <field access="private" final="yes" name="serialPersistentFields" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.io.ObjectStreamField</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_ARRAY_SIZE -->
+      <field from="java.lang.AbstractStringBuilder" inherited="yes" name="MAX_ARRAY_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:value -->
+      <field from="java.lang.AbstractStringBuilder" inherited="yes" name="value">
+        <signature>
+          <array>
+            <char/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:count -->
+      <field from="java.lang.AbstractStringBuilder" inherited="yes" name="count">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="4" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <constructor access="public" instrs="4" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.NegativeArraySizeException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String) -->
+      <constructor access="public" instrs="11" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.CharSequence) -->
+      <constructor access="public" instrs="11" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="10" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.StringBuffer</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="default" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.AbstractStringBuilder</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="11" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="3"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <apply>
+                    <plus/>
+                    <arg nr="2"/>
+                    <arg nr="3"/>
+                  </apply>
+                  <apply>
+                    <size/>
+                    <arg nr="1"/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="11" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="3"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <apply>
+                    <plus/>
+                    <arg nr="2"/>
+                    <arg nr="3"/>
+                  </apply>
+                  <apply>
+                    <size/>
+                    <arg nr="1"/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <float/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" instrs="9" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <float/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="6" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="6" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="default" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.AbstractStringBuilder</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.StringBuffer</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.Appendable</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="6" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Appendable</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="3"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <apply>
+                    <plus/>
+                    <arg nr="2"/>
+                    <arg nr="3"/>
+                  </apply>
+                  <apply>
+                    <size/>
+                    <arg nr="1"/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" bridge="yes" instrs="4" name="append" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <return>
+            <object>java.lang.Appendable</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ appendCodePoint -->
+      <method access="public" instrs="9" name="appendCodePoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ appendCodePoint -->
+      <method access="public" bridge="yes" instrs="4" name="appendCodePoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ capacity -->
+      <method access="public" instrs="4" name="capacity">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>5</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ charAt -->
+      <method access="public" instrs="16" name="charAt" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <char/>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointAt -->
+      <method access="public" instrs="4" name="codePointAt" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointBefore -->
+      <method access="public" instrs="4" name="codePointBefore" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ codePointCount -->
+      <method access="public" instrs="5" name="codePointCount" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method access="public" instrs="10" name="delete" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method access="public" bridge="yes" instrs="5" name="delete" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deleteCharAt -->
+      <method access="public" instrs="9" name="deleteCharAt" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deleteCharAt -->
+      <method access="public" bridge="yes" instrs="4" name="deleteCharAt" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ensureCapacity -->
+      <method access="public" instrs="4" name="ensureCapacity" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getChars -->
+      <method access="public" instrs="7" name="getChars" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayStoreException</throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="4"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <plus/>
+                      <arg nr="2"/>
+                      <arg nr="4"/>
+                    </apply>
+                    <arg nr="1"/>
+                  </apply>
+                  <apply>
+                    <size/>
+                    <arg nr="3"/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ indexOf -->
+      <method access="public" instrs="4" name="indexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ indexOf -->
+      <method access="public" instrs="5" name="indexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="12" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="11" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="10" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="10" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="12" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="10" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <float/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <float/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.CharSequence</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="5" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ insert -->
+      <method access="public" bridge="yes" instrs="7" name="insert" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <char/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastIndexOf -->
+      <method access="public" instrs="6" name="lastIndexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastIndexOf -->
+      <method access="public" instrs="5" name="lastIndexOf" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ length -->
+      <method access="public" instrs="3" name="length">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ offsetByCodePoints -->
+      <method access="public" instrs="5" name="offsetByCodePoints" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" instrs="18" name="readObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="11" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" bridge="yes" instrs="6" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reverse -->
+      <method access="public" instrs="8" name="reverse" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reverse -->
+      <method access="public" bridge="yes" instrs="3" name="reverse" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.AbstractStringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCharAt -->
+      <method access="public" instrs="20" name="setCharAt" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <char/>
+          </arg>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <lt/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setLength -->
+      <method access="public" instrs="7" name="setLength" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subSequence -->
+      <method access="public" instrs="5" name="subSequence" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.CharSequence</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.IndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ substring -->
+      <method access="public" instrs="6" name="substring" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ substring -->
+      <method access="public" instrs="5" name="substring" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>0</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="1"/>
+                  <arg nr="2"/>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <leq/>
+                  <arg nr="2"/>
+                  <apply>
+                    <size/>
+                    <this/>
+                  </apply>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.StringIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="18" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trimToSize -->
+      <method access="public" instrs="3" name="trimToSize" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" instrs="20" name="writeObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

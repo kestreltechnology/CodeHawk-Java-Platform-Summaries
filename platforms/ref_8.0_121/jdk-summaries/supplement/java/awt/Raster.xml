@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 10:05:08"/>
+  <class name="Raster" package="java.awt.image">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:sampleModel -->
+      <field access="protected" name="sampleModel">
+        <signature>
+          <object>java.awt.image.SampleModel</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:dataBuffer -->
+      <field access="protected" name="dataBuffer">
+        <signature>
+          <object>java.awt.image.DataBuffer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:minX -->
+      <field access="protected" name="minX">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:minY -->
+      <field access="protected" name="minY">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:width -->
+      <field access="protected" name="width">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:height -->
+      <field access="protected" name="height">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:sampleModelTranslateX -->
+      <field access="protected" name="sampleModelTranslateX">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:sampleModelTranslateY -->
+      <field access="protected" name="sampleModelTranslateY">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:numBands -->
+      <field access="protected" name="numBands">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:numDataElements -->
+      <field access="protected" name="numDataElements">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:parent -->
+      <field access="protected" name="parent">
+        <signature>
+          <object>java.awt.image.Raster</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ (java.awt.image.SampleModel,java.awt.Point) -->
+      <method access="protected" instrs="19" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.Point</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!--  (java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Point) -->
+      <method access="protected" instrs="18" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.awt.Point</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!--  (java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Rectangle,java.awt.Point,java.awt.image.Raster) -->
+      <method access="protected" instrs="106" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.awt.Rectangle</object>
+          </arg>
+          <arg nr="4">
+            <object>java.awt.Point</object>
+          </arg>
+          <arg nr="5">
+            <object>java.awt.image.Raster</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createBandedRaster -->
+      <method access="public" instrs="47" name="createBandedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="4"/>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.lang.ArrayIndexOutOfBoundsException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createBandedRaster -->
+      <method access="public" instrs="108" name="createBandedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="7">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createBandedRaster -->
+      <method access="public" instrs="75" name="createBandedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="7">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createChild -->
+      <method access="public" instrs="101" name="createChild" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <object>java.awt.image.Raster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createCompatibleWritableRaster -->
+      <method access="public" instrs="11" name="createCompatibleWritableRaster" valid="no">
+        <signature>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createCompatibleWritableRaster -->
+      <method access="public" instrs="36" name="createCompatibleWritableRaster" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <c-throws>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="1"/>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <safety-condition>
+              <math>
+                <apply>
+                  <geq/>
+                  <arg nr="2"/>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </safety-condition>
+            <exn>java.awt.image.RasterFormatException</exn>
+          </c-throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createCompatibleWritableRaster -->
+      <method access="public" instrs="18" name="createCompatibleWritableRaster" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.Rectangle</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createCompatibleWritableRaster -->
+      <method access="public" instrs="15" name="createCompatibleWritableRaster" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createInterleavedRaster -->
+      <method access="public" instrs="25" name="createInterleavedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createInterleavedRaster -->
+      <method access="public" instrs="45" name="createInterleavedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="7">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createInterleavedRaster -->
+      <method access="public" instrs="56" name="createInterleavedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="7">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createPackedRaster -->
+      <method access="public" instrs="46" name="createPackedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="5">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createPackedRaster -->
+      <method access="public" instrs="178" name="createPackedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createPackedRaster -->
+      <method access="public" instrs="62" name="createPackedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <arg nr="6">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createPackedRaster -->
+      <method access="public" instrs="80" name="createPackedRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createRaster -->
+      <method access="public" instrs="91" name="createRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.Raster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createTranslatedChild -->
+      <method access="public" instrs="14" name="createTranslatedChild" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.awt.image.Raster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createWritableRaster -->
+      <method access="public" instrs="14" name="createWritableRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createWritableRaster -->
+      <method access="public" instrs="91" name="createWritableRaster" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.awt.image.SampleModel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.awt.image.DataBuffer</object>
+          </arg>
+          <arg nr="3">
+            <object>java.awt.Point</object>
+          </arg>
+          <return>
+            <object>java.awt.image.WritableRaster</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.awt.image.RasterFormatException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBounds -->
+      <method access="public" instrs="12" name="getBounds" valid="no">
+        <signature>
+          <return>
+            <object>java.awt.Rectangle</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataBuffer -->
+      <method access="public" instrs="3" name="getDataBuffer" valid="no">
+        <signature>
+          <return>
+            <object>java.awt.image.DataBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataElements -->
+      <method access="public" instrs="15" name="getDataElements" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataElements -->
+      <method access="public" instrs="17" name="getDataElements" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+          <throws>java.lang.ClassCastException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeight -->
+      <method access="public" final="yes" instrs="3" name="getHeight">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinX -->
+      <method access="public" final="yes" instrs="3" name="getMinX">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinY -->
+      <method access="public" final="yes" instrs="3" name="getMinY">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumBands -->
+      <method access="public" final="yes" instrs="3" name="getNumBands">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumDataElements -->
+      <method access="public" final="yes" instrs="4" name="getNumDataElements" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParent -->
+      <method access="public" instrs="3" name="getParent">
+        <signature>
+          <return>
+            <object>java.awt.image.Raster</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixel -->
+      <method access="public" instrs="15" name="getPixel" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixel -->
+      <method access="public" instrs="15" name="getPixel" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <float/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <float/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixel -->
+      <method access="public" instrs="15" name="getPixel" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixels -->
+      <method access="public" instrs="17" name="getPixels" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixels -->
+      <method access="public" instrs="17" name="getPixels" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <float/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <float/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPixels -->
+      <method access="public" instrs="17" name="getPixels" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSample -->
+      <method access="public" instrs="15" name="getSample" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArrayIndexOutOfBoundsException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSampleDouble -->
+      <method access="public" instrs="15" name="getSampleDouble" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSampleFloat -->
+      <method access="public" instrs="15" name="getSampleFloat" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <float/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSampleModel -->
+      <method access="public" instrs="3" name="getSampleModel">
+        <signature>
+          <return>
+            <object>java.awt.image.SampleModel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSampleModelTranslateX -->
+      <method access="public" final="yes" instrs="3" name="getSampleModelTranslateX">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSampleModelTranslateY -->
+      <method access="public" final="yes" instrs="3" name="getSampleModelTranslateY">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSamples -->
+      <method access="public" instrs="18" name="getSamples" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <int/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <int/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSamples -->
+      <method access="public" instrs="18" name="getSamples" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <float/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <float/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSamples -->
+      <method access="public" instrs="18" name="getSamples" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTransferType -->
+      <method access="public" final="yes" instrs="4" name="getTransferType" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getWidth -->
+      <method access="public" final="yes" instrs="3" name="getWidth">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initIDs -->
+      <method access="private" name="initIDs" native="yes" static="yes" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

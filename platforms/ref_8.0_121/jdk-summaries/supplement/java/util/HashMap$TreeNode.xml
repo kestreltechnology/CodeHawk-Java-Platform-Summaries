@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-27 21:25:18"/>
+  <class final="yes" name="HashMap$TreeNode" package="java.util">
+    <superclass>java.util.LinkedHashMap$Entry</superclass>
+    <interfaces>
+      <implements>java.util.Map$Entry</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:parent -->
+      <field access="default" name="parent">
+        <signature>
+          <object>java.util.HashMap$TreeNode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:left -->
+      <field access="default" name="left">
+        <signature>
+          <object>java.util.HashMap$TreeNode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:right -->
+      <field access="default" name="right">
+        <signature>
+          <object>java.util.HashMap$TreeNode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:prev -->
+      <field access="default" name="prev">
+        <signature>
+          <object>java.util.HashMap$TreeNode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:red -->
+      <field access="default" name="red">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:$assertionsDisabled -->
+      <field access="default" final="yes" name="$assertionsDisabled" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:value -->
+      <field from="java.util.HashMap$Node" inherited="yes" name="value">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:after -->
+      <field from="java.util.LinkedHashMap$Entry" inherited="yes" name="after">
+        <signature>
+          <object>java.util.LinkedHashMap$Entry</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:before -->
+      <field from="java.util.LinkedHashMap$Entry" inherited="yes" name="before">
+        <signature>
+          <object>java.util.LinkedHashMap$Entry</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:key -->
+      <field from="java.util.HashMap$Node" inherited="yes" name="key">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:next -->
+      <field from="java.util.HashMap$Node" inherited="yes" name="next">
+        <signature>
+          <object>java.util.HashMap$Node</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:hash -->
+      <field from="java.util.HashMap$Node" inherited="yes" name="hash">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~ (int,java.lang.Object,java.lang.Object,java.util.HashMap$Node) -->
+      <constructor access="default" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.util.HashMap$Node</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ balanceDeletion -->
+      <method access="default" instrs="252" name="balanceDeletion" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ balanceInsertion -->
+      <method access="default" instrs="136" name="balanceInsertion" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkInvariants -->
+      <method access="default" instrs="101" name="checkInvariants" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ find -->
+      <method access="default" final="yes" instrs="84" name="find" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTreeNode -->
+      <method access="default" final="yes" instrs="12" name="getTreeNode" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ moveRootToFront -->
+      <method access="default" instrs="66" name="moveRootToFront" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.util.HashMap$Node</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putTreeVal -->
+      <method access="default" final="yes" instrs="147" name="putTreeVal" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.util.HashMap$Node</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeTreeNode -->
+      <method access="default" final="yes" instrs="283" name="removeTreeNode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.util.HashMap$Node</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ root -->
+      <method access="default" final="yes" instrs="12" name="root" valid="no">
+        <signature>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rotateLeft -->
+      <method access="default" instrs="51" name="rotateLeft" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost lb="12" ub="117"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rotateRight -->
+      <method access="default" instrs="51" name="rotateRight" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.HashMap$TreeNode</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$TreeNode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	    <transfer><arg nr="2"/><return/></transfer>
+	  </taint>
+	  <time-cost>
+	    <cost lb="12" ub="117"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ split -->
+      <method access="default" final="yes" instrs="109" name="split" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.util.HashMap$Node</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tieBreakOrder -->
+      <method access="default" instrs="25" name="tieBreakOrder" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ treeify -->
+      <method access="default" final="yes" instrs="110" name="treeify" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.util.HashMap$Node</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ untreeify -->
+      <method access="default" final="yes" instrs="29" name="untreeify" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.HashMap</object>
+          </arg>
+          <return>
+            <object>java.util.HashMap$Node</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

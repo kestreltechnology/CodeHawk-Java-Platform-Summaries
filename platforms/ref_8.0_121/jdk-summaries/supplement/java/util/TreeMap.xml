@@ -1,0 +1,1493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-19 17:35:30"/>
+  <class name="TreeMap" package="java.util">
+    <superclass>java.util.AbstractMap</superclass>
+    <interfaces>
+      <implements>java.util.NavigableMap</implements>
+      <implements>java.lang.Cloneable</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>java.util.Map</implements>
+      <implements>java.util.SortedMap</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:comparator -->
+      <field access="private" final="yes" name="comparator">
+        <signature>
+          <object>java.util.Comparator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:root -->
+      <field access="private" name="root">
+        <signature>
+          <object>java.util.TreeMap$Entry</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:size -->
+      <field access="private" name="size">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:modCount -->
+      <field access="private" name="modCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:entrySet -->
+      <field access="private" name="entrySet">
+        <signature>
+          <object>java.util.TreeMap$EntrySet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:navigableKeySet -->
+      <field access="private" name="navigableKeySet">
+        <signature>
+          <object>java.util.TreeMap$KeySet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:descendingMap -->
+      <field access="private" name="descendingMap">
+        <signature>
+          <object>java.util.NavigableMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNBOUNDED -->
+      <field access="private" final="yes" name="UNBOUNDED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RED -->
+      <field access="private" final="yes" name="RED" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BLACK -->
+      <field access="private" final="yes" name="BLACK" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="919286545866124006"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:keySet -->
+      <field from="java.util.AbstractMap" inherited="yes" name="keySet">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:values -->
+      <field from="java.util.AbstractMap" inherited="yes" name="values">
+        <signature>
+          <object>java.util.Collection</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="12">
+        <signature/>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>65</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Comparator) -->
+      <constructor access="public" instrs="12" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Map) -->
+      <constructor access="public" instrs="15" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.SortedMap) -->
+      <constructor access="public" instrs="26" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedMap</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="4" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" instrs="3" name="access$100" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$200 -->
+      <method access="default" instrs="2" name="access$200" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$300 -->
+      <method access="default" instrs="3" name="access$300" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$400 -->
+      <method access="default" instrs="3" name="access$400" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$500 -->
+      <method access="default" instrs="3" name="access$500" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAllForTreeSet -->
+      <method access="default" instrs="13" name="addAllForTreeSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.SortedSet</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ buildFromSorted -->
+      <method access="private" instrs="18" name="buildFromSorted" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Iterator</object>
+          </arg>
+          <arg nr="3">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ buildFromSorted -->
+      <method access="private" final="yes" instrs="107" name="buildFromSorted" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.util.Iterator</object>
+          </arg>
+          <arg nr="6">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+          <arg nr="7">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceilingEntry -->
+      <method access="public" instrs="5" name="ceilingEntry">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceilingKey -->
+      <method access="public" instrs="5" name="ceilingKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" instrs="13" name="clear">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.UnsupportedOperationException</throws>
+        </exceptions>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>43</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="44" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ colorOf -->
+      <method access="private" instrs="7" name="colorOf" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="8" ub="10"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparator -->
+      <method access="public" instrs="3" name="comparator">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
+      <method access="default" final="yes" instrs="14" name="compare" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ computeRedLevel -->
+      <method access="private" instrs="18" name="computeRedLevel" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsKey -->
+      <method access="public" instrs="8" name="containsKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsValue -->
+      <method access="public" instrs="18" name="containsValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deleteEntry -->
+      <method access="private" instrs="124" name="deleteEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeyIterator -->
+      <method access="default" instrs="7" name="descendingKeyIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeySet -->
+      <method access="public" instrs="4" name="descendingKeySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingKeySpliterator -->
+      <method access="default" final="yes" instrs="10" name="descendingKeySpliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingMap -->
+      <method access="public" instrs="21" name="descendingMap">
+        <signature>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ entrySet -->
+      <method access="public" instrs="15" name="entrySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exportEntry -->
+      <method access="default" instrs="9" name="exportEntry" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	  <taint>
+	    <transfer><arg nr="1"/><return/></transfer>
+	  </taint>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstEntry -->
+      <method access="public" instrs="4" name="firstEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+	<summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+          </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ firstKey -->
+      <method access="public" instrs="4" name="firstKey" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.util.NoSuchElementException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fixAfterDeletion -->
+      <method access="private" instrs="175" name="fixAfterDeletion" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fixAfterInsertion -->
+      <method access="private" instrs="127" name="fixAfterInsertion" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floorEntry -->
+      <method access="public" instrs="5" name="floorEntry">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floorKey -->
+      <method access="public" instrs="5" name="floorKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
+      <method access="public" instrs="30" name="forEach" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.BiConsumer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" instrs="11" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCeilingEntry -->
+      <method access="default" final="yes" instrs="55" name="getCeilingEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method access="default" final="yes" instrs="43" name="getEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntryUsingComparator -->
+      <method access="default" final="yes" instrs="35" name="getEntryUsingComparator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFirstEntry -->
+      <method access="default" final="yes" instrs="14" name="getFirstEntry" valid="no">
+        <signature>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFloorEntry -->
+      <method access="default" final="yes" instrs="55" name="getFloorEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHigherEntry -->
+      <method access="default" final="yes" instrs="51" name="getHigherEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLastEntry -->
+      <method access="default" final="yes" instrs="14"
+	      name="getLastEntry" valid="no">
+        <signature>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLowerEntry -->
+      <method access="default" final="yes" instrs="51" name="getLowerEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" instrs="11" name="headMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headMap -->
+      <method access="public" instrs="5" name="headMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ higherEntry -->
+      <method access="public" instrs="5" name="higherEntry">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ higherKey -->
+      <method access="public" instrs="5" name="higherKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ key -->
+      <method access="default" instrs="9" name="key" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keyIterator -->
+      <method access="default" instrs="7" name="keyIterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keyOrNull -->
+      <method access="default" instrs="7" name="keyOrNull" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySet -->
+      <method access="public" instrs="3" name="keySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySpliterator -->
+      <method access="default" final="yes" instrs="10" name="keySpliterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySpliteratorFor -->
+      <method access="default" instrs="33" name="keySpliteratorFor" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.NavigableMap</object>
+          </arg>
+          <return>
+            <object>java.util.Spliterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastEntry -->
+      <method access="public" instrs="4" name="lastEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+      </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lastKey -->
+      <method access="public" instrs="4" name="lastKey" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.util.NoSuchElementException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leftOf -->
+      <method access="private" instrs="7" name="leftOf" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lowerEntry -->
+      <method access="public" instrs="5" name="lowerEntry">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lowerKey -->
+      <method access="public" instrs="5" name="lowerKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ navigableKeySet -->
+      <method access="public" instrs="15" name="navigableKeySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parentOf -->
+      <method access="private" instrs="7" name="parentOf" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollFirstEntry -->
+      <method access="public" instrs="13" name="pollFirstEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollLastEntry -->
+      <method access="public" instrs="13" name="pollLastEntry">
+        <signature>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.AbstractMap$SimpleImmutableEntry</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ predecessor -->
+      <method access="default" instrs="38" name="predecessor" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" instrs="128" name="put" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putAll -->
+      <method access="public" instrs="49" name="putAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readObject -->
+      <method access="private" instrs="12" name="readObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readTreeSet -->
+      <method access="default" instrs="7" name="readTreeSet" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.io.ObjectInputStream</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.ClassNotFoundException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="16" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="18" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="16" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replaceAll -->
+      <method access="public" instrs="32" name="replaceAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.BiFunction</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rightOf -->
+      <method access="private" instrs="7" name="rightOf" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rotateLeft -->
+      <method access="private" instrs="48" name="rotateLeft" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rotateRight -->
+      <method access="private" instrs="48" name="rotateRight" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setColor -->
+      <method access="private" instrs="6" name="setColor" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="10" ub="18"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="3" name="size">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" instrs="11" name="subMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subMap -->
+      <method access="public" instrs="7" name="subMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ successor -->
+      <method access="default" instrs="38" name="successor" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.TreeMap$Entry</object>
+          </arg>
+          <return>
+            <object>java.util.TreeMap$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" instrs="11" name="tailMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.util.NavigableMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tailMap -->
+      <method access="public" instrs="5" name="tailMap">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.SortedMap</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ClassCastException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <object-class/>
+		  <object>java.util.TreeMap$DescendingSubMap</object>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valEquals -->
+      <method access="default" final="yes" instrs="12" name="valEquals" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ values -->
+      <method access="public" instrs="15" name="values">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="14" ub="229"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeObject -->
+      <method access="private" instrs="27" name="writeObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.ObjectOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-14 09:57:48"/>
+  <interface dispatch="yes" name="Comparator" package="java.util">
+    <superinterfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $deserializeLambda$ -->
+      <method access="private" instrs="274" name="$deserializeLambda$" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.invoke.SerializedLambda</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
+      <method abstract="yes" access="public" name="compare" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparing -->
+      <method access="public" instrs="12" name="comparing" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Function</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="564" ub="5700"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparing -->
+      <method access="public" instrs="8" name="comparing" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Function</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="392" ub="2960"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparingDouble -->
+      <method access="public" instrs="8" name="comparingDouble" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToDoubleFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="392" ub="2960"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparingInt -->
+      <method access="public" instrs="8" name="comparingInt" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToIntFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="392" ub="2960"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparingLong -->
+      <method access="public" instrs="8" name="comparingLong" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToLongFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="392" ub="2960"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method abstract="yes" access="public" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$comparing$77a9974f$1 -->
+      <method access="private" instrs="9" name="lambda$comparing$77a9974f$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Function</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$comparing$ea9a8b3a$1 -->
+      <method access="private" instrs="9" name="lambda$comparing$ea9a8b3a$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.function.Function</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$comparingDouble$8dcf42ea$1 -->
+      <method access="private" instrs="8" name="lambda$comparingDouble$8dcf42ea$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToDoubleFunction</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$comparingInt$7b0bb60$1 -->
+      <method access="private" instrs="8" name="lambda$comparingInt$7b0bb60$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToIntFunction</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$comparingLong$6043328a$1 -->
+      <method access="private" instrs="8" name="lambda$comparingLong$6043328a$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToLongFunction</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$thenComparing$36697e65$1 -->
+      <method access="private" instrs="14" name="lambda$thenComparing$36697e65$1" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ naturalOrder -->
+      <method access="public" instrs="2" name="naturalOrder" static="yes">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>6</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nullsFirst -->
+      <method access="public" instrs="6" name="nullsFirst" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nullsLast -->
+      <method access="public" instrs="6" name="nullsLast" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reverseOrder -->
+      <method access="public" instrs="2" name="reverseOrder" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reversed -->
+      <method access="public" instrs="3" name="reversed" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparing -->
+      <method access="public" instrs="9" name="thenComparing">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+	<exceptions/>	
+        <summary>
+	  <time-cost>
+	    <cost lb="394" ub="2962"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparing -->
+      <method access="public" instrs="6" name="thenComparing" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Function</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparing -->
+      <method access="public" instrs="5" name="thenComparing" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.Function</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparingDouble -->
+      <method access="public" instrs="5" name="thenComparingDouble" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToDoubleFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparingInt -->
+      <method access="public" instrs="5" name="thenComparingInt" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToIntFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ thenComparingLong -->
+      <method access="public" instrs="5" name="thenComparingLong" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.ToLongFunction</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
