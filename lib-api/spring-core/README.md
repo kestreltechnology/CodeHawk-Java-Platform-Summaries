@@ -1,0 +1,11 @@
+#### Classes included
+- org.springframework.core.annotation.AnnotationAttributes
+- org.springframework.core.env.ConfigurableEnvironment
+- org.springframework.core.env.ConfigurablePropertyResolver
+- org.springframework.core.env.Environment
+- org.springframework.core.env.EnvironmentCapable
+- org.springframework.core.env.PropertyResolver
+- org.springframework.core.io.ResourceLoader
+- org.springframework.core.io.support.ResourcePatternResolver
+- org.springframework.core.NestedRuntimeException
+- org.springframework.core.ParameterNameDiscoverer
