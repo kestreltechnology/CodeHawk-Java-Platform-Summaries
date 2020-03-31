@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2020-03-30 17:43:30"/>
+  <interface name="Servlet" package="javax.servlet">
+    <superinterfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ destroy -->
+      <method abstract="yes" access="public" name="destroy" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletConfig -->
+      <method abstract="yes" access="public" name="getServletConfig" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletInfo -->
+      <method abstract="yes" access="public" name="getServletInfo" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method abstract="yes" access="public" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletConfig</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ service -->
+      <method abstract="yes" access="public" name="service" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
