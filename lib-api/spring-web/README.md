@@ -1,0 +1,11 @@
+#### Classes included
+- org.springframework.http.client.ClientHttpRequestFactory
+- org.springframework.http.client.support.HttpAccessor
+- org.springframework.http.client.support.InterceptingHttpAccessor
+- org.springframework.http.converter.HttpMessageConversionException
+- org.springframework.http.converter.HttpMessageNotReadableException
+- org.springframework.web.accept.ContentNegotiationStrategy
+- org.springframework.web.client.ResponseErrorHandler
+- org.springframework.web.client.ResponseExtractor
+- org.springframework.web.client.RestOperations
+- org.springframework.web.client.RestTemplate
