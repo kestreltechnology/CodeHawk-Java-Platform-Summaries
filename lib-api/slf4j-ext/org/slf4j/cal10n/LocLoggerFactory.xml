@@ -8,7 +8,7 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (ch.qos.cal10n.IMessageConveyor) -->
-      <constructor access="public" valid="no">
+      <constructor access="public">
         <signature>
           <arg nr="1">
             <object>ch.qos.cal10n.IMessageConveyor</object>
@@ -16,7 +16,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </constructor>
     </constructors>
