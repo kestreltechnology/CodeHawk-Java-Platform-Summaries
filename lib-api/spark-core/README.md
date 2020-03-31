@@ -1,0 +1,21 @@
+#### Classes included
+- spark.embeddedserver.EmbeddedServer
+- spark.ExceptionHandler
+- spark.ExceptionMapper
+- spark.Filter
+- spark.HaltException
+- spark.QueryParamsMap
+- spark.Redirect
+- spark.Request
+- spark.Response
+- spark.Routable
+- spark.route.RouteOverview
+- spark.route.Routes
+- spark.Route
+- spark.RouteGroup
+- spark.Service$StaticFiles
+- spark.Service
+- spark.Session
+- spark.Spark
+- spark.ssl.SslStores
+- spark.staticfiles.StaticFilesConfiguration
