@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-31 09:41:19"/>
+  <class name="DefaultMethodSecurityExpressionHandler" package="org.springframework.security.access.expression.method">
+    <superclass>org.springframework.security.access.expression.AbstractSecurityExpressionHandler</superclass>
+    <interfaces>
+      <implements>org.springframework.security.access.expression.method.MethodSecurityExpressionHandler</implements>
+      <implements>org.springframework.security.access.expression.SecurityExpressionHandler</implements>
+      <implements>org.springframework.context.ApplicationContextAware</implements>
+      <implements>org.springframework.aop.framework.AopInfrastructureBean</implements>
+      <implements>org.springframework.beans.factory.Aware</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="protected" final="yes" name="logger">
+        <signature>
+          <object>org.apache.commons.logging.Log</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createEvaluationContextInternal -->
+      <method access="public" name="createEvaluationContextInternal" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.Authentication</object>
+          </arg>
+          <arg nr="2">
+            <object>org.aopalliance.intercept.MethodInvocation</object>
+          </arg>
+          <return>
+            <object>org.springframework.expression.spel.support.StandardEvaluationContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createEvaluationContextInternal -->
+      <method access="public" bridge="yes" name="createEvaluationContextInternal" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.Authentication</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.springframework.expression.spel.support.StandardEvaluationContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createSecurityExpressionRoot -->
+      <method access="protected" name="createSecurityExpressionRoot" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.Authentication</object>
+          </arg>
+          <arg nr="2">
+            <object>org.aopalliance.intercept.MethodInvocation</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.access.expression.method.MethodSecurityExpressionOperations</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createSecurityExpressionRoot -->
+      <method access="protected" bridge="yes" name="createSecurityExpressionRoot" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.Authentication</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.access.expression.SecurityExpressionOperations</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filter -->
+      <method access="public" name="filter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.expression.Expression</object>
+          </arg>
+          <arg nr="3">
+            <object>org.springframework.expression.EvaluationContext</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDefaultRolePrefix -->
+      <method access="protected" name="getDefaultRolePrefix" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterNameDiscoverer -->
+      <method access="protected" name="getParameterNameDiscoverer" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.core.ParameterNameDiscoverer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTrustResolver -->
+      <method access="protected" name="getTrustResolver" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.authentication.AuthenticationTrustResolver</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDefaultRolePrefix -->
+      <method access="public" name="setDefaultRolePrefix" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setParameterNameDiscoverer -->
+      <method access="public" name="setParameterNameDiscoverer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.core.ParameterNameDiscoverer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPermissionCacheOptimizer -->
+      <method access="public" name="setPermissionCacheOptimizer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.access.PermissionCacheOptimizer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReturnObject -->
+      <method access="public" name="setReturnObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.expression.EvaluationContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTrustResolver -->
+      <method access="public" name="setTrustResolver" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.AuthenticationTrustResolver</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createEvaluationContext -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="createEvaluationContext">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.Authentication</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.springframework.expression.EvaluationContext</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getExpressionParser -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="getExpressionParser">
+        <signature>
+          <return>
+            <object>org.springframework.expression.ExpressionParser</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getPermissionEvaluator -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="getPermissionEvaluator">
+        <signature>
+          <return>
+            <object>org.springframework.security.access.PermissionEvaluator</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getRoleHierarchy -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="getRoleHierarchy">
+        <signature>
+          <return>
+            <object>org.springframework.security.access.hierarchicalroles.RoleHierarchy</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setApplicationContext -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="setApplicationContext">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.context.ApplicationContext</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setExpressionParser -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="setExpressionParser">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.expression.ExpressionParser</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setPermissionEvaluator -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="setPermissionEvaluator">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.access.PermissionEvaluator</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setRoleHierarchy -->
+      <method from="org.springframework.security.access.expression.AbstractSecurityExpressionHandler" inherited="yes" name="setRoleHierarchy">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.access.hierarchicalroles.RoleHierarchy</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
