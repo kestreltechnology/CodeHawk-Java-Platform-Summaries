@@ -70,3 +70,4 @@ and postconditions, as well as string sinks and resource sinks.
 | spring-security-web | 6 | 8 | 0 | 0 | 0 | 0 | 0 |
 | spring-web | 10 | 107 | 48 | 0 | 0 | 24 | 0 |
 | vaadin-server | 191 | 2365 | 544 | 1 | 23 | 18 | 0 |
+| vaadin-shared | 66 | 169 | 142 | 15 | 1 | 13 | 0 |
