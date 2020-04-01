@@ -65,3 +65,8 @@ and postconditions, as well as string sinks and resource sinks.
 | spring-context | 12 | 46 | 3 | 0 | 0 | 0 | 0 |
 | spring-core | 10 | 65 | 8 | 0 | 0 | 0 | 0 |
 | spring-security-config | 37 | 308 | 30 | 0 | 0 | 3 | 0  |
+| spring-security-core | 45 | 213 | 55 | 0 | 0 | 1 | 0 |
+| spring-security-crypto | 1  | 5 | 5 | 0 | 0 | 0 | 0 |
+| spring-security-web | 6 | 8 | 0 | 0 | 0 | 0 | 0 |
+| spring-web | 10 | 107 | 48 | 0 | 0 | 24 | 0 |
+| vaadin-server | 191 | 2365 | 544 | 1 | 23 | 18 | 0 |
