@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-31 15:39:44"/>
+  <class name="Responsive" package="com.vaadin.server">
+    <superclass>com.vaadin.server.AbstractExtension</superclass>
+    <interfaces>
+      <implements>com.vaadin.server.Extension</implements>
+      <implements>com.vaadin.server.ClientConnector</implements>
+      <implements>com.vaadin.event.MethodEventSource</implements>
+      <implements>com.vaadin.shared.Connector</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="protected" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.extension.responsive.ResponsiveState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.extension.responsive.ResponsiveState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ makeResponsive -->
+      <method access="public" name="makeResponsive" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>com.vaadin.ui.Component</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addAttachListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addAttachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector$AttachListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addDetachListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addDetachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector$DetachListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addExtension -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addExtension">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.Extension</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.reflect.Method</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.reflect.Method</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addMethodInvocationToQueue -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="addMethodInvocationToQueue">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.reflect.Method</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) attach -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="attach">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) beforeClientResponse -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="beforeClientResponse">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createState -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="createState">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) detach -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="detach">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) encodeState -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="encodeState">
+        <signature>
+          <return>
+            <object>elemental.json.JsonObject</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) extend -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="extend">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.AbstractClientConnector</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) fireEvent -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="fireEvent">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventObject</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getAllChildrenIterable -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getAllChildrenIterable">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector</object>
+          </arg>
+          <return>
+            <object>java.lang.Iterable</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getConnectorId -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getConnectorId">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getErrorHandler -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getErrorHandler">
+        <signature>
+          <return>
+            <object>com.vaadin.server.ErrorHandler</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getExtensions -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getExtensions">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getListeners -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getListeners">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getParent -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="getParent">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.Connector</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getParent -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="getParent">
+        <signature>
+          <return>
+            <object>com.vaadin.server.ClientConnector</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getResource -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getResource">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.Resource</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getRpcManager -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getRpcManager">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.ServerRpcManager</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getRpcProxy -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getRpcProxy">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.ClientRpc</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSession -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getSession">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getStateType -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getStateType">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSupportedParentType -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="getSupportedParentType">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getUI -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="getUI">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.UI</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handleConnectorRequest -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="handleConnectorRequest">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hasListeners -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="hasListeners">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isAttached -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="isAttached">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isConnectorEnabled -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="isConnectorEnabled">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isThis -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="isThis">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) markAsDirty -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="markAsDirty">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) markAsDirtyRecursive -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="markAsDirtyRecursive">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) registerRpc -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="registerRpc">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.shared.communication.ServerRpc</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) registerRpc -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="registerRpc">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.shared.communication.ServerRpc</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) remove -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="remove">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeAttachListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeAttachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector$AttachListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeDetachListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeDetachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector$DetachListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeExtension -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeExtension">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.Extension</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.reflect.Method</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeListener -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestRepaint -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="requestRepaint">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestRepaintAll -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="requestRepaintAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) retrievePendingRpcCalls -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="retrievePendingRpcCalls">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setErrorHandler -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="setErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ErrorHandler</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setParent -->
+      <method from="com.vaadin.server.AbstractExtension" inherited="yes" name="setParent">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setResource -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="setResource">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.Resource</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) updateDiffstate -->
+      <method from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="updateDiffstate">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>elemental.json.JsonValue</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

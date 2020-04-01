@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2020-03-31 15:39:47"/>
+  <interface name="StreamVariable" package="com.vaadin.server">
+    <superinterfaces>
+      <superinterface>java.io.Serializable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOutputStream -->
+      <method abstract="yes" access="public" name="getOutputStream" valid="no">
+        <signature>
+          <return>
+            <object>java.io.OutputStream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInterrupted -->
+      <method abstract="yes" access="public" name="isInterrupted" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listenProgress -->
+      <method abstract="yes" access="public" name="listenProgress" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ onProgress -->
+      <method abstract="yes" access="public" name="onProgress" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.StreamVariable$StreamingProgressEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ streamingFailed -->
+      <method abstract="yes" access="public" name="streamingFailed" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.StreamVariable$StreamingErrorEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ streamingFinished -->
+      <method abstract="yes" access="public" name="streamingFinished" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.StreamVariable$StreamingEndEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ streamingStarted -->
+      <method abstract="yes" access="public" name="streamingStarted" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.StreamVariable$StreamingStartEvent</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

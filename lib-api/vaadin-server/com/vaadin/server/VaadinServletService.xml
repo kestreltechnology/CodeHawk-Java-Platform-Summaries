@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-31 15:39:49"/>
+  <class name="VaadinServletService" package="com.vaadin.server">
+    <superclass>com.vaadin.server.VaadinService</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~ (inherited) field:URL_PARAMETER_CLOSE_APPLICATION -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="URL_PARAMETER_CLOSE_APPLICATION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~ (inherited) field:URL_PARAMETER_RESTART_APPLICATION -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="URL_PARAMETER_RESTART_APPLICATION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (com.vaadin.server.VaadinServlet,com.vaadin.server.DeploymentConfiguration) -->
+      <constructor access="public" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinServlet</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.DeploymentConfiguration</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.ServiceException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createRequestHandlers -->
+      <method access="protected" name="createRequestHandlers" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.ServiceException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApplicationUrl -->
+      <method access="protected" name="getApplicationUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.net.URL</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.net.MalformedURLException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBaseDirectory -->
+      <method access="public" name="getBaseDirectory" valid="no">
+        <signature>
+          <return>
+            <object>java.io.File</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCancelingRelativePath -->
+      <method access="public" name="getCancelingRelativePath" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConfiguredTheme -->
+      <method access="public" name="getConfiguredTheme" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConfiguredWidgetset -->
+      <method access="public" name="getConfiguredWidgetset" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContextRootRelativePath -->
+      <method access="public" name="getContextRootRelativePath" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrentResponse -->
+      <method access="public" name="getCurrentResponse" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServletResponse</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrentServletRequest -->
+      <method access="public" name="getCurrentServletRequest" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMainDivId -->
+      <method access="public" name="getMainDivId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMimeType -->
+      <method access="public" name="getMimeType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServiceName -->
+      <method access="public" name="getServiceName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServlet -->
+      <method access="public" name="getServlet" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServlet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStaticFileLocation -->
+      <method access="public" name="getStaticFileLocation" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getThemeResourceAsStream -->
+      <method access="public" name="getThemeResourceAsStream" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.io.InputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isStandalone -->
+      <method access="public" name="isStandalone" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requestCanCreateSession -->
+      <method access="protected" name="requestCanCreateSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) accessSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="accessSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Runnable</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.Future</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addServiceDestroyListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="addServiceDestroyListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ServiceDestroyListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addSessionDestroyListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="addSessionDestroyListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SessionDestroyListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) addSessionInitListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="addSessionInitListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SessionInitListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) closeSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="closeSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createCriticalNotificationJSON -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="createCriticalNotificationJSON">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) createVaadinSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="createVaadinSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) criticalNotification -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="criticalNotification">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="6">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) destroy -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="destroy">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) ensureAccessQueuePurged -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="ensureAccessQueuePurged">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) ensurePushAvailable -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="ensurePushAvailable">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) findUI -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="findUI">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.ui.UI</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) findVaadinSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="findVaadinSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) fireSessionDestroy -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="fireSessionDestroy">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) generateConnectorId -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="generateConnectorId">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.ClientConnector</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClassLoader -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getClassLoader">
+        <signature>
+          <return>
+            <object>java.lang.ClassLoader</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCurrent -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getCurrent">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinService</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCurrentRequest -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getCurrentRequest">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinRequest</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getCurrentResponse -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getCurrentResponse">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinResponse</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDependencyFilters -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getDependencyFilters">
+        <signature>
+          <return>
+            <object>java.lang.Iterable</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getDeploymentConfiguration -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getDeploymentConfiguration">
+        <signature>
+          <return>
+            <object>com.vaadin.server.DeploymentConfiguration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getExistingSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getExistingSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getRequestHandlers -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getRequestHandlers">
+        <signature>
+          <return>
+            <object>java.lang.Iterable</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServiceInitListeners -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getServiceInitListeners">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSessionAttributeName -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getSessionAttributeName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSessionLock -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getSessionLock">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.locks.Lock</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSystemMessages -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getSystemMessages">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Locale</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.SystemMessages</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getSystemMessagesProvider -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="getSystemMessagesProvider">
+        <signature>
+          <return>
+            <object>com.vaadin.server.SystemMessagesProvider</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handleRequest -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="handleRequest">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) handleSessionExpired -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="handleSessionExpired">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) init -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="init">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) initConnectorIdGenerator -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="initConnectorIdGenerator">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.ConnectorIdGenerator</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) initDependencyFilters -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="initDependencyFilters">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isAtmosphereAvailable -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="isAtmosphereAvailable">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isCsrfTokenValid -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="isCsrfTokenValid">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isOtherSessionLocked -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="isOtherSessionLocked">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) isUIActive -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="isUIActive">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) loadSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="loadSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) lockSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="lockSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) preserveUIOnRefresh -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="preserveUIOnRefresh">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.UIProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.UICreateEvent</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) readFromHttpSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="readFromHttpSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) reinitializeSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="reinitializeSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeFromHttpSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="removeFromHttpSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeServiceDestroyListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="removeServiceDestroyListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ServiceDestroyListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="removeSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeSessionDestroyListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="removeSessionDestroyListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SessionDestroyListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) removeSessionInitListener -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="removeSessionInitListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SessionInitListener</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestEnd -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="requestEnd">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+          <arg nr="3">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) requestStart -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="requestStart">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) runPendingAccessTasks -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="runPendingAccessTasks">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setClassLoader -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="setClassLoader">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.ClassLoader</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setCurrent -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="setCurrent">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinService</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setCurrentInstances -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="setCurrentInstances">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setDefaultClassLoader -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="setDefaultClassLoader">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) setSystemMessagesProvider -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="setSystemMessagesProvider">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SystemMessagesProvider</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) storeSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="storeSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) unlockSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="unlockSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) verifyNoOtherSessionLocked -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="verifyNoOtherSessionLocked">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) writeStringResponse -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="writeStringResponse">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinResponse</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) writeToHttpSession -->
+      <method from="com.vaadin.server.VaadinService" inherited="yes" name="writeToHttpSession">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.WrappedSession</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-31 15:39:48"/>
+  <class name="VaadinServlet" package="com.vaadin.server">
+    <superclass>javax.servlet.http.HttpServlet</superclass>
+    <interfaces>
+      <implements>com.vaadin.server.Constants</implements>
+      <implements>javax.servlet.Servlet</implements>
+      <implements>javax.servlet.ServletConfig</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ allowServePrecompressedResource -->
+      <method access="protected" name="allowServePrecompressedResource" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createDeploymentConfiguration -->
+      <method access="protected" name="createDeploymentConfiguration" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Properties</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.DeploymentConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createServletService -->
+      <method access="protected" name="createServletService" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.DeploymentConfiguration</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinServletService</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.ServiceException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createVaadinRequest -->
+      <method access="protected" name="createVaadinRequest" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinServletRequest</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ criticalNotification -->
+      <method access="protected" name="criticalNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinServletResponse</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="6">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ destroy -->
+      <method access="public" name="destroy">
+        <signature/>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findResourceURL -->
+      <method access="public" name="findResourceURL">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.net.URL</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="retrieve resource" form="filename" type="string">
+	      <throws>java.io.IOException</throws>
+	    </sink>
+	  </sinks>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApplicationUrl -->
+      <method access="protected" name="getApplicationUrl">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <object>java.net.URL</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.net.MalformedURLException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCacheTime -->
+      <method access="protected" name="getCacheTime">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	  <sinks>
+	    <sink arg="1" dest="retrieve resource" form="filename" type="string"/>
+	  </sinks>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrent -->
+      <method access="public" name="getCurrent" static="yes">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServlet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDefaultTheme -->
+      <method access="public" name="getDefaultTheme" static="yes">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLastPathParameter -->
+      <method access="protected" name="getLastPathParameter" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="decode" form="URI" type="string"/>
+	  </sinks>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestType -->
+      <method access="protected" name="getRequestType">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinServletRequest</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.VaadinServlet$RequestType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getResourcePath -->
+      <method access="protected" name="getResourcePath" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getService -->
+      <method access="protected" name="getService">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServletService</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStaticFilePath -->
+      <method access="protected" name="getStaticFilePath">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleContextRootWithoutSlash -->
+      <method access="protected" name="handleContextRootWithoutSlash" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" name="init">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletConfig</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAllowedVAADINResourceUrl -->
+      <method access="protected" name="isAllowedVAADINResourceUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.URL</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isStaticResourceRequest -->
+      <method access="protected" name="isStaticResourceRequest">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ safeEscapeForHtml -->
+      <method access="public" final="yes" name="safeEscapeForHtml" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="sanitize" form="html" type="string"/>
+	  </sinks>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ service -->
+      <method access="protected" name="service" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ servletInitialized -->
+      <method access="protected" name="servletInitialized">
+        <signature/>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ stripSpecialChars -->
+      <method access="public" name="stripSpecialChars" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="sanitize" form="html" type="string"/>
+	  </sinks>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeStaticResourceResponse -->
+      <method access="protected" name="writeStaticResourceResponse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <arg nr="3">
+            <object>java.net.URL</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary>
+          <taint/>
+        </summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->
+      <method from="java.lang.Object" inherited="yes" name="clone">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doDelete -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doDelete">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doGet -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doGet">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doHead -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doHead">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doOptions -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doOptions">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doPost -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doPost">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doPut -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doPut">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) doTrace -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="doTrace">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) equals -->
+      <method from="java.lang.Object" inherited="yes" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) finalize -->
+      <method from="java.lang.Object" inherited="yes" name="finalize">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getClass -->
+      <method from="java.lang.Object" inherited="yes" name="getClass">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInitParameter -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getInitParameter">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getInitParameterNames -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getInitParameterNames">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getLastModified -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="getLastModified">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServletConfig -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getServletConfig">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletConfig</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServletContext -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getServletContext">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletContext</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServletInfo -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getServletInfo">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) getServletName -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="getServletName">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) hashCode -->
+      <method from="java.lang.Object" inherited="yes" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) init -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="init">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) log -->
+      <method from="javax.servlet.GenericServlet" inherited="yes" name="log">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notify -->
+      <method from="java.lang.Object" inherited="yes" name="notify">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) notifyAll -->
+      <method from="java.lang.Object" inherited="yes" name="notifyAll">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) service -->
+      <method from="javax.servlet.http.HttpServlet" inherited="yes" name="service">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletResponse</object>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) toString -->
+      <method from="java.lang.Object" inherited="yes" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) wait -->
+      <method from="java.lang.Object" inherited="yes" name="wait">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
