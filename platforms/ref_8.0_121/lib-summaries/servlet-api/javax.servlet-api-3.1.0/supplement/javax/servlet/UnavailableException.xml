@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 17:20:41"/>
+  <class name="UnavailableException" package="javax.servlet">
+    <superclass>javax.servlet.ServletException</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:servlet -->
+      <field access="private" name="servlet">
+        <signature>
+          <object>javax.servlet.Servlet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:permanent -->
+      <field access="private" name="permanent">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:seconds -->
+      <field access="private" name="seconds">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SUPPRESSED_CAPTION -->
+      <field from="java.lang.Throwable" inherited="yes" name="SUPPRESSED_CAPTION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:CAUSE_CAPTION -->
+      <field from="java.lang.Throwable" inherited="yes" name="CAUSE_CAPTION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SELF_SUPPRESSION_MESSAGE -->
+      <field from="java.lang.Throwable" inherited="yes" name="SELF_SUPPRESSION_MESSAGE">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:NULL_CAUSE_MESSAGE -->
+      <field from="java.lang.Throwable" inherited="yes" name="NULL_CAUSE_MESSAGE">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:EMPTY_THROWABLE_ARRAY -->
+      <field from="java.lang.Throwable" inherited="yes" name="EMPTY_THROWABLE_ARRAY">
+        <signature>
+          <array>
+            <object>java.lang.Throwable</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:backtrace -->
+      <field from="java.lang.Throwable" inherited="yes" name="backtrace">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:$assertionsDisabled -->
+      <field from="java.lang.Throwable" inherited="yes" name="$assertionsDisabled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:detailMessage -->
+      <field from="java.lang.Throwable" inherited="yes" name="detailMessage">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:suppressedExceptions -->
+      <field from="java.lang.Throwable" inherited="yes" name="suppressedExceptions">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:SUPPRESSED_SENTINEL -->
+      <field from="java.lang.Throwable" inherited="yes" name="SUPPRESSED_SENTINEL">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stackTrace -->
+      <field from="java.lang.Throwable" inherited="yes" name="stackTrace">
+        <signature>
+          <array>
+            <object>java.lang.StackTraceElement</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:UNASSIGNED_STACK -->
+      <field from="java.lang.Throwable" inherited="yes" name="UNASSIGNED_STACK">
+        <signature>
+          <array>
+            <object>java.lang.StackTraceElement</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:cause -->
+      <field from="java.lang.Throwable" inherited="yes" name="cause">
+        <signature>
+          <object>java.lang.Throwable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serialVersionUID -->
+      <field from="java.lang.Exception" inherited="yes" name="serialVersionUID">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:rootCause -->
+      <field from="javax.servlet.ServletException" inherited="yes" name="rootCause">
+        <signature>
+          <object>java.lang.Throwable</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (javax.servlet.Servlet,java.lang.String) -->
+      <constructor access="public" instrs="10" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Servlet</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ (int,javax.servlet.Servlet,java.lang.String) -->
+      <constructor access="public" instrs="19" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.Servlet</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String) -->
+      <constructor access="public" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,int) -->
+      <constructor access="public" instrs="16" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServlet -->
+      <method access="public" instrs="3" name="getServlet">
+        <signature>
+          <return>
+            <object>javax.servlet.Servlet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUnavailableSeconds -->
+      <method access="public" instrs="8" name="getUnavailableSeconds">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost lb="9" ub="11"/>
+	  </time-cost>
+	</summary>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isPermanent -->
+      <method access="public" instrs="3" name="isPermanent">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

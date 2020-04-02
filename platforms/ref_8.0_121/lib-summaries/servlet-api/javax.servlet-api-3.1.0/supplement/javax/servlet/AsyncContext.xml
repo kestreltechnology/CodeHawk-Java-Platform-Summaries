@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-16 15:56:55"/>
+  <interface dispatch="yes" name="AsyncContext" package="javax.servlet">
+    <superinterfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_REQUEST_URI -->
+      <field access="public" final="yes" name="ASYNC_REQUEST_URI" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="javax.servlet.async.request_uri"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_CONTEXT_PATH -->
+      <field access="public" final="yes" name="ASYNC_CONTEXT_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="javax.servlet.async.context_path"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_PATH_INFO -->
+      <field access="public" final="yes" name="ASYNC_PATH_INFO" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="javax.servlet.async.path_info"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_SERVLET_PATH -->
+      <field access="public" final="yes" name="ASYNC_SERVLET_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="javax.servlet.async.servlet_path"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_QUERY_STRING -->
+      <field access="public" final="yes" name="ASYNC_QUERY_STRING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="javax.servlet.async.query_string"/>
+        </value>
+      </field>
+    </fields>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method abstract="yes" access="public" name="addListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.AsyncListener</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method abstract="yes" access="public" name="addListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.AsyncListener</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.ServletResponse</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ complete -->
+      <method abstract="yes" access="public" name="complete" valid="no">
+        <signature/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createListener -->
+      <method abstract="yes" access="public" name="createListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>javax.servlet.AsyncListener</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dispatch -->
+      <method abstract="yes" access="public" name="dispatch" valid="no">
+        <signature/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dispatch -->
+      <method abstract="yes" access="public" name="dispatch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dispatch -->
+      <method abstract="yes" access="public" name="dispatch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequest -->
+      <method abstract="yes" access="public" name="getRequest" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletRequest</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getResponse -->
+      <method abstract="yes" access="public" name="getResponse" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletResponse</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTimeout -->
+      <method abstract="yes" access="public" name="getTimeout" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasOriginalRequestAndResponse -->
+      <method abstract="yes" access="public" name="hasOriginalRequestAndResponse" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTimeout -->
+      <method abstract="yes" access="public" name="setTimeout" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ start -->
+      <method abstract="yes" access="public" name="start" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
