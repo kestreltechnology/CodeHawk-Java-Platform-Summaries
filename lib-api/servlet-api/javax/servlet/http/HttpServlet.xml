@@ -13,7 +13,7 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
-      <constructor access="public" valid="no">
+      <constructor access="public">
         <signature/>
         <exceptions/>
         <summary>
@@ -150,7 +150,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLastModified -->
-      <method access="protected" name="getLastModified" valid="no">
+      <method access="protected" name="getLastModified">
         <signature>
           <arg nr="1">
             <object>javax.servlet.http.HttpServletRequest</object>
@@ -161,7 +161,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ service -->

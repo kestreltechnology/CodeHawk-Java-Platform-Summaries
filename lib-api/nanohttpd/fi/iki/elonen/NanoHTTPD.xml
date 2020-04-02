@@ -100,7 +100,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createClientHandler -->
-      <method access="protected" name="createClientHandler" valid="no">
+      <method access="protected" name="createClientHandler">
         <signature>
           <arg nr="1">
             <object>java.net.Socket</object>
@@ -114,11 +114,24 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createServerRunnable -->
-      <method access="protected" name="createServerRunnable" valid="no">
+      <method access="protected" name="createServerRunnable">
         <signature>
           <arg nr="1">
             <int/>
@@ -129,11 +142,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decodeParameters -->
-      <method access="protected" name="decodeParameters" static="yes" valid="no">
+      <method access="protected" name="decodeParameters" static="yes">
         <signature>
           <arg nr="1">
             <object>java.util.Map</object>
@@ -144,11 +166,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decodeParameters -->
-      <method access="protected" name="decodeParameters" static="yes" valid="no">
+      <method access="protected" name="decodeParameters" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -159,11 +186,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decodePercent -->
-      <method access="protected" name="decodePercent" static="yes" valid="no">
+      <method access="protected" name="decodePercent" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -174,7 +206,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHostname -->
@@ -212,7 +249,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMimeTypeForFile -->
-      <method access="public" name="getMimeTypeForFile" static="yes" valid="no">
+      <method access="public" name="getMimeTypeForFile" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -223,7 +260,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServerSocketFactory -->
@@ -386,7 +428,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mimeTypes -->
-      <method access="public" name="mimeTypes" static="yes" valid="no">
+      <method access="public" name="mimeTypes" static="yes">
         <signature>
           <return>
             <object>java.util.Map</object>
@@ -398,7 +440,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newChunkedResponse -->
-      <method access="public" name="newChunkedResponse" static="yes" valid="no">
+      <method access="public" name="newChunkedResponse" static="yes">
         <signature>
           <arg nr="1">
             <object>fi.iki.elonen.NanoHTTPD$Response$IStatus</object>
@@ -415,7 +457,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="3"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newFixedLengthResponse -->
@@ -670,7 +725,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ useGzipWhenAccepted -->
-      <method access="protected" name="useGzipWhenAccepted" valid="no">
+      <method access="protected" name="useGzipWhenAccepted">
         <signature>
           <arg nr="1">
             <object>fi.iki.elonen.NanoHTTPD$Response</object>
@@ -681,7 +736,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ wasStarted -->

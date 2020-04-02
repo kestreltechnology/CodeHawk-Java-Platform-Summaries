@@ -571,7 +571,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ halt -->
-      <method access="public" name="halt" static="yes" valid="no">
+      <method access="public" name="halt" static="yes">
         <signature>
           <arg nr="1">
             <int/>
@@ -582,7 +582,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ halt -->
@@ -800,7 +805,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ modelAndView -->
-      <method access="public" name="modelAndView" static="yes" valid="no">
+      <method access="public" name="modelAndView" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -814,7 +819,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notFound -->
@@ -1394,7 +1408,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecure -->
-      <method access="public" name="setSecure" static="yes" valid="no">
+      <method access="public" name="setSecure" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1415,7 +1429,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ staticFileLocation -->
-      <method access="public" name="staticFileLocation" static="yes" valid="no">
+      <method access="public" name="staticFileLocation" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1427,7 +1441,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ stop -->
-      <method access="public" name="stop" static="yes" valid="no">
+      <method access="public" name="stop" static="yes">
         <signature/>
         <exceptions/>
         <summary>
@@ -1435,7 +1449,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ threadPool -->
-      <method access="public" name="threadPool" static="yes" valid="no">
+      <method access="public" name="threadPool" static="yes">
         <signature>
           <arg nr="1">
             <int/>
@@ -1447,7 +1461,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ threadPool -->
-      <method access="public" name="threadPool" static="yes" valid="no">
+      <method access="public" name="threadPool" static="yes">
         <signature>
           <arg nr="1">
             <int/>
@@ -1465,7 +1479,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1480,7 +1494,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1498,7 +1512,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1516,7 +1530,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1537,7 +1551,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1555,7 +1569,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trace -->
-      <method access="public" name="trace" static="yes" valid="no">
+      <method access="public" name="trace" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1576,7 +1590,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ webSocket -->
-      <method access="public" name="webSocket" static="yes" valid="no">
+      <method access="public" name="webSocket" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1591,7 +1605,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ webSocket -->
-      <method access="public" name="webSocket" static="yes" valid="no">
+      <method access="public" name="webSocket" static="yes">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -1606,7 +1620,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ webSocketIdleTimeoutMillis -->
-      <method access="public" name="webSocketIdleTimeoutMillis" static="yes" valid="no">
+      <method access="public" name="webSocketIdleTimeoutMillis" static="yes">
         <signature>
           <arg nr="1">
             <int/>

@@ -8,7 +8,7 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
-      <constructor access="public" valid="no">
+      <constructor access="public">
         <signature/>
         <exceptions/>
         <summary>
@@ -27,7 +27,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDeleteFailures -->
-      <method access="public" name="getDeleteFailures" valid="no">
+      <method access="public" name="getDeleteFailures">
         <signature>
           <return>
             <object>java.util.List</object>
@@ -35,7 +35,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTrackCount -->

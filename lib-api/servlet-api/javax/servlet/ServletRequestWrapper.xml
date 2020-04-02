@@ -10,7 +10,7 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (javax.servlet.ServletRequest) -->
-      <constructor access="public" valid="no">
+      <constructor access="public">
         <signature>
           <arg nr="1">
             <object>javax.servlet.ServletRequest</object>
@@ -18,14 +18,19 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </constructor>
     </constructors>
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAsyncContext -->
-      <method access="public" name="getAsyncContext" valid="no">
+      <method access="public" name="getAsyncContext">
         <signature>
           <return>
             <object>javax.servlet.AsyncContext</object>
@@ -33,11 +38,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttribute -->
-      <method access="public" name="getAttribute" valid="no">
+      <method access="public" name="getAttribute">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -48,11 +58,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttributeNames -->
-      <method access="public" name="getAttributeNames" valid="no">
+      <method access="public" name="getAttributeNames">
         <signature>
           <return>
             <object>java.util.Enumeration</object>
@@ -60,11 +79,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCharacterEncoding -->
-      <method access="public" name="getCharacterEncoding" valid="no">
+      <method access="public" name="getCharacterEncoding">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -72,11 +96,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLength -->
-      <method access="public" name="getContentLength" valid="no">
+      <method access="public" name="getContentLength">
         <signature>
           <return>
             <int/>
@@ -84,11 +113,36 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	    <error-post>
+	      <math>
+		<apply>
+		  <eq/>
+		  <return/>
+		  <cn>-1</cn>
+		</apply>
+	      </math>
+	    </error-post>
+	  </postconditions>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLengthLong -->
-      <method access="public" name="getContentLengthLong" valid="no">
+      <method access="public" name="getContentLengthLong">
         <signature>
           <return>
             <long/>
@@ -96,11 +150,36 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	    <error-post>
+	      <math>
+		<apply>
+		  <eq/>
+		  <return/>
+		  <cn>-1</cn>
+		</apply>
+	      </math>
+	    </error-post>
+	  </postconditions>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentType -->
-      <method access="public" name="getContentType" valid="no">
+      <method access="public" name="getContentType">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -108,11 +187,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDispatcherType -->
-      <method access="public" name="getDispatcherType" valid="no">
+      <method access="public" name="getDispatcherType">
         <signature>
           <return>
             <object>javax.servlet.DispatcherType</object>
@@ -120,11 +204,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
-      <method access="public" name="getInputStream" valid="no">
+      <method access="public" name="getInputStream">
         <signature>
           <return>
             <object>javax.servlet.ServletInputStream</object>
@@ -134,11 +223,16 @@
           <throws>java.io.IOException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalAddr -->
-      <method access="public" name="getLocalAddr" valid="no">
+      <method access="public" name="getLocalAddr">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -146,11 +240,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalName -->
-      <method access="public" name="getLocalName" valid="no">
+      <method access="public" name="getLocalName">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -158,11 +257,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalPort -->
-      <method access="public" name="getLocalPort" valid="no">
+      <method access="public" name="getLocalPort">
         <signature>
           <return>
             <int/>
@@ -170,11 +274,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocale -->
-      <method access="public" name="getLocale" valid="no">
+      <method access="public" name="getLocale">
         <signature>
           <return>
             <object>java.util.Locale</object>
@@ -182,11 +291,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocales -->
-      <method access="public" name="getLocales" valid="no">
+      <method access="public" name="getLocales">
         <signature>
           <return>
             <object>java.util.Enumeration</object>
@@ -194,11 +308,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameter -->
-      <method access="public" name="getParameter" valid="no">
+      <method access="public" name="getParameter">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -209,11 +328,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterMap -->
-      <method access="public" name="getParameterMap" valid="no">
+      <method access="public" name="getParameterMap">
         <signature>
           <return>
             <object>java.util.Map</object>
@@ -221,11 +349,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterNames -->
-      <method access="public" name="getParameterNames" valid="no">
+      <method access="public" name="getParameterNames">
         <signature>
           <return>
             <object>java.util.Enumeration</object>
@@ -233,11 +366,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterValues -->
-      <method access="public" name="getParameterValues" valid="no">
+      <method access="public" name="getParameterValues">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -250,11 +388,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProtocol -->
-      <method access="public" name="getProtocol" valid="no">
+      <method access="public" name="getProtocol">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -262,11 +409,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReader -->
-      <method access="public" name="getReader" valid="no">
+      <method access="public" name="getReader">
         <signature>
           <return>
             <object>java.io.BufferedReader</object>
@@ -276,11 +428,16 @@
           <throws>java.io.IOException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRealPath -->
-      <method access="public" name="getRealPath" valid="no">
+      <method access="public" name="getRealPath">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -291,11 +448,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteAddr -->
-      <method access="public" name="getRemoteAddr" valid="no">
+      <method access="public" name="getRemoteAddr">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -303,11 +469,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteHost -->
-      <method access="public" name="getRemoteHost" valid="no">
+      <method access="public" name="getRemoteHost">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -315,11 +486,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemotePort -->
-      <method access="public" name="getRemotePort" valid="no">
+      <method access="public" name="getRemotePort">
         <signature>
           <return>
             <int/>
@@ -327,7 +503,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequest -->
@@ -343,7 +524,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestDispatcher -->
-      <method access="public" name="getRequestDispatcher" valid="no">
+      <method access="public" name="getRequestDispatcher">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -354,11 +535,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScheme -->
-      <method access="public" name="getScheme" valid="no">
+      <method access="public" name="getScheme">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -366,11 +556,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServerName -->
-      <method access="public" name="getServerName" valid="no">
+      <method access="public" name="getServerName">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -378,11 +573,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServerPort -->
-      <method access="public" name="getServerPort" valid="no">
+      <method access="public" name="getServerPort">
         <signature>
           <return>
             <int/>
@@ -390,11 +590,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletContext -->
-      <method access="public" name="getServletContext" valid="no">
+      <method access="public" name="getServletContext">
         <signature>
           <return>
             <object>javax.servlet.ServletContext</object>
@@ -402,11 +607,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsyncStarted -->
-      <method access="public" name="isAsyncStarted" valid="no">
+      <method access="public" name="isAsyncStarted">
         <signature>
           <return>
             <boolean/>
@@ -414,11 +624,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsyncSupported -->
-      <method access="public" name="isAsyncSupported" valid="no">
+      <method access="public" name="isAsyncSupported">
         <signature>
           <return>
             <boolean/>
@@ -426,11 +641,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSecure -->
-      <method access="public" name="isSecure" valid="no">
+      <method access="public" name="isSecure">
         <signature>
           <return>
             <boolean/>
@@ -438,11 +658,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isWrapperFor -->
-      <method access="public" name="isWrapperFor" valid="no">
+      <method access="public" name="isWrapperFor">
         <signature>
           <arg nr="1">
             <object>javax.servlet.ServletRequest</object>
@@ -453,11 +678,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isWrapperFor -->
-      <method access="public" name="isWrapperFor" valid="no">
+      <method access="public" name="isWrapperFor">
         <signature>
           <arg nr="1">
             <object>java.lang.Class</object>
@@ -468,11 +702,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAttribute -->
-      <method access="public" name="removeAttribute" valid="no">
+      <method access="public" name="removeAttribute">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -480,11 +723,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAttribute -->
-      <method access="public" name="setAttribute" valid="no">
+      <method access="public" name="setAttribute">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -495,11 +743,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCharacterEncoding -->
-      <method access="public" name="setCharacterEncoding" valid="no">
+      <method access="public" name="setCharacterEncoding">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -509,11 +766,21 @@
           <throws>java.io.UnsupportedEncodingException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="property set" form="character encoding" type="string">
+	      <throws>java.io.UnsupportedEncodingException</throws>
+	    </sink>
+	  </sinks>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRequest -->
-      <method access="public" name="setRequest" valid="no">
+      <method access="public" name="setRequest">
         <signature>
           <arg nr="1">
             <object>javax.servlet.ServletRequest</object>
@@ -521,11 +788,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ startAsync -->
-      <method access="public" name="startAsync" valid="no">
+      <method access="public" name="startAsync">
         <signature>
           <return>
             <object>javax.servlet.AsyncContext</object>
@@ -535,11 +807,16 @@
           <throws>java.lang.IllegalStateException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ startAsync -->
-      <method access="public" name="startAsync" valid="no">
+      <method access="public" name="startAsync">
         <signature>
           <arg nr="1">
             <object>javax.servlet.ServletRequest</object>
@@ -555,7 +832,20 @@
           <throws>java.lang.IllegalStateException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->

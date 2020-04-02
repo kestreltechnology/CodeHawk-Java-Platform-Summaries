@@ -12,7 +12,7 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (javax.servlet.http.HttpServletRequest) -->
-      <constructor access="public" valid="no">
+      <constructor access="public">
         <signature>
           <arg nr="1">
             <object>javax.servlet.http.HttpServletRequest</object>
@@ -20,7 +20,12 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
         </summary>
       </constructor>
     </constructors>
@@ -45,7 +50,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ changeSessionId -->
-      <method access="public" name="changeSessionId" valid="no">
+      <method access="public" name="changeSessionId">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -53,11 +58,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthType -->
-      <method access="public" name="getAuthType" valid="no">
+      <method access="public" name="getAuthType">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -65,11 +75,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContextPath -->
-      <method access="public" name="getContextPath" valid="no">
+      <method access="public" name="getContextPath">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -77,11 +92,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCookies -->
-      <method access="public" name="getCookies" valid="no">
+      <method access="public" name="getCookies">
         <signature>
           <return>
             <array>
@@ -91,11 +111,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDateHeader -->
-      <method access="public" name="getDateHeader" valid="no">
+      <method access="public" name="getDateHeader">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -106,11 +131,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeader -->
-      <method access="public" name="getHeader" valid="no">
+      <method access="public" name="getHeader">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -121,11 +155,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeaderNames -->
-      <method access="public" name="getHeaderNames" valid="no">
+      <method access="public" name="getHeaderNames">
         <signature>
           <return>
             <object>java.util.Enumeration</object>
@@ -133,11 +176,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeaders -->
-      <method access="public" name="getHeaders" valid="no">
+      <method access="public" name="getHeaders">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -148,11 +196,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIntHeader -->
-      <method access="public" name="getIntHeader" valid="no">
+      <method access="public" name="getIntHeader">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -163,11 +220,20 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMethod -->
-      <method access="public" name="getMethod" valid="no">
+      <method access="public" name="getMethod">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -175,11 +241,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPart -->
-      <method access="public" name="getPart" valid="no">
+      <method access="public" name="getPart">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -193,11 +264,20 @@
           <throws>javax.servlet.ServletException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParts -->
-      <method access="public" name="getParts" valid="no">
+      <method access="public" name="getParts">
         <signature>
           <return>
             <object>java.util.Collection</object>
@@ -208,11 +288,16 @@
           <throws>javax.servlet.ServletException</throws>
         </exceptions>
         <summary>
-          <taint/>
-        </summary>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPathInfo -->
-      <method access="public" name="getPathInfo" valid="no">
+      <method access="public" name="getPathInfo">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -220,11 +305,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPathTranslated -->
-      <method access="public" name="getPathTranslated" valid="no">
+      <method access="public" name="getPathTranslated">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -232,11 +322,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getQueryString -->
-      <method access="public" name="getQueryString" valid="no">
+      <method access="public" name="getQueryString">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -244,11 +339,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteUser -->
-      <method access="public" name="getRemoteUser" valid="no">
+      <method access="public" name="getRemoteUser">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -256,11 +356,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestURI -->
-      <method access="public" name="getRequestURI" valid="no">
+      <method access="public" name="getRequestURI">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -268,11 +373,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestURL -->
-      <method access="public" name="getRequestURL" valid="no">
+      <method access="public" name="getRequestURL">
         <signature>
           <return>
             <object>java.lang.StringBuffer</object>
@@ -280,11 +390,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestedSessionId -->
-      <method access="public" name="getRequestedSessionId" valid="no">
+      <method access="public" name="getRequestedSessionId">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -292,11 +407,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletPath -->
-      <method access="public" name="getServletPath" valid="no">
+      <method access="public" name="getServletPath">
         <signature>
           <return>
             <object>java.lang.String</object>
@@ -304,11 +424,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
-      <method access="public" name="getSession" valid="no">
+      <method access="public" name="getSession">
         <signature>
           <arg nr="1">
             <boolean/>
@@ -319,11 +444,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
-      <method access="public" name="getSession" valid="no">
+      <method access="public" name="getSession">
         <signature>
           <return>
             <object>javax.servlet.http.HttpSession</object>
@@ -331,11 +461,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUserPrincipal -->
-      <method access="public" name="getUserPrincipal" valid="no">
+      <method access="public" name="getUserPrincipal">
         <signature>
           <return>
             <object>java.security.Principal</object>
@@ -343,11 +478,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromCookie -->
-      <method access="public" name="isRequestedSessionIdFromCookie" valid="no">
+      <method access="public" name="isRequestedSessionIdFromCookie">
         <signature>
           <return>
             <boolean/>
@@ -355,11 +495,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromURL -->
-      <method access="public" name="isRequestedSessionIdFromURL" valid="no">
+      <method access="public" name="isRequestedSessionIdFromURL">
         <signature>
           <return>
             <boolean/>
@@ -367,11 +512,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromUrl -->
-      <method access="public" name="isRequestedSessionIdFromUrl" valid="no">
+      <method access="public" name="isRequestedSessionIdFromUrl">
         <signature>
           <return>
             <boolean/>
@@ -379,11 +529,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdValid -->
-      <method access="public" name="isRequestedSessionIdValid" valid="no">
+      <method access="public" name="isRequestedSessionIdValid">
         <signature>
           <return>
             <boolean/>
@@ -391,11 +546,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUserInRole -->
-      <method access="public" name="isUserInRole" valid="no">
+      <method access="public" name="isUserInRole">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -406,11 +566,16 @@
         </signature>
         <exceptions/>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ login -->
-      <method access="public" name="login" valid="no">
+      <method access="public" name="login">
         <signature>
           <arg nr="1">
             <object>java.lang.String</object>
@@ -423,11 +588,28 @@
           <throws>javax.servlet.ServletException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="2"/>
+	      <this/>
+	    </transfer>
+	  </taint>
+	  <sinks>
+	    <sink arg="1" dest="login" form="username" type="string">
+	      <throws>javax.servlet.ServletException</throws>
+	    </sink>
+	    <sink arg="2" dest="login" form="password" type="string">
+	      <throws>javax.servlet.ServletException</throws>
+	    </sink>
+	  </sinks>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logout -->
-      <method access="public" name="logout" valid="no">
+      <method access="public" name="logout">
         <signature/>
         <exceptions>
           <throws>javax.servlet.ServletException</throws>
@@ -437,7 +619,7 @@
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ upgrade -->
-      <method access="public" name="upgrade" valid="no">
+      <method access="public" name="upgrade">
         <signature>
           <arg nr="1">
             <object>java.lang.Class</object>
@@ -451,7 +633,16 @@
           <throws>javax.servlet.ServletException</throws>
         </exceptions>
         <summary>
-          <taint/>
+          <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
         </summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) clone -->

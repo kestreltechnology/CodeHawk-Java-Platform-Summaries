@@ -55,10 +55,10 @@ and postconditions, as well as string sinks and resource sinks.
 | netty-all | 118 | 1747 | 265 | 0 | 41 | 0 | 0 |
 | portlet-api | 5 | 64 | 8 | 0 | 0 | 0 | 0 |
 | protobuf-java | 118 | 2544 | 572 | 0 | 58 | 0 | 0 |
-| servlet-api | 36 | 418 | 18 | 0 | 0 | 1 | 0 |
+| servlet-api | 36 | 418 | 139 | 0 | 2 | 4 | 0 |
 | slf4j-api | 8 | 98 | 81 | 0 | 0 | 0 | 0 |
 | slf4j-ext | 3 | 71 | 14 | 0 | 0 | 0 | 0 |
-| spark-core | 20 | 411 | 163 | 0 | 1 | 0 | 0 |
+| spark-core | 20 | 411 | 196 | 0 | 1 | 0 | 0 |
 | spring-aop | 7 | 6 | 0 | 0 | 0 | 0 | 0 |
 | spring-beans | 7 | 28 | 0 | 0 | 0 | 0 | 0 |
 | spring-boot | 5 | 52 | 27 | 0  | 0 | 1 | 0 |
