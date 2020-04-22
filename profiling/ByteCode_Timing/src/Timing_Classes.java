@@ -24,6 +24,14 @@
  SOFTWARE.
 */
 
+/*
+  Note: For most load and store instructions, we simply mirror a method that tests
+  a load or store instruction of the correct class, rather than the specific load or
+  store instruction being queried. We do this under the assumption that all load/store
+  instructions of a particular type have the same runtime, although it would be better
+  to develop more specific tests.
+*/
+
 package ByteCode_Timing;
 
 import java.lang.String;
@@ -156,7 +164,17 @@ public class Timing_Classes {
 
     /* astore */
     /* astore_0 */
+
     /* astore_1 */
+    public static class run_astore_1 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            for(int i = 0; i < new_count; i++) {
+            	count = count;
+            }
+        }
+    }
+
     /* astore_2 */
     /* astore_3 */
 
@@ -345,10 +363,59 @@ public class Timing_Classes {
     }
 
     /* dload */
+    public static class run_dload implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dload_0 */
+    public static class run_dload_0 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dload_1 */
+    public static class run_dload_1 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    } 
+
     /* dload_2 */
+    public static class run_dload_2 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dload_3 */
+    public static class run_dload_3 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
 
     public static class run_dmul implements Command {
         public void execute(Object count) {
@@ -395,10 +462,59 @@ public class Timing_Classes {
     }
 
     /* dstore */
+    public static class run_dstore implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dstore_0 */
+    public static class run_dstore_0 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dstore_1 */
+    public static class run_dstore_1 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dstore_2 */
+    public static class run_dstore_2 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* dstore_3 */
+    public static class run_dstore_3 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0d;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
 
     public static class run_dup implements Command {
         public void execute(Object count) {
@@ -554,10 +670,59 @@ public class Timing_Classes {
     }
 
     /* fload */
+    public static class run_fload implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            float a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fload_0 */
+    public static class run_fload_0 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fload_1 */
+    public static class run_fload_1 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fload_2 */
+    public static class run_fload_2 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fload_3 */
+    public static class run_fload_3 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
 
     public static class run_fmul implements Command {
         public void execute(Object count) {
@@ -604,10 +769,59 @@ public class Timing_Classes {
     }
 
     /* fstore */
+    public static class run_fstore implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fstore_0 */
+    public static class run_fstore_0 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fstore_1 */
+    public static class run_fstore_1 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fstore_2 */
+    public static class run_fstore_2 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
+
     /* fstore_3 */
+    public static class run_fstore_3 implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            double a = 0.0f;
+            for(int i = 0; i < new_count; i++) {
+                a = a;
+            } 
+        }
+    }
 
     public static class run_fsub implements Command {
         public void execute(Object count) {
@@ -1055,11 +1269,10 @@ public class Timing_Classes {
     public static class run_iload_3 implements Command {
         public void execute(Object count) {
             int i;
-            int a;
-            int b = 0;
+            int a = 0;
             int new_count = (int)count;
             for(i = 0; i < new_count; i++) {
-                b = b;
+                a = a;
             }
         }
     }
@@ -1215,6 +1428,16 @@ public class Timing_Classes {
     /* istore_1 */
     /* istore_2 */
     /* istore_3 */
+    public static class run_istore_3 implements Command {
+        public void execute(Object count) {
+            int i;
+            int a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
 
     public static class run_ixshr implements Command {
         public void execute(Object count) {
@@ -1398,10 +1621,64 @@ public class Timing_Classes {
     }
 
     /* lload */
+    public static class run_lload implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lload_0 */
+    public static class run_lload_0 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lload_1 */
+    public static class run_lload_1 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lload_2 */
+    public static class run_lload_2 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lload_3 */
+    public static class run_lload_3 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
 
     public static class run_lmul implements Command {
         public void execute(Object count) {
@@ -1484,10 +1761,64 @@ public class Timing_Classes {
     }
 
     /* lstore */
+    public static class run_lstore implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lstore_0 */
+    public static class run_lstore_0 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lstore_1 */
+    public static class run_lstore_1 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lstore_2 */
+    public static class run_lstore_2 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
+
     /* lstore_3 */
+    public static class run_lstore_3 implements Command {
+        public void execute(Object count) {
+            int i;
+            long a = 0;
+            int new_count = (int)count;
+            for(i = 0; i < new_count; i++) {
+                a = a;
+            }
+        }
+    }
 
     public static class run_lsub implements Command {
         public void execute(Object count) {
