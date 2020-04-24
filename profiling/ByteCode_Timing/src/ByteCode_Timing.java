@@ -940,7 +940,15 @@ public class ByteCode_Timing {
     public static long get_irem_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_ireturn_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_ishl_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_ishr_timings(String bytecode_name, int iterations) {return 0;}
+    public static long get_ishr_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("iload_2", iterations);
+        dependentTime += get_timings("iconst_1", iterations);
+        dependentTime += get_timings("istore_3", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_ishr(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime; 
+    }
     public static long get_istore_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_istore_0_timings(String bytecode_name, int iterations) {
         long dependentTime = get_timings("EmptyLoop", iterations);
@@ -975,14 +983,30 @@ public class ByteCode_Timing {
         return finalTime;
     }
     public static long get_isub_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_iushr_timings(String bytecode_name, int iterations) {return 0;}
+    public static long get_iushr_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("iload_2", iterations);
+        dependentTime += get_timings("iconst_1", iterations);
+        dependentTime += get_timings("istore_3", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_iushr(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime;
+    }
     public static long get_ixor_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_l2d_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_l2f_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_l2i_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_ladd_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_laload_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_land_timings(String bytecode_name, int iterations) {return 0;}
+    public static long get_land_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("lload_2", iterations);
+        dependentTime += get_timings("lload", iterations);
+        dependentTime += get_timings("lstore", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_land(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime;
+    }
     public static long get_lastore_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_lcmp_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_lconst_0_timings(String bytecode_name, int iterations) {return 0;}
@@ -1040,8 +1064,25 @@ public class ByteCode_Timing {
     }
     public static long get_lrem_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_lreturn_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_lshl_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_lshr_timings(String bytecode_name, int iterations) {return 0;}
+    public static long get_lshl_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("lload_2", iterations);
+        dependentTime += get_timings("iconst_1", iterations);
+        dependentTime += get_timings("lstore", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_lshl(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime;
+    }
+
+    public static long get_lshr_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("lload_2", iterations);
+        dependentTime += get_timings("iconst_1", iterations);
+        dependentTime += get_timings("lstore", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_lshr(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime; 
+    }
     public static long get_lstore_timings(String bytecode_name, int iterations) {
         long dependentTime = get_timings("EmptyLoop", iterations);
         //dependentTime += get_timings("lload", iterations);
@@ -1078,8 +1119,24 @@ public class ByteCode_Timing {
         return finalTime;
     }
     public static long get_lsub_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_lushr_timings(String bytecode_name, int iterations) {return 0;}
-    public static long get_lxor_timings(String bytecode_name, int iterations) {return 0;}
+    public static long get_lushr_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("lload_2", iterations);
+        dependentTime += get_timings("iconst_1", iterations);
+        dependentTime += get_timings("lstore", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_lushr(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime;
+    }
+    public static long get_lxor_timings(String bytecode_name, int iterations) {
+        long dependentTime = get_timings("EmptyLoop", iterations);
+        dependentTime += get_timings("lload_2", iterations);
+        dependentTime += get_timings("lload", iterations);
+        dependentTime += get_timings("lstore", iterations);
+        long testTime = Timing_Classes.callCommand(new Timing_Classes.run_lxor(), iterations);
+        long finalTime = testTime - dependentTime;
+        return finalTime;
+    }
     public static long get_monitorenter_timings(String bytecode_name, int iterations) {return 0;}
     public static long get_monitorexit_timings(String bytecode_name, int iterations) {return 0;}
 

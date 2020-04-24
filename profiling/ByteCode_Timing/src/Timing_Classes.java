@@ -1423,6 +1423,17 @@ public class Timing_Classes {
     }
 
     /* ishr */
+    public static class run_ishr implements Command {
+        public void execute(Object count) {
+            int a = 5;
+            int b;
+            int new_count = (int)count;
+            for(int i = 0; i < new_count; i++) {
+                b = a >> 1;
+            }
+        }
+    }
+
     /* istore */
     /* istore_0 */
     /* istore_1 */
@@ -1456,6 +1467,18 @@ public class Timing_Classes {
             int new_count = (int)count;
             for(int i = 0; i < new_count; i++) {
                 a = a - 1;
+            }
+        }
+    }
+
+    /* iushr */
+    public static class run_iushr implements Command {
+        public void execute(Object count) {
+            int a = 5;
+            int b;
+            int new_count = (int)count;
+            for(int i = 0; i < new_count; i++) {
+                b = a >>> 1;
             }
         }
     }
@@ -1830,17 +1853,19 @@ public class Timing_Classes {
         }
     }
 
+    /* lushr */
     public static class run_lushr implements Command {
         public void execute(Object count) {
             long a = 5;
             long b;
             int new_count = (int)count;
             for(int i = 0; i < new_count; i++) {
-                b = a >> 1;
+                b = a >>> 1;
             }
         }
     }
 
+    /* lxor */
     public static class run_lxor implements Command {
         public void execute(Object count) {
             long a = 1;
