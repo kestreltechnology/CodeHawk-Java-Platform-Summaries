@@ -1977,8 +1977,35 @@ public class Timing_Classes {
     }
 
     /* sipush */
+    public static class run_sipush implements Command {
+        public void execute(Object count) {
+            int new_count = (int)count;
+            short a = 1;
+            for(int i = 0; i < new_count; i++) {
+                a = 1;
+            }
+        }
+    }
+
     /* swap */
     /* tableswitch */
+    public static class run_tableswitch implements Command {
+            public void execute(Object count) {
+                int new_count = (int)count;
+                int x = 0;
+                for(int i = 0; i < new_count; i++) {
+                    switch(x) {
+                        case 0:
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                    }
+                }
+            }
+    }
+
     /* wide */
 
     public static class run_trivial_assignment_double implements Command {
