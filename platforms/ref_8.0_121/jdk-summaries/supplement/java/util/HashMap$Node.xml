@@ -69,7 +69,7 @@
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
-      <method access="public" final="yes" instrs="27" name="equals" valid="no">
+      <method access="public" final="yes" instrs="27" name="equals">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -79,7 +79,18 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKey -->
       <method access="public" final="yes" instrs="3" name="getKey">
@@ -90,6 +101,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>4</cn>
@@ -106,6 +123,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>4</cn>
@@ -114,14 +137,21 @@
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" final="yes" instrs="8" name="hashCode" valid="no">
+      <method access="public" final="yes" instrs="8" name="hashCode">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setValue -->
       <method access="public" final="yes" instrs="8" name="setValue">
@@ -135,6 +165,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>16</cn>
@@ -143,14 +179,21 @@
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
-      <method access="public" final="yes" instrs="13" name="toString" valid="no">
+      <method access="public" final="yes" instrs="13" name="toString">
         <signature>
           <return>
             <object>java.lang.String</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
     </methods>
   </class>

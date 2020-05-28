@@ -39,7 +39,7 @@
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
-      <method access="public" final="yes" instrs="4" name="clear" valid="no">
+      <method access="public" final="yes" instrs="4" name="clear">
         <signature/>
         <exceptions/>
         <summary/>
@@ -76,6 +76,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <postconditions>
 	    <post>
 	      <math>
@@ -110,11 +116,28 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>6</cn>
 	    </cost>
 	  </time-cost>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
@@ -126,6 +149,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <postconditions>
 	    <post>
 	      <math>
@@ -140,5 +169,5 @@
       </method>
     </methods>
   </class>
-  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
 </codehawk-java-analyzer>

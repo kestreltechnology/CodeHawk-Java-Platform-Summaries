@@ -578,24 +578,36 @@
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinX -->
-      <method access="public" instrs="4" name="getMinX" valid="no">
+      <method access="public" instrs="4" name="getMinX">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMinY -->
-      <method access="public" instrs="4" name="getMinY" valid="no">
+      <method access="public" instrs="4" name="getMinY">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>20</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNumXTiles -->
       <method access="public" instrs="2" name="getNumXTiles">
@@ -947,7 +959,7 @@
 	</summary>
      </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getWritableTile -->
-      <method access="public" instrs="3" name="getWritableTile" valid="no">
+      <method access="public" instrs="3" name="getWritableTile">
         <signature>
           <arg nr="1">
             <int/>
@@ -960,7 +972,13 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>4</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getWritableTileIndices -->
       <method access="public" instrs="13" name="getWritableTileIndices" valid="no">
@@ -1023,7 +1041,7 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTileWritable -->
-      <method access="public" instrs="11" name="isTileWritable" valid="no">
+      <method access="public" instrs="11" name="isTileWritable">
         <signature>
           <arg nr="1">
             <int/>
@@ -1038,7 +1056,11 @@
         <exceptions>
           <throws>java.lang.IndexOutOfBoundsException</throws>
         </exceptions>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="16" ub="2896"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ releaseWritableTile -->
       <method access="public" instrs="1" name="releaseWritableTile">
