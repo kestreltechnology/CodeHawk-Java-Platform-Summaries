@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 08:05:05"/>
+  <class name="Server" package="org.eclipse.jetty.server">
+    <superclass>org.eclipse.jetty.server.handler.HandlerWrapper</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.util.Attributes</implements>
+      <implements>org.eclipse.jetty.server.HandlerContainer</implements>
+      <implements>org.eclipse.jetty.server.Handler</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.net.InetSocketAddress) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>java.net.InetSocketAddress</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.util.thread.ThreadPool) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.thread.ThreadPool</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addConnector -->
+      <method access="public" name="addConnector">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Connector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearAttributes -->
+      <method access="public" name="clearAttributes">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" name="doStart">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStop -->
+      <method access="protected" name="doStop">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dump -->
+      <method access="public" name="dump">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Appendable</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttribute -->
+      <method access="public" name="getAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttributeNames -->
+      <method access="public" name="getAttributeNames">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConnectors -->
+      <method access="public" name="getConnectors">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Connector</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDateField -->
+      <method access="public" name="getDateField">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.HttpField</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorHandler -->
+      <method access="public" name="getErrorHandler">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestLog -->
+      <method access="public" name="getRequestLog">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.RequestLog</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionIdManager -->
+      <method access="public" name="getSessionIdManager">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.SessionIdManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStopAtShutdown -->
+      <method access="public" name="getStopAtShutdown">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getThreadPool -->
+      <method access="public" name="getThreadPool">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.thread.ThreadPool</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getURI -->
+      <method access="public" name="getURI">
+        <signature>
+          <return>
+            <object>java.net.URI</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getVersion -->
+      <method access="public" name="getVersion" static="yes">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handle -->
+      <method access="public" name="handle">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleAsync -->
+      <method access="public" name="handleAsync">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleOptions -->
+      <method access="protected" name="handleOptions">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Response</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDumpAfterStart -->
+      <method access="public" name="isDumpAfterStart">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isDumpBeforeStop -->
+      <method access="public" name="isDumpBeforeStop">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ join -->
+      <method access="public" name="join">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ main -->
+      <method access="public" name="main" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAttribute -->
+      <method access="public" name="removeAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeConnector -->
+      <method access="public" name="removeConnector">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Connector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAttribute -->
+      <method access="public" name="setAttribute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setConnectors -->
+      <method access="public" name="setConnectors">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.eclipse.jetty.server.Connector</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDumpAfterStart -->
+      <method access="public" name="setDumpAfterStart">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDumpBeforeStop -->
+      <method access="public" name="setDumpBeforeStop">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setErrorHandler -->
+      <method access="public" name="setErrorHandler">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRequestLog -->
+      <method access="public" name="setRequestLog">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.RequestLog</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionIdManager -->
+      <method access="public" name="setSessionIdManager">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.SessionIdManager</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setStopAtShutdown -->
+      <method access="public" name="setStopAtShutdown">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setStopTimeout -->
+      <method access="public" name="setStopTimeout">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ start -->
+      <method access="protected" name="start">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.component.LifeCycle</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 08:06:19"/>
+  <class name="ErrorHandler" package="org.eclipse.jetty.server.handler">
+    <superclass>org.eclipse.jetty.server.handler.AbstractHandler</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.server.Handler</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="private" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ERROR_PAGE -->
+      <field access="public" final="yes" name="ERROR_PAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.server.error_page"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_showStacks -->
+      <field access="default" name="_showStacks">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_showMessageInTitle -->
+      <field access="default" name="_showMessageInTitle">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_cacheControl -->
+      <field access="default" name="_cacheControl">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RUNNING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="RUNNING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="FAILED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOP_ON_FAILURE -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOP_ON_FAILURE">
+        <signature>
+          <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_stopTimeout -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_stopTimeout">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_state -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_state">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__FAILED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_lock -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_lock">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.concurrent.CopyOnWriteArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_doStarted -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_doStarted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_destroyed -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_destroyed">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_beans -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_beans">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_server -->
+      <field from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="_server">
+        <signature>
+          <object>org.eclipse.jetty.server.Server</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="12" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ badMessageError -->
+      <method access="public" instrs="26" name="badMessageError" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.http.HttpFields</object>
+          </arg>
+          <return>
+            <object>java.nio.ByteBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doError -->
+      <method access="public" instrs="159" name="doError" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ generateAcceptableResponse -->
+      <method access="protected" instrs="53" name="generateAcceptableResponse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ generateAcceptableResponse -->
+      <method access="protected" instrs="51" name="generateAcceptableResponse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="6">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAcceptableWriter -->
+      <method access="protected" instrs="49" name="getAcceptableWriter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <return>
+            <object>java.io.Writer</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCacheControl -->
+      <method access="public" instrs="3" name="getCacheControl" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorHandler -->
+      <method access="public" instrs="18" name="getErrorHandler" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.handler.ContextHandler</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ErrorHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getShowMessageInTitle -->
+      <method access="public" instrs="3" name="getShowMessageInTitle" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handle -->
+      <method access="public" instrs="7" name="handle" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleErrorPage -->
+      <method access="protected" instrs="9" name="handleErrorPage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShowStacks -->
+      <method access="public" instrs="3" name="isShowStacks" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCacheControl -->
+      <method access="public" instrs="4" name="setCacheControl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setShowMessageInTitle -->
+      <method access="public" instrs="4" name="setShowMessageInTitle" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setShowStacks -->
+      <method access="public" instrs="4" name="setShowStacks" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method access="protected" instrs="8" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeErrorPage -->
+      <method access="protected" instrs="28" name="writeErrorPage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeErrorPageBody -->
+      <method access="protected" instrs="25" name="writeErrorPageBody" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeErrorPageHead -->
+      <method access="protected" instrs="24" name="writeErrorPageHead" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeErrorPageMessage -->
+      <method access="protected" instrs="25" name="writeErrorPageMessage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="5">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeErrorPageStacks -->
+      <method access="protected" instrs="38" name="writeErrorPageStacks" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.Writer</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

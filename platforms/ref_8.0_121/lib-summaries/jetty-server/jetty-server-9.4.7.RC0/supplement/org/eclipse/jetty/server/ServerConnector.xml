@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-28 23:49:08"/>
+  <class name="ServerConnector" package="org.eclipse.jetty.server">
+    <superclass>org.eclipse.jetty.server.AbstractNetworkConnector</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.server.NetworkConnector</implements>
+      <implements>org.eclipse.jetty.server.Connector</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+      <implements>org.eclipse.jetty.util.component.Graceful</implements>
+      <implements>java.io.Closeable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_manager -->
+      <field access="private" final="yes" name="_manager">
+        <signature>
+          <object>org.eclipse.jetty.io.SelectorManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_acceptor -->
+      <field access="private" final="yes" name="_acceptor">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicReference</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_acceptChannel -->
+      <field access="private" name="_acceptChannel">
+        <signature>
+          <object>java.nio.channels.ServerSocketChannel</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_inheritChannel -->
+      <field access="private" name="_inheritChannel">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_localPort -->
+      <field access="private" name="_localPort">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_acceptQueueSize -->
+      <field access="private" name="_acceptQueueSize">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_reuseAddress -->
+      <field access="private" name="_reuseAddress">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_lingerTime -->
+      <field access="private" name="_lingerTime">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RUNNING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="RUNNING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="FAILED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOP_ON_FAILURE -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOP_ON_FAILURE">
+        <signature>
+          <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_stopTimeout -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_stopTimeout">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_state -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_state">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__FAILED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_lock -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_lock">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.concurrent.CopyOnWriteArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_doStarted -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_doStarted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_destroyed -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_destroyed">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_beans -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_beans">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_name -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_name">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_defaultConnectionFactory -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_defaultConnectionFactory">
+        <signature>
+          <object>org.eclipse.jetty.server.ConnectionFactory</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_defaultProtocol -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_defaultProtocol">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_byteBufferPool -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_byteBufferPool">
+        <signature>
+          <object>org.eclipse.jetty.io.ByteBufferPool</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_scheduler -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_scheduler">
+        <signature>
+          <object>org.eclipse.jetty.util.thread.Scheduler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_executor -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_executor">
+        <signature>
+          <object>java.util.concurrent.Executor</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_server -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_server">
+        <signature>
+          <object>org.eclipse.jetty.server.Server</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_idleTimeout -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_idleTimeout">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_immutableEndPoints -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_immutableEndPoints">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_endpoints -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_endpoints">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_factories -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_factories">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_acceptorPriorityDelta -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_acceptorPriorityDelta">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_acceptors -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_acceptors">
+        <signature>
+          <array>
+            <object>java.lang.Thread</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_locker -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_locker">
+        <signature>
+          <object>org.eclipse.jetty.util.thread.Locker</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_accepting -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_accepting">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_setAccepting -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_setAccepting">
+        <signature>
+          <object>java.util.concurrent.locks.Condition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_stopping -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="_stopping">
+        <signature>
+          <object>java.util.concurrent.CountDownLatch</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_host -->
+      <field from="org.eclipse.jetty.server.AbstractNetworkConnector" inherited="yes" name="_host">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_port -->
+      <field from="org.eclipse.jetty.server.AbstractNetworkConnector" inherited="yes" name="_port">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:LOG -->
+      <field from="org.eclipse.jetty.server.AbstractConnector" inherited="yes" name="LOG">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.server.Server) -->
+      <constructor access="public" instrs="17" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.server.Server,int,int) -->
+      <constructor access="public" instrs="17" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,int,int,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public" instrs="10" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public" instrs="10" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.util.ssl.SslContextFactory) -->
+      <constructor access="public" instrs="19" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,int,int,org.eclipse.jetty.util.ssl.SslContextFactory) -->
+      <constructor access="public" instrs="19" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.util.ssl.SslContextFactory,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public" instrs="12" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,java.util.concurrent.Executor,org.eclipse.jetty.util.thread.Scheduler,org.eclipse.jetty.io.ByteBufferPool,int,int,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public" instrs="47" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.io.ByteBufferPool</object>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accept -->
+      <method access="public" instrs="15" name="accept" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accepted -->
+      <method access="private" instrs="15" name="accepted" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="4" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.ServerConnector</object>
+          </arg>
+          <arg nr="2">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" instrs="29" name="close" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="protected" instrs="25" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.Socket</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" instrs="19" name="doStart" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAcceptQueueSize -->
+      <method access="public" instrs="3" name="getAcceptQueueSize" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalPort -->
+      <method access="public" instrs="3" name="getLocalPort" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReuseAddress -->
+      <method access="public" instrs="3" name="getReuseAddress" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSelectorManager -->
+      <method access="public" instrs="3" name="getSelectorManager" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.io.SelectorManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSoLingerTime -->
+      <method access="public" instrs="3" name="getSoLingerTime" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTransport -->
+      <method access="public" instrs="3" name="getTransport" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInheritChannel -->
+      <method access="public" instrs="3" name="isInheritChannel" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method access="public" instrs="12" name="isOpen" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newEndPoint -->
+      <method access="protected" instrs="15" name="newEndPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.io.ManagedSelector</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.SelectionKey</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.ChannelEndPoint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSelectorManager -->
+      <method access="protected" instrs="8" name="newSelectorManager" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.SelectorManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" instrs="32" name="open" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.ServerSocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" instrs="32" name="open" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ openAcceptChannel -->
+      <method access="protected" instrs="69" name="openAcceptChannel" valid="no">
+        <signature>
+          <return>
+            <object>java.nio.channels.ServerSocketChannel</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAcceptQueueSize -->
+      <method access="public" instrs="4" name="setAcceptQueueSize" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAccepting -->
+      <method access="public" instrs="51" name="setAccepting" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInheritChannel -->
+      <method access="public" instrs="4" name="setInheritChannel" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReuseAddress -->
+      <method access="public" instrs="4" name="setReuseAddress" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSoLingerTime -->
+      <method access="public" instrs="4" name="setSoLingerTime" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdown -->
+      <method access="public" instrs="3" name="shutdown" valid="no">
+        <signature>
+          <return>
+            <object>java.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

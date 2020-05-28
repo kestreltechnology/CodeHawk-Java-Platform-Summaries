@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-16 08:05:02"/>
+  <interface dispatch="yes" name="Handler" package="org.eclipse.jetty.server">
+    <superinterfaces>
+      <superinterface>org.eclipse.jetty.util.component.LifeCycle</superinterface>
+      <superinterface>org.eclipse.jetty.util.component.Destroyable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ destroy -->
+      <method abstract="yes" access="public" name="destroy" valid="no">
+        <signature/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServer -->
+      <method abstract="yes" access="public" name="getServer" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.Server</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handle -->
+      <method abstract="yes" access="public" name="handle" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setServer -->
+      <method abstract="yes" access="public" name="setServer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

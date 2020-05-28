@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 11:38:38"/>
+  <class abstract="yes" name="AbstractHandlerContainer" package="org.eclipse.jetty.server.handler">
+    <superclass>org.eclipse.jetty.server.handler.AbstractHandler</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.server.HandlerContainer</implements>
+      <implements>org.eclipse.jetty.server.Handler</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RUNNING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="RUNNING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="FAILED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOP_ON_FAILURE -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOP_ON_FAILURE">
+        <signature>
+          <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_stopTimeout -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_stopTimeout">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_state -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_state">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__FAILED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_lock -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_lock">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.concurrent.CopyOnWriteArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_doStarted -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_doStarted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_destroyed -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_destroyed">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_beans -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_beans">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_server -->
+      <field from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="_server">
+        <signature>
+          <object>org.eclipse.jetty.server.Server</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:LOG -->
+      <field from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="LOG">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expandChildren -->
+      <method access="protected" instrs="1" name="expandChildren" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expandHandler -->
+      <method access="protected" instrs="44" name="expandHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Handler</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findContainerOf -->
+      <method access="public" instrs="61" name="findContainerOf" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.server.Handler</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.HandlerContainer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getChildHandlerByClass -->
+      <method access="public" instrs="18" name="getChildHandlerByClass" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.Handler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getChildHandlers -->
+      <method access="public" instrs="15" name="getChildHandlers" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Handler</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getChildHandlersByClass -->
+      <method access="public" instrs="15" name="getChildHandlersByClass" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.server.Handler</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setServer -->
+      <method access="public" instrs="41" name="setServer" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

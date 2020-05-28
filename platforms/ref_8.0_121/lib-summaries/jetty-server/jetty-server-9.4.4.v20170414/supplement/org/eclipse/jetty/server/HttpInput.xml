@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 08:03:41"/>
+  <class name="HttpInput" package="org.eclipse.jetty.server">
+    <superclass>javax.servlet.ServletInputStream</superclass>
+    <interfaces>
+      <implements>java.lang.Runnable</implements>
+      <implements>java.io.Closeable</implements>
+      <implements>java.lang.AutoCloseable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="private" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EOF_CONTENT -->
+      <field access="default" final="yes" name="EOF_CONTENT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$Content</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EARLY_EOF_CONTENT -->
+      <field access="default" final="yes" name="EARLY_EOF_CONTENT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$Content</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_oneByteBuffer -->
+      <field access="private" final="yes" name="_oneByteBuffer">
+        <signature>
+          <array>
+            <byte/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_content -->
+      <field access="private" name="_content">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$Content</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_intercepted -->
+      <field access="private" name="_intercepted">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$Content</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_inputQ -->
+      <field access="private" final="yes" name="_inputQ">
+        <signature>
+          <object>java.util.Deque</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_channelState -->
+      <field access="private" final="yes" name="_channelState">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpChannelState</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_listener -->
+      <field access="private" name="_listener">
+        <signature>
+          <object>javax.servlet.ReadListener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_state -->
+      <field access="private" name="_state">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_firstByteTimeStamp -->
+      <field access="private" name="_firstByteTimeStamp">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_contentArrived -->
+      <field access="private" name="_contentArrived">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_contentConsumed -->
+      <field access="private" name="_contentConsumed">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_blockUntil -->
+      <field access="private" name="_blockUntil">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_interceptor -->
+      <field access="private" name="_interceptor">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$Interceptor</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STREAM -->
+      <field access="protected" final="yes" name="STREAM" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC -->
+      <field access="protected" final="yes" name="ASYNC" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EARLY_EOF -->
+      <field access="protected" final="yes" name="EARLY_EOF" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EOF -->
+      <field access="protected" final="yes" name="EOF" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AEOF -->
+      <field access="protected" final="yes" name="AEOF" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput$State</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_SKIP_BUFFER_SIZE -->
+      <field from="java.io.InputStream" inherited="yes" name="MAX_SKIP_BUFFER_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.server.HttpChannelState) -->
+      <method access="public" instrs="21" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpChannelState</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addContent -->
+      <method access="public" instrs="79" name="addContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addInterceptor -->
+      <method access="public" instrs="16" name="addInterceptor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Interceptor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ available -->
+      <method access="public" instrs="59" name="available" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ blockForContent -->
+      <method access="protected" instrs="89" name="blockForContent" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ consume -->
+      <method access="private" instrs="38" name="consume" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ consumeAll -->
+      <method access="public" instrs="45" name="consumeAll" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ earlyEOF -->
+      <method access="public" instrs="4" name="earlyEOF" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eof -->
+      <method access="public" instrs="4" name="eof" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ failed -->
+      <method access="public" instrs="43" name="failed" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="protected" instrs="15" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBlockingTimeout -->
+      <method access="private" instrs="6" name="getBlockingTimeout" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentConsumed -->
+      <method access="public" instrs="15" name="getContentConsumed" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpChannelState -->
+      <method access="protected" instrs="3" name="getHttpChannelState" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpChannelState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInterceptor -->
+      <method access="public" instrs="3" name="getInterceptor" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput$Interceptor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasContent -->
+      <method access="public" instrs="23" name="hasContent" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsync -->
+      <method access="public" instrs="20" name="isAsync" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsyncEOF -->
+      <method access="public" instrs="20" name="isAsyncEOF" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isError -->
+      <method access="public" instrs="16" name="isError" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isFinished -->
+      <method access="public" instrs="16" name="isFinished" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isReady -->
+      <method access="public" instrs="46" name="isReady" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextContent -->
+      <method access="protected" instrs="15" name="nextContent" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextInterceptedContent -->
+      <method access="protected" instrs="82" name="nextInterceptedContent" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextNonSentinelContent -->
+      <method access="protected" instrs="12" name="nextNonSentinelContent" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ prependContent -->
+      <method access="public" instrs="63" name="prependContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ produceContent -->
+      <method access="protected" instrs="1" name="produceContent" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ produceNextContext -->
+      <method access="protected" instrs="15" name="produceNextContext" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="public" instrs="25" name="read" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="public" instrs="153" name="read" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ recycle -->
+      <method access="public" instrs="69" name="recycle" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ run -->
+      <method access="public" instrs="136" name="run" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInterceptor -->
+      <method access="public" instrs="4" name="setInterceptor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Interceptor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReadListener -->
+      <method access="public" instrs="73" name="setReadListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ReadListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ skip -->
+      <method access="protected" instrs="20" name="skip" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpInput$Content</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="63" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unblock -->
+      <method access="public" instrs="17" name="unblock" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ wake -->
+      <method access="protected" instrs="13" name="wake" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

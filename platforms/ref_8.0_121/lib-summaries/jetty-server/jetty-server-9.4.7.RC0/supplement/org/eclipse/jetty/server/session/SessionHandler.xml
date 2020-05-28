@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 11:38:27"/>
+  <class name="SessionHandler" package="org.eclipse.jetty.server.session">
+    <superclass>org.eclipse.jetty.server.handler.ScopedHandler</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.server.HandlerContainer</implements>
+      <implements>org.eclipse.jetty.server.Handler</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="default" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULT_TRACKING -->
+      <field access="public" final="yes" name="DEFAULT_TRACKING" not-null="yes" static="yes">
+        <signature>
+          <object>java.util.EnumSet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__SessionCookieProperty -->
+      <field access="public" final="yes" name="__SessionCookieProperty" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.SessionCookie"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__DefaultSessionCookie -->
+      <field access="public" final="yes" name="__DefaultSessionCookie" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="JSESSIONID"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__SessionIdPathParameterNameProperty -->
+      <field access="public" final="yes" name="__SessionIdPathParameterNameProperty" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.SessionIdPathParameterName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__DefaultSessionIdPathParameterName -->
+      <field access="public" final="yes" name="__DefaultSessionIdPathParameterName" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="jsessionid"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__CheckRemoteSessionEncoding -->
+      <field access="public" final="yes" name="__CheckRemoteSessionEncoding" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.CheckingRemoteSessionIdEncoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__SessionDomainProperty -->
+      <field access="public" final="yes" name="__SessionDomainProperty" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.SessionDomain"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__DefaultSessionDomain -->
+      <field access="public" final="yes" name="__DefaultSessionDomain" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__SessionPathProperty -->
+      <field access="public" final="yes" name="__SessionPathProperty" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.SessionPath"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__MaxAgeProperty -->
+      <field access="public" final="yes" name="__MaxAgeProperty" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.servlet.MaxAge"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__defaultSessionTrackingModes -->
+      <field access="public" name="__defaultSessionTrackingModes">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SESSION_LISTENER_TYPES -->
+      <field access="public" final="yes" name="SESSION_LISTENER_TYPES" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.Class</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_INACTIVE_MINUTES -->
+      <field access="public" final="yes" name="MAX_INACTIVE_MINUTES" not-null="yes" static="yes">
+        <signature>
+          <object>java.math.BigDecimal</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__nullSessionContext -->
+      <field access="default" final="yes" name="__nullSessionContext" not-null="yes" static="yes">
+        <signature>
+          <object>javax.servlet.http.HttpSessionContext</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_dftMaxIdleSecs -->
+      <field access="protected" name="_dftMaxIdleSecs">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_httpOnly -->
+      <field access="protected" name="_httpOnly">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionIdManager -->
+      <field access="protected" name="_sessionIdManager">
+        <signature>
+          <object>org.eclipse.jetty.server.SessionIdManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_secureCookies -->
+      <field access="protected" name="_secureCookies">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_secureRequestOnly -->
+      <field access="protected" name="_secureRequestOnly">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionAttributeListeners -->
+      <field access="protected" final="yes" name="_sessionAttributeListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionListeners -->
+      <field access="protected" final="yes" name="_sessionListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionIdListeners -->
+      <field access="protected" final="yes" name="_sessionIdListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_loader -->
+      <field access="protected" name="_loader">
+        <signature>
+          <object>java.lang.ClassLoader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_context -->
+      <field access="protected" name="_context">
+        <signature>
+          <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionContext -->
+      <field access="protected" name="_sessionContext">
+        <signature>
+          <object>org.eclipse.jetty.server.session.SessionContext</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionCookie -->
+      <field access="protected" name="_sessionCookie">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionIdPathParameterName -->
+      <field access="protected" name="_sessionIdPathParameterName">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionIdPathParameterNamePrefix -->
+      <field access="protected" name="_sessionIdPathParameterNamePrefix">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionDomain -->
+      <field access="protected" name="_sessionDomain">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionPath -->
+      <field access="protected" name="_sessionPath">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_maxCookieAge -->
+      <field access="protected" name="_maxCookieAge">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_refreshCookieAge -->
+      <field access="protected" name="_refreshCookieAge">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_nodeIdInSessionId -->
+      <field access="protected" name="_nodeIdInSessionId">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_checkingRemoteSessionIdEncoding -->
+      <field access="protected" name="_checkingRemoteSessionIdEncoding">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionComment -->
+      <field access="protected" name="_sessionComment">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionCache -->
+      <field access="protected" name="_sessionCache">
+        <signature>
+          <object>org.eclipse.jetty.server.session.SessionCache</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionTimeStats -->
+      <field access="protected" final="yes" name="_sessionTimeStats">
+        <signature>
+          <object>org.eclipse.jetty.util.statistic.SampleStatistic</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionsCreatedStats -->
+      <field access="protected" final="yes" name="_sessionsCreatedStats">
+        <signature>
+          <object>org.eclipse.jetty.util.statistic.CounterStatistic</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionTrackingModes -->
+      <field access="public" name="_sessionTrackingModes">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_usingURLs -->
+      <field access="protected" name="_usingURLs">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_usingCookies -->
+      <field access="protected" name="_usingCookies">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_candidateSessionIdsForExpiry -->
+      <field access="protected" name="_candidateSessionIdsForExpiry">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_scheduler -->
+      <field access="protected" name="_scheduler">
+        <signature>
+          <object>org.eclipse.jetty.util.thread.Scheduler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_ownScheduler -->
+      <field access="protected" name="_ownScheduler">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_cookieConfig -->
+      <field access="private" name="_cookieConfig">
+        <signature>
+          <object>javax.servlet.SessionCookieConfig</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:RUNNING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="RUNNING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STARTING">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="FAILED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOPPED">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:STOP_ON_FAILURE -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="STOP_ON_FAILURE">
+        <signature>
+          <object>org.eclipse.jetty.util.component.LifeCycle$Listener</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_stopTimeout -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_stopTimeout">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_state -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_state">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STARTING -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STARTING">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__STOPPED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__STOPPED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__FAILED -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="__FAILED">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_lock -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_lock">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.AbstractLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.concurrent.CopyOnWriteArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_doStarted -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_doStarted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_destroyed -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_destroyed">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_listeners -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_listeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_beans -->
+      <field from="org.eclipse.jetty.util.component.ContainerLifeCycle" inherited="yes" name="_beans">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_server -->
+      <field from="org.eclipse.jetty.server.handler.AbstractHandler" inherited="yes" name="_server">
+        <signature>
+          <object>org.eclipse.jetty.server.Server</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_handler -->
+      <field from="org.eclipse.jetty.server.handler.HandlerWrapper" inherited="yes" name="_handler">
+        <signature>
+          <object>org.eclipse.jetty.server.Handler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:__outerScope -->
+      <field from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="__outerScope">
+        <signature>
+          <object>java.lang.ThreadLocal</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_outerScope -->
+      <field from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="_outerScope">
+        <signature>
+          <object>org.eclipse.jetty.server.handler.ScopedHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:_nextScope -->
+      <field from="org.eclipse.jetty.server.handler.ScopedHandler" inherited="yes" name="_nextScope">
+        <signature>
+          <object>org.eclipse.jetty.server.handler.ScopedHandler</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="98" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access -->
+      <method access="public" instrs="56" name="access" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.http.HttpCookie</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addEventListener -->
+      <method access="public" instrs="33" name="addEventListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkRequestedSessionId -->
+      <method access="protected" instrs="189" name="checkRequestedSessionId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearEventListeners -->
+      <method access="public" instrs="27" name="clearEventListeners" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ complete -->
+      <method access="public" instrs="21" name="complete" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ complete -->
+      <method access="public" instrs="20" name="complete" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.Session</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doHandle -->
+      <method access="public" instrs="7" name="doHandle" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doScope -->
+      <method access="public" instrs="211" name="doScope" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.Request</object>
+          </arg>
+          <arg nr="3">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <arg nr="4">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doSessionAttributeListeners -->
+      <method access="public" instrs="43" name="doSessionAttributeListeners" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.Session</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" instrs="222" name="doStart" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStop -->
+      <method access="protected" instrs="23" name="doStop" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDefaultSessionTrackingModes -->
+      <method access="public" instrs="3" name="getDefaultSessionTrackingModes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEffectiveSessionTrackingModes -->
+      <method access="public" instrs="4" name="getEffectiveSessionTrackingModes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExtendedId -->
+      <method access="public" instrs="7" name="getExtendedId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpOnly -->
+      <method access="public" instrs="3" name="getHttpOnly" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpSession -->
+      <method access="public" instrs="21" name="getHttpSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>javax.servlet.http.HttpSession</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getId -->
+      <method access="public" instrs="7" name="getId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMaxCookieAge -->
+      <method access="public" instrs="3" name="getMaxCookieAge" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMaxInactiveInterval -->
+      <method access="public" instrs="3" name="getMaxInactiveInterval" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRefreshCookieAge -->
+      <method access="public" instrs="3" name="getRefreshCookieAge" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScheduler -->
+      <method access="public" instrs="3" name="getScheduler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSecureCookies -->
+      <method access="public" instrs="3" name="getSecureCookies" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
+      <method access="public" instrs="70" name="getSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.session.Session</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionCache -->
+      <method access="public" instrs="3" name="getSessionCache" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.session.SessionCache</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionCookie -->
+      <method access="public" instrs="3" name="getSessionCookie" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionCookie -->
+      <method access="public" instrs="101" name="getSessionCookie" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.http.HttpCookie</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionCookieConfig -->
+      <method access="public" instrs="3" name="getSessionCookieConfig" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.SessionCookieConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionDomain -->
+      <method access="public" instrs="3" name="getSessionDomain" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionIdManager -->
+      <method access="public" instrs="3" name="getSessionIdManager" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.SessionIdManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionIdPathParameterName -->
+      <method access="public" instrs="3" name="getSessionIdPathParameterName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionIdPathParameterNamePrefix -->
+      <method access="public" instrs="3" name="getSessionIdPathParameterNamePrefix" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionPath -->
+      <method access="public" instrs="3" name="getSessionPath" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionTimeMax -->
+      <method access="public" instrs="4" name="getSessionTimeMax" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionTimeMean -->
+      <method access="public" instrs="4" name="getSessionTimeMean" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionTimeStdDev -->
+      <method access="public" instrs="4" name="getSessionTimeStdDev" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionTimeTotal -->
+      <method access="public" instrs="4" name="getSessionTimeTotal" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionsCreated -->
+      <method access="public" instrs="5" name="getSessionsCreated" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invalidate -->
+      <method access="public" instrs="31" name="invalidate" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isCheckingRemoteSessionIdEncoding -->
+      <method access="public" instrs="3" name="isCheckingRemoteSessionIdEncoding" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isIdInUse -->
+      <method access="public" instrs="5" name="isIdInUse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNodeIdInSessionId -->
+      <method access="public" instrs="3" name="isNodeIdInSessionId" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSecureRequestOnly -->
+      <method access="public" instrs="3" name="isSecureRequestOnly" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUsingCookies -->
+      <method access="public" instrs="3" name="isUsingCookies" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUsingURLs -->
+      <method access="public" instrs="3" name="isUsingURLs" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isValid -->
+      <method access="public" instrs="7" name="isValid" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newHttpSession -->
+      <method access="public" instrs="85" name="newHttpSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </arg>
+          <return>
+            <object>javax.servlet.http.HttpSession</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeEventListener -->
+      <method access="public" instrs="29" name="removeEventListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeSession -->
+      <method access="public" instrs="45" name="removeSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.session.Session</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ renewSessionId -->
+      <method access="public" instrs="43" name="renewSessionId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scavenge -->
+      <method access="public" instrs="80" name="scavenge" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sessionInactivityTimerExpired -->
+      <method access="public" instrs="153" name="sessionInactivityTimerExpired" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.Session</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCheckingRemoteSessionIdEncoding -->
+      <method access="public" instrs="4" name="setCheckingRemoteSessionIdEncoding" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHttpOnly -->
+      <method access="public" instrs="4" name="setHttpOnly" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMaxInactiveInterval -->
+      <method access="public" instrs="23" name="setMaxInactiveInterval" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setNodeIdInSessionId -->
+      <method access="public" instrs="4" name="setNodeIdInSessionId" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRefreshCookieAge -->
+      <method access="public" instrs="4" name="setRefreshCookieAge" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecureRequestOnly -->
+      <method access="public" instrs="4" name="setSecureRequestOnly" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionCache -->
+      <method access="public" instrs="9" name="setSessionCache" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.SessionCache</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionCookie -->
+      <method access="public" instrs="4" name="setSessionCookie" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionIdManager -->
+      <method access="public" instrs="9" name="setSessionIdManager" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.SessionIdManager</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionIdPathParameterName -->
+      <method access="public" instrs="33" name="setSessionIdPathParameterName" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionTrackingModes -->
+      <method access="public" instrs="19" name="setSessionTrackingModes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Set</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setUsingCookies -->
+      <method access="public" instrs="4" name="setUsingCookies" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdownSessions -->
+      <method access="protected" instrs="4" name="shutdownSessions" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ statsReset -->
+      <method access="public" instrs="7" name="statsReset" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="23" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

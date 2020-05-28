@@ -1,0 +1,1917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 08:01:48"/>
+  <class name="Request" package="org.eclipse.jetty.server">
+    <interfaces>
+      <implements>javax.servlet.http.HttpServletRequest</implements>
+      <implements>javax.servlet.ServletRequest</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__MULTIPART_CONFIG_ELEMENT -->
+      <field access="public" final="yes" name="__MULTIPART_CONFIG_ELEMENT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.multipartConfig"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__MULTIPART_INPUT_STREAM -->
+      <field access="public" final="yes" name="__MULTIPART_INPUT_STREAM" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.multiPartInputStream"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__MULTIPART_CONTEXT -->
+      <field access="public" final="yes" name="__MULTIPART_CONTEXT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.eclipse.jetty.multiPartContext"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="private" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__defaultLocale -->
+      <field access="private" final="yes" name="__defaultLocale" not-null="yes" static="yes">
+        <signature>
+          <object>java.util.Collection</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__NONE -->
+      <field access="private" final="yes" name="__NONE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_STREAM -->
+      <field access="private" final="yes" name="_STREAM" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:__READER -->
+      <field access="private" final="yes" name="__READER" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NO_PARAMS -->
+      <field access="private" final="yes" name="NO_PARAMS" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.MultiMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_channel -->
+      <field access="private" final="yes" name="_channel">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpChannel</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_requestAttributeListeners -->
+      <field access="private" final="yes" name="_requestAttributeListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_input -->
+      <field access="private" final="yes" name="_input">
+        <signature>
+          <object>org.eclipse.jetty.server.HttpInput</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_metaData -->
+      <field access="private" name="_metaData">
+        <signature>
+          <object>org.eclipse.jetty.http.MetaData$Request</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_originalURI -->
+      <field access="private" name="_originalURI">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_contextPath -->
+      <field access="private" name="_contextPath">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_servletPath -->
+      <field access="private" name="_servletPath">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_pathInfo -->
+      <field access="private" name="_pathInfo">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_secure -->
+      <field access="private" name="_secure">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_asyncNotSupportedSource -->
+      <field access="private" name="_asyncNotSupportedSource">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_newContext -->
+      <field access="private" name="_newContext">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_cookiesExtracted -->
+      <field access="private" name="_cookiesExtracted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_handled -->
+      <field access="private" name="_handled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_contentParamsExtracted -->
+      <field access="private" name="_contentParamsExtracted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_requestedSessionIdFromCookie -->
+      <field access="private" name="_requestedSessionIdFromCookie">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_attributes -->
+      <field access="private" name="_attributes">
+        <signature>
+          <object>org.eclipse.jetty.util.Attributes</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_authentication -->
+      <field access="private" name="_authentication">
+        <signature>
+          <object>org.eclipse.jetty.server.Authentication</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_characterEncoding -->
+      <field access="private" name="_characterEncoding">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_context -->
+      <field access="private" name="_context">
+        <signature>
+          <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_cookies -->
+      <field access="private" name="_cookies">
+        <signature>
+          <object>org.eclipse.jetty.server.CookieCutter</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_dispatcherType -->
+      <field access="private" name="_dispatcherType">
+        <signature>
+          <object>javax.servlet.DispatcherType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_inputState -->
+      <field access="private" name="_inputState">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_queryParameters -->
+      <field access="private" name="_queryParameters">
+        <signature>
+          <object>org.eclipse.jetty.util.MultiMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_contentParameters -->
+      <field access="private" name="_contentParameters">
+        <signature>
+          <object>org.eclipse.jetty.util.MultiMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_parameters -->
+      <field access="private" name="_parameters">
+        <signature>
+          <object>org.eclipse.jetty.util.MultiMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_queryEncoding -->
+      <field access="private" name="_queryEncoding">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_reader -->
+      <field access="private" name="_reader">
+        <signature>
+          <object>java.io.BufferedReader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_readerEncoding -->
+      <field access="private" name="_readerEncoding">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_remote -->
+      <field access="private" name="_remote">
+        <signature>
+          <object>java.net.InetSocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_requestedSessionId -->
+      <field access="private" name="_requestedSessionId">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_scope -->
+      <field access="private" name="_scope">
+        <signature>
+          <object>org.eclipse.jetty.server.UserIdentity$Scope</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_session -->
+      <field access="private" name="_session">
+        <signature>
+          <object>javax.servlet.http.HttpSession</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_sessionHandler -->
+      <field access="private" name="_sessionHandler">
+        <signature>
+          <object>org.eclipse.jetty.server.session.SessionHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_timeStamp -->
+      <field access="private" name="_timeStamp">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_multiPartInputStream -->
+      <field access="private" name="_multiPartInputStream">
+        <signature>
+          <object>org.eclipse.jetty.util.MultiPartInputStreamParser</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_async -->
+      <field access="private" name="_async">
+        <signature>
+          <object>org.eclipse.jetty.server.AsyncContextState</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_trailers -->
+      <field access="private" name="_trailers">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpFields</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.eclipse.jetty.server.HttpChannel,org.eclipse.jetty.server.HttpInput) -->
+      <method access="public" instrs="29" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.HttpChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.server.HttpInput</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addEventListener -->
+      <method access="public" instrs="20" name="addEventListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticate -->
+      <method access="public" instrs="25" name="authenticate" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpServletResponse</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ changeSessionId -->
+      <method access="public" instrs="49" name="changeSessionId" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ extractContentParameters -->
+      <method access="private" instrs="61" name="extractContentParameters" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ extractFormParameters -->
+      <method access="public" instrs="142" name="extractFormParameters" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ extractMultipartParameters -->
+      <method access="private" instrs="15" name="extractMultipartParameters" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ extractQueryParameters -->
+      <method access="private" instrs="53" name="extractQueryParameters" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findServerName -->
+      <method access="private" instrs="62" name="findServerName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findServerPort -->
+      <method access="private" instrs="44" name="findServerPort" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAsyncContext -->
+      <method access="public" instrs="18" name="getAsyncContext" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.AsyncContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttribute -->
+      <method access="public" instrs="45" name="getAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttributeNames -->
+      <method access="public" instrs="10" name="getAttributeNames" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttributes -->
+      <method access="public" instrs="11" name="getAttributes" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.Attributes</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthType -->
+      <method access="public" instrs="22" name="getAuthType" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthentication -->
+      <method access="public" instrs="3" name="getAuthentication" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.Authentication</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBaseRequest -->
+      <method access="public" instrs="34" name="getBaseRequest" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletRequest</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.Request</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCharacterEncoding -->
+      <method access="public" instrs="9" name="getCharacterEncoding" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLength -->
+      <method access="public" instrs="23" name="getContentLength" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLengthLong -->
+      <method access="public" instrs="21" name="getContentLengthLong" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentRead -->
+      <method access="public" instrs="4" name="getContentRead" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentType -->
+      <method access="public" instrs="41" name="getContentType" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContext -->
+      <method access="public" instrs="3" name="getContext" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContextPath -->
+      <method access="public" instrs="3" name="getContextPath" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCookies -->
+      <method access="public" instrs="65" name="getCookies" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>javax.servlet.http.Cookie</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDateHeader -->
+      <method access="public" instrs="12" name="getDateHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDispatcherType -->
+      <method access="public" instrs="3" name="getDispatcherType" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.DispatcherType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeader -->
+      <method access="public" instrs="12" name="getHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeaderNames -->
+      <method access="public" instrs="11" name="getHeaderNames" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeaders -->
+      <method access="public" instrs="19" name="getHeaders" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpChannel -->
+      <method access="public" instrs="3" name="getHttpChannel" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpChannel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpChannelState -->
+      <method access="public" instrs="4" name="getHttpChannelState" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpChannelState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpFields -->
+      <method access="public" instrs="10" name="getHttpFields" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.HttpFields</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpInput -->
+      <method access="public" instrs="3" name="getHttpInput" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.HttpInput</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpURI -->
+      <method access="public" instrs="10" name="getHttpURI" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.HttpURI</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttpVersion -->
+      <method access="public" instrs="10" name="getHttpVersion" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.HttpVersion</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputState -->
+      <method access="public" instrs="3" name="getInputState" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" instrs="28" name="getInputStream" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletInputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIntHeader -->
+      <method access="public" instrs="13" name="getIntHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalAddr -->
+      <method access="public" instrs="37" name="getLocalAddr" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalName -->
+      <method access="public" instrs="29" name="getLocalName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalPort -->
+      <method access="public" instrs="16" name="getLocalPort" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocale -->
+      <method access="public" instrs="53" name="getLocale" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Locale</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocales -->
+      <method access="public" instrs="30" name="getLocales" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMetaData -->
+      <method access="public" instrs="3" name="getMetaData" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.MetaData$Request</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMethod -->
+      <method access="public" instrs="10" name="getMethod" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOriginalURI -->
+      <method access="public" instrs="3" name="getOriginalURI" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameter -->
+      <method access="public" instrs="7" name="getParameter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterMap -->
+      <method access="public" instrs="5" name="getParameterMap" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterNames -->
+      <method access="public" instrs="5" name="getParameterNames" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameterValues -->
+      <method access="public" instrs="16" name="getParameterValues" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParameters -->
+      <method access="private" instrs="84" name="getParameters" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPart -->
+      <method access="public" instrs="8" name="getPart" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>javax.servlet.http.Part</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParts -->
+      <method access="public" instrs="17" name="getParts" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getParts -->
+      <method access="private" instrs="173" name="getParts" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </arg>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPathInfo -->
+      <method access="public" instrs="3" name="getPathInfo" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPathTranslated -->
+      <method access="public" instrs="14" name="getPathTranslated" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProtocol -->
+      <method access="public" instrs="17" name="getProtocol" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPushBuilder -->
+      <method access="public" instrs="114" name="getPushBuilder" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.PushBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getQueryEncoding -->
+      <method access="public" instrs="3" name="getQueryEncoding" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getQueryParameters -->
+      <method access="public" instrs="3" name="getQueryParameters" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getQueryString -->
+      <method access="public" instrs="11" name="getQueryString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReader -->
+      <method access="public" instrs="58" name="getReader" valid="no">
+        <signature>
+          <return>
+            <object>java.io.BufferedReader</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRealPath -->
+      <method access="public" instrs="10" name="getRealPath" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteAddr -->
+      <method access="public" instrs="24" name="getRemoteAddr" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteHost -->
+      <method access="public" instrs="16" name="getRemoteHost" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteInetSocketAddress -->
+      <method access="public" instrs="11" name="getRemoteInetSocketAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.InetSocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemotePort -->
+      <method access="public" instrs="16" name="getRemotePort" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteUser -->
+      <method access="public" instrs="10" name="getRemoteUser" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestDispatcher -->
+      <method access="public" instrs="47" name="getRequestDispatcher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>javax.servlet.RequestDispatcher</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestURI -->
+      <method access="public" instrs="11" name="getRequestURI" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestURL -->
+      <method access="public" instrs="20" name="getRequestURL" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.StringBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestedSessionId -->
+      <method access="public" instrs="3" name="getRequestedSessionId" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getResolvedUserIdentity -->
+      <method access="public" instrs="11" name="getResolvedUserIdentity" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getResponse -->
+      <method access="public" instrs="4" name="getResponse" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.Response</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRootURL -->
+      <method access="public" instrs="15" name="getRootURL" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.StringBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScheme -->
+      <method access="public" instrs="18" name="getScheme" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServerName -->
+      <method access="public" instrs="18" name="getServerName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServerPort -->
+      <method access="public" instrs="34" name="getServerPort" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletContext -->
+      <method access="public" instrs="3" name="getServletContext" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletName -->
+      <method access="public" instrs="9" name="getServletName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletPath -->
+      <method access="public" instrs="9" name="getServletPath" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServletResponse -->
+      <method access="public" instrs="4" name="getServletResponse" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.ServletResponse</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
+      <method access="public" instrs="4" name="getSession" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.http.HttpSession</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
+      <method access="public" instrs="66" name="getSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>javax.servlet.http.HttpSession</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionHandler -->
+      <method access="public" instrs="3" name="getSessionHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTimeStamp -->
+      <method access="public" instrs="3" name="getTimeStamp" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTrailers -->
+      <method access="public" instrs="3" name="getTrailers" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.http.HttpFields</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUserIdentity -->
+      <method access="public" instrs="22" name="getUserIdentity" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUserIdentityScope -->
+      <method access="public" instrs="3" name="getUserIdentityScope" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.UserIdentity$Scope</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUserPrincipal -->
+      <method access="public" instrs="25" name="getUserPrincipal" valid="no">
+        <signature>
+          <return>
+            <object>java.security.Principal</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasMetaData -->
+      <method access="public" instrs="7" name="hasMetaData" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsyncStarted -->
+      <method access="public" instrs="4" name="isAsyncStarted" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isAsyncSupported -->
+      <method access="public" instrs="7" name="isAsyncSupported" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isHandled -->
+      <method access="public" instrs="3" name="isHandled" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isHead -->
+      <method access="public" instrs="14" name="isHead" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isPush -->
+      <method access="public" instrs="6" name="isPush" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isPushSupported -->
+      <method access="public" instrs="12" name="isPushSupported" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromCookie -->
+      <method access="public" instrs="10" name="isRequestedSessionIdFromCookie" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromURL -->
+      <method access="public" instrs="10" name="isRequestedSessionIdFromURL" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdFromUrl -->
+      <method access="public" instrs="10" name="isRequestedSessionIdFromUrl" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRequestedSessionIdValid -->
+      <method access="public" instrs="27" name="isRequestedSessionIdValid" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSecure -->
+      <method access="public" instrs="3" name="isSecure" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isUserInRole -->
+      <method access="public" instrs="25" name="isUserInRole" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$getLocales$0 -->
+      <method access="private" instrs="31" name="lambda$getLocales$0" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.util.Locale</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ login -->
+      <method access="public" instrs="48" name="login" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logout -->
+      <method access="public" instrs="12" name="logout" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mergeQueryParameters -->
+      <method access="public" instrs="149" name="mergeQueryParameters" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ recycle -->
+      <method access="protected" instrs="147" name="recycle" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAttribute -->
+      <method access="public" instrs="48" name="removeAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeEventListener -->
+      <method access="public" instrs="6" name="removeEventListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.EventListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ resetParameters -->
+      <method access="public" instrs="4" name="resetParameters" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAsyncSupported -->
+      <method access="public" instrs="12" name="setAsyncSupported" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAttribute -->
+      <method access="public" instrs="90" name="setAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAttributes -->
+      <method access="public" instrs="4" name="setAttributes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.Attributes</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAuthentication -->
+      <method access="public" instrs="4" name="setAuthentication" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Authentication</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAuthority -->
+      <method access="public" instrs="11" name="setAuthority" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCharacterEncoding -->
+      <method access="public" instrs="22" name="setCharacterEncoding" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.UnsupportedEncodingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCharacterEncodingUnchecked -->
+      <method access="public" instrs="4" name="setCharacterEncodingUnchecked" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentParameters -->
+      <method access="public" instrs="4" name="setContentParameters" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentType -->
+      <method access="public" instrs="11" name="setContentType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContext -->
+      <method access="public" instrs="13" name="setContext" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.handler.ContextHandler$Context</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContextPath -->
+      <method access="public" instrs="4" name="setContextPath" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCookies -->
+      <method access="public" instrs="13" name="setCookies" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>javax.servlet.http.Cookie</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDispatcherType -->
+      <method access="public" instrs="4" name="setDispatcherType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.DispatcherType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHandled -->
+      <method access="public" instrs="4" name="setHandled" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHttpURI -->
+      <method access="public" instrs="7" name="setHttpURI" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.http.HttpURI</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHttpVersion -->
+      <method access="public" instrs="9" name="setHttpVersion" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.http.HttpVersion</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMetaData -->
+      <method access="public" instrs="96" name="setMetaData" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.http.MetaData$Request</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMethod -->
+      <method access="public" instrs="9" name="setMethod" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPathInfo -->
+      <method access="public" instrs="4" name="setPathInfo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setQueryEncoding -->
+      <method access="public" instrs="4" name="setQueryEncoding" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setQueryParameters -->
+      <method access="public" instrs="4" name="setQueryParameters" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.MultiMap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setQueryString -->
+      <method access="public" instrs="13" name="setQueryString" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRemoteAddr -->
+      <method access="public" instrs="4" name="setRemoteAddr" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.InetSocketAddress</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRequestedSessionId -->
+      <method access="public" instrs="4" name="setRequestedSessionId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRequestedSessionIdFromCookie -->
+      <method access="public" instrs="4" name="setRequestedSessionIdFromCookie" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setScheme -->
+      <method access="public" instrs="10" name="setScheme" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSecure -->
+      <method access="public" instrs="4" name="setSecure" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setServletPath -->
+      <method access="public" instrs="4" name="setServletPath" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSession -->
+      <method access="public" instrs="4" name="setSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.http.HttpSession</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSessionHandler -->
+      <method access="public" instrs="4" name="setSessionHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.session.SessionHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTimeStamp -->
+      <method access="public" instrs="4" name="setTimeStamp" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTrailers -->
+      <method access="public" instrs="4" name="setTrailers" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.http.HttpFields</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setURIPathQuery -->
+      <method access="public" instrs="10" name="setURIPathQuery" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setUserIdentityScope -->
+      <method access="public" instrs="4" name="setUserIdentityScope" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.UserIdentity$Scope</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ startAsync -->
+      <method access="public" instrs="47" name="startAsync" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.AsyncContext</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalStateException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ startAsync -->
+      <method access="public" instrs="58" name="startAsync" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.ServletRequest</object>
+          </arg>
+          <arg nr="2">
+            <object>javax.servlet.ServletResponse</object>
+          </arg>
+          <return>
+            <object>javax.servlet.AsyncContext</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalStateException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ takeNewContext -->
+      <method access="public" instrs="8" name="takeNewContext" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="45" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ upgrade -->
+      <method access="public" instrs="5" name="upgrade" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>javax.servlet.http.HttpUpgradeHandler</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.servlet.ServletException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-28 23:49:08"/>
+  <class name="ServerConnector" package="org.eclipse.jetty.server">
+    <superclass>org.eclipse.jetty.server.AbstractNetworkConnector</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.server.NetworkConnector</implements>
+      <implements>org.eclipse.jetty.server.Connector</implements>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+      <implements>org.eclipse.jetty.util.component.Graceful</implements>
+      <implements>java.io.Closeable</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.server.Server) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.eclipse.jetty.server.Server,int,int) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,int,int,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.util.ssl.SslContextFactory) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,int,int,org.eclipse.jetty.util.ssl.SslContextFactory) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,org.eclipse.jetty.util.ssl.SslContextFactory,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.ssl.SslContextFactory</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.eclipse.jetty.server.Server,java.util.concurrent.Executor,org.eclipse.jetty.util.thread.Scheduler,org.eclipse.jetty.io.ByteBufferPool,int,int,org.eclipse.jetty.server.ConnectionFactory[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.Server</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+          <arg nr="4">
+            <object>org.eclipse.jetty.io.ByteBufferPool</object>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <array>
+              <object>org.eclipse.jetty.server.ConnectionFactory</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accept -->
+      <method access="public" name="accept">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accepted -->
+      <method access="private" name="accepted">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" name="access$000" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.ServerConnector</object>
+          </arg>
+          <arg nr="2">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" name="close">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="protected" name="configure">
+        <signature>
+          <arg nr="1">
+            <object>java.net.Socket</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" name="doStart">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAcceptQueueSize -->
+      <method access="public" name="getAcceptQueueSize">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocalPort -->
+      <method access="public" name="getLocalPort">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReuseAddress -->
+      <method access="public" name="getReuseAddress">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSelectorManager -->
+      <method access="public" name="getSelectorManager">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.io.SelectorManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSoLingerTime -->
+      <method access="public" name="getSoLingerTime">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTransport -->
+      <method access="public" name="getTransport">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInheritChannel -->
+      <method access="public" name="isInheritChannel">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method access="public" name="isOpen">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newEndPoint -->
+      <method access="protected" name="newEndPoint">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SocketChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.io.ManagedSelector</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.SelectionKey</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.ChannelEndPoint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSelectorManager -->
+      <method access="protected" name="newSelectorManager">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.SelectorManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" name="open">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.ServerSocketChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ open -->
+      <method access="public" name="open">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ openAcceptChannel -->
+      <method access="protected" name="openAcceptChannel">
+        <signature>
+          <return>
+            <object>java.nio.channels.ServerSocketChannel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAcceptQueueSize -->
+      <method access="public" name="setAcceptQueueSize">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAccepting -->
+      <method access="public" name="setAccepting">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInheritChannel -->
+      <method access="public" name="setInheritChannel">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReuseAddress -->
+      <method access="public" name="setReuseAddress">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSoLingerTime -->
+      <method access="public" name="setSoLingerTime">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdown -->
+      <method access="public" name="shutdown">
+        <signature>
+          <return>
+            <object>java.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
