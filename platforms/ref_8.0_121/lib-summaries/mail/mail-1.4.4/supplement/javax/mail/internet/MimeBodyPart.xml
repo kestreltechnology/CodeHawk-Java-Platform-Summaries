@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-17 19:17:43"/>
+  <class name="MimeBodyPart" package="javax.mail.internet">
+    <superclass>javax.mail.BodyPart</superclass>
+    <interfaces>
+      <implements>javax.mail.internet.MimePart</implements>
+      <implements>javax.mail.Part</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:setDefaultTextCharset -->
+      <field access="private" final="yes" name="setDefaultTextCharset" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:setContentTypeFileName -->
+      <field access="private" final="yes" name="setContentTypeFileName" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:encodeFileName -->
+      <field access="private" final="yes" name="encodeFileName" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:decodeFileName -->
+      <field access="private" final="yes" name="decodeFileName" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ignoreMultipartEncoding -->
+      <field access="private" final="yes" name="ignoreMultipartEncoding" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cacheMultipart -->
+      <field access="default" final="yes" name="cacheMultipart" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:dh -->
+      <field access="protected" name="dh">
+        <signature>
+          <object>javax.activation.DataHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:content -->
+      <field access="protected" name="content">
+        <signature>
+          <array>
+            <byte/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:contentStream -->
+      <field access="protected" name="contentStream">
+        <signature>
+          <object>java.io.InputStream</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:headers -->
+      <field access="protected" name="headers">
+        <signature>
+          <object>javax.mail.internet.InternetHeaders</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cachedContent -->
+      <field access="private" name="cachedContent">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:parent -->
+      <field from="javax.mail.BodyPart" inherited="yes" name="parent">
+        <signature>
+          <object>javax.mail.Multipart</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="8" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.io.InputStream) -->
+      <method access="public" instrs="49" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ (javax.mail.internet.InternetHeaders,byte[]) -->
+      <method access="public" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.InternetHeaders</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addHeader -->
+      <method access="public" instrs="6" name="addHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addHeaderLine -->
+      <method access="public" instrs="5" name="addHeaderLine" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ attachFile -->
+      <method access="public" instrs="16" name="attachFile" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ attachFile -->
+      <method access="public" instrs="9" name="attachFile" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAllHeaderLines -->
+      <method access="public" instrs="4" name="getAllHeaderLines" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAllHeaders -->
+      <method access="public" instrs="4" name="getAllHeaders" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContent -->
+      <method access="public" instrs="52" name="getContent" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentID -->
+      <method access="public" instrs="5" name="getContentID" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLanguage -->
+      <method access="public" instrs="3" name="getContentLanguage" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentLanguage -->
+      <method access="default" instrs="51" name="getContentLanguage" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentMD5 -->
+      <method access="public" instrs="5" name="getContentMD5" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentStream -->
+      <method access="protected" instrs="24" name="getContentStream" valid="no">
+        <signature>
+          <return>
+            <object>java.io.InputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContentType -->
+      <method access="public" instrs="15" name="getContentType" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataHandler -->
+      <method access="public" instrs="15" name="getDataHandler" valid="no">
+        <signature>
+          <return>
+            <object>javax.activation.DataHandler</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDescription -->
+      <method access="public" instrs="3" name="getDescription" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDescription -->
+      <method access="default" instrs="16" name="getDescription" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDisposition -->
+      <method access="public" instrs="3" name="getDisposition" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDisposition -->
+      <method access="default" instrs="17" name="getDisposition" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEncoding -->
+      <method access="public" instrs="3" name="getEncoding" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEncoding -->
+      <method access="default" instrs="58" name="getEncoding" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFileName -->
+      <method access="public" instrs="3" name="getFileName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFileName -->
+      <method access="default" instrs="59" name="getFileName" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeader -->
+      <method access="public" instrs="5" name="getHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHeader -->
+      <method access="public" instrs="6" name="getHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInputStream -->
+      <method access="public" instrs="4" name="getInputStream" valid="no">
+        <signature>
+          <return>
+            <object>java.io.InputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLineCount -->
+      <method access="public" instrs="2" name="getLineCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMatchingHeaderLines -->
+      <method access="public" instrs="5" name="getMatchingHeaderLines" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMatchingHeaders -->
+      <method access="public" instrs="5" name="getMatchingHeaders" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNonMatchingHeaderLines -->
+      <method access="public" instrs="5" name="getNonMatchingHeaderLines" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNonMatchingHeaders -->
+      <method access="public" instrs="5" name="getNonMatchingHeaders" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>java.util.Enumeration</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRawInputStream -->
+      <method access="public" instrs="3" name="getRawInputStream" valid="no">
+        <signature>
+          <return>
+            <object>java.io.InputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSize -->
+      <method access="public" instrs="22" name="getSize" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invalidateContentHeaders -->
+      <method access="default" instrs="7" name="invalidateContentHeaders" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMimeType -->
+      <method access="public" instrs="4" name="isMimeType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMimeType -->
+      <method access="default" instrs="16" name="isMimeType" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeHeader -->
+      <method access="public" instrs="5" name="removeHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ restrictEncoding -->
+      <method access="default" instrs="52" name="restrictEncoding" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ saveFile -->
+      <method access="public" instrs="59" name="saveFile" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ saveFile -->
+      <method access="public" instrs="9" name="saveFile" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContent -->
+      <method access="public" instrs="16" name="setContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContent -->
+      <method access="public" instrs="12" name="setContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.Multipart</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentID -->
+      <method access="public" instrs="11" name="setContentID" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentLanguage -->
+      <method access="public" instrs="4" name="setContentLanguage" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentLanguage -->
+      <method access="default" instrs="29" name="setContentLanguage" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentMD5 -->
+      <method access="public" instrs="5" name="setContentMD5" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDataHandler -->
+      <method access="public" instrs="9" name="setDataHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.activation.DataHandler</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDescription -->
+      <method access="public" instrs="5" name="setDescription" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDescription -->
+      <method access="public" instrs="5" name="setDescription" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDescription -->
+      <method access="default" instrs="24" name="setDescription" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDisposition -->
+      <method access="public" instrs="4" name="setDisposition" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDisposition -->
+      <method access="default" instrs="29" name="setDisposition" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEncoding -->
+      <method access="default" instrs="5" name="setEncoding" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFileName -->
+      <method access="public" instrs="4" name="setFileName" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFileName -->
+      <method access="default" instrs="68" name="setFileName" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHeader -->
+      <method access="public" instrs="6" name="setHeader" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setText -->
+      <method access="public" instrs="5" name="setText" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setText -->
+      <method access="public" instrs="6" name="setText" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setText -->
+      <method access="public" instrs="6" name="setText" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setText -->
+      <method access="default" instrs="29" name="setText" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ updateHeaders -->
+      <method access="protected" instrs="32" name="updateHeaders" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ updateHeaders -->
+      <method access="default" instrs="186" name="updateHeaders" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="public" instrs="5" name="writeTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.OutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="default" instrs="106" name="writeTo" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javax.mail.internet.MimePart</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.OutputStream</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>javax.mail.MessagingException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
