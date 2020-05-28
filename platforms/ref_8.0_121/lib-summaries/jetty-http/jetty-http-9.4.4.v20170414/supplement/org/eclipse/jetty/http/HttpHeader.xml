@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 12:45:46"/>
+  <class final="yes" name="HttpHeader" package="org.eclipse.jetty.http">
+    <superclass>java.lang.Enum</superclass>
+    <interfaces>
+      <implements>java.lang.Comparable</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONNECTION -->
+      <field access="public" final="yes" name="CONNECTION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CACHE_CONTROL -->
+      <field access="public" final="yes" name="CACHE_CONTROL" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DATE -->
+      <field access="public" final="yes" name="DATE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PRAGMA -->
+      <field access="public" final="yes" name="PRAGMA" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PROXY_CONNECTION -->
+      <field access="public" final="yes" name="PROXY_CONNECTION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRAILER -->
+      <field access="public" final="yes" name="TRAILER" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRANSFER_ENCODING -->
+      <field access="public" final="yes" name="TRANSFER_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UPGRADE -->
+      <field access="public" final="yes" name="UPGRADE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:VIA -->
+      <field access="public" final="yes" name="VIA" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:WARNING -->
+      <field access="public" final="yes" name="WARNING" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NEGOTIATE -->
+      <field access="public" final="yes" name="NEGOTIATE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ALLOW -->
+      <field access="public" final="yes" name="ALLOW" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_ENCODING -->
+      <field access="public" final="yes" name="CONTENT_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_LANGUAGE -->
+      <field access="public" final="yes" name="CONTENT_LANGUAGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_LENGTH -->
+      <field access="public" final="yes" name="CONTENT_LENGTH" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_LOCATION -->
+      <field access="public" final="yes" name="CONTENT_LOCATION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_MD5 -->
+      <field access="public" final="yes" name="CONTENT_MD5" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_RANGE -->
+      <field access="public" final="yes" name="CONTENT_RANGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_TYPE -->
+      <field access="public" final="yes" name="CONTENT_TYPE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EXPIRES -->
+      <field access="public" final="yes" name="EXPIRES" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LAST_MODIFIED -->
+      <field access="public" final="yes" name="LAST_MODIFIED" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT -->
+      <field access="public" final="yes" name="ACCEPT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT_CHARSET -->
+      <field access="public" final="yes" name="ACCEPT_CHARSET" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT_ENCODING -->
+      <field access="public" final="yes" name="ACCEPT_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT_LANGUAGE -->
+      <field access="public" final="yes" name="ACCEPT_LANGUAGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AUTHORIZATION -->
+      <field access="public" final="yes" name="AUTHORIZATION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EXPECT -->
+      <field access="public" final="yes" name="EXPECT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FORWARDED -->
+      <field access="public" final="yes" name="FORWARDED" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FROM -->
+      <field access="public" final="yes" name="FROM" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HOST -->
+      <field access="public" final="yes" name="HOST" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IF_MATCH -->
+      <field access="public" final="yes" name="IF_MATCH" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IF_MODIFIED_SINCE -->
+      <field access="public" final="yes" name="IF_MODIFIED_SINCE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IF_NONE_MATCH -->
+      <field access="public" final="yes" name="IF_NONE_MATCH" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IF_RANGE -->
+      <field access="public" final="yes" name="IF_RANGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IF_UNMODIFIED_SINCE -->
+      <field access="public" final="yes" name="IF_UNMODIFIED_SINCE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:KEEP_ALIVE -->
+      <field access="public" final="yes" name="KEEP_ALIVE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAX_FORWARDS -->
+      <field access="public" final="yes" name="MAX_FORWARDS" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PROXY_AUTHORIZATION -->
+      <field access="public" final="yes" name="PROXY_AUTHORIZATION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RANGE -->
+      <field access="public" final="yes" name="RANGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REQUEST_RANGE -->
+      <field access="public" final="yes" name="REQUEST_RANGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REFERER -->
+      <field access="public" final="yes" name="REFERER" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TE -->
+      <field access="public" final="yes" name="TE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:USER_AGENT -->
+      <field access="public" final="yes" name="USER_AGENT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:X_FORWARDED_FOR -->
+      <field access="public" final="yes" name="X_FORWARDED_FOR" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:X_FORWARDED_PROTO -->
+      <field access="public" final="yes" name="X_FORWARDED_PROTO" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:X_FORWARDED_SERVER -->
+      <field access="public" final="yes" name="X_FORWARDED_SERVER" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:X_FORWARDED_HOST -->
+      <field access="public" final="yes" name="X_FORWARDED_HOST" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT_RANGES -->
+      <field access="public" final="yes" name="ACCEPT_RANGES" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGE -->
+      <field access="public" final="yes" name="AGE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ETAG -->
+      <field access="public" final="yes" name="ETAG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOCATION -->
+      <field access="public" final="yes" name="LOCATION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PROXY_AUTHENTICATE -->
+      <field access="public" final="yes" name="PROXY_AUTHENTICATE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RETRY_AFTER -->
+      <field access="public" final="yes" name="RETRY_AFTER" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SERVER -->
+      <field access="public" final="yes" name="SERVER" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SERVLET_ENGINE -->
+      <field access="public" final="yes" name="SERVLET_ENGINE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:VARY -->
+      <field access="public" final="yes" name="VARY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:WWW_AUTHENTICATE -->
+      <field access="public" final="yes" name="WWW_AUTHENTICATE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ORIGIN -->
+      <field access="public" final="yes" name="ORIGIN" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SEC_WEBSOCKET_KEY -->
+      <field access="public" final="yes" name="SEC_WEBSOCKET_KEY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SEC_WEBSOCKET_VERSION -->
+      <field access="public" final="yes" name="SEC_WEBSOCKET_VERSION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SEC_WEBSOCKET_EXTENSIONS -->
+      <field access="public" final="yes" name="SEC_WEBSOCKET_EXTENSIONS" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SEC_WEBSOCKET_SUBPROTOCOL -->
+      <field access="public" final="yes" name="SEC_WEBSOCKET_SUBPROTOCOL" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SEC_WEBSOCKET_ACCEPT -->
+      <field access="public" final="yes" name="SEC_WEBSOCKET_ACCEPT" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:COOKIE -->
+      <field access="public" final="yes" name="COOKIE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SET_COOKIE -->
+      <field access="public" final="yes" name="SET_COOKIE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SET_COOKIE2 -->
+      <field access="public" final="yes" name="SET_COOKIE2" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MIME_VERSION -->
+      <field access="public" final="yes" name="MIME_VERSION" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IDENTITY -->
+      <field access="public" final="yes" name="IDENTITY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:X_POWERED_BY -->
+      <field access="public" final="yes" name="X_POWERED_BY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP2_SETTINGS -->
+      <field access="public" final="yes" name="HTTP2_SETTINGS" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRICT_TRANSPORT_SECURITY -->
+      <field access="public" final="yes" name="STRICT_TRANSPORT_SECURITY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:C_METHOD -->
+      <field access="public" final="yes" name="C_METHOD" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:C_SCHEME -->
+      <field access="public" final="yes" name="C_SCHEME" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:C_AUTHORITY -->
+      <field access="public" final="yes" name="C_AUTHORITY" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:C_PATH -->
+      <field access="public" final="yes" name="C_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:C_STATUS -->
+      <field access="public" final="yes" name="C_STATUS" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNKNOWN -->
+      <field access="public" final="yes" name="UNKNOWN" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.http.HttpHeader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CACHE -->
+      <field access="public" final="yes" name="CACHE" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.Trie</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_string -->
+      <field access="private" final="yes" name="_string">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_bytes -->
+      <field access="private" final="yes" name="_bytes">
+        <signature>
+          <array>
+            <byte/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_bytesColonSpace -->
+      <field access="private" final="yes" name="_bytesColonSpace">
+        <signature>
+          <array>
+            <byte/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_buffer -->
+      <field access="private" final="yes" name="_buffer">
+        <signature>
+          <object>java.nio.ByteBuffer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:$VALUES -->
+      <field access="private" final="yes" name="$VALUES" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>org.eclipse.jetty.http.HttpHeader</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ordinal -->
+      <field from="java.lang.Enum" inherited="yes" name="ordinal">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:name -->
+      <field from="java.lang.Enum" inherited="yes" name="name">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,int,java.lang.String) -->
+      <method access="private" instrs="28" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ asString -->
+      <method access="public" instrs="3" name="asString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBytes -->
+      <method access="public" instrs="3" name="getBytes" valid="no">
+        <signature>
+          <return>
+            <array>
+              <byte/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBytesColonSpace -->
+      <method access="public" instrs="3" name="getBytesColonSpace" valid="no">
+        <signature>
+          <return>
+            <array>
+              <byte/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ is -->
+      <method access="public" instrs="5" name="is" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toBuffer -->
+      <method access="public" instrs="4" name="toBuffer" valid="no">
+        <signature>
+          <return>
+            <object>java.nio.ByteBuffer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="3" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueOf -->
+      <method access="public" instrs="5" name="valueOf" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.http.HttpHeader</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ values -->
+      <method access="public" instrs="4" name="values" static="yes" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.jetty.http.HttpHeader</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
