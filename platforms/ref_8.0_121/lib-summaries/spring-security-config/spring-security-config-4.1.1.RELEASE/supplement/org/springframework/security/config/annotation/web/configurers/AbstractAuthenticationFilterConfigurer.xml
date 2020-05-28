@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-17 22:34:46"/>
+  <class abstract="yes" name="AbstractAuthenticationFilterConfigurer" package="org.springframework.security.config.annotation.web.configurers">
+    <superclass>org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer</superclass>
+    <interfaces>
+      <implements>org.springframework.security.config.annotation.SecurityConfigurer</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authFilter -->
+      <field access="private" final="yes" name="authFilter">
+        <signature>
+          <object>org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationDetailsSource -->
+      <field access="private" name="authenticationDetailsSource">
+        <signature>
+          <object>org.springframework.security.authentication.AuthenticationDetailsSource</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:successHandler -->
+      <field access="private" name="successHandler">
+        <signature>
+          <object>org.springframework.security.web.authentication.AuthenticationSuccessHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationEntryPoint -->
+      <field access="private" name="authenticationEntryPoint">
+        <signature>
+          <object>org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:customLoginPage -->
+      <field access="private" name="customLoginPage">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:loginPage -->
+      <field access="private" name="loginPage">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:loginProcessingUrl -->
+      <field access="private" name="loginProcessingUrl">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:failureHandler -->
+      <field access="private" name="failureHandler">
+        <signature>
+          <object>org.springframework.security.web.authentication.AuthenticationFailureHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:permitAll -->
+      <field access="private" name="permitAll">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:failureUrl -->
+      <field access="private" name="failureUrl">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:securityBuilder -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="securityBuilder">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:objectPostProcessor -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="objectPostProcessor">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityConfigurerAdapter$CompositeObjectPostProcessor</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter,java.lang.String) -->
+      <method access="protected" instrs="20" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationDetailsSource -->
+      <method access="public" final="yes" instrs="6" name="authenticationDetailsSource" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.AuthenticationDetailsSource</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" instrs="69" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" bridge="yes" instrs="5" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createLoginProcessingUrlMatcher -->
+      <method abstract="yes" access="protected" name="createLoginProcessingUrlMatcher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ defaultSuccessUrl -->
+      <method access="public" final="yes" instrs="5" name="defaultSuccessUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ defaultSuccessUrl -->
+      <method access="public" final="yes" instrs="14" name="defaultSuccessUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disable -->
+      <method access="public" bridge="yes" instrs="3" name="disable" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ failureHandler -->
+      <method access="public" final="yes" instrs="9" name="failureHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.AuthenticationFailureHandler</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ failureUrl -->
+      <method access="public" final="yes" instrs="12" name="failureUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthenticationFilter -->
+      <method access="protected" final="yes" instrs="3" name="getAuthenticationFilter" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFailureUrl -->
+      <method access="protected" final="yes" instrs="3" name="getFailureUrl" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLoginPage -->
+      <method access="protected" final="yes" instrs="3" name="getLoginPage" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLoginProcessingUrl -->
+      <method access="protected" final="yes" instrs="3" name="getLoginProcessingUrl" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSelf -->
+      <method access="private" instrs="2" name="getSelf" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" instrs="28" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" bridge="yes" instrs="5" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isCustomLoginPage -->
+      <method access="public" final="yes" instrs="3" name="isCustomLoginPage" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loginPage -->
+      <method access="protected" instrs="11" name="loginPage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loginProcessingUrl -->
+      <method access="public" instrs="12" name="loginProcessingUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ permitAll -->
+      <method access="public" final="yes" instrs="4" name="permitAll" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ permitAll -->
+      <method access="public" final="yes" instrs="6" name="permitAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ registerDefaultAuthenticationEntryPoint -->
+      <method access="private" instrs="84" name="registerDefaultAuthenticationEntryPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setLoginPage -->
+      <method access="private" instrs="10" name="setLoginPage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ successHandler -->
+      <method access="public" final="yes" instrs="6" name="successHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.AuthenticationSuccessHandler</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ updateAuthenticationDefaults -->
+      <method access="private" instrs="48" name="updateAuthenticationDefaults" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

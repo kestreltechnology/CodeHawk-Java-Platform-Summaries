@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 09:28:31"/>
+  <class abstract="yes" name="WebSecurityConfigurerAdapter" package="org.springframework.security.config.annotation.web.configuration">
+    <interfaces>
+      <implements>org.springframework.security.config.annotation.web.WebSecurityConfigurer</implements>
+      <implements>org.springframework.security.config.annotation.SecurityConfigurer</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="private" final="yes" name="logger">
+        <signature>
+          <object>org.apache.commons.logging.Log</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:context -->
+      <field access="private" name="context">
+        <signature>
+          <object>org.springframework.context.ApplicationContext</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:contentNegotiationStrategy -->
+      <field access="private" name="contentNegotiationStrategy">
+        <signature>
+          <object>org.springframework.web.accept.ContentNegotiationStrategy</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:objectPostProcessor -->
+      <field access="private" name="objectPostProcessor">
+        <signature>
+          <object>org.springframework.security.config.annotation.ObjectPostProcessor</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationConfiguration -->
+      <field access="private" name="authenticationConfiguration">
+        <signature>
+          <object>org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationBuilder -->
+      <field access="private" name="authenticationBuilder">
+        <signature>
+          <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:localConfigureAuthenticationBldr -->
+      <field access="private" name="localConfigureAuthenticationBldr">
+        <signature>
+          <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~ field:disableLocalConfigureAuthenticationBldr -->
+      <field access="private" name="disableLocalConfigureAuthenticationBldr">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationManagerInitialized -->
+      <field access="private" name="authenticationManagerInitialized">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationManager -->
+      <field access="private" name="authenticationManager">
+        <signature>
+          <object>org.springframework.security.authentication.AuthenticationManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:trustResolver -->
+      <field access="private" name="trustResolver">
+        <signature>
+          <object>org.springframework.security.authentication.AuthenticationTrustResolver</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:http -->
+      <field access="private" name="http">
+        <signature>
+          <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:disableDefaults -->
+      <field access="private" name="disableDefaults">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="protected" instrs="4" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (boolean) -->
+      <constructor access="protected" instrs="26" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="3" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationManager -->
+      <method access="protected" instrs="28" name="authenticationManager" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.authentication.AuthenticationManager</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationManagerBean -->
+      <method access="public" instrs="8" name="authenticationManagerBean" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.authentication.AuthenticationManager</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="protected" instrs="4" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" instrs="1" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.builders.WebSecurity</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="protected" instrs="17" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" bridge="yes" instrs="5" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApplicationContext -->
+      <method access="protected" final="yes" instrs="3" name="getApplicationContext" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.context.ApplicationContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHttp -->
+      <method access="protected" final="yes" instrs="112" name="getHttp" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" instrs="15" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.builders.WebSecurity</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" bridge="yes" instrs="5" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setApplicationContext -->
+      <method access="public" instrs="4" name="setApplicationContext" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.context.ApplicationContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAuthenticationConfiguration -->
+      <method access="public" instrs="4" name="setAuthenticationConfiguration" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContentNegotationStrategy -->
+      <method access="public" instrs="4" name="setContentNegotationStrategy" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.web.accept.ContentNegotiationStrategy</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setObjectPostProcessor -->
+      <method access="public" instrs="17" name="setObjectPostProcessor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.ObjectPostProcessor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTrustResolver -->
+      <method access="public" instrs="4" name="setTrustResolver" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.AuthenticationTrustResolver</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ userDetailsService -->
+      <method access="protected" instrs="22" name="userDetailsService" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ userDetailsServiceBean -->
+      <method access="public" instrs="22" name="userDetailsServiceBean" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

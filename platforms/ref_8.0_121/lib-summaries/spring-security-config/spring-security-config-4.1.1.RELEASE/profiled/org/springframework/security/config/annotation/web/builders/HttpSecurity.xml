@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 09:28:30"/>
+  <class final="yes" name="HttpSecurity" package="org.springframework.security.config.annotation.web.builders">
+    <superclass>org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder</superclass>
+    <interfaces>
+      <implements>org.springframework.security.config.annotation.SecurityBuilder</implements>
+      <implements>org.springframework.security.config.annotation.web.HttpSecurityBuilder</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.springframework.security.config.annotation.ObjectPostProcessor,org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder,java.util.Map) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.ObjectPostProcessor</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" name="addFilter">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" bridge="yes" name="addFilter">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterAfter -->
+      <method access="public" name="addFilterAfter">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterAfter -->
+      <method access="public" bridge="yes" name="addFilterAfter">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterAt -->
+      <method access="public" name="addFilterAt">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterBefore -->
+      <method access="public" name="addFilterBefore">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterBefore -->
+      <method access="public" bridge="yes" name="addFilterBefore">
+        <signature>
+          <arg nr="1">
+            <object>javax.servlet.Filter</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ anonymous -->
+      <method access="public" name="anonymous">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.AnonymousConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ antMatcher -->
+      <method access="public" name="antMatcher">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationProvider -->
+      <method access="public" name="authenticationProvider">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.AuthenticationProvider</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationProvider -->
+      <method access="public" bridge="yes" name="authenticationProvider">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.AuthenticationProvider</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authorizeRequests -->
+      <method access="public" name="authorizeRequests">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer$ExpressionInterceptUrlRegistry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ beforeConfigure -->
+      <method access="protected" name="beforeConfigure">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cors -->
+      <method access="public" name="cors">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.CorsConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ csrf -->
+      <method access="public" name="csrf">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.CsrfConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ exceptionHandling -->
+      <method access="public" name="exceptionHandling">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ formLogin -->
+      <method access="public" name="formLogin">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthenticationRegistry -->
+      <method access="private" name="getAuthenticationRegistry">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContext -->
+      <method access="private" name="getContext">
+        <signature>
+          <return>
+            <object>org.springframework.context.ApplicationContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOrApply -->
+      <method access="private" name="getOrApply">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityConfigurerAdapter</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.SecurityConfigurerAdapter</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ headers -->
+      <method access="public" name="headers">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.HeadersConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ httpBasic -->
+      <method access="public" name="httpBasic">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ jee -->
+      <method access="public" name="jee">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.JeeConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logout -->
+      <method access="public" name="logout">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ openidLogin -->
+      <method access="public" name="openidLogin">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.openid.OpenIDLoginConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ performBuild -->
+      <method access="protected" name="performBuild">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.DefaultSecurityFilterChain</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ performBuild -->
+      <method access="protected" bridge="yes" name="performBuild">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ portMapper -->
+      <method access="public" name="portMapper">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.PortMapperConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ regexMatcher -->
+      <method access="public" name="regexMatcher">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rememberMe -->
+      <method access="public" name="rememberMe">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.RememberMeConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requestCache -->
+      <method access="public" name="requestCache">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.RequestCacheConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requestMatcher -->
+      <method access="public" name="requestMatcher">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requestMatchers -->
+      <method access="public" name="requestMatchers">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity$RequestMatcherConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requiresChannel -->
+      <method access="public" name="requiresChannel">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer$ChannelRequestMatcherRegistry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ securityContext -->
+      <method access="public" name="securityContext">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.SecurityContextConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ servletApi -->
+      <method access="public" name="servletApi">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ServletApiConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sessionManagement -->
+      <method access="public" name="sessionManagement">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSharedObject -->
+      <method access="public" name="setSharedObject">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ userDetailsService -->
+      <method access="public" name="userDetailsService">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.builders.HttpSecurity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ userDetailsService -->
+      <method access="public" bridge="yes" name="userDetailsService">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ x509 -->
+      <method access="public" name="x509">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.X509Configurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

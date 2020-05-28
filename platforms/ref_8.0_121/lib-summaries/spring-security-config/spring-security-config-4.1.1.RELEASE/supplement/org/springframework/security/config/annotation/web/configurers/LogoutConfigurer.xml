@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-17 22:34:49"/>
+  <class final="yes" name="LogoutConfigurer" package="org.springframework.security.config.annotation.web.configurers">
+    <superclass>org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer</superclass>
+    <interfaces>
+      <implements>org.springframework.security.config.annotation.SecurityConfigurer</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logoutHandlers -->
+      <field access="private" name="logoutHandlers">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:contextLogoutHandler -->
+      <field access="private" name="contextLogoutHandler">
+        <signature>
+          <object>org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logoutSuccessUrl -->
+      <field access="private" name="logoutSuccessUrl">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logoutSuccessHandler -->
+      <field access="private" name="logoutSuccessHandler">
+        <signature>
+          <object>org.springframework.security.web.authentication.logout.LogoutSuccessHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logoutUrl -->
+      <field access="private" name="logoutUrl">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logoutRequestMatcher -->
+      <field access="private" name="logoutRequestMatcher">
+        <signature>
+          <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:permitAll -->
+      <field access="private" name="permitAll">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:customLogoutSuccess -->
+      <field access="private" name="customLogoutSuccess">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:defaultLogoutSuccessHandlerMappings -->
+      <field access="private" name="defaultLogoutSuccessHandlerMappings">
+        <signature>
+          <object>java.util.LinkedHashMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:securityBuilder -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="securityBuilder">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:objectPostProcessor -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="objectPostProcessor">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityConfigurerAdapter$CompositeObjectPostProcessor</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="24" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addLogoutHandler -->
+      <method access="public" instrs="10" name="addLogoutHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.logout.LogoutHandler</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearAuthentication -->
+      <method access="public" instrs="6" name="clearAuthentication" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" instrs="9" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" bridge="yes" instrs="5" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createDefaultSuccessHandler -->
+      <method access="private" instrs="25" name="createDefaultSuccessHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.authentication.logout.LogoutSuccessHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createLogoutFilter -->
+      <method access="private" instrs="34" name="createLogoutFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.authentication.logout.LogoutFilter</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ defaultLogoutSuccessHandlerFor -->
+      <method access="public" instrs="14" name="defaultLogoutSuccessHandlerFor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.logout.LogoutSuccessHandler</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deleteCookies -->
+      <method access="public" instrs="7" name="deleteCookies" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disable -->
+      <method access="public" bridge="yes" instrs="3" name="disable" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogoutHandlers -->
+      <method access="default" instrs="3" name="getLogoutHandlers" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogoutRequestMatcher -->
+      <method access="private" instrs="65" name="getLogoutRequestMatcher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogoutSuccessHandler -->
+      <method access="private" instrs="10" name="getLogoutSuccessHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.authentication.logout.LogoutSuccessHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogoutSuccessUrl -->
+      <method access="private" instrs="3" name="getLogoutSuccessUrl" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" instrs="37" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="public" bridge="yes" instrs="5" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invalidateHttpSession -->
+      <method access="public" instrs="6" name="invalidateHttpSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isCustomLogoutSuccess -->
+      <method access="default" instrs="3" name="isCustomLogoutSuccess" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logoutRequestMatcher -->
+      <method access="public" instrs="5" name="logoutRequestMatcher" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logoutSuccessHandler -->
+      <method access="public" instrs="11" name="logoutSuccessHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.authentication.logout.LogoutSuccessHandler</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logoutSuccessUrl -->
+      <method access="public" instrs="8" name="logoutSuccessUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ logoutUrl -->
+      <method access="public" instrs="8" name="logoutUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ permitAll -->
+      <method access="public" instrs="4" name="permitAll" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ permitAll -->
+      <method access="public" instrs="5" name="permitAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.LogoutConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

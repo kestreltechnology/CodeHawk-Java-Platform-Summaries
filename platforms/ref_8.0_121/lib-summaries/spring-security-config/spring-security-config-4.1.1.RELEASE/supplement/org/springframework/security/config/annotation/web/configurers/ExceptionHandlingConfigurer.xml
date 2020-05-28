@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 09:28:32"/>
+  <class final="yes" name="ExceptionHandlingConfigurer" package="org.springframework.security.config.annotation.web.configurers">
+    <superclass>org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer</superclass>
+    <interfaces>
+      <implements>org.springframework.security.config.annotation.SecurityConfigurer</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:authenticationEntryPoint -->
+      <field access="private" name="authenticationEntryPoint">
+        <signature>
+          <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:accessDeniedHandler -->
+      <field access="private" name="accessDeniedHandler">
+        <signature>
+          <object>org.springframework.security.web.access.AccessDeniedHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:defaultEntryPointMappings -->
+      <field access="private" name="defaultEntryPointMappings">
+        <signature>
+          <object>java.util.LinkedHashMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:securityBuilder -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="securityBuilder">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:objectPostProcessor -->
+      <field from="org.springframework.security.config.annotation.SecurityConfigurerAdapter" inherited="yes" name="objectPostProcessor">
+        <signature>
+          <object>org.springframework.security.config.annotation.SecurityConfigurerAdapter$CompositeObjectPostProcessor</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="8" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accessDeniedHandler -->
+      <method access="public" instrs="5" name="accessDeniedHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.access.AccessDeniedHandler</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accessDeniedPage -->
+      <method access="public" instrs="11" name="accessDeniedPage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ authenticationEntryPoint -->
+      <method access="public" instrs="5" name="authenticationEntryPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" instrs="29" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method access="public" bridge="yes" instrs="5" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.SecurityBuilder</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createDefaultEntryPoint -->
+      <method access="private" instrs="36" name="createDefaultEntryPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ defaultAuthenticationEntryPointFor -->
+      <method access="public" instrs="8" name="defaultAuthenticationEntryPointFor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.security.web.util.matcher.RequestMatcher</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disable -->
+      <method access="public" bridge="yes" instrs="3" name="disable" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAccessDeniedHandler -->
+      <method access="default" instrs="3" name="getAccessDeniedHandler" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.access.AccessDeniedHandler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthenticationEntryPoint -->
+      <method access="default" instrs="3" name="getAuthenticationEntryPoint" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAuthenticationEntryPoint -->
+      <method access="default" instrs="11" name="getAuthenticationEntryPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.AuthenticationEntryPoint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRequestCache -->
+      <method access="private" instrs="13" name="getRequestCache" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.config.annotation.web.HttpSecurityBuilder</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.web.savedrequest.RequestCache</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
