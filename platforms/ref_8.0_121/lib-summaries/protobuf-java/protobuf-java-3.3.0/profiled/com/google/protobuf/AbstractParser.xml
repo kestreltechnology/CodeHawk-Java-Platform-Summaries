@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 18:54:56"/>
+  <class abstract="yes" name="AbstractParser" package="com.google.protobuf">
+    <interfaces>
+      <implements>com.google.protobuf.Parser</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkMessageInitialized -->
+      <method access="private" name="checkMessageInitialized">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.MessageLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newUninitializedMessageException -->
+      <method access="private" name="newUninitializedMessageException">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.MessageLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.UninitializedMessageException</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" name="parseDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" name="parseDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" bridge="yes" name="parseDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" bridge="yes" name="parseDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" name="parseFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" name="parsePartialDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" name="parsePartialDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" bridge="yes" name="parsePartialDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" bridge="yes" name="parsePartialDelimitedFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" name="parsePartialFrom">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

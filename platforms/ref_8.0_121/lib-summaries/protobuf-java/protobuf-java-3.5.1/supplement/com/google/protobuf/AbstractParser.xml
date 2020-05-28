@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 18:35:54"/>
+  <class abstract="yes" name="AbstractParser" package="com.google.protobuf">
+    <interfaces>
+      <implements>com.google.protobuf.Parser</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EMPTY_REGISTRY -->
+      <field access="private" final="yes" name="EMPTY_REGISTRY" not-null="yes" static="yes">
+        <signature>
+          <object>com.google.protobuf.ExtensionRegistryLite</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkMessageInitialized -->
+      <method access="private" instrs="14" name="checkMessageInitialized" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.MessageLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newUninitializedMessageException -->
+      <method access="private" instrs="12" name="newUninitializedMessageException" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.MessageLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.UninitializedMessageException</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" instrs="7" name="parseDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" instrs="5" name="parseDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDelimitedFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="8" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="7" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="26" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="9" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="7" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="8" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="7" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="7" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="6" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteBuffer</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parseFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" instrs="30" name="parsePartialDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" instrs="5" name="parsePartialDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parsePartialDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialDelimitedFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parsePartialDelimitedFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="6" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="23" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="5" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="25" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="7" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="8" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="8" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="20" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" instrs="5" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>com.google.protobuf.MessageLite</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.InputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="7" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="6" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <byte/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="5" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <arg nr="2">
+            <object>com.google.protobuf.ExtensionRegistryLite</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.ByteString</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parsePartialFrom -->
+      <method access="public" bridge="yes" instrs="4" name="parsePartialFrom" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.google.protobuf.CodedInputStream</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.google.protobuf.InvalidProtocolBufferException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
