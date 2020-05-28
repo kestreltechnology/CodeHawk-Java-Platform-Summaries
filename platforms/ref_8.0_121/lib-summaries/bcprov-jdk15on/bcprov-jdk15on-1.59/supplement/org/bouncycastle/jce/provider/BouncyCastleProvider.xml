@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 18:52:19"/>
+  <class final="yes" name="BouncyCastleProvider" package="org.bouncycastle.jce.provider">
+    <superclass>java.security.Provider</superclass>
+    <interfaces>
+      <implements>org.bouncycastle.jcajce.provider.config.ConfigurableProvider</implements>
+      <implements>java.util.Map</implements>
+      <implements>java.lang.Cloneable</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:info -->
+      <field access="private" name="info" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PROVIDER_NAME -->
+      <field access="public" final="yes" name="PROVIDER_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="BC"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONFIGURATION -->
+      <field access="public" final="yes" name="CONFIGURATION" not-null="yes" static="yes">
+        <signature>
+          <object>org.bouncycastle.jcajce.provider.config.ProviderConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:keyInfoConverters -->
+      <field access="private" final="yes" name="keyInfoConverters" not-null="yes" static="yes">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SYMMETRIC_PACKAGE -->
+      <field access="private" final="yes" name="SYMMETRIC_PACKAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.bouncycastle.jcajce.provider.symmetric."/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SYMMETRIC_GENERIC -->
+      <field access="private" final="yes" name="SYMMETRIC_GENERIC" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SYMMETRIC_MACS -->
+      <field access="private" final="yes" name="SYMMETRIC_MACS" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SYMMETRIC_CIPHERS -->
+      <field access="private" final="yes" name="SYMMETRIC_CIPHERS" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYMMETRIC_PACKAGE -->
+      <field access="private" final="yes" name="ASYMMETRIC_PACKAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.bouncycastle.jcajce.provider.asymmetric."/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYMMETRIC_GENERIC -->
+      <field access="private" final="yes" name="ASYMMETRIC_GENERIC" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYMMETRIC_CIPHERS -->
+      <field access="private" final="yes" name="ASYMMETRIC_CIPHERS" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIGEST_PACKAGE -->
+      <field access="private" final="yes" name="DIGEST_PACKAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.bouncycastle.jcajce.provider.digest."/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DIGESTS -->
+      <field access="private" final="yes" name="DIGESTS" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:KEYSTORE_PACKAGE -->
+      <field access="private" final="yes" name="KEYSTORE_PACKAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.bouncycastle.jcajce.provider.keystore."/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:KEYSTORES -->
+      <field access="private" final="yes" name="KEYSTORES" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SECURE_RANDOM_PACKAGE -->
+      <field access="private" final="yes" name="SECURE_RANDOM_PACKAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.bouncycastle.jcajce.provider.drbg."/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SECURE_RANDOMS -->
+      <field access="private" final="yes" name="SECURE_RANDOMS" not-null="yes" static="yes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ENTRIES -->
+      <field from="java.util.Hashtable" inherited="yes" name="ENTRIES">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:VALUES -->
+      <field from="java.util.Hashtable" inherited="yes" name="VALUES">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:KEYS -->
+      <field from="java.util.Hashtable" inherited="yes" name="KEYS">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MAX_ARRAY_SIZE -->
+      <field from="java.util.Hashtable" inherited="yes" name="MAX_ARRAY_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:values -->
+      <field from="java.util.Hashtable" inherited="yes" name="values">
+        <signature>
+          <object>java.util.Collection</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:keySet -->
+      <field from="java.util.Hashtable" inherited="yes" name="keySet">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:threshold -->
+      <field from="java.util.Hashtable" inherited="yes" name="threshold">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:loadFactor -->
+      <field from="java.util.Hashtable" inherited="yes" name="loadFactor">
+        <signature>
+          <float/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:count -->
+      <field from="java.util.Hashtable" inherited="yes" name="count">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:table -->
+      <field from="java.util.Hashtable" inherited="yes" name="table">
+        <signature>
+          <array>
+            <object>java.util.Hashtable$Entry</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:modCount -->
+      <field from="java.util.Hashtable" inherited="yes" name="modCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:hexDigit -->
+      <field from="java.util.Properties" inherited="yes" name="hexDigit">
+        <signature>
+          <array>
+            <char/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ALIAS_PREFIX_LOWER -->
+      <field from="java.security.Provider" inherited="yes" name="ALIAS_PREFIX_LOWER">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ALIAS_PREFIX -->
+      <field from="java.security.Provider" inherited="yes" name="ALIAS_PREFIX">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serialVersionUID -->
+      <field from="java.security.Provider" inherited="yes" name="serialVersionUID">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:previousKey -->
+      <field from="java.security.Provider" inherited="yes" name="previousKey">
+        <signature>
+          <object>java.security.Provider$ServiceKey</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ALIAS_LENGTH -->
+      <field from="java.security.Provider" inherited="yes" name="ALIAS_LENGTH">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serviceSet -->
+      <field from="java.security.Provider" inherited="yes" name="serviceSet">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:servicesChanged -->
+      <field from="java.security.Provider" inherited="yes" name="servicesChanged">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serviceMap -->
+      <field from="java.security.Provider" inherited="yes" name="serviceMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:legacyMap -->
+      <field from="java.security.Provider" inherited="yes" name="legacyMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:legacyStrings -->
+      <field from="java.security.Provider" inherited="yes" name="legacyStrings">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:legacyChanged -->
+      <field from="java.security.Provider" inherited="yes" name="legacyChanged">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:defaults -->
+      <field from="java.util.Properties" inherited="yes" name="defaults">
+        <signature>
+          <object>java.util.Properties</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:debug -->
+      <field from="java.security.Provider" inherited="yes" name="debug">
+        <signature>
+          <object>sun.security.util.Debug</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:initialized -->
+      <field from="java.security.Provider" inherited="yes" name="initialized">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:version -->
+      <field from="java.security.Provider" inherited="yes" name="version">
+        <signature>
+          <double/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:name -->
+      <field from="java.security.Provider" inherited="yes" name="name">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:entrySetCallCount -->
+      <field from="java.security.Provider" inherited="yes" name="entrySetCallCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:entrySet -->
+      <field from="java.security.Provider" inherited="yes" name="entrySet">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:knownEngines -->
+      <field from="java.security.Provider" inherited="yes" name="knownEngines">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="12" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="3" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.bouncycastle.jce.provider.BouncyCastleProvider</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAlgorithm -->
+      <method access="public" instrs="24" name="addAlgorithm" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAlgorithm -->
+      <method access="public" instrs="27" name="addAlgorithm" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.bouncycastle.asn1.ASN1ObjectIdentifier</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAttributes -->
+      <method access="public" instrs="49" name="addAttributes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addKeyInfoConverter -->
+      <method access="public" instrs="18" name="addKeyInfoConverter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.bouncycastle.asn1.ASN1ObjectIdentifier</object>
+          </arg>
+          <arg nr="2">
+            <object>org.bouncycastle.jcajce.provider.util.AsymmetricKeyInfoConverter</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAsymmetricKeyInfoConverter -->
+      <method access="private" instrs="16" name="getAsymmetricKeyInfoConverter" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.bouncycastle.asn1.ASN1ObjectIdentifier</object>
+          </arg>
+          <return>
+            <object>org.bouncycastle.jcajce.provider.util.AsymmetricKeyInfoConverter</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPrivateKey -->
+      <method access="public" instrs="13" name="getPrivateKey" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.bouncycastle.asn1.pkcs.PrivateKeyInfo</object>
+          </arg>
+          <return>
+            <object>java.security.PrivateKey</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPublicKey -->
+      <method access="public" instrs="13" name="getPublicKey" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.bouncycastle.asn1.x509.SubjectPublicKeyInfo</object>
+          </arg>
+          <return>
+            <object>java.security.PublicKey</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasAlgorithm -->
+      <method access="public" instrs="32" name="hasAlgorithm" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loadAlgorithms -->
+      <method access="private" instrs="53" name="loadAlgorithms" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loadPQCKeys -->
+      <method access="private" instrs="43" name="loadPQCKeys" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setParameter -->
+      <method access="public" instrs="18" name="setParameter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setup -->
+      <method access="private" instrs="160" name="setup" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
