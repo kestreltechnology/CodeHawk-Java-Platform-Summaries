@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 10:30:24"/>
+  <class name="SecuredAnnotationSecurityMetadataSource" package="org.springframework.security.access.annotation">
+    <superclass>org.springframework.security.access.method.AbstractFallbackMethodSecurityMetadataSource</superclass>
+    <interfaces>
+      <implements>org.springframework.security.access.method.MethodSecurityMetadataSource</implements>
+      <implements>org.springframework.security.access.SecurityMetadataSource</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:logger -->
+      <field from="org.springframework.security.access.method.AbstractMethodSecurityMetadataSource" inherited="yes" name="logger">
+        <signature>
+          <object>org.apache.commons.logging.Log</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findAttributes -->
+      <method access="protected" instrs="6" name="findAttributes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findAttributes -->
+      <method access="protected" instrs="6" name="findAttributes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.reflect.Method</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAllConfigAttributes -->
+      <method access="public" instrs="2" name="getAllConfigAttributes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ processAnnotation -->
+      <method access="private" instrs="42" name="processAnnotation" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.annotation.Annotation</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

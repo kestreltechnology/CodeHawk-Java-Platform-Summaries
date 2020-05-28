@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 10:44:29"/>
+  <class name="DaoAuthenticationProvider" package="org.springframework.security.authentication.dao">
+    <superclass>org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider</superclass>
+    <interfaces>
+      <implements>org.springframework.security.authentication.AuthenticationProvider</implements>
+      <implements>org.springframework.beans.factory.InitializingBean</implements>
+      <implements>org.springframework.context.MessageSourceAware</implements>
+      <implements>org.springframework.beans.factory.Aware</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:passwordEncoder -->
+      <field access="private" name="passwordEncoder">
+        <signature>
+          <object>org.springframework.security.authentication.encoding.PasswordEncoder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:saltSource -->
+      <field access="private" name="saltSource">
+        <signature>
+          <object>org.springframework.security.authentication.dao.SaltSource</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:userDetailsService -->
+      <field access="private" name="userDetailsService">
+        <signature>
+          <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:includeDetailsObject -->
+      <field access="private" name="includeDetailsObject">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:postAuthenticationChecks -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="postAuthenticationChecks">
+        <signature>
+          <object>org.springframework.security.core.userdetails.UserDetailsChecker</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:preAuthenticationChecks -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="preAuthenticationChecks">
+        <signature>
+          <object>org.springframework.security.core.userdetails.UserDetailsChecker</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:hideUserNotFoundExceptions -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="hideUserNotFoundExceptions">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:forcePrincipalAsString -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="forcePrincipalAsString">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:userCache -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="userCache">
+        <signature>
+          <object>org.springframework.security.core.userdetails.UserCache</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:messages -->
+      <field from="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" inherited="yes" name="messages">
+        <signature>
+          <object>org.springframework.context.support.MessageSourceAccessor</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="11" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ additionalAuthenticationChecks -->
+      <method access="protected" instrs="56" name="additionalAuthenticationChecks" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.userdetails.UserDetails</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.security.authentication.UsernamePasswordAuthenticationToken</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.springframework.security.core.AuthenticationException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doAfterPropertiesSet -->
+      <method access="protected" instrs="5" name="doAfterPropertiesSet" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPasswordEncoder -->
+      <method access="protected" instrs="3" name="getPasswordEncoder" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.authentication.encoding.PasswordEncoder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSaltSource -->
+      <method access="protected" instrs="3" name="getSaltSource" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.authentication.dao.SaltSource</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUserDetailsService -->
+      <method access="protected" instrs="3" name="getUserDetailsService" valid="no">
+        <signature>
+          <return>
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isIncludeDetailsObject -->
+      <method access="protected" instrs="3" name="isIncludeDetailsObject" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retrieveUser -->
+      <method access="protected" final="yes" instrs="23" name="retrieveUser" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>org.springframework.security.authentication.UsernamePasswordAuthenticationToken</object>
+          </arg>
+          <return>
+            <object>org.springframework.security.core.userdetails.UserDetails</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.springframework.security.core.AuthenticationException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIncludeDetailsObject -->
+      <method access="public" instrs="4" name="setIncludeDetailsObject" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPasswordEncoder -->
+      <method access="public" instrs="4" name="setPasswordEncoder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.encoding.PasswordEncoder</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSaltSource -->
+      <method access="public" instrs="4" name="setSaltSource" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.authentication.dao.SaltSource</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setUserDetailsService -->
+      <method access="public" instrs="4" name="setUserDetailsService" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.security.core.userdetails.UserDetailsService</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
