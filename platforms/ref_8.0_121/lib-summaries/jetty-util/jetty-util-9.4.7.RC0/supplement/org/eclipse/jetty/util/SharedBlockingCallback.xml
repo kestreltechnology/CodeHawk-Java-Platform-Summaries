@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 11:58:22"/>
+  <class name="SharedBlockingCallback" package="org.eclipse.jetty.util">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="default" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>org.eclipse.jetty.util.log.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:IDLE -->
+      <field access="private" name="IDLE" static="yes">
+        <signature>
+          <object>java.lang.Throwable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SUCCEEDED -->
+      <field access="private" name="SUCCEEDED" static="yes">
+        <signature>
+          <object>java.lang.Throwable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FAILED -->
+      <field access="private" name="FAILED" static="yes">
+        <signature>
+          <object>java.lang.Throwable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_lock -->
+      <field access="private" final="yes" name="_lock">
+        <signature>
+          <object>java.util.concurrent.locks.ReentrantLock</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_idle -->
+      <field access="private" final="yes" name="_idle">
+        <signature>
+          <object>java.util.concurrent.locks.Condition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_complete -->
+      <field access="private" final="yes" name="_complete">
+        <signature>
+          <object>java.util.concurrent.locks.Condition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:_blocker -->
+      <field access="private" name="_blocker">
+        <signature>
+          <object>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="24" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" instrs="2" name="access$100" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Throwable</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$200 -->
+      <method access="default" instrs="3" name="access$200" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.locks.ReentrantLock</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$300 -->
+      <method access="default" instrs="2" name="access$300" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Throwable</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$400 -->
+      <method access="default" instrs="3" name="access$400" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.locks.Condition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$500 -->
+      <method access="default" instrs="2" name="access$500" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Throwable</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$702 -->
+      <method access="default" instrs="5" name="access$702" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$800 -->
+      <method access="default" instrs="3" name="access$800" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.locks.Condition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ acquire -->
+      <method access="public" instrs="62" name="acquire" valid="no">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIdleTimeout -->
+      <method access="protected" instrs="2" name="getIdleTimeout" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notComplete -->
+      <method access="protected" instrs="18" name="notComplete" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
