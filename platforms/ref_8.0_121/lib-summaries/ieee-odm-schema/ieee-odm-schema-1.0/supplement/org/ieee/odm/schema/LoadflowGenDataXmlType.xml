@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-28 22:28:46"/>
+  <class name="LoadflowGenDataXmlType" package="org.ieee.odm.schema">
+    <superclass>org.ieee.odm.schema.IDRecordXmlType</superclass>
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:power -->
+      <field access="protected" name="power">
+        <signature>
+          <object>org.ieee.odm.schema.PowerXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:desiredVoltage -->
+      <field access="protected" name="desiredVoltage">
+        <signature>
+          <object>org.ieee.odm.schema.VoltageXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:remoteVoltageControlBus -->
+      <field access="protected" name="remoteVoltageControlBus">
+        <signature>
+          <object>org.ieee.odm.schema.IDRefRecordXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:qLimit -->
+      <field access="protected" name="qLimit">
+        <signature>
+          <object>org.ieee.odm.schema.ReactivePowerLimitXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:pLimit -->
+      <field access="protected" name="pLimit">
+        <signature>
+          <object>org.ieee.odm.schema.ActivePowerLimitXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:voltageLimit -->
+      <field access="protected" name="voltageLimit">
+        <signature>
+          <object>org.ieee.odm.schema.VoltageLimitXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:mvaBase -->
+      <field access="protected" name="mvaBase">
+        <signature>
+          <object>org.ieee.odm.schema.ApparentPowerXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:sourceZ -->
+      <field access="protected" name="sourceZ">
+        <signature>
+          <object>org.ieee.odm.schema.ZXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:xfrZ -->
+      <field access="protected" name="xfrZ">
+        <signature>
+          <object>org.ieee.odm.schema.ZXmlType</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:xfrTap -->
+      <field access="protected" name="xfrTap">
+        <signature>
+          <object>java.lang.Double</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:mvarVControlParticipateFactor -->
+      <field access="protected" name="mvarVControlParticipateFactor">
+        <signature>
+          <object>java.lang.Double</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:mwControlParticipateFactor -->
+      <field access="protected" name="mwControlParticipateFactor">
+        <signature>
+          <object>java.lang.Double</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:name -->
+      <field from="org.ieee.odm.schema.NameTagXmlType" inherited="yes" name="name">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:desc -->
+      <field from="org.ieee.odm.schema.NameTagXmlType" inherited="yes" name="desc">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:offLine -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="offLine">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:number -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="number">
+        <signature>
+          <object>java.lang.Long</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:zoneName -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="zoneName">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:zoneNumber -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="zoneNumber">
+        <signature>
+          <object>java.lang.Integer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:areaName -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="areaName">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:areaNumber -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="areaNumber">
+        <signature>
+          <object>java.lang.Integer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:extension -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="extension">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:nvPair -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="nvPair">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ownerList -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="ownerList">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:normalOffLineStatus -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="normalOffLineStatus">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:isoCode -->
+      <field from="org.ieee.odm.schema.BaseRecordXmlType" inherited="yes" name="isoCode">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:id -->
+      <field from="org.ieee.odm.schema.IDRecordXmlType" inherited="yes" name="id">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDesiredVoltage -->
+      <method access="public" instrs="3" name="getDesiredVoltage" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.VoltageXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMvaBase -->
+      <method access="public" instrs="3" name="getMvaBase" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.ApparentPowerXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMvarVControlParticipateFactor -->
+      <method access="public" instrs="3" name="getMvarVControlParticipateFactor" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Double</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMwControlParticipateFactor -->
+      <method access="public" instrs="3" name="getMwControlParticipateFactor" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Double</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPLimit -->
+      <method access="public" instrs="3" name="getPLimit" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.ActivePowerLimitXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPower -->
+      <method access="public" instrs="3" name="getPower" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.PowerXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getQLimit -->
+      <method access="public" instrs="3" name="getQLimit" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.ReactivePowerLimitXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRemoteVoltageControlBus -->
+      <method access="public" instrs="3" name="getRemoteVoltageControlBus" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.IDRefRecordXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSourceZ -->
+      <method access="public" instrs="3" name="getSourceZ" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.ZXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getVoltageLimit -->
+      <method access="public" instrs="3" name="getVoltageLimit" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.VoltageLimitXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getXfrTap -->
+      <method access="public" instrs="3" name="getXfrTap" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Double</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getXfrZ -->
+      <method access="public" instrs="3" name="getXfrZ" valid="no">
+        <signature>
+          <return>
+            <object>org.ieee.odm.schema.ZXmlType</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDesiredVoltage -->
+      <method access="public" instrs="4" name="setDesiredVoltage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.VoltageXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMvaBase -->
+      <method access="public" instrs="4" name="setMvaBase" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.ApparentPowerXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMvarVControlParticipateFactor -->
+      <method access="public" instrs="4" name="setMvarVControlParticipateFactor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Double</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMwControlParticipateFactor -->
+      <method access="public" instrs="4" name="setMwControlParticipateFactor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Double</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPLimit -->
+      <method access="public" instrs="4" name="setPLimit" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.ActivePowerLimitXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPower -->
+      <method access="public" instrs="4" name="setPower" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.PowerXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setQLimit -->
+      <method access="public" instrs="4" name="setQLimit" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.ReactivePowerLimitXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRemoteVoltageControlBus -->
+      <method access="public" instrs="4" name="setRemoteVoltageControlBus" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.IDRefRecordXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSourceZ -->
+      <method access="public" instrs="4" name="setSourceZ" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.ZXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setVoltageLimit -->
+      <method access="public" instrs="4" name="setVoltageLimit" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.VoltageLimitXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setXfrTap -->
+      <method access="public" instrs="4" name="setXfrTap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Double</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setXfrZ -->
+      <method access="public" instrs="4" name="setXfrZ" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.ieee.odm.schema.ZXmlType</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
