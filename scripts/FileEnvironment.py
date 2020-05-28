@@ -86,6 +86,10 @@ class FileEnvironment(object):
         self.thisdir = os.path.dirname(os.path.abspath(__file__))
         self.repodir = os.path.dirname(self.thisdir)
 
+        # platform settings
+        if os.uname()[0] == 'Linux': self.platform = 'linux'
+        elif os.uname()[0] == 'Darwin': self.platform = 'macOS'
+
         # jdk summaries
         self.jdkapidir = os.path.join(self.repodir,'jdk-api')
         self.jdkapijar = os.path.join(self.jdkapidir,'jdk-api.jar')
@@ -102,6 +106,7 @@ class FileEnvironment(object):
                                              
         # CodeHawk executables to generate and integrate summaries
         self.bindir = os.path.join(self.repodir,'bin')
+        self.bindir = os.path.join(self.bindir,self.platform)
         self.templatecmd = os.path.join(self.bindir,'chj_template')
         self.integratecmd = os.path.join(self.bindir,'chj_integrate')
         self.inspectcmd = os.path.join(self.bindir,'chj_inspect')
