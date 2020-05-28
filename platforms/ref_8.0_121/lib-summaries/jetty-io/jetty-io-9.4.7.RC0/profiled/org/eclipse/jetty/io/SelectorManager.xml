@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 00:07:57"/>
+  <class abstract="yes" name="SelectorManager" package="org.eclipse.jetty.io">
+    <superclass>org.eclipse.jetty.util.component.ContainerLifeCycle</superclass>
+    <interfaces>
+      <implements>org.eclipse.jetty.util.component.Dumpable</implements>
+      <implements>org.eclipse.jetty.util.component.Container</implements>
+      <implements>org.eclipse.jetty.util.component.Destroyable</implements>
+      <implements>org.eclipse.jetty.util.component.LifeCycle</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (java.util.concurrent.Executor,org.eclipse.jetty.util.thread.Scheduler) -->
+      <constructor access="protected">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (java.util.concurrent.Executor,org.eclipse.jetty.util.thread.Scheduler,int) -->
+      <constructor access="protected">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accept -->
+      <method access="public" name="accept">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accept -->
+      <method access="public" name="accept">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accepted -->
+      <method access="protected" name="accepted">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ acceptor -->
+      <method access="public" name="acceptor">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <return>
+            <object>java.io.Closeable</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ chooseSelector -->
+      <method access="private" name="chooseSelector">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.ManagedSelector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" name="connect">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connectionClosed -->
+      <method access="public" name="connectionClosed">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.Connection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connectionFailed -->
+      <method access="protected" name="connectionFailed">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connectionOpened -->
+      <method access="public" name="connectionOpened">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.Connection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ defaultSchedulers -->
+      <method access="public" name="defaultSchedulers" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doAccept -->
+      <method access="protected" name="doAccept">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <return>
+            <object>java.nio.channels.SelectableChannel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doFinishConnect -->
+      <method access="protected" name="doFinishConnect">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStart -->
+      <method access="protected" name="doStart">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doStop -->
+      <method access="protected" name="doStop">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ endPointClosed -->
+      <method access="protected" name="endPointClosed">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.EndPoint</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ endPointOpened -->
+      <method access="protected" name="endPointOpened">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.io.EndPoint</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ execute -->
+      <method access="protected" name="execute">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConnectTimeout -->
+      <method access="public" name="getConnectTimeout">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExecutor -->
+      <method access="public" name="getExecutor">
+        <signature>
+          <return>
+            <object>java.util.concurrent.Executor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReservedThreads -->
+      <method access="public" name="getReservedThreads">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScheduler -->
+      <method access="public" name="getScheduler">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.util.thread.Scheduler</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSelectorCount -->
+      <method access="public" name="getSelectorCount">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isConnectionPending -->
+      <method access="protected" name="isConnectionPending">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newConnection -->
+      <method abstract="yes" access="public" name="newConnection">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.io.EndPoint</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.Connection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newEndPoint -->
+      <method abstract="yes" access="protected" name="newEndPoint">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.io.ManagedSelector</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.SelectionKey</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.EndPoint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSelector -->
+      <method access="protected" name="newSelector">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.io.ManagedSelector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSelector -->
+      <method access="protected" name="newSelector">
+        <signature>
+          <return>
+            <object>java.nio.channels.Selector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setConnectTimeout -->
+      <method access="public" name="setConnectTimeout">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReservedThreads -->
+      <method access="public" name="setReservedThreads">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
