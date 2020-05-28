@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 13:11:14"/>
+  <class name="Aprational" package="org.apfloat">
+    <superclass>org.apfloat.Apfloat</superclass>
+    <interfaces>
+      <implements>java.lang.Comparable</implements>
+      <implements>java.util.Formattable</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="-224128535732558313"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNDEFINED -->
+      <field access="private" final="yes" name="UNDEFINED" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="-9223372036854775808"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:numerator -->
+      <field access="private" name="numerator">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:denominator -->
+      <field access="private" name="denominator">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:scale -->
+      <field access="private" name="scale">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:size -->
+      <field access="private" name="size">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:inverseDen -->
+      <field access="private" name="inverseDen">
+        <signature>
+          <object>java.lang.ref.SoftReference</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:approx -->
+      <field access="private" name="approx">
+        <signature>
+          <object>java.lang.ref.SoftReference</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:EXTRA_PRECISION -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="EXTRA_PRECISION">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DEFAULT -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="DEFAULT">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:INFINITE -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="INFINITE">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:I -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="I">
+        <signature>
+          <object>org.apfloat.Apcomplex</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:imag -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="imag">
+        <signature>
+          <object>org.apfloat.Apfloat</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:real -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="real">
+        <signature>
+          <object>org.apfloat.Apfloat</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ZERO -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="ZERO">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:impl -->
+      <field from="org.apfloat.Apfloat" inherited="yes" name="impl">
+        <signature>
+          <object>org.apfloat.spi.ApfloatImpl</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:$assertionsDisabled -->
+      <field from="org.apfloat.Apfloat" inherited="yes" name="$assertionsDisabled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ONE -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="ONE">
+        <signature>
+          <object>org.apfloat.Apint</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ONES -->
+      <field from="org.apfloat.Apcomplex" inherited="yes" name="ONES">
+        <signature>
+          <array>
+            <object>org.apfloat.Apint</object>
+          </array>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="protected" instrs="15" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apfloat.Apint) -->
+      <method access="public" instrs="8" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apint</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apfloat.Apint,org.apfloat.Apint) -->
+      <method access="public" instrs="26" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apint</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apfloat.Apint</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String) -->
+      <method access="public" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,int) -->
+      <method access="public" instrs="62" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.io.PushbackReader) -->
+      <method access="public" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PushbackReader</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.io.PushbackReader,int) -->
+      <method access="public" instrs="48" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.PushbackReader</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.math.BigInteger) -->
+      <method access="public" instrs="24" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.math.BigInteger,int) -->
+      <method access="public" instrs="27" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.math.BigInteger</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ abs -->
+      <method access="default" instrs="3" name="abs" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ abs -->
+      <method access="default" bridge="yes" instrs="3" name="abs" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" instrs="21" name="add" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ceil -->
+      <method access="public" instrs="9" name="ceil" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkDenominator -->
+      <method access="private" instrs="10" name="checkDenominator" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" instrs="16" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" instrs="24" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
+      <method access="public" bridge="yes" instrs="5" name="compareTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareToHalf -->
+      <method access="default" instrs="3" name="compareToHalf" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ denominator -->
+      <method access="public" instrs="3" name="denominator" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ divide -->
+      <method access="public" instrs="33" name="divide" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.ArithmeticException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ensureApprox -->
+      <method access="private" instrs="63" name="ensureApprox" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" instrs="53" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floor -->
+      <method access="public" instrs="9" name="floor" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ formatTo -->
+      <method access="public" instrs="86" name="formatTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Formatter</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ frac -->
+      <method access="public" instrs="11" name="frac" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ frac -->
+      <method access="public" bridge="yes" instrs="3" name="frac" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApprox -->
+      <method access="private" instrs="10" name="getApprox" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getImpl -->
+      <method access="protected" instrs="6" name="getImpl" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.spi.ApfloatImpl</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInverseDen -->
+      <method access="private" instrs="10" name="getInverseDen" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="10" name="hashCode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShort -->
+      <method access="public" instrs="13" name="isShort" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mod -->
+      <method access="public" instrs="19" name="mod" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" instrs="22" name="multiply" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" instrs="9" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" bridge="yes" instrs="3" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" bridge="yes" instrs="3" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ numerator -->
+      <method access="public" instrs="3" name="numerator" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ precision -->
+      <method access="public" instrs="2" name="precision" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preferCompare -->
+      <method access="public" instrs="7" name="preferCompare" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ radix -->
+      <method access="public" instrs="12" name="radix" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ reduce -->
+      <method access="private" instrs="77" name="reduce" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ roundAway -->
+      <method access="default" instrs="30" name="roundAway" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scale -->
+      <method access="public" instrs="45" name="scale" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scale -->
+      <method access="default" instrs="4" name="scale" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scale -->
+      <method access="default" bridge="yes" instrs="4" name="scale" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setApprox -->
+      <method access="private" instrs="7" name="setApprox" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInverseDen -->
+      <method access="private" instrs="7" name="setInverseDen" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Apfloat</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signum -->
+      <method access="public" instrs="4" name="signum" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="86" name="size" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" instrs="21" name="subtract" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apfloat.Aprational</object>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" instrs="12" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Aprational</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" bridge="yes" instrs="4" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apfloat</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toRadix -->
+      <method access="public" bridge="yes" instrs="4" name="toRadix" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apfloat.Apcomplex</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.NumberFormatException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="4" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="29" name="toString" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ truncate -->
+      <method access="public" instrs="6" name="truncate" valid="no">
+        <signature>
+          <return>
+            <object>org.apfloat.Apint</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="public" instrs="5" name="writeTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.Writer</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeTo -->
+      <method access="public" instrs="19" name="writeTo" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.Writer</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+          <throws>org.apfloat.ApfloatRuntimeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
