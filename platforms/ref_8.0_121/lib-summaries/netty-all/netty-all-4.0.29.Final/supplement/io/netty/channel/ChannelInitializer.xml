@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:36:16"/>
+  <class abstract="yes" name="ChannelInitializer" package="io.netty.channel">
+    <superclass>io.netty.channel.ChannelInboundHandlerAdapter</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelInboundHandler</implements>
+      <implements>io.netty.channel.ChannelHandler</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="private" final="yes" name="logger" not-null="yes" static="yes">
+        <signature>
+          <object>io.netty.util.internal.logging.InternalLogger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:added -->
+      <field from="io.netty.channel.ChannelHandlerAdapter" inherited="yes" name="added">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channelRegistered -->
+      <method access="public" final="yes" instrs="76" name="channelRegistered" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initChannel -->
+      <method abstract="yes" access="protected" name="initChannel" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

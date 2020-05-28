@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:38:51"/>
+  <class abstract="yes" name="AbstractNioMessageChannel" package="io.netty.channel.nio">
+    <superclass>io.netty.channel.nio.AbstractNioChannel</superclass>
+    <interfaces>
+      <implements>io.netty.channel.Channel</implements>
+      <implements>io.netty.util.AttributeMap</implements>
+      <implements>java.lang.Comparable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MASK -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="MASK">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:BUCKET_SIZE -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="BUCKET_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:updater -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="updater">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicReferenceFieldUpdater</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:attributes -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="attributes">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicReferenceArray</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:NOT_YET_CONNECTED_EXCEPTION -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="NOT_YET_CONNECTED_EXCEPTION">
+        <signature>
+          <object>java.nio.channels.NotYetConnectedException</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:estimatorHandle -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="estimatorHandle">
+        <signature>
+          <object>io.netty.channel.MessageSizeEstimator$Handle</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:strVal -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="strVal">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:strValActive -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="strValActive">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:remoteAddress -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="remoteAddress">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:localAddress -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="localAddress">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:unsafe -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="unsafe">
+        <signature>
+          <object>io.netty.channel.Channel$Unsafe</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:parent -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="parent">
+        <signature>
+          <object>io.netty.channel.Channel</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:voidPromise -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="voidPromise">
+        <signature>
+          <object>io.netty.channel.VoidChannelPromise</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:succeededFuture -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="succeededFuture">
+        <signature>
+          <object>io.netty.channel.ChannelFuture</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:hashCode -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="hashCode">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:eventLoop -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="eventLoop">
+        <signature>
+          <object>io.netty.channel.EventLoop</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:closeFuture -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="closeFuture">
+        <signature>
+          <object>io.netty.channel.AbstractChannel$CloseFuture</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:registered -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="registered">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:pipeline -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="pipeline">
+        <signature>
+          <object>io.netty.channel.ChannelPipeline</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:unsafeVoidPromise -->
+      <field from="io.netty.channel.AbstractChannel" inherited="yes" name="unsafeVoidPromise">
+        <signature>
+          <object>io.netty.channel.VoidChannelPromise</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:CLOSED_CHANNEL_EXCEPTION -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="CLOSED_CHANNEL_EXCEPTION">
+        <signature>
+          <object>java.nio.channels.ClosedChannelException</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:inputShutdown -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="inputShutdown">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:readPending -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="readPending">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:selectionKey -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="selectionKey">
+        <signature>
+          <object>java.nio.channels.SelectionKey</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:$assertionsDisabled -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="$assertionsDisabled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:logger -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="logger">
+        <signature>
+          <object>io.netty.util.internal.logging.InternalLogger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:readInterestOp -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="readInterestOp">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ch -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="ch">
+        <signature>
+          <object>java.nio.channels.SelectableChannel</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:connectPromise -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="connectPromise">
+        <signature>
+          <object>io.netty.channel.ChannelPromise</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:requestedRemoteAddress -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="requestedRemoteAddress">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:connectTimeoutFuture -->
+      <field from="io.netty.channel.nio.AbstractNioChannel" inherited="yes" name="connectTimeoutFuture">
+        <signature>
+          <object>java.util.concurrent.ScheduledFuture</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~ (io.netty.channel.Channel,java.nio.channels.SelectableChannel,int) -->
+      <method access="protected" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ continueOnWriteError -->
+      <method access="protected" instrs="2" name="continueOnWriteError" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doReadMessages -->
+      <method abstract="yes" access="protected" name="doReadMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doWrite -->
+      <method access="protected" instrs="73" name="doWrite" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelOutboundBuffer</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doWriteMessage -->
+      <method abstract="yes" access="protected" name="doWriteMessage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelOutboundBuffer</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newUnsafe -->
+      <method access="protected" instrs="6" name="newUnsafe" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newUnsafe -->
+      <method access="protected" bridge="yes" instrs="3" name="newUnsafe" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.AbstractChannel$AbstractUnsafe</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

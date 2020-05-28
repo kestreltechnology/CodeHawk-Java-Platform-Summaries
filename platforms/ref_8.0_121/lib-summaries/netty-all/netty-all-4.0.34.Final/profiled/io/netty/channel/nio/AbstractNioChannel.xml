@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:39:15"/>
+  <class abstract="yes" name="AbstractNioChannel" package="io.netty.channel.nio">
+    <superclass>io.netty.channel.AbstractChannel</superclass>
+    <interfaces>
+      <implements>io.netty.channel.Channel</implements>
+      <implements>io.netty.util.AttributeMap</implements>
+      <implements>java.lang.Comparable</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~ (io.netty.channel.Channel,java.nio.channels.SelectableChannel,int) -->
+      <method access="protected">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.nio.channels.SelectableChannel</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" name="access$000" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$002 -->
+      <method access="default" name="access$002" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" name="access$100" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <return>
+            <object>java.net.SocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$102 -->
+      <method access="default" name="access$102" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>java.net.SocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$200 -->
+      <method access="default" name="access$200" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ScheduledFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$202 -->
+      <method access="default" name="access$202" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.nio.AbstractNioChannel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ScheduledFuture</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.ScheduledFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doBeginRead -->
+      <method access="protected" name="doBeginRead">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doClose -->
+      <method access="protected" name="doClose">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doConnect -->
+      <method abstract="yes" access="protected" name="doConnect">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doDeregister -->
+      <method access="protected" name="doDeregister">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doFinishConnect -->
+      <method abstract="yes" access="protected" name="doFinishConnect">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doRegister -->
+      <method access="protected" name="doRegister">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eventLoop -->
+      <method access="public" name="eventLoop">
+        <signature>
+          <return>
+            <object>io.netty.channel.nio.NioEventLoop</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eventLoop -->
+      <method access="public" bridge="yes" name="eventLoop">
+        <signature>
+          <return>
+            <object>io.netty.channel.EventLoop</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isCompatible -->
+      <method access="protected" name="isCompatible">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.EventLoop</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInputShutdown -->
+      <method access="protected" name="isInputShutdown">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method access="public" name="isOpen">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isReadPending -->
+      <method access="protected" name="isReadPending">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ javaChannel -->
+      <method access="protected" name="javaChannel">
+        <signature>
+          <return>
+            <object>java.nio.channels.SelectableChannel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newDirectBuffer -->
+      <method access="protected" final="yes" name="newDirectBuffer">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newDirectBuffer -->
+      <method access="protected" final="yes" name="newDirectBuffer">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.ReferenceCounted</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ selectionKey -->
+      <method access="protected" name="selectionKey">
+        <signature>
+          <return>
+            <object>java.nio.channels.SelectionKey</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setInputShutdown -->
+      <method access="default" name="setInputShutdown">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setReadPending -->
+      <method access="protected" name="setReadPending">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unsafe -->
+      <method access="public" name="unsafe">
+        <signature>
+          <return>
+            <object>io.netty.channel.nio.AbstractNioChannel$NioUnsafe</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unsafe -->
+      <method access="public" bridge="yes" name="unsafe">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel$Unsafe</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

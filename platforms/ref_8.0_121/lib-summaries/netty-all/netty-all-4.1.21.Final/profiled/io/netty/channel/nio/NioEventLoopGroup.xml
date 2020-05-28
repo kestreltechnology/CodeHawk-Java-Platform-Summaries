@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:06:37"/>
+  <class name="NioEventLoopGroup" package="io.netty.channel.nio">
+    <superclass>io.netty.channel.MultithreadEventLoopGroup</superclass>
+    <interfaces>
+      <implements>io.netty.channel.EventLoopGroup</implements>
+      <implements>io.netty.util.concurrent.EventExecutorGroup</implements>
+      <implements>java.util.concurrent.ScheduledExecutorService</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,java.util.concurrent.ThreadFactory) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,java.util.concurrent.Executor) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.ThreadFactory,java.nio.channels.spi.SelectorProvider) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.ThreadFactory,java.nio.channels.spi.SelectorProvider,io.netty.channel.SelectStrategyFactory) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+          <arg nr="4">
+            <object>io.netty.channel.SelectStrategyFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.Executor,java.nio.channels.spi.SelectorProvider) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.Executor,java.nio.channels.spi.SelectorProvider,io.netty.channel.SelectStrategyFactory) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+          <arg nr="4">
+            <object>io.netty.channel.SelectStrategyFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.Executor,io.netty.util.concurrent.EventExecutorChooserFactory,java.nio.channels.spi.SelectorProvider,io.netty.channel.SelectStrategyFactory) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.util.concurrent.EventExecutorChooserFactory</object>
+          </arg>
+          <arg nr="4">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+          <arg nr="5">
+            <object>io.netty.channel.SelectStrategyFactory</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (int,java.util.concurrent.Executor,io.netty.util.concurrent.EventExecutorChooserFactory,java.nio.channels.spi.SelectorProvider,io.netty.channel.SelectStrategyFactory,io.netty.util.concurrent.RejectedExecutionHandler) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.util.concurrent.EventExecutorChooserFactory</object>
+          </arg>
+          <arg nr="4">
+            <object>java.nio.channels.spi.SelectorProvider</object>
+          </arg>
+          <arg nr="5">
+            <object>io.netty.channel.SelectStrategyFactory</object>
+          </arg>
+          <arg nr="6">
+            <object>io.netty.util.concurrent.RejectedExecutionHandler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newChild -->
+      <method access="protected" name="newChild">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.EventLoop</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newChild -->
+      <method access="protected" bridge="yes" name="newChild">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.Executor</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rebuildSelectors -->
+      <method access="public" name="rebuildSelectors">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIoRatio -->
+      <method access="public" name="setIoRatio">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

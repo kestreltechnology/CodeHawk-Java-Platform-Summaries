@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:40:42"/>
+  <class abstract="yes" name="ByteToMessageDecoder" package="io.netty.handler.codec">
+    <superclass>io.netty.channel.ChannelInboundHandlerAdapter</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelInboundHandler</implements>
+      <implements>io.netty.channel.ChannelHandler</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="protected">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ actualReadableBytes -->
+      <method access="protected" name="actualReadableBytes">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ callDecode -->
+      <method access="protected" name="callDecode">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channelInactive -->
+      <method access="public" name="channelInactive">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channelInputClosed -->
+      <method access="private" name="channelInputClosed">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channelRead -->
+      <method access="public" name="channelRead">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channelReadComplete -->
+      <method access="public" name="channelReadComplete">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decode -->
+      <method abstract="yes" access="protected" name="decode">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decodeLast -->
+      <method access="protected" name="decodeLast">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ discardSomeReadBytes -->
+      <method access="protected" final="yes" name="discardSomeReadBytes">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expandCumulation -->
+      <method access="default" name="expandCumulation" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBufAllocator</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelRead -->
+      <method access="default" name="fireChannelRead" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handlerRemoved -->
+      <method access="public" final="yes" name="handlerRemoved">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handlerRemoved0 -->
+      <method access="protected" name="handlerRemoved0">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ internalBuffer -->
+      <method access="protected" name="internalBuffer">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isSingleDecode -->
+      <method access="public" name="isSingleDecode">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCumulator -->
+      <method access="public" name="setCumulator">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.handler.codec.ByteToMessageDecoder$Cumulator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDiscardAfterReads -->
+      <method access="public" name="setDiscardAfterReads">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSingleDecode -->
+      <method access="public" name="setSingleDecode">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ userEventTriggered -->
+      <method access="public" name="userEventTriggered">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

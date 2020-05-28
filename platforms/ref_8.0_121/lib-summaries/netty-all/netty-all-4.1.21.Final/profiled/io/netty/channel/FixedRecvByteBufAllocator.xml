@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 20:30:54"/>
+  <class name="FixedRecvByteBufAllocator" package="io.netty.channel">
+    <superclass>io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator</superclass>
+    <interfaces>
+      <implements>io.netty.channel.MaxMessagesRecvByteBufAllocator</implements>
+      <implements>io.netty.channel.RecvByteBufAllocator</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newHandle -->
+      <method access="public" name="newHandle">
+        <signature>
+          <return>
+            <object>io.netty.channel.RecvByteBufAllocator$Handle</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ respectMaybeMoreData -->
+      <method access="public" name="respectMaybeMoreData">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>io.netty.channel.FixedRecvByteBufAllocator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ respectMaybeMoreData -->
+      <method access="public" bridge="yes" name="respectMaybeMoreData">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

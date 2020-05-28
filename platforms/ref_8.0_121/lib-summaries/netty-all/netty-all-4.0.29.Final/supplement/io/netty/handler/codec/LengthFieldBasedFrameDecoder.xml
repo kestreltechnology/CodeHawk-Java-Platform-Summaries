@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:36:22"/>
+  <class name="LengthFieldBasedFrameDecoder" package="io.netty.handler.codec">
+    <superclass>io.netty.handler.codec.ByteToMessageDecoder</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelInboundHandler</implements>
+      <implements>io.netty.channel.ChannelHandler</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:byteOrder -->
+      <field access="private" final="yes" name="byteOrder">
+        <signature>
+          <object>java.nio.ByteOrder</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:maxFrameLength -->
+      <field access="private" final="yes" name="maxFrameLength">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lengthFieldOffset -->
+      <field access="private" final="yes" name="lengthFieldOffset">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lengthFieldLength -->
+      <field access="private" final="yes" name="lengthFieldLength">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lengthFieldEndOffset -->
+      <field access="private" final="yes" name="lengthFieldEndOffset">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lengthAdjustment -->
+      <field access="private" final="yes" name="lengthAdjustment">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:initialBytesToStrip -->
+      <field access="private" final="yes" name="initialBytesToStrip">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:failFast -->
+      <field access="private" final="yes" name="failFast">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:discardingTooLongFrame -->
+      <field access="private" name="discardingTooLongFrame">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:tooLongFrameLength -->
+      <field access="private" name="tooLongFrameLength">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:bytesToDiscard -->
+      <field access="private" name="bytesToDiscard">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:added -->
+      <field from="io.netty.channel.ChannelHandlerAdapter" inherited="yes" name="added">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:COMPOSITE_CUMULATOR -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="COMPOSITE_CUMULATOR">
+        <signature>
+          <object>io.netty.handler.codec.ByteToMessageDecoder$Cumulator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:decodeWasNull -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="decodeWasNull">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:first -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="first">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:cumulation -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="cumulation">
+        <signature>
+          <object>io.netty.buffer.ByteBuf</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:singleDecode -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="singleDecode">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:cumulator -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="cumulator">
+        <signature>
+          <object>io.netty.handler.codec.ByteToMessageDecoder$Cumulator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MERGE_CUMULATOR -->
+      <field from="io.netty.handler.codec.ByteToMessageDecoder" inherited="yes" name="MERGE_CUMULATOR">
+        <signature>
+          <object>io.netty.handler.codec.ByteToMessageDecoder$Cumulator</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int,int) -->
+      <method access="public" instrs="8" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int,int,int,int) -->
+      <method access="public" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,int,int,int,int,boolean) -->
+      <method access="public" instrs="10" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~ (java.nio.ByteOrder,int,int,int,int,int,boolean) -->
+      <method access="public" instrs="111" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.nio.ByteOrder</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decode -->
+      <method access="protected" final="yes" instrs="12" name="decode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ decode -->
+      <method access="protected" instrs="215" name="decode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ extractFrame -->
+      <method access="protected" instrs="6" name="extractFrame" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fail -->
+      <method access="private" instrs="38" name="fail" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ failIfNecessary -->
+      <method access="private" instrs="36" name="failIfNecessary" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUnadjustedFrameLength -->
+      <method access="protected" instrs="51" name="getUnadjustedFrameLength" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.nio.ByteOrder</object>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

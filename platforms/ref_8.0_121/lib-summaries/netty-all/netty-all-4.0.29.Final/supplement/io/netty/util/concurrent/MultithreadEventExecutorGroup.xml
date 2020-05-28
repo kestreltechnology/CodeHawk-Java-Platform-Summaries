@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:36:53"/>
+  <class abstract="yes" name="MultithreadEventExecutorGroup" package="io.netty.util.concurrent">
+    <superclass>io.netty.util.concurrent.AbstractEventExecutorGroup</superclass>
+    <interfaces>
+      <implements>io.netty.util.concurrent.EventExecutorGroup</implements>
+      <implements>java.util.concurrent.ScheduledExecutorService</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:children -->
+      <field access="private" final="yes" name="children">
+        <signature>
+          <array>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:childIndex -->
+      <field access="private" final="yes" name="childIndex">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:terminatedChildren -->
+      <field access="private" final="yes" name="terminatedChildren">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:terminationFuture -->
+      <field access="private" final="yes" name="terminationFuture">
+        <signature>
+          <object>io.netty.util.concurrent.Promise</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:chooser -->
+      <field access="private" final="yes" name="chooser">
+        <signature>
+          <object>io.netty.util.concurrent.MultithreadEventExecutorGroup$EventExecutorChooser</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~ (int,java.util.concurrent.ThreadFactory,java.lang.Object[]) -->
+      <method access="protected" instrs="202" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$200 -->
+      <method access="default" instrs="3" name="access$200" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.MultithreadEventExecutorGroup</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.atomic.AtomicInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$300 -->
+      <method access="default" instrs="3" name="access$300" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.MultithreadEventExecutorGroup</object>
+          </arg>
+          <return>
+            <array>
+              <object>io.netty.util.concurrent.EventExecutor</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$400 -->
+      <method access="default" instrs="3" name="access$400" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.MultithreadEventExecutorGroup</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$500 -->
+      <method access="default" instrs="3" name="access$500" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.MultithreadEventExecutorGroup</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.atomic.AtomicInteger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ awaitTermination -->
+      <method access="public" instrs="42" name="awaitTermination" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.InterruptedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ children -->
+      <method access="protected" instrs="12" name="children" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ executorCount -->
+      <method access="public" final="yes" instrs="4" name="executorCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isPowerOfTwo -->
+      <method access="private" instrs="10" name="isPowerOfTwo" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShutdown -->
+      <method access="public" instrs="24" name="isShutdown" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShuttingDown -->
+      <method access="public" instrs="24" name="isShuttingDown" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTerminated -->
+      <method access="public" instrs="24" name="isTerminated" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" instrs="4" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newChild -->
+      <method abstract="yes" access="protected" name="newChild" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newDefaultThreadFactory -->
+      <method access="protected" instrs="6" name="newDefaultThreadFactory" valid="no">
+        <signature>
+          <return>
+            <object>java.util.concurrent.ThreadFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ next -->
+      <method access="public" instrs="4" name="next" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdown -->
+      <method access="public" instrs="20" name="shutdown" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ shutdownGracefully -->
+      <method access="public" instrs="26" name="shutdownGracefully" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <object>java.util.concurrent.TimeUnit</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ terminationFuture -->
+      <method access="public" instrs="3" name="terminationFuture" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:07:15"/>
+  <class abstract="yes" name="AbstractChannelHandlerContext" package="io.netty.channel">
+    <superclass>io.netty.util.DefaultAttributeMap</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelHandlerContext</implements>
+      <implements>io.netty.util.ResourceLeakHint</implements>
+      <implements>io.netty.util.AttributeMap</implements>
+      <implements>io.netty.channel.ChannelInboundInvoker</implements>
+      <implements>io.netty.channel.ChannelOutboundInvoker</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="private" final="yes" name="logger" not-null="yes" static="yes">
+        <signature>
+          <object>io.netty.util.internal.logging.InternalLogger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:next -->
+      <field access="default" name="next">
+        <signature>
+          <object>io.netty.channel.AbstractChannelHandlerContext</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:prev -->
+      <field access="default" name="prev">
+        <signature>
+          <object>io.netty.channel.AbstractChannelHandlerContext</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HANDLER_STATE_UPDATER -->
+      <field access="private" final="yes" name="HANDLER_STATE_UPDATER" not-null="yes" static="yes">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicIntegerFieldUpdater</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ADD_PENDING -->
+      <field access="private" final="yes" name="ADD_PENDING" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ADD_COMPLETE -->
+      <field access="private" final="yes" name="ADD_COMPLETE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REMOVE_COMPLETE -->
+      <field access="private" final="yes" name="REMOVE_COMPLETE" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="3"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INIT -->
+      <field access="private" final="yes" name="INIT" static="yes">
+        <signature>
+          <int/>
+        </signature>
+        <value>
+          <int value="0"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:inbound -->
+      <field access="private" final="yes" name="inbound">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:outbound -->
+      <field access="private" final="yes" name="outbound">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:pipeline -->
+      <field access="private" final="yes" name="pipeline">
+        <signature>
+          <object>io.netty.channel.DefaultChannelPipeline</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:name -->
+      <field access="private" final="yes" name="name">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ordered -->
+      <field access="private" final="yes" name="ordered">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:executor -->
+      <field access="default" final="yes" name="executor">
+        <signature>
+          <object>io.netty.util.concurrent.EventExecutor</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:succeededFuture -->
+      <field access="private" name="succeededFuture">
+        <signature>
+          <object>io.netty.channel.ChannelFuture</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:invokeChannelReadCompleteTask -->
+      <field access="private" name="invokeChannelReadCompleteTask">
+        <signature>
+          <object>java.lang.Runnable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:invokeReadTask -->
+      <field access="private" name="invokeReadTask">
+        <signature>
+          <object>java.lang.Runnable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ field:invokeChannelWritableStateChangedTask -->
+      <field access="private" name="invokeChannelWritableStateChangedTask">
+        <signature>
+          <object>java.lang.Runnable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:invokeFlushTask -->
+      <field access="private" name="invokeFlushTask">
+        <signature>
+          <object>java.lang.Runnable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:handlerState -->
+      <field access="private" name="handlerState">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:$assertionsDisabled -->
+      <field access="default" final="yes" name="$assertionsDisabled" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:MASK -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="MASK">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:BUCKET_SIZE -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="BUCKET_SIZE">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:updater -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="updater">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicReferenceFieldUpdater</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:attributes -->
+      <field from="io.netty.util.DefaultAttributeMap" inherited="yes" name="attributes">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicReferenceArray</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (io.netty.channel.DefaultChannelPipeline,io.netty.util.concurrent.EventExecutor,java.lang.String,boolean,boolean) -->
+      <method access="default" instrs="34" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.DefaultChannelPipeline</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <arg nr="5">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="3" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" instrs="3" name="access$100" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1000 -->
+      <method access="default" instrs="6" name="access$1000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="4">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1100 -->
+      <method access="default" instrs="4" name="access$1100" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1200 -->
+      <method access="default" instrs="4" name="access$1200" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1300 -->
+      <method access="default" instrs="4" name="access$1300" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1400 -->
+      <method access="default" instrs="3" name="access$1400" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1500 -->
+      <method access="default" instrs="3" name="access$1500" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1800 -->
+      <method access="default" instrs="3" name="access$1800" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.DefaultChannelPipeline</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$1900 -->
+      <method access="default" instrs="5" name="access$1900" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$200 -->
+      <method access="default" instrs="3" name="access$200" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$300 -->
+      <method access="default" instrs="3" name="access$300" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$400 -->
+      <method access="default" instrs="4" name="access$400" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$500 -->
+      <method access="default" instrs="4" name="access$500" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$600 -->
+      <method access="default" instrs="4" name="access$600" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$700 -->
+      <method access="default" instrs="3" name="access$700" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$800 -->
+      <method access="default" instrs="3" name="access$800" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$900 -->
+      <method access="default" instrs="5" name="access$900" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ alloc -->
+      <method access="public" instrs="5" name="alloc" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufAllocator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ attr -->
+      <method access="public" instrs="5" name="attr" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.AttributeKey</object>
+          </arg>
+          <return>
+            <object>io.netty.util.Attribute</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bind -->
+      <method access="public" instrs="6" name="bind" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bind -->
+      <method access="public" instrs="41" name="bind" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channel -->
+      <method access="public" instrs="4" name="channel" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" instrs="5" name="close" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" instrs="32" name="close" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="6" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="7" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="6" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="43" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deregister -->
+      <method access="public" instrs="5" name="deregister" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deregister -->
+      <method access="public" instrs="32" name="deregister" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disconnect -->
+      <method access="public" instrs="5" name="disconnect" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disconnect -->
+      <method access="public" instrs="41" name="disconnect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ executor -->
+      <method access="public" instrs="10" name="executor" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findContextInbound -->
+      <method access="private" instrs="10" name="findContextInbound" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findContextOutbound -->
+      <method access="private" instrs="10" name="findContextOutbound" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelActive -->
+      <method access="public" instrs="5" name="fireChannelActive" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelActive -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelActive" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelInactive -->
+      <method access="public" instrs="5" name="fireChannelInactive" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelInactive -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelInactive" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelRead -->
+      <method access="public" instrs="6" name="fireChannelRead" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelRead -->
+      <method access="public" bridge="yes" instrs="4" name="fireChannelRead" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelReadComplete -->
+      <method access="public" instrs="5" name="fireChannelReadComplete" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelReadComplete -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelReadComplete" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelRegistered -->
+      <method access="public" instrs="5" name="fireChannelRegistered" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelRegistered -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelRegistered" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelUnregistered -->
+      <method access="public" instrs="5" name="fireChannelUnregistered" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelUnregistered -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelUnregistered" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelWritabilityChanged -->
+      <method access="public" instrs="5" name="fireChannelWritabilityChanged" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireChannelWritabilityChanged -->
+      <method access="public" bridge="yes" instrs="3" name="fireChannelWritabilityChanged" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireExceptionCaught -->
+      <method access="public" instrs="6" name="fireExceptionCaught" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireExceptionCaught -->
+      <method access="public" bridge="yes" instrs="4" name="fireExceptionCaught" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireUserEventTriggered -->
+      <method access="public" instrs="6" name="fireUserEventTriggered" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireUserEventTriggered -->
+      <method access="public" bridge="yes" instrs="4" name="fireUserEventTriggered" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelInboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flush -->
+      <method access="public" instrs="35" name="flush" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flush -->
+      <method access="public" bridge="yes" instrs="3" name="flush" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelOutboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasAttr -->
+      <method access="public" instrs="5" name="hasAttr" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.AttributeKey</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ inExceptionCaught -->
+      <method access="private" instrs="38" name="inExceptionCaught" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeBind -->
+      <method access="private" instrs="22" name="invokeBind" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelActive -->
+      <method access="default" instrs="16" name="invokeChannelActive" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelActive -->
+      <method access="private" instrs="18" name="invokeChannelActive" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelInactive -->
+      <method access="default" instrs="16" name="invokeChannelInactive" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelInactive -->
+      <method access="private" instrs="18" name="invokeChannelInactive" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelRead -->
+      <method access="default" instrs="26" name="invokeChannelRead" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelRead -->
+      <method access="private" instrs="20" name="invokeChannelRead" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelReadComplete -->
+      <method access="default" instrs="26" name="invokeChannelReadComplete" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelReadComplete -->
+      <method access="private" instrs="18" name="invokeChannelReadComplete" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelRegistered -->
+      <method access="default" instrs="16" name="invokeChannelRegistered" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelRegistered -->
+      <method access="private" instrs="18" name="invokeChannelRegistered" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelUnregistered -->
+      <method access="default" instrs="16" name="invokeChannelUnregistered" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelUnregistered -->
+      <method access="private" instrs="18" name="invokeChannelUnregistered" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelWritabilityChanged -->
+      <method access="default" instrs="26" name="invokeChannelWritabilityChanged" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeChannelWritabilityChanged -->
+      <method access="private" instrs="18" name="invokeChannelWritabilityChanged" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeClose -->
+      <method access="private" instrs="20" name="invokeClose" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeConnect -->
+      <method access="private" instrs="24" name="invokeConnect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeDeregister -->
+      <method access="private" instrs="20" name="invokeDeregister" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeDisconnect -->
+      <method access="private" instrs="20" name="invokeDisconnect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeExceptionCaught -->
+      <method access="default" instrs="35" name="invokeExceptionCaught" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeExceptionCaught -->
+      <method access="private" instrs="34" name="invokeExceptionCaught" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeFlush -->
+      <method access="private" instrs="10" name="invokeFlush" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeFlush0 -->
+      <method access="private" instrs="11" name="invokeFlush0" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeHandler -->
+      <method access="private" instrs="16" name="invokeHandler" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeRead -->
+      <method access="private" instrs="18" name="invokeRead" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeUserEventTriggered -->
+      <method access="default" instrs="22" name="invokeUserEventTriggered" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.AbstractChannelHandlerContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeUserEventTriggered -->
+      <method access="private" instrs="20" name="invokeUserEventTriggered" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeWrite -->
+      <method access="private" instrs="14" name="invokeWrite" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeWrite0 -->
+      <method access="private" instrs="13" name="invokeWrite0" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ invokeWriteAndFlush -->
+      <method access="private" instrs="16" name="invokeWriteAndFlush" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNotValidPromise -->
+      <method access="private" instrs="92" name="isNotValidPromise" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRemoved -->
+      <method access="public" instrs="8" name="isRemoved" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ name -->
+      <method access="public" instrs="3" name="name" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newFailedFuture -->
+      <method access="public" instrs="9" name="newFailedFuture" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newProgressivePromise -->
+      <method access="public" instrs="8" name="newProgressivePromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelProgressivePromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newPromise -->
+      <method access="public" instrs="8" name="newPromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSucceededFuture -->
+      <method access="public" instrs="18" name="newSucceededFuture" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyHandlerException -->
+      <method access="private" instrs="15" name="notifyHandlerException" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ notifyOutboundHandlerException -->
+      <method access="private" instrs="10" name="notifyOutboundHandlerException" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pipeline -->
+      <method access="public" instrs="3" name="pipeline" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPipeline</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="public" instrs="31" name="read" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelHandlerContext</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="public" bridge="yes" instrs="3" name="read" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelOutboundInvoker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ safeExecute -->
+      <method access="private" instrs="24" name="safeExecute" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Runnable</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAddComplete -->
+      <method access="default" final="yes" instrs="14" name="setAddComplete" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAddPending -->
+      <method access="default" final="yes" instrs="15" name="setAddPending" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRemoved -->
+      <method access="default" final="yes" instrs="4" name="setRemoved" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toHintString -->
+      <method access="public" instrs="12" name="toHintString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="20" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ voidPromise -->
+      <method access="public" instrs="4" name="voidPromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method access="public" instrs="6" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method access="public" instrs="31" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method access="private" instrs="46" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeAndFlush -->
+      <method access="public" instrs="24" name="writeAndFlush" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeAndFlush -->
+      <method access="public" instrs="6" name="writeAndFlush" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:06:29"/>
+  <class name="Bootstrap" package="io.netty.bootstrap">
+    <superclass>io.netty.bootstrap.AbstractBootstrap</superclass>
+    <interfaces>
+      <implements>java.lang.Cloneable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="private" final="yes" name="logger" not-null="yes" static="yes">
+        <signature>
+          <object>io.netty.util.internal.logging.InternalLogger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULT_RESOLVER -->
+      <field access="private" final="yes" name="DEFAULT_RESOLVER" not-null="yes" static="yes">
+        <signature>
+          <object>io.netty.resolver.AddressResolverGroup</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:config -->
+      <field access="private" final="yes" name="config">
+        <signature>
+          <object>io.netty.bootstrap.BootstrapConfig</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:resolver -->
+      <field access="private" name="resolver">
+        <signature>
+          <object>io.netty.resolver.AddressResolverGroup</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:remoteAddress -->
+      <field access="private" name="remoteAddress">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:localAddress -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="localAddress">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:handler -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="handler">
+        <signature>
+          <object>io.netty.channel.ChannelHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:channelFactory -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="channelFactory">
+        <signature>
+          <object>io.netty.bootstrap.ChannelFactory</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:attrs -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="attrs">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:options -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="options">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:group -->
+      <field from="io.netty.bootstrap.AbstractBootstrap" inherited="yes" name="group">
+        <signature>
+          <object>io.netty.channel.EventLoopGroup</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="12" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (io.netty.bootstrap.Bootstrap) -->
+      <method access="private" instrs="21" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="7" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="3">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="4">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="5">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$100 -->
+      <method access="default" instrs="5" name="access$100" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="5" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="10" name="clone" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.EventLoopGroup</object>
+          </arg>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" bridge="yes" instrs="3" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.AbstractBootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" bridge="yes" instrs="3" name="clone" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.CloneNotSupportedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ config -->
+      <method access="public" final="yes" instrs="3" name="config" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.BootstrapConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ config -->
+      <method access="public" bridge="yes" instrs="3" name="config" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.AbstractBootstrapConfig</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="20" name="connect" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="6" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="8" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.InetAddress</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="17" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method access="public" instrs="15" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doConnect -->
+      <method access="private" instrs="14" name="doConnect" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doResolveAndConnect -->
+      <method access="private" instrs="40" name="doResolveAndConnect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doResolveAndConnect0 -->
+      <method access="private" instrs="68" name="doResolveAndConnect0" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="4">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method access="default" instrs="69" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remoteAddress -->
+      <method access="public" instrs="5" name="remoteAddress" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remoteAddress -->
+      <method access="public" instrs="7" name="remoteAddress" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remoteAddress -->
+      <method access="public" instrs="9" name="remoteAddress" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.InetAddress</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remoteAddress -->
+      <method access="default" final="yes" instrs="3" name="remoteAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.SocketAddress</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ resolver -->
+      <method access="public" instrs="9" name="resolver" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.resolver.AddressResolverGroup</object>
+          </arg>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ resolver -->
+      <method access="default" final="yes" instrs="3" name="resolver" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.resolver.AddressResolverGroup</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ validate -->
+      <method access="public" instrs="14" name="validate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.Bootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ validate -->
+      <method access="public" bridge="yes" instrs="3" name="validate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.bootstrap.AbstractBootstrap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

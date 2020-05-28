@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-15 15:38:26"/>
+  <interface dispatch="yes" name="Channel" package="io.netty.channel">
+    <superinterfaces>
+      <superinterface>io.netty.util.AttributeMap</superinterface>
+      <superinterface>java.lang.Comparable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ alloc -->
+      <method abstract="yes" access="public" name="alloc" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufAllocator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bind -->
+      <method abstract="yes" access="public" name="bind" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bind -->
+      <method abstract="yes" access="public" name="bind" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ closeFuture -->
+      <method abstract="yes" access="public" name="closeFuture" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ config -->
+      <method abstract="yes" access="public" name="config" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelConfig</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method abstract="yes" access="public" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method abstract="yes" access="public" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method abstract="yes" access="public" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ connect -->
+      <method abstract="yes" access="public" name="connect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.SocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deregister -->
+      <method abstract="yes" access="public" name="deregister" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deregister -->
+      <method abstract="yes" access="public" name="deregister" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disconnect -->
+      <method abstract="yes" access="public" name="disconnect" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disconnect -->
+      <method abstract="yes" access="public" name="disconnect" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eventLoop -->
+      <method abstract="yes" access="public" name="eventLoop" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.EventLoop</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flush -->
+      <method abstract="yes" access="public" name="flush" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isActive -->
+      <method abstract="yes" access="public" name="isActive" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOpen -->
+      <method abstract="yes" access="public" name="isOpen" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRegistered -->
+      <method abstract="yes" access="public" name="isRegistered" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isWritable -->
+      <method abstract="yes" access="public" name="isWritable" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ localAddress -->
+      <method abstract="yes" access="public" name="localAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.SocketAddress</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ metadata -->
+      <method abstract="yes" access="public" name="metadata" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelMetadata</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newFailedFuture -->
+      <method abstract="yes" access="public" name="newFailedFuture" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newProgressivePromise -->
+      <method abstract="yes" access="public" name="newProgressivePromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelProgressivePromise</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newPromise -->
+      <method abstract="yes" access="public" name="newPromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSucceededFuture -->
+      <method abstract="yes" access="public" name="newSucceededFuture" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parent -->
+      <method abstract="yes" access="public" name="parent" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pipeline -->
+      <method abstract="yes" access="public" name="pipeline" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPipeline</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method abstract="yes" access="public" name="read" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remoteAddress -->
+      <method abstract="yes" access="public" name="remoteAddress" valid="no">
+        <signature>
+          <return>
+            <object>java.net.SocketAddress</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unsafe -->
+      <method abstract="yes" access="public" name="unsafe" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel$Unsafe</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ voidPromise -->
+      <method abstract="yes" access="public" name="voidPromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method abstract="yes" access="public" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method abstract="yes" access="public" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeAndFlush -->
+      <method abstract="yes" access="public" name="writeAndFlush" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeAndFlush -->
+      <method abstract="yes" access="public" name="writeAndFlush" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

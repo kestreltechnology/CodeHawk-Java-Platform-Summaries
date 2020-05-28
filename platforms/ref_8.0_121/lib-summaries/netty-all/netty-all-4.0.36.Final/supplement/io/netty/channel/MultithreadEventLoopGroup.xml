@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:40:37"/>
+  <class abstract="yes" name="MultithreadEventLoopGroup" package="io.netty.channel">
+    <superclass>io.netty.util.concurrent.MultithreadEventExecutorGroup</superclass>
+    <interfaces>
+      <implements>io.netty.channel.EventLoopGroup</implements>
+      <implements>io.netty.util.concurrent.EventExecutorGroup</implements>
+      <implements>java.util.concurrent.ScheduledExecutorService</implements>
+      <implements>java.lang.Iterable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:logger -->
+      <field access="private" final="yes" name="logger" not-null="yes" static="yes">
+        <signature>
+          <object>io.netty.util.internal.logging.InternalLogger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULT_EVENT_LOOP_THREADS -->
+      <field access="private" final="yes" name="DEFAULT_EVENT_LOOP_THREADS" static="yes">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:chooser -->
+      <field from="io.netty.util.concurrent.MultithreadEventExecutorGroup" inherited="yes" name="chooser">
+        <signature>
+          <object>io.netty.util.concurrent.MultithreadEventExecutorGroup$EventExecutorChooser</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:terminatedChildren -->
+      <field from="io.netty.util.concurrent.MultithreadEventExecutorGroup" inherited="yes" name="terminatedChildren">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:children -->
+      <field from="io.netty.util.concurrent.MultithreadEventExecutorGroup" inherited="yes" name="children">
+        <signature>
+          <array>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:terminationFuture -->
+      <field from="io.netty.util.concurrent.MultithreadEventExecutorGroup" inherited="yes" name="terminationFuture">
+        <signature>
+          <object>io.netty.util.concurrent.Promise</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:childIndex -->
+      <field from="io.netty.util.concurrent.MultithreadEventExecutorGroup" inherited="yes" name="childIndex">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~ (int,java.util.concurrent.ThreadFactory,java.lang.Object[]) -->
+      <method access="protected" instrs="10" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.util.concurrent.ThreadFactory</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newDefaultThreadFactory -->
+      <method access="protected" instrs="7" name="newDefaultThreadFactory" valid="no">
+        <signature>
+          <return>
+            <object>java.util.concurrent.ThreadFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ next -->
+      <method access="public" instrs="4" name="next" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.EventLoop</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ next -->
+      <method access="public" bridge="yes" instrs="3" name="next" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ register -->
+      <method access="public" instrs="5" name="register" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ register -->
+      <method access="public" instrs="6" name="register" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.channel.ChannelPromise</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

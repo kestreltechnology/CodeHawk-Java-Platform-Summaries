@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 20:30:55"/>
+  <class final="yes" name="DatagramPacket" package="io.netty.channel.socket">
+    <superclass>io.netty.channel.DefaultAddressedEnvelope</superclass>
+    <interfaces>
+      <implements>io.netty.buffer.ByteBufHolder</implements>
+      <implements>io.netty.channel.AddressedEnvelope</implements>
+      <implements>io.netty.util.ReferenceCounted</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:recipient -->
+      <field from="io.netty.channel.DefaultAddressedEnvelope" inherited="yes" name="recipient">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:sender -->
+      <field from="io.netty.channel.DefaultAddressedEnvelope" inherited="yes" name="sender">
+        <signature>
+          <object>java.net.SocketAddress</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:message -->
+      <field from="io.netty.channel.DefaultAddressedEnvelope" inherited="yes" name="message">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~ (io.netty.buffer.ByteBuf,java.net.InetSocketAddress) -->
+      <constructor access="public" instrs="5" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.InetSocketAddress</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (io.netty.buffer.ByteBuf,java.net.InetSocketAddress,java.net.InetSocketAddress) -->
+      <constructor access="public" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <arg nr="2">
+            <object>java.net.InetSocketAddress</object>
+          </arg>
+          <arg nr="3">
+            <object>java.net.InetSocketAddress</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ content -->
+      <method access="public" bridge="yes" instrs="4" name="content" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBuf</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" instrs="7" name="copy" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" bridge="yes" instrs="3" name="copy" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ duplicate -->
+      <method access="public" instrs="7" name="duplicate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ duplicate -->
+      <method access="public" bridge="yes" instrs="3" name="duplicate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="11" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" bridge="yes" instrs="4" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.ByteBuf</object>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" instrs="5" name="retain" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" instrs="6" name="retain" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="4" name="retain" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.channel.AddressedEnvelope</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="3" name="retain" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.AddressedEnvelope</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="4" name="retain" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.util.ReferenceCounted</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="3" name="retain" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.ReferenceCounted</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="4" name="retain" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retain -->
+      <method access="public" bridge="yes" instrs="3" name="retain" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retainedDuplicate -->
+      <method access="public" instrs="7" name="retainedDuplicate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ retainedDuplicate -->
+      <method access="public" bridge="yes" instrs="3" name="retainedDuplicate" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" instrs="5" name="touch" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" instrs="6" name="touch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.socket.DatagramPacket</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="4" name="touch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.AddressedEnvelope</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="3" name="touch" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.channel.AddressedEnvelope</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="4" name="touch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.util.ReferenceCounted</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="3" name="touch" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.ReferenceCounted</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="4" name="touch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ touch -->
+      <method access="public" bridge="yes" instrs="3" name="touch" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.ByteBufHolder</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

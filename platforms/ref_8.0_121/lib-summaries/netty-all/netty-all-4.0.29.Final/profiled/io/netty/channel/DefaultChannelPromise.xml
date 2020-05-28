@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:37:02"/>
+  <class name="DefaultChannelPromise" package="io.netty.channel">
+    <superclass>io.netty.util.concurrent.DefaultPromise</superclass>
+    <interfaces>
+      <implements>io.netty.channel.ChannelPromise</implements>
+      <implements>io.netty.channel.ChannelFlushPromiseNotifier$FlushCheckpoint</implements>
+      <implements>io.netty.util.concurrent.Promise</implements>
+      <implements>io.netty.util.concurrent.Future</implements>
+      <implements>java.util.concurrent.Future</implements>
+      <implements>io.netty.channel.ChannelFuture</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (io.netty.channel.Channel) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~ (io.netty.channel.Channel,io.netty.util.concurrent.EventExecutor) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.channel.Channel</object>
+          </arg>
+          <arg nr="2">
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method access="public" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method access="public" bridge="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method access="public" bridge="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListener -->
+      <method access="public" bridge="yes" name="addListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListeners -->
+      <method access="public" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListeners -->
+      <method access="public" bridge="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListeners -->
+      <method access="public" bridge="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addListeners -->
+      <method access="public" bridge="yes" name="addListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ await -->
+      <method access="public" name="await">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ await -->
+      <method access="public" bridge="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ await -->
+      <method access="public" bridge="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ await -->
+      <method access="public" bridge="yes" name="await">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ awaitUninterruptibly -->
+      <method access="public" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ awaitUninterruptibly -->
+      <method access="public" bridge="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ awaitUninterruptibly -->
+      <method access="public" bridge="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ awaitUninterruptibly -->
+      <method access="public" bridge="yes" name="awaitUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ channel -->
+      <method access="public" name="channel">
+        <signature>
+          <return>
+            <object>io.netty.channel.Channel</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkDeadLock -->
+      <method access="protected" name="checkDeadLock">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ executor -->
+      <method access="protected" name="executor">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flushCheckpoint -->
+      <method access="public" name="flushCheckpoint">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ flushCheckpoint -->
+      <method access="public" name="flushCheckpoint">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ promise -->
+      <method access="public" name="promise">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListener -->
+      <method access="public" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListener -->
+      <method access="public" bridge="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListener -->
+      <method access="public" bridge="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListener -->
+      <method access="public" bridge="yes" name="removeListener">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.util.concurrent.GenericFutureListener</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListeners -->
+      <method access="public" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListeners -->
+      <method access="public" bridge="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListeners -->
+      <method access="public" bridge="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeListeners -->
+      <method access="public" bridge="yes" name="removeListeners">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>io.netty.util.concurrent.GenericFutureListener</object>
+            </array>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFailure -->
+      <method access="public" name="setFailure">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFailure -->
+      <method access="public" bridge="yes" name="setFailure">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSuccess -->
+      <method access="public" name="setSuccess">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSuccess -->
+      <method access="public" name="setSuccess">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Void</object>
+          </arg>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSuccess -->
+      <method access="public" bridge="yes" name="setSuccess">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sync -->
+      <method access="public" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sync -->
+      <method access="public" bridge="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sync -->
+      <method access="public" bridge="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sync -->
+      <method access="public" bridge="yes" name="sync">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ syncUninterruptibly -->
+      <method access="public" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelPromise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ syncUninterruptibly -->
+      <method access="public" bridge="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ syncUninterruptibly -->
+      <method access="public" bridge="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ syncUninterruptibly -->
+      <method access="public" bridge="yes" name="syncUninterruptibly">
+        <signature>
+          <return>
+            <object>io.netty.channel.ChannelFuture</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ trySuccess -->
+      <method access="public" name="trySuccess">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

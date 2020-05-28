@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-15 15:36:52"/>
+  <interface dispatch="yes" name="EventExecutor" package="io.netty.util.concurrent">
+    <superinterfaces>
+      <superinterface>io.netty.util.concurrent.EventExecutorGroup</superinterface>
+      <superinterface>java.util.concurrent.ScheduledExecutorService</superinterface>
+      <superinterface>java.lang.Iterable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ inEventLoop -->
+      <method abstract="yes" access="public" name="inEventLoop" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ inEventLoop -->
+      <method abstract="yes" access="public" name="inEventLoop" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Thread</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newFailedFuture -->
+      <method abstract="yes" access="public" name="newFailedFuture" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newProgressivePromise -->
+      <method abstract="yes" access="public" name="newProgressivePromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.ProgressivePromise</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newPromise -->
+      <method abstract="yes" access="public" name="newPromise" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.Promise</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newSucceededFuture -->
+      <method abstract="yes" access="public" name="newSucceededFuture" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>io.netty.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ next -->
+      <method abstract="yes" access="public" name="next" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutor</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parent -->
+      <method abstract="yes" access="public" name="parent" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.util.concurrent.EventExecutorGroup</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

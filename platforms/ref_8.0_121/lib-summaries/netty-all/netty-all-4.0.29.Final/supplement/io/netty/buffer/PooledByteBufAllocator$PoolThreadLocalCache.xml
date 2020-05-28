@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-15 15:36:58"/>
+  <class final="yes" name="PooledByteBufAllocator$PoolThreadLocalCache" package="io.netty.buffer">
+    <superclass>io.netty.util.concurrent.FastThreadLocal</superclass>
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:index -->
+      <field access="private" final="yes" name="index">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:caches -->
+      <field access="default" final="yes" name="caches">
+        <signature>
+          <object>java.util.concurrent.atomic.AtomicInteger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:this$0 -->
+      <field access="default" final="yes" name="this$0">
+        <signature>
+          <object>io.netty.buffer.PooledByteBufAllocator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:index -->
+      <field from="io.netty.util.concurrent.FastThreadLocal" inherited="yes" name="index">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:variablesToRemoveIndex -->
+      <field from="io.netty.util.concurrent.FastThreadLocal" inherited="yes" name="variablesToRemoveIndex">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (io.netty.buffer.PooledByteBufAllocator) -->
+      <method access="default" instrs="16" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.PooledByteBufAllocator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initialValue -->
+      <method access="protected" instrs="63" name="initialValue" valid="no">
+        <signature>
+          <return>
+            <object>io.netty.buffer.PoolThreadCache</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ initialValue -->
+      <method access="protected" bridge="yes" instrs="3" name="initialValue" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ onRemoval -->
+      <method access="protected" instrs="7" name="onRemoval" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>io.netty.buffer.PoolThreadCache</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ onRemoval -->
+      <method access="protected" bridge="yes" instrs="5" name="onRemoval" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.Exception</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
