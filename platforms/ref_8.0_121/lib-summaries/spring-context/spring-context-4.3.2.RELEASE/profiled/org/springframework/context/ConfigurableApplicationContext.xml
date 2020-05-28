@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-17 23:42:03"/>
+  <interface name="ConfigurableApplicationContext" package="org.springframework.context">
+    <superinterfaces>
+      <superinterface>org.springframework.context.ApplicationContext</superinterface>
+      <superinterface>org.springframework.context.Lifecycle</superinterface>
+      <superinterface>java.io.Closeable</superinterface>
+      <superinterface>org.springframework.core.env.EnvironmentCapable</superinterface>
+      <superinterface>org.springframework.beans.factory.ListableBeanFactory</superinterface>
+      <superinterface>org.springframework.beans.factory.HierarchicalBeanFactory</superinterface>
+      <superinterface>org.springframework.context.MessageSource</superinterface>
+      <superinterface>org.springframework.context.ApplicationEventPublisher</superinterface>
+      <superinterface>org.springframework.core.io.support.ResourcePatternResolver</superinterface>
+      <superinterface>java.lang.AutoCloseable</superinterface>
+    </superinterfaces>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addApplicationListener -->
+      <method abstract="yes" access="public" name="addApplicationListener">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.context.ApplicationListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addBeanFactoryPostProcessor -->
+      <method abstract="yes" access="public" name="addBeanFactoryPostProcessor">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.beans.factory.config.BeanFactoryPostProcessor</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addProtocolResolver -->
+      <method abstract="yes" access="public" name="addProtocolResolver">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.core.io.ProtocolResolver</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method abstract="yes" access="public" name="close">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBeanFactory -->
+      <method abstract="yes" access="public" name="getBeanFactory">
+        <signature>
+          <return>
+            <object>org.springframework.beans.factory.config.ConfigurableListableBeanFactory</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEnvironment -->
+      <method abstract="yes" access="public" name="getEnvironment">
+        <signature>
+          <return>
+            <object>org.springframework.core.env.ConfigurableEnvironment</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isActive -->
+      <method abstract="yes" access="public" name="isActive">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ refresh -->
+      <method abstract="yes" access="public" name="refresh">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ registerShutdownHook -->
+      <method abstract="yes" access="public" name="registerShutdownHook">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEnvironment -->
+      <method abstract="yes" access="public" name="setEnvironment">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.core.env.ConfigurableEnvironment</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setId -->
+      <method abstract="yes" access="public" name="setId">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setParent -->
+      <method abstract="yes" access="public" name="setParent">
+        <signature>
+          <arg nr="1">
+            <object>org.springframework.context.ApplicationContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
