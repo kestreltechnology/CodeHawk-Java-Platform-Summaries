@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 17:06:11"/>
+  <class final="yes" name="MethodInfo" package="javassist.bytecode">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:constPool -->
+      <field access="default" name="constPool">
+        <signature>
+          <object>javassist.bytecode.ConstPool</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:accessFlags -->
+      <field access="default" name="accessFlags">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:name -->
+      <field access="default" name="name">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cachedName -->
+      <field access="default" name="cachedName">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:descriptor -->
+      <field access="default" name="descriptor">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:attribute -->
+      <field access="default" name="attribute">
+        <signature>
+          <object>java.util.LinkedList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:doPreverify -->
+      <field access="public" name="doPreverify" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:nameInit -->
+      <field access="public" final="yes" name="nameInit" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="&lt;init&gt;"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:nameClinit -->
+      <field access="public" final="yes" name="nameClinit" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="&lt;clinit&gt;"/>
+        </value>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (javassist.bytecode.ConstPool) -->
+      <method access="private" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~ (javassist.bytecode.ConstPool,java.lang.String,java.lang.String) -->
+      <method access="public" instrs="21" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~ (javassist.bytecode.ConstPool,java.io.DataInputStream) -->
+      <method access="default" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+          <arg nr="2">
+            <object>java.io.DataInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!--  (javassist.bytecode.ConstPool,java.lang.String,javassist.bytecode.MethodInfo,java.util.Map) -->
+      <method access="public" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>javassist.bytecode.MethodInfo</object>
+          </arg>
+          <arg nr="4">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAttribute -->
+      <method access="public" instrs="19" name="addAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.AttributeInfo</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compact -->
+      <method access="default" instrs="22" name="compact" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAccessFlags -->
+      <method access="public" instrs="3" name="getAccessFlags" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttribute -->
+      <method access="public" instrs="5" name="getAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>javassist.bytecode.AttributeInfo</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getAttributes -->
+      <method access="public" instrs="11" name="getAttributes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCodeAttribute -->
+      <method access="public" instrs="8" name="getCodeAttribute" valid="no">
+        <signature>
+          <return>
+            <object>javassist.bytecode.CodeAttribute</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConstPool -->
+      <method access="public" instrs="3" name="getConstPool" valid="no">
+        <signature>
+          <return>
+            <object>javassist.bytecode.ConstPool</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDescriptor -->
+      <method access="public" instrs="6" name="getDescriptor" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExceptionsAttribute -->
+      <method access="public" instrs="8" name="getExceptionsAttribute" valid="no">
+        <signature>
+          <return>
+            <object>javassist.bytecode.ExceptionsAttribute</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLineNumber -->
+      <method access="public" instrs="20" name="getLineNumber" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getName -->
+      <method access="public" instrs="13" name="getName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isConstructor -->
+      <method access="public" instrs="5" name="isConstructor" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMethod -->
+      <method access="public" instrs="15" name="isMethod" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isStaticInitializer -->
+      <method access="public" instrs="5" name="isStaticInitializer" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ prune -->
+      <method access="default" instrs="118" name="prune" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ConstPool</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="private" instrs="64" name="read" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.MethodInfo</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ read -->
+      <method access="private" instrs="36" name="read" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.DataInputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rebuildStackMap -->
+      <method access="public" instrs="13" name="rebuildStackMap" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.ClassPool</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rebuildStackMapForME -->
+      <method access="public" instrs="13" name="rebuildStackMapForME" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.ClassPool</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rebuildStackMapIf6 -->
+      <method access="public" instrs="13" name="rebuildStackMapIf6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.ClassPool</object>
+          </arg>
+          <arg nr="2">
+            <object>javassist.bytecode.ClassFile</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeCodeAttribute -->
+      <method access="public" instrs="5" name="removeCodeAttribute" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeExceptionsAttribute -->
+      <method access="public" instrs="5" name="removeExceptionsAttribute" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setAccessFlags -->
+      <method access="public" instrs="4" name="setAccessFlags" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCodeAttribute -->
+      <method access="public" instrs="16" name="setCodeAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.CodeAttribute</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setDescriptor -->
+      <method access="public" instrs="12" name="setDescriptor" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setExceptionsAttribute -->
+      <method access="public" instrs="16" name="setExceptionsAttribute" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>javassist.bytecode.ExceptionsAttribute</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setName -->
+      <method access="public" instrs="10" name="setName" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSuperclass -->
+      <method access="public" instrs="47" name="setSuperclass" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>javassist.bytecode.BadBytecode</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" instrs="13" name="toString" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ write -->
+      <method access="default" instrs="29" name="write" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.DataOutputStream</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
