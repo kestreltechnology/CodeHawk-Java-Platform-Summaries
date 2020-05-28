@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 17:59:58"/>
+  <class name="VaadinServletService" package="com.vaadin.server">
+    <superclass>com.vaadin.server.VaadinService</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:servlet -->
+      <field access="private" final="yes" name="servlet">
+        <signature>
+          <object>com.vaadin.server.VaadinServlet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:REQUEST_START_TIME_ATTRIBUTE -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="REQUEST_START_TIME_ATTRIBUTE">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~ (inherited) field:URL_PARAMETER_CLOSE_APPLICATION -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="URL_PARAMETER_CLOSE_APPLICATION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~ (inherited) field:URL_PARAMETER_RESTART_APPLICATION -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="URL_PARAMETER_RESTART_APPLICATION">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~ (inherited) field:REINITIALIZING_SESSION_MARKER -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="REINITIALIZING_SESSION_MARKER">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~ (inherited) field:PRESERVE_UNBOUND_SESSION_ATTRIBUTE -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="PRESERVE_UNBOUND_SESSION_ATTRIBUTE">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:classLoader -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="classLoader">
+        <signature>
+          <object>java.lang.ClassLoader</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:$assertionsDisabled -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="$assertionsDisabled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:connectorIdGenerator -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="connectorIdGenerator">
+        <signature>
+          <object>com.vaadin.server.ConnectorIdGenerator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:dependencyFilters -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="dependencyFilters">
+        <signature>
+          <object>java.lang.Iterable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:requestHandlers -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="requestHandlers">
+        <signature>
+          <object>java.lang.Iterable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:deploymentConfiguration -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="deploymentConfiguration">
+        <signature>
+          <object>com.vaadin.server.DeploymentConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:initialized -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="initialized">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:pushWarningEmitted -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="pushWarningEmitted">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:atmosphereAvailable -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="atmosphereAvailable">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:systemMessagesProvider -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="systemMessagesProvider">
+        <signature>
+          <object>com.vaadin.server.SystemMessagesProvider</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:sessionDestroyListeners -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="sessionDestroyListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:sessionInitListeners -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="sessionInitListeners">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serviceDestroyListeners -->
+      <field from="com.vaadin.server.VaadinService" inherited="yes" name="serviceDestroyListeners">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (com.vaadin.server.VaadinServlet,com.vaadin.server.DeploymentConfiguration) -->
+      <method access="public" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinServlet</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.DeploymentConfiguration</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.ServiceException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createRequestHandlers -->
+      <method access="protected" instrs="34" name="createRequestHandlers" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.ServiceException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApplicationUrl -->
+      <method access="protected" instrs="6" name="getApplicationUrl" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.net.URL</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.net.MalformedURLException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBaseDirectory -->
+      <method access="public" instrs="15" name="getBaseDirectory" valid="no">
+        <signature>
+          <return>
+            <object>java.io.File</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCancelingRelativePath -->
+      <method access="public" instrs="25" name="getCancelingRelativePath" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConfiguredTheme -->
+      <method access="public" instrs="2" name="getConfiguredTheme" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConfiguredWidgetset -->
+      <method access="public" instrs="5" name="getConfiguredWidgetset" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContextRootRelativePath -->
+      <method access="public" instrs="31" name="getContextRootRelativePath" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrentResponse -->
+      <method access="public" instrs="2" name="getCurrentResponse" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServletResponse</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrentServletRequest -->
+      <method access="public" instrs="2" name="getCurrentServletRequest" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>javax.servlet.http.HttpServletRequest</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogger -->
+      <method access="private" final="yes" instrs="4" name="getLogger" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.logging.Logger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMainDivId -->
+      <method access="public" instrs="51" name="getMainDivId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMimeType -->
+      <method access="public" instrs="6" name="getMimeType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServiceName -->
+      <method access="public" instrs="4" name="getServiceName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getServlet -->
+      <method access="public" instrs="3" name="getServlet" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinServlet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStaticFileLocation -->
+      <method access="public" instrs="31" name="getStaticFileLocation" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getThemeResourceAsStream -->
+      <method access="public" instrs="43" name="getThemeResourceAsStream" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.io.InputStream</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.io.IOException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOtherRequest -->
+      <method access="private" instrs="25" name="isOtherRequest" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isStandalone -->
+      <method access="public" instrs="2" name="isStandalone" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ requestCanCreateSession -->
+      <method access="protected" instrs="13" name="requestCanCreateSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 18:00:05"/>
+  <class abstract="yes" name="AbstractSingleComponentContainer" package="com.vaadin.ui">
+    <superclass>com.vaadin.ui.AbstractComponent</superclass>
+    <interfaces>
+      <implements>com.vaadin.ui.SingleComponentContainer</implements>
+      <implements>com.vaadin.ui.Component</implements>
+      <implements>com.vaadin.event.ContextClickEvent$ContextClickNotifier</implements>
+      <implements>com.vaadin.server.ClientConnector</implements>
+      <implements>com.vaadin.event.MethodEventSource</implements>
+      <implements>com.vaadin.shared.Connector</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>com.vaadin.server.Sizeable</implements>
+      <implements>com.vaadin.ui.HasComponents</implements>
+      <implements>com.vaadin.ui.HasComponents$ComponentAttachDetachNotifier</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addComponentAttachListener -->
+      <method access="public" name="addComponentAttachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.HasComponents$ComponentAttachListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addComponentDetachListener -->
+      <method access="public" name="addComponentDetachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.HasComponents$ComponentDetachListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireComponentAttachEvent -->
+      <method access="protected" name="fireComponentAttachEvent">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireComponentDetachEvent -->
+      <method access="protected" name="fireComponentDetachEvent">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getComponentCount -->
+      <method access="public" name="getComponentCount">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContent -->
+      <method access="public" name="getContent">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.Component</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getInvalidSizedChild -->
+      <method access="private" name="getInvalidSizedChild">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" name="getState">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.ui.AbstractSingleComponentContainerState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" name="getState">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.ui.AbstractSingleComponentContainerState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" name="getState">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" name="iterator">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readDesign -->
+      <method access="public" name="readDesign">
+        <signature>
+          <arg nr="1">
+            <object>org.jsoup.nodes.Element</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.declarative.DesignContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readDesignChildren -->
+      <method access="protected" name="readDesignChildren">
+        <signature>
+          <arg nr="1">
+            <object>org.jsoup.select.Elements</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.declarative.DesignContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeComponentAttachListener -->
+      <method access="public" name="removeComponentAttachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.HasComponents$ComponentAttachListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeComponentDetachListener -->
+      <method access="public" name="removeComponentDetachListener">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.HasComponents$ComponentDetachListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeFromParent -->
+      <method access="public" name="removeFromParent" static="yes">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ repaintChangedChildTree -->
+      <method access="private" name="repaintChangedChildTree">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContent -->
+      <method access="public" name="setContent">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setHeight -->
+      <method access="public" name="setHeight">
+        <signature>
+          <arg nr="1">
+            <float/>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.Sizeable$Unit</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setWidth -->
+      <method access="public" name="setWidth">
+        <signature>
+          <arg nr="1">
+            <float/>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.Sizeable$Unit</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeDesign -->
+      <method access="public" name="writeDesign">
+        <signature>
+          <arg nr="1">
+            <object>org.jsoup.nodes.Element</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.declarative.DesignContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

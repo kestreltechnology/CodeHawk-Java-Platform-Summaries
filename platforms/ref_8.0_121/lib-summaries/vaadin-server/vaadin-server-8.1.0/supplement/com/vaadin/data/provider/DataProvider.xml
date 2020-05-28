@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-16 18:15:27"/>
+  <interface dispatch="yes" name="DataProvider" package="com.vaadin.data.provider">
+    <superinterfaces>
+      <superinterface>java.io.Serializable</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $deserializeLambda$ -->
+      <method access="private" instrs="52" name="$deserializeLambda$" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.invoke.SerializedLambda</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addDataProviderListener -->
+      <method abstract="yes" access="public" name="addDataProviderListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.DataProviderListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fetch -->
+      <method abstract="yes" access="public" name="fetch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.Query</object>
+          </arg>
+          <return>
+            <object>java.util.stream.Stream</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fromCallbacks -->
+      <method access="public" instrs="4" name="fromCallbacks" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.CallbackDataProvider$FetchCallback</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.data.provider.CallbackDataProvider$CountCallback</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.CallbackDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fromFilteringCallbacks -->
+      <method access="public" instrs="6" name="fromFilteringCallbacks" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.CallbackDataProvider$FetchCallback</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.data.provider.CallbackDataProvider$CountCallback</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.CallbackDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fromStream -->
+      <method access="public" instrs="8" name="fromStream" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.stream.Stream</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.ListDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getId -->
+      <method access="public" instrs="6" name="getId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInMemory -->
+      <method abstract="yes" access="public" name="isInMemory" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$withConfigurableFilter$60115b0d$1 -->
+      <method access="private" instrs="11" name="lambda$withConfigurableFilter$60115b0d$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Void</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ofCollection -->
+      <method access="public" instrs="5" name="ofCollection" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.ListDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ofItems -->
+      <method access="public" instrs="6" name="ofItems" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.ListDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ refreshAll -->
+      <method abstract="yes" access="public" name="refreshAll" valid="no">
+        <signature/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ refreshItem -->
+      <method abstract="yes" access="public" name="refreshItem" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method abstract="yes" access="public" name="size" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.Query</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ withConfigurableFilter -->
+      <method access="public" instrs="7" name="withConfigurableFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableBiFunction</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.ConfigurableFilterDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ withConfigurableFilter -->
+      <method access="public" instrs="4" name="withConfigurableFilter" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.data.provider.ConfigurableFilterDataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ withConvertedFilter -->
+      <method access="public" instrs="11" name="withConvertedFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableFunction</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

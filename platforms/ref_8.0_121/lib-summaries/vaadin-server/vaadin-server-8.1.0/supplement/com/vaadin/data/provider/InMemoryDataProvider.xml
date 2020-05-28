@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-16 18:17:32"/>
+  <interface dispatch="yes" name="InMemoryDataProvider" package="com.vaadin.data.provider">
+    <superinterfaces>
+      <superinterface>com.vaadin.data.provider.ConfigurableFilterDataProvider</superinterface>
+      <superinterface>com.vaadin.data.provider.DataProvider</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $deserializeLambda$ -->
+      <method access="private" instrs="499" name="$deserializeLambda$" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.invoke.SerializedLambda</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" instrs="20" name="addFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilter -->
+      <method access="public" instrs="14" name="addFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addFilterByValue -->
+      <method access="public" instrs="6" name="addFilterByValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addSortComparator -->
+      <method access="public" instrs="19" name="addSortComparator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableComparator</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addSortOrder -->
+      <method access="public" instrs="6" name="addSortOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.shared.data.sort.SortDirection</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearFilters -->
+      <method access="public" instrs="4" name="clearFilters" valid="no">
+        <signature/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringBy -->
+      <method access="public" instrs="9" name="filteringBy" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableBiPredicate</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringBy -->
+      <method access="public" instrs="14" name="filteringBy" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.SerializableBiPredicate</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringByEquals -->
+      <method access="public" instrs="5" name="filteringByEquals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringByPrefix -->
+      <method access="public" instrs="7" name="filteringByPrefix" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringByPrefix -->
+      <method access="public" instrs="6" name="filteringByPrefix" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringBySubstring -->
+      <method access="public" instrs="11" name="filteringBySubstring" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ filteringBySubstring -->
+      <method access="public" instrs="6" name="filteringBySubstring" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <return>
+            <object>com.vaadin.data.provider.DataProvider</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFilter -->
+      <method abstract="yes" access="public" name="getFilter" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSortComparator -->
+      <method abstract="yes" access="public" name="getSortComparator" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.SerializableComparator</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInMemory -->
+      <method access="public" instrs="2" name="isInMemory" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$addFilter$67797f5d$1 -->
+      <method access="private" instrs="12" name="lambda$addFilter$67797f5d$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$addSortComparator$32cbba61$1 -->
+      <method access="private" instrs="14" name="lambda$addSortComparator$32cbba61$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableComparator</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.SerializableComparator</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$filteringBy$debb8345$1 -->
+      <method access="private" instrs="4" name="lambda$filteringBy$debb8345$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableBiPredicate</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$filteringBy$f407d9e3$1 -->
+      <method access="private" instrs="7" name="lambda$filteringBy$f407d9e3$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableBiPredicate</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$filteringByPrefix$9781e25c$1 -->
+      <method access="private" instrs="2" name="lambda$filteringByPrefix$9781e25c$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.util.Locale</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$filteringBySubstring$9781e25c$1 -->
+      <method access="private" instrs="2" name="lambda$filteringBySubstring$9781e25c$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Locale</object>
+          </arg>
+          <return>
+            <object>java.util.Locale</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$null$f35a4394$1 -->
+      <method access="private" instrs="5" name="lambda$null$f35a4394$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableBiPredicate</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilter -->
+      <method abstract="yes" access="public" name="setFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilter -->
+      <method access="public" instrs="6" name="setFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilter -->
+      <method access="public" bridge="yes" instrs="5" name="setFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilterByValue -->
+      <method access="public" instrs="6" name="setFilterByValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSortComparator -->
+      <method abstract="yes" access="public" name="setSortComparator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableComparator</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSortOrder -->
+      <method access="public" instrs="6" name="setSortOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.ValueProvider</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.shared.data.sort.SortDirection</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

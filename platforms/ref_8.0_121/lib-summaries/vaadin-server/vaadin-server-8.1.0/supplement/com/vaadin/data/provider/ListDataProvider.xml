@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 18:15:28"/>
+  <class name="ListDataProvider" package="com.vaadin.data.provider">
+    <superclass>com.vaadin.data.provider.AbstractDataProvider</superclass>
+    <interfaces>
+      <implements>com.vaadin.data.provider.InMemoryDataProvider</implements>
+      <implements>com.vaadin.data.provider.DataProvider</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>com.vaadin.data.provider.ConfigurableFilterDataProvider</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:sortOrder -->
+      <field access="private" name="sortOrder">
+        <signature>
+          <object>com.vaadin.server.SerializableComparator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:filter -->
+      <field access="private" name="filter">
+        <signature>
+          <object>com.vaadin.server.SerializablePredicate</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:backend -->
+      <field access="private" final="yes" name="backend">
+        <signature>
+          <object>java.util.Collection</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:eventRouter -->
+      <field from="com.vaadin.data.provider.AbstractDataProvider" inherited="yes" name="eventRouter">
+        <signature>
+          <object>com.vaadin.event.EventRouter</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.Collection) -->
+      <method access="public" instrs="16" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Collection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fetch -->
+      <method access="public" instrs="41" name="fetch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.Query</object>
+          </arg>
+          <return>
+            <object>java.util.stream.Stream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFilter -->
+      <method access="public" instrs="3" name="getFilter" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFilteredStream -->
+      <method access="private" instrs="26" name="getFilteredStream" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.Query</object>
+          </arg>
+          <return>
+            <object>java.util.stream.Stream</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getItems -->
+      <method access="public" instrs="3" name="getItems" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSortComparator -->
+      <method access="public" instrs="3" name="getSortComparator" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.SerializableComparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$fetch$0 -->
+      <method access="private" instrs="6" name="lambda$fetch$0" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lambda$fetch$1 -->
+      <method access="private" instrs="4" name="lambda$fetch$1" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Comparator</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Comparator</object>
+          </arg>
+          <return>
+            <object>java.util.Comparator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilter -->
+      <method access="public" instrs="6" name="setFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializablePredicate</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFilter -->
+      <method access="public" bridge="yes" instrs="5" name="setFilter" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSortComparator -->
+      <method access="public" instrs="6" name="setSortComparator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.SerializableComparator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" instrs="6" name="size" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.data.provider.Query</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

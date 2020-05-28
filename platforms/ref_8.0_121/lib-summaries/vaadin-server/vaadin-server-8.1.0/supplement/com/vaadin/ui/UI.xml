@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 16:36:40"/>
+  <class abstract="yes" name="UI" package="com.vaadin.ui">
+    <superclass>com.vaadin.ui.AbstractSingleComponentContainer</superclass>
+    <interfaces>
+      <implements>com.vaadin.event.Action$Container</implements>
+      <implements>com.vaadin.event.Action$Notifier</implements>
+      <implements>com.vaadin.event.UIEvents$PollNotifier</implements>
+      <implements>com.vaadin.ui.LegacyComponent</implements>
+      <implements>com.vaadin.ui.Component$Focusable</implements>
+      <implements>com.vaadin.ui.SingleComponentContainer</implements>
+      <implements>com.vaadin.ui.Component</implements>
+      <implements>com.vaadin.event.ContextClickEvent$ContextClickNotifier</implements>
+      <implements>com.vaadin.server.ClientConnector</implements>
+      <implements>com.vaadin.event.MethodEventSource</implements>
+      <implements>com.vaadin.shared.Connector</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>com.vaadin.server.Sizeable</implements>
+      <implements>com.vaadin.ui.HasComponents</implements>
+      <implements>com.vaadin.ui.HasComponents$ComponentAttachDetachNotifier</implements>
+      <implements>com.vaadin.server.VariableOwner</implements>
+      <implements>com.vaadin.event.ConnectorEventListener</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:session -->
+      <field access="private" name="session">
+        <signature>
+          <object>com.vaadin.server.VaadinSession</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:windows -->
+      <field access="private" final="yes" name="windows">
+        <signature>
+          <object>java.util.LinkedHashSet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:scrollIntoView -->
+      <field access="private" name="scrollIntoView">
+        <signature>
+          <object>com.vaadin.ui.Component</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:uiId -->
+      <field access="private" name="uiId">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:actionManager -->
+      <field access="protected" name="actionManager">
+        <signature>
+          <object>com.vaadin.event.ActionManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:connectorTracker -->
+      <field access="private" name="connectorTracker">
+        <signature>
+          <object>com.vaadin.ui.ConnectorTracker</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:page -->
+      <field access="private" name="page">
+        <signature>
+          <object>com.vaadin.server.Page</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:loadingIndicatorConfiguration -->
+      <field access="private" name="loadingIndicatorConfiguration">
+        <signature>
+          <object>com.vaadin.ui.LoadingIndicatorConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:scrollTop -->
+      <field access="private" name="scrollTop">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:scrollLeft -->
+      <field access="private" name="scrollLeft">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:rpc -->
+      <field access="private" name="rpc">
+        <signature>
+          <object>com.vaadin.shared.ui.ui.UIServerRpc</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:debugRpc -->
+      <field access="private" name="debugRpc">
+        <signature>
+          <object>com.vaadin.shared.ui.ui.DebugWindowServerRpc</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:windowOrderRpc -->
+      <field access="private" name="windowOrderRpc">
+        <signature>
+          <object>com.vaadin.shared.ui.WindowOrderRpc</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lastHeartbeatTimestamp -->
+      <field access="private" name="lastHeartbeatTimestamp">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:closing -->
+      <field access="private" name="closing">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:tooltipConfiguration -->
+      <field access="private" name="tooltipConfiguration">
+        <signature>
+          <object>com.vaadin.ui.TooltipConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:pushConfiguration -->
+      <field access="private" name="pushConfiguration">
+        <signature>
+          <object>com.vaadin.ui.PushConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:reconnectDialogConfiguration -->
+      <field access="private" name="reconnectDialogConfiguration">
+        <signature>
+          <object>com.vaadin.ui.ReconnectDialogConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:notificationConfiguration -->
+      <field access="private" name="notificationConfiguration">
+        <signature>
+          <object>com.vaadin.ui.NotificationConfiguration</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:lastProcessedClientToServerId -->
+      <field access="private" name="lastProcessedClientToServerId">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:activeDragSource -->
+      <field access="private" name="activeDragSource">
+        <signature>
+          <object>com.vaadin.ui.dnd.DragSourceExtension</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:pendingFocus -->
+      <field access="private" name="pendingFocus">
+        <signature>
+          <object>com.vaadin.ui.Component$Focusable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:resizeLazy -->
+      <field access="private" name="resizeLazy">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:navigator -->
+      <field access="private" name="navigator">
+        <signature>
+          <object>com.vaadin.navigator.Navigator</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:pushConnection -->
+      <field access="private" name="pushConnection">
+        <signature>
+          <object>com.vaadin.server.communication.PushConnection</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:localeService -->
+      <field access="private" name="localeService">
+        <signature>
+          <object>com.vaadin.server.LocaleService</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:embedId -->
+      <field access="private" name="embedId">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:mobileHtml5DndPolyfillLoaded -->
+      <field access="private" name="mobileHtml5DndPolyfillLoaded">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:$assertionsDisabled -->
+      <field access="default" final="yes" name="$assertionsDisabled" static="yes">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:connectorId -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="connectorId">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stateTypeCache -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="stateTypeCache">
+        <signature>
+          <object>java.util.concurrent.ConcurrentHashMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stateType -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="stateType">
+        <signature>
+          <object>java.lang.Class</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:sharedState -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="sharedState">
+        <signature>
+          <object>com.vaadin.shared.communication.SharedState</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:errorHandler -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="errorHandler">
+        <signature>
+          <object>com.vaadin.server.ErrorHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:eventRouter -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="eventRouter">
+        <signature>
+          <object>com.vaadin.event.EventRouter</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:extensions -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="extensions">
+        <signature>
+          <object>java.util.ArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:pendingInvocations -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="pendingInvocations">
+        <signature>
+          <object>java.util.ArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:rpcProxyMap -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="rpcProxyMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:rpcManagerMap -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="rpcManagerMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DESIGN_ATTR_PLAIN_TEXT -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="DESIGN_ATTR_PLAIN_TEXT">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:customAttributes -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="customAttributes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:applicationData -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="applicationData">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:COMPONENT_EVENT_METHOD -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="COMPONENT_EVENT_METHOD">
+        <signature>
+          <object>java.lang.reflect.Method</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:actionManager -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="actionManager">
+        <signature>
+          <object>com.vaadin.event.ConnectorActionManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:delayedFocus -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="delayedFocus">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:parent -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="parent">
+        <signature>
+          <object>com.vaadin.ui.HasComponents</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:locale -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="locale">
+        <signature>
+          <object>java.util.Locale</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:visible -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="visible">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:heightUnit -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="heightUnit">
+        <signature>
+          <object>com.vaadin.server.Sizeable$Unit</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:widthUnit -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="widthUnit">
+        <signature>
+          <object>com.vaadin.server.Sizeable$Unit</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:height -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="height">
+        <signature>
+          <float/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:width -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="width">
+        <signature>
+          <float/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:componentError -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="componentError">
+        <signature>
+          <object>com.vaadin.server.ErrorMessage</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:content -->
+      <field from="com.vaadin.ui.AbstractSingleComponentContainer" inherited="yes" name="content">
+        <signature>
+          <object>com.vaadin.ui.Component</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="4" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (com.vaadin.ui.Component) -->
+      <method access="public" instrs="123" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $deserializeLambda$ -->
+      <method access="private" instrs="60" name="$deserializeLambda$" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.invoke.SerializedLambda</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access -->
+      <method access="public" instrs="17" name="access" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+          <return>
+            <object>java.util.concurrent.Future</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$000 -->
+      <method access="default" instrs="4" name="access$000" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.EventObject</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$102 -->
+      <method access="default" instrs="5" name="access$102" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$202 -->
+      <method access="default" instrs="5" name="access$202" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$300 -->
+      <method access="default" instrs="4" name="access$300" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.EventObject</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$400 -->
+      <method access="default" instrs="2" name="access$400" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.logging.Logger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$500 -->
+      <method access="default" instrs="4" name="access$500" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.ClientRpc</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$600 -->
+      <method access="default" instrs="4" name="access$600" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ accessSynchronously -->
+      <method access="public" instrs="44" name="accessSynchronously" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Runnable</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.ui.UIDetachedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAction -->
+      <method access="public" instrs="5" name="addAction" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.Action</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addActionHandler -->
+      <method access="public" instrs="5" name="addActionHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.Action$Handler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addClickListener -->
+      <method access="public" instrs="7" name="addClickListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.MouseEvents$ClickListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addPollListener -->
+      <method access="public" instrs="7" name="addPollListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.UIEvents$PollListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addWindow -->
+      <method access="public" instrs="19" name="addWindow" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Window</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+          <throws>java.lang.IllegalArgumentException</throws>
+          <throws>java.lang.NullPointerException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addWindowOrderUpdateListener -->
+      <method access="public" instrs="11" name="addWindowOrderUpdateListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI$WindowOrderUpdateListener</object>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.Registration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ attach -->
+      <method access="public" instrs="8" name="attach" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ attachWindow -->
+      <method access="private" instrs="14" name="attachWindow" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Window</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ changeVariables -->
+      <method access="public" instrs="19" name="changeVariables" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" instrs="37" name="close" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ detach -->
+      <method access="public" instrs="3" name="detach" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doInit -->
+      <method access="public" instrs="79" name="doInit" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doRefresh -->
+      <method access="public" instrs="53" name="doRefresh" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireClick -->
+      <method access="private" instrs="14" name="fireClick" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fireWindowOrder -->
+      <method access="private" instrs="28" name="fireWindowOrder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ focus -->
+      <method access="public" instrs="3" name="focus" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getActionManager -->
+      <method access="protected" instrs="12" name="getActionManager" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.event.ActionManager</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getActiveDragSource -->
+      <method access="public" instrs="3" name="getActiveDragSource" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.dnd.DragSourceExtension</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getComponentCount -->
+      <method access="public" instrs="11" name="getComponentCount" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConnectorTracker -->
+      <method access="public" instrs="3" name="getConnectorTracker" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.ConnectorTracker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCurrent -->
+      <method access="public" instrs="4" name="getCurrent" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.UI</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEmbedId -->
+      <method access="public" instrs="3" name="getEmbedId" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLastHeartbeatTimestamp -->
+      <method access="public" instrs="3" name="getLastHeartbeatTimestamp" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLastProcessedClientToServerId -->
+      <method access="public" instrs="3" name="getLastProcessedClientToServerId" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLoadingIndicatorConfiguration -->
+      <method access="public" instrs="3" name="getLoadingIndicatorConfiguration" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.LoadingIndicatorConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocaleService -->
+      <method access="public" instrs="3" name="getLocaleService" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.LocaleService</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogger -->
+      <method access="private" instrs="4" name="getLogger" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.logging.Logger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNavigator -->
+      <method access="public" instrs="3" name="getNavigator" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.navigator.Navigator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNotificationConfiguration -->
+      <method access="public" instrs="3" name="getNotificationConfiguration" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.NotificationConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOverlayContainerLabel -->
+      <method access="public" instrs="5" name="getOverlayContainerLabel" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPage -->
+      <method access="public" instrs="3" name="getPage" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.Page</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPollInterval -->
+      <method access="public" instrs="5" name="getPollInterval" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPushConfiguration -->
+      <method access="public" instrs="3" name="getPushConfiguration" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.PushConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPushConnection -->
+      <method access="public" instrs="17" name="getPushConnection" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.communication.PushConnection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getReconnectDialogConfiguration -->
+      <method access="public" instrs="3" name="getReconnectDialogConfiguration" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.ReconnectDialogConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScrollLeft -->
+      <method access="public" instrs="3" name="getScrollLeft" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getScrollTop -->
+      <method access="public" instrs="3" name="getScrollTop" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSession -->
+      <method access="public" instrs="3" name="getSession" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.VaadinSession</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSessionDetails -->
+      <method access="private" instrs="18" name="getSessionDetails" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" instrs="4" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.ui.ui.UIState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" instrs="5" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.ui.ui.UIState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="4" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.ui.AbstractSingleComponentContainerState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="3" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.ui.AbstractSingleComponentContainerState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="4" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="3" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="4" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="3" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStateType -->
+      <method access="public" instrs="2" name="getStateType" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Class</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTabIndex -->
+      <method access="public" instrs="5" name="getTabIndex" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTheme -->
+      <method access="public" instrs="5" name="getTheme" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTooltipConfiguration -->
+      <method access="public" instrs="3" name="getTooltipConfiguration" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.TooltipConfiguration</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUI -->
+      <method access="public" instrs="2" name="getUI" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.ui.UI</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUIId -->
+      <method access="public" instrs="3" name="getUIId" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getWindows -->
+      <method access="public" instrs="4" name="getWindows" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ init -->
+      <method abstract="yes" access="protected" name="init" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isClosing -->
+      <method access="public" instrs="3" name="isClosing" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isConnectorEnabled -->
+      <method access="public" instrs="10" name="isConnectorEnabled" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isMobileHtml5DndEnabled -->
+      <method access="public" instrs="5" name="isMobileHtml5DndEnabled" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isResizeLazy -->
+      <method access="public" instrs="3" name="isResizeLazy" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
+      <method access="public" instrs="21" name="iterator" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~ lambda$addWindowOrderUpdateListener$e01bffe5$1 -->
+      <method access="private" instrs="6" name="lambda$addWindowOrderUpdateListener$e01bffe5$1" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI$WindowOrderUpdateListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ loadMobileHtml5DndPolyfill -->
+      <method access="private" instrs="47" name="loadMobileHtml5DndPolyfill" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ paintContent -->
+      <method access="public" instrs="59" name="paintContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.PaintTarget</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>com.vaadin.server.PaintException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ push -->
+      <method access="public" instrs="51" name="push" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ refresh -->
+      <method access="protected" instrs="1" name="refresh" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinRequest</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeAction -->
+      <method access="public" instrs="8" name="removeAction" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.Action</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeActionHandler -->
+      <method access="public" instrs="8" name="removeActionHandler" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.Action$Handler</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeClickListener -->
+      <method access="public" instrs="6" name="removeClickListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.MouseEvents$ClickListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removePollListener -->
+      <method access="public" instrs="6" name="removePollListener" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.UIEvents$PollListener</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeWindow -->
+      <method access="public" instrs="25" name="removeWindow" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Window</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scrollIntoView -->
+      <method access="public" instrs="15" name="scrollIntoView" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalArgumentException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setActiveDragSource -->
+      <method access="public" instrs="4" name="setActiveDragSource" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.dnd.DragSourceExtension</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCaption -->
+      <method access="public" instrs="5" name="setCaption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setContent -->
+      <method access="public" instrs="12" name="setContent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setCurrent -->
+      <method access="public" instrs="5" name="setCurrent" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.UI</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFocusedComponent -->
+      <method access="public" instrs="6" name="setFocusedComponent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Component$Focusable</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setLastHeartbeatTimestamp -->
+      <method access="public" instrs="4" name="setLastHeartbeatTimestamp" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setLastProcessedClientToServerId -->
+      <method access="public" instrs="4" name="setLastProcessedClientToServerId" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setMobileHtml5DndEnabled -->
+      <method access="public" instrs="16" name="setMobileHtml5DndEnabled" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setNavigator -->
+      <method access="public" instrs="4" name="setNavigator" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.navigator.Navigator</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setOverlayContainerLabel -->
+      <method access="public" instrs="5" name="setOverlayContainerLabel" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPollInterval -->
+      <method access="public" instrs="5" name="setPollInterval" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPushConnection -->
+      <method access="public" instrs="36" name="setPushConnection" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.communication.PushConnection</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setResizeLazy -->
+      <method access="public" instrs="6" name="setResizeLazy" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setScrollLeft -->
+      <method access="public" instrs="21" name="setScrollLeft" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setScrollTop -->
+      <method access="public" instrs="21" name="setScrollTop" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSession -->
+      <method access="public" instrs="67" name="setSession" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.VaadinSession</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTabIndex -->
+      <method access="public" instrs="5" name="setTabIndex" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTheme -->
+      <method access="public" instrs="13" name="setTheme" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="13" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="14" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.Notification$Type</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="14" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="15" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>com.vaadin.ui.Notification$Type</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="11" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>com.vaadin.ui.Notification$Type</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ showNotification -->
+      <method access="public" instrs="5" name="showNotification" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.ui.Notification</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

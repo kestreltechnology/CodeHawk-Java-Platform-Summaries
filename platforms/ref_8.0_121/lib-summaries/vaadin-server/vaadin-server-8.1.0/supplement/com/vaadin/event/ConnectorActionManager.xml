@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-16 18:15:32"/>
+  <class name="ConnectorActionManager" package="com.vaadin.event">
+    <superclass>com.vaadin.event.ActionManager</superclass>
+    <interfaces>
+      <implements>com.vaadin.event.Action$Container</implements>
+      <implements>com.vaadin.event.Action$Handler</implements>
+      <implements>com.vaadin.event.Action$Notifier</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:connector -->
+      <field access="private" name="connector">
+        <signature>
+          <object>com.vaadin.server.ClientConnector</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:serialVersionUID -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="serialVersionUID">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:viewer -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="viewer">
+        <signature>
+          <object>com.vaadin.ui.Component</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:clientHasActions -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="clientHasActions">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:actionMapper -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="actionMapper">
+        <signature>
+          <object>com.vaadin.server.KeyMapper</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:actionHandlers -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="actionHandlers">
+        <signature>
+          <object>java.util.HashSet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:ownActions -->
+      <field from="com.vaadin.event.ActionManager" inherited="yes" name="ownActions">
+        <signature>
+          <object>java.util.HashSet</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (com.vaadin.server.ClientConnector) -->
+      <method access="public" instrs="6" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~ (com.vaadin.server.ClientConnector,com.vaadin.ui.Component) -->
+      <method access="public" instrs="7" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.ClientConnector</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.Component</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLogger -->
+      <method access="private" final="yes" instrs="4" name="getLogger" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.logging.Logger</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleAction -->
+      <method access="public" instrs="11" name="handleAction" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.event.Action</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

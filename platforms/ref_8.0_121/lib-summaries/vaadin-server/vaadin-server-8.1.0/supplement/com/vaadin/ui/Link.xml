@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-29 16:11:19"/>
+  <class name="Link" package="com.vaadin.ui">
+    <superclass>com.vaadin.ui.AbstractComponent</superclass>
+    <interfaces>
+      <implements>com.vaadin.ui.Component</implements>
+      <implements>com.vaadin.event.ContextClickEvent$ContextClickNotifier</implements>
+      <implements>com.vaadin.server.ClientConnector</implements>
+      <implements>com.vaadin.event.MethodEventSource</implements>
+      <implements>com.vaadin.shared.Connector</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>com.vaadin.server.Sizeable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TARGET_BORDER_NONE -->
+      <field access="public" final="yes" name="TARGET_BORDER_NONE" not-null="yes" static="yes">
+        <signature>
+          <object>com.vaadin.shared.ui.BorderStyle</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TARGET_BORDER_MINIMAL -->
+      <field access="public" final="yes" name="TARGET_BORDER_MINIMAL" not-null="yes" static="yes">
+        <signature>
+          <object>com.vaadin.shared.ui.BorderStyle</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TARGET_BORDER_DEFAULT -->
+      <field access="public" final="yes" name="TARGET_BORDER_DEFAULT" not-null="yes" static="yes">
+        <signature>
+          <object>com.vaadin.shared.ui.BorderStyle</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:connectorId -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="connectorId">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stateTypeCache -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="stateTypeCache">
+        <signature>
+          <object>java.util.concurrent.ConcurrentHashMap</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:stateType -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="stateType">
+        <signature>
+          <object>java.lang.Class</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:sharedState -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="sharedState">
+        <signature>
+          <object>com.vaadin.shared.communication.SharedState</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:$assertionsDisabled -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="$assertionsDisabled">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:errorHandler -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="errorHandler">
+        <signature>
+          <object>com.vaadin.server.ErrorHandler</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:eventRouter -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="eventRouter">
+        <signature>
+          <object>com.vaadin.event.EventRouter</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:extensions -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="extensions">
+        <signature>
+          <object>java.util.ArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:pendingInvocations -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="pendingInvocations">
+        <signature>
+          <object>java.util.ArrayList</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:rpcProxyMap -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="rpcProxyMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:rpcManagerMap -->
+      <field from="com.vaadin.server.AbstractClientConnector" inherited="yes" name="rpcManagerMap">
+        <signature>
+          <object>java.util.Map</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:DESIGN_ATTR_PLAIN_TEXT -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="DESIGN_ATTR_PLAIN_TEXT">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:customAttributes -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="customAttributes">
+        <signature>
+          <array>
+            <object>java.lang.String</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:applicationData -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="applicationData">
+        <signature>
+          <object>java.lang.Object</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:COMPONENT_EVENT_METHOD -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="COMPONENT_EVENT_METHOD">
+        <signature>
+          <object>java.lang.reflect.Method</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:actionManager -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="actionManager">
+        <signature>
+          <object>com.vaadin.event.ConnectorActionManager</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:delayedFocus -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="delayedFocus">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:parent -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="parent">
+        <signature>
+          <object>com.vaadin.ui.HasComponents</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:locale -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="locale">
+        <signature>
+          <object>java.util.Locale</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:visible -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="visible">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:heightUnit -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="heightUnit">
+        <signature>
+          <object>com.vaadin.server.Sizeable$Unit</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:widthUnit -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="widthUnit">
+        <signature>
+          <object>com.vaadin.server.Sizeable$Unit</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:height -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="height">
+        <signature>
+          <float/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:width -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="width">
+        <signature>
+          <float/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:componentError -->
+      <field from="com.vaadin.ui.AbstractComponent" inherited="yes" name="componentError">
+        <signature>
+          <object>com.vaadin.server.ErrorMessage</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <constructor access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.String,com.vaadin.server.Resource) -->
+      <constructor access="public" instrs="9" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.Resource</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (java.lang.String,com.vaadin.server.Resource,java.lang.String,int,int,com.vaadin.shared.ui.BorderStyle) -->
+      <constructor access="public" instrs="21" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.server.Resource</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <object>com.vaadin.shared.ui.BorderStyle</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCustomAttributes -->
+      <method access="protected" instrs="21" name="getCustomAttributes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getResource -->
+      <method access="public" instrs="4" name="getResource" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.server.Resource</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" instrs="4" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.ui.link.LinkState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" instrs="5" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.ui.link.LinkState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="4" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="3" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.AbstractComponentState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="4" name="getState" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getState -->
+      <method access="protected" bridge="yes" instrs="3" name="getState" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.communication.SharedState</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTargetBorder -->
+      <method access="public" instrs="5" name="getTargetBorder" valid="no">
+        <signature>
+          <return>
+            <object>com.vaadin.shared.ui.BorderStyle</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTargetHeight -->
+      <method access="public" instrs="12" name="getTargetHeight" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTargetName -->
+      <method access="public" instrs="5" name="getTargetName" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTargetWidth -->
+      <method access="public" instrs="12" name="getTargetWidth" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ readDesign -->
+      <method access="public" instrs="31" name="readDesign" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.jsoup.nodes.Element</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.declarative.DesignContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setResource -->
+      <method access="public" instrs="5" name="setResource" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.server.Resource</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTargetBorder -->
+      <method access="public" instrs="5" name="setTargetBorder" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>com.vaadin.shared.ui.BorderStyle</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTargetHeight -->
+      <method access="public" instrs="5" name="setTargetHeight" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTargetName -->
+      <method access="public" instrs="5" name="setTargetName" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTargetWidth -->
+      <method access="public" instrs="5" name="setTargetWidth" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ writeDesign -->
+      <method access="public" instrs="30" name="writeDesign" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.jsoup.nodes.Element</object>
+          </arg>
+          <arg nr="2">
+            <object>com.vaadin.ui.declarative.DesignContext</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
