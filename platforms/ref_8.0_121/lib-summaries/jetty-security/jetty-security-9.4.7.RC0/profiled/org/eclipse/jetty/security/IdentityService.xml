@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-29 00:13:51"/>
+  <interface name="IdentityService" package="org.eclipse.jetty.security">
+    <superinterfaces/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ associate -->
+      <method abstract="yes" access="public" name="associate">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ disassociate -->
+      <method abstract="yes" access="public" name="disassociate">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSystemUserIdentity -->
+      <method abstract="yes" access="public" name="getSystemUserIdentity">
+        <signature>
+          <return>
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newRunAsToken -->
+      <method abstract="yes" access="public" name="newRunAsToken">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.security.RunAsToken</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newUserIdentity -->
+      <method abstract="yes" access="public" name="newUserIdentity">
+        <signature>
+          <arg nr="1">
+            <object>javax.security.auth.Subject</object>
+          </arg>
+          <arg nr="2">
+            <object>java.security.Principal</object>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setRunAs -->
+      <method abstract="yes" access="public" name="setRunAs">
+        <signature>
+          <arg nr="1">
+            <object>org.eclipse.jetty.server.UserIdentity</object>
+          </arg>
+          <arg nr="2">
+            <object>org.eclipse.jetty.security.RunAsToken</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ unsetRunAs -->
+      <method abstract="yes" access="public" name="unsetRunAs">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
