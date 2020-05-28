@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 16:42:03"/>
+  <class name="DefaultParser" package="org.apache.commons.cli">
+    <interfaces>
+      <implements>org.apache.commons.cli.CommandLineParser</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:cmd -->
+      <field access="protected" name="cmd">
+        <signature>
+          <object>org.apache.commons.cli.CommandLine</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:options -->
+      <field access="protected" name="options">
+        <signature>
+          <object>org.apache.commons.cli.Options</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:stopAtNonOption -->
+      <field access="protected" name="stopAtNonOption">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:currentToken -->
+      <field access="protected" name="currentToken">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:currentOption -->
+      <field access="protected" name="currentOption">
+        <signature>
+          <object>org.apache.commons.cli.Option</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:skipParsing -->
+      <field access="protected" name="skipParsing">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expectedOpts -->
+      <field access="protected" name="expectedOpts">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkRequiredArgs -->
+      <method access="private" instrs="14" name="checkRequiredArgs" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkRequiredOptions -->
+      <method access="private" instrs="11" name="checkRequiredOptions" valid="no">
+        <signature/>
+        <exceptions>
+          <throws>org.apache.commons.cli.MissingOptionException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLongPrefix -->
+      <method access="private" instrs="30" name="getLongPrefix" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleConcatenatedOptions -->
+      <method access="protected" instrs="57" name="handleConcatenatedOptions" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleLongOption -->
+      <method access="private" instrs="13" name="handleLongOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleLongOptionWithEqual -->
+      <method access="private" instrs="65" name="handleLongOptionWithEqual" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleLongOptionWithoutEqual -->
+      <method access="private" instrs="33" name="handleLongOptionWithoutEqual" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleOption -->
+      <method access="private" instrs="24" name="handleOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Option</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleProperties -->
+      <method access="private" instrs="86" name="handleProperties" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Properties</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleShortAndLongOption -->
+      <method access="private" instrs="179" name="handleShortAndLongOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleToken -->
+      <method access="private" instrs="70" name="handleToken" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handleUnknownToken -->
+      <method access="private" instrs="35" name="handleUnknownToken" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isArgument -->
+      <method access="private" instrs="12" name="isArgument" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isJavaProperty -->
+      <method access="private" instrs="24" name="isJavaProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isLongOption -->
+      <method access="private" instrs="44" name="isLongOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNegativeNumber -->
+      <method access="private" instrs="8" name="isNegativeNumber" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isOption -->
+      <method access="private" instrs="12" name="isOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isShortOption -->
+      <method access="private" instrs="20" name="isShortOption" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" instrs="6" name="parse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" instrs="7" name="parse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Properties</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" instrs="7" name="parse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parse -->
+      <method access="public" instrs="70" name="parse" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Options</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <arg nr="3">
+            <object>java.util.Properties</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.commons.cli.CommandLine</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.ParseException</throws>
+          <throws>org.apache.commons.cli.ParseException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ updateRequiredOptions -->
+      <method access="private" instrs="31" name="updateRequiredOptions" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.cli.Option</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.cli.AlreadySelectedException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
