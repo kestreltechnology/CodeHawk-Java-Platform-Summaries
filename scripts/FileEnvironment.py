@@ -27,6 +27,59 @@
 import json
 import os
 
+class CHError(Exception):
+
+    def wrap(self):
+        lines = []
+        lines.append('*' * 80)
+        lines.append(self.__str__())
+        lines.append('*' * 80)
+        return '\n'.join(lines)
+
+class CHJError(CHError):
+
+    def __init__(self,msg):
+        CHError.__init__(self,msg)
+
+class CHJFileNotFoundError(CHJError):
+
+    def __init__(self,filename):
+        CHJError.__init__(self,'File ' + filename + ' not found')
+        self.filename =  filename
+
+class CHJDirectoryNotFoundError(CHJError):
+
+    def __init__(self,dirname):
+        CHJError.__init__(self,'Directory ' + dirname + ' not found')
+        self.dirname = dirname
+
+class CHJProcessError(CHJError):
+
+    def __init__(self,msg):
+        CHJError.__init__(self,msg)
+
+    def __str__(self):
+        return 'Process error: ' + self.str()
+
+class CHJJSONParseError(CHJError):
+
+    def __init__(self,filename,e):
+        CHJError.__init__(self,'JSON parse error')
+        self.filename = filename
+        self.valueerror = e
+
+    def __str__(self):
+        return ('JSON parse error in file: ' + self.filename + ': '
+                    + str(self.valueerror))
+
+def check_file(filename):
+    if not os.path.isfile(filename):
+        raise CHJFileNotFoundError(filename)
+
+def check_directory(pathname):
+    if not os.path.isdir(pathname):
+        raise CHJDirectoryNotFoundError(pathname)
+
 class FileEnvironment(object):
 
     def __init__(self):
@@ -36,11 +89,13 @@ class FileEnvironment(object):
         # jdk summaries
         self.jdkapidir = os.path.join(self.repodir,'jdk-api')
         self.jdkapijar = os.path.join(self.jdkapidir,'jdk-api.jar')
+        self.jdkdirs = [ 'com', 'java', 'javax', 'org', 'sun' ]
 
         # third-party library summaries
         self.librefdir = os.path.join(self.repodir,'lib-reference')
         self.libapidir = os.path.join(self.repodir,'lib-api')
         self.dependenciesfile = os.path.join(self.thisdir,'dependencies.json')
+        self.apidependenciesfile = os.path.join(self.thisdir,'api_dependencies.json')
 
         # platform-specific summaries
         self.platformsdir = os.path.join(self.repodir,'platforms')
@@ -50,8 +105,23 @@ class FileEnvironment(object):
         self.templatecmd = os.path.join(self.bindir,'chj_template')
         self.integratecmd = os.path.join(self.bindir,'chj_integrate')
         self.inspectcmd = os.path.join(self.bindir,'chj_inspect')
+        self.apidependencies = self._load_api_dependencies()
         self.dependencies = self._load_dependencies()
         self.manifestfile = os.path.join(self.thisdir,'Manifest.txt')
+
+    def get_api_refjar(self,libname):
+        if libname in self.apidependencies:
+            refjar = self.apidependencies[libname]['refjar']
+            refjar = os.path.join(self.librefdir,refjar)
+            if os.path.isfile(refjar):
+                return refjar
+            else:
+                msg = ('Api reference jar: ' + refjar
+                           + ' not found in ' + self.librefdir)
+                raise CHJError(msg)
+        else:
+            msg = 'No record for ' + libname + ' found in api_dependencies.json'
+            raise CHJError(msg)
 
     def get_dependencies(self,jar):
         jarname = os.path.basename(jar)
@@ -62,8 +132,8 @@ class FileEnvironment(object):
                 for d in jarrec['deps']:
                     depjar = os.path.join(self.librefdir,d)
                     if not os.path.isfile(depjar):
-                        print('Dependent jar: ' + depjar + ' not found')
-                        exit(1)
+                        msg = 'Dependent jar: ' + depjar + ' not found'
+                        raise CHJError(msg)
                     result.append(depjar)
                 return result
         return []
@@ -75,15 +145,18 @@ class FileEnvironment(object):
             if 'dirs' in jarrec:
                 return jarrec['dirs']
             else:
-                print('*' * 80)
-                print('No directories specified for ' + jarname)
-                print('*' * 80)
-                exit(1)
+                msg = 'No directories specified for ' + jarname
+                raise CHJError(msg)
         else:
-            print('*' * 80)
-            print('No dependencies record found for '  + jarname)
-            print('*' * 80)
-            exit(1)
+            msg = 'No dependencies record found for '  + jarname + ' to get directories'
+            raise CHJError(msg)
+
+    def get_api_directories(self,libname):
+        if libname in self.apidependencies:
+            return self.apidependencies[libname]['dirs']
+        else:
+            msg = 'No dependencies record for ' + libname + ' to get api-directories'
+            raise CHJError(msg)
 
     def get_libname(self,jarname):
         if jarname in self.dependencies:
@@ -91,15 +164,11 @@ class FileEnvironment(object):
             if 'path' in jarrec:
                 return jarrec['path']
             else:
-                print('*' * 80)
-                print('No path specified for ' + jarname)
-                print('*' * 80)
-                exit(1)
+                msg = 'No path specified for ' + jarname + ' to get libname'
+                raise CHJError(msg)
         else:
-            print('*' * 80)
-            print('No dependencies record found for '  + jarname)
-            print('*' * 80)
-            exit(1)
+            msg = 'No dependencies record found for '  + jarname + ' to get libname'
+            raise CHJError(msg)
 
     def get_export(self,jar):
         jarname = os.path.basename(jar)
@@ -108,15 +177,11 @@ class FileEnvironment(object):
             if 'export' in jarrec:
                 return jarrec['export']
             else:
-                print('*' * 80)
-                print('No export path specified for ' + jarname)
-                print('*' * 80)
-                exit(1)
+                msg = 'No export path specified for ' + jarname
+                raise CHJError(msg)
         else:
-            print('*' * 80)
-            print('No dependencies record found for '  + jarname)
-            print('*' * 80)
-            exit(1)
+            msg = 'No dependencies record found for '  + jarname + ' to get export'
+            raise CHJError(msg)
 
     def get_lib_api_dir(self,libname):
         return os.path.join(self.libapidir,libname)
@@ -129,8 +194,22 @@ class FileEnvironment(object):
         return classname.split('.')[-1] + '.xml'
 
     def _load_dependencies(self):
-        with open(self.dependenciesfile,'r') as fp:
-            return json.load(fp)
+        filename = self.dependenciesfile
+        with open(filename,'r') as fp:
+            try:
+                deps = json.load(fp)
+                return deps['libraries']
+            except ValueError as e:
+                raise CHJJSONParseError(filename,e)
+
+    def _load_api_dependencies(self):
+        filename = self.apidependenciesfile
+        with open(filename,'r') as fp:
+            try:
+                deps = json.load(fp)
+                return deps['libraries']
+            except ValueError as e:
+                raise CHJJSONParseError(filename,e)
 
 class PlatformEnvironment(FileEnvironment):
 
@@ -148,6 +227,13 @@ class PlatformEnvironment(FileEnvironment):
         self.jdksumintegrated = os.path.join(self.jdksumdir,'integrated')
         self.jdksumprofiled = os.path.join(self.jdksumdir,'profiled')
         self.jdksumsupplement = os.path.join(self.jdksumdir,'supplement')
+
+        self.jdkprofileddirs = [ 'java', 'org' ]
+        self.jdksupplementdirs = [ 'java' ]
+
+        self.jdksumjar = os.path.join(self.jdksumdir,'jdk.jar')
+        self.jdksumprofiledjar = os.path.join(self.jdksumprofiled,'jdk-profiled.jar')
+        self.jdksumsupplementjar = os.path.join(self.jdksumsupplement,'jdk-supplement.jar')
 
         self.libsumdir = os.path.join(self.platformdir,'lib-summaries')
         self.libsumintegrated = os.path.join(self.libsumdir,'integrated')

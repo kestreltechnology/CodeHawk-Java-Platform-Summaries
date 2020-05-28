@@ -34,7 +34,8 @@ import FileEnvironment as F
 
 def parse():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('libversion',help='name of library version')
+    parser.add_argument('libversion',
+                            help='name of library version, e.g., commons-cli-1.3')
     args = parser.parse_args()
     return args
 
@@ -42,14 +43,29 @@ if __name__ == '__main__':
 
     args = parse()
 
-    fenv = F.FileEnvironment()
-    libname = fenv.get_libname(args.libversion + '.jar')
+    try:
+        fenv = F.FileEnvironment()        
+        libname = fenv.get_libname(args.libversion + '.jar')
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
 
     fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
-    
-    deps = fenv.get_dependencies(fenv.refjar)
 
-    # collect classnames from summaries present in api jar    
+    try:
+        deps = fenv.get_dependencies(fenv.refjar)
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
+
+    try:
+        F.check_file(fenv.apijar)
+        F.check_file(fenv.refjar)
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
+
+    # collect classnames from summaries present in api jar
     jartfcmd = [ 'jar', 'tf', fenv.apijar ]
     result = subprocess.check_output(jartfcmd)
     result = result.split('\n')
@@ -80,7 +96,7 @@ if __name__ == '__main__':
                 '-classpath', fenv.refjssejar ]
         
     for d in deps:
-        cmd.extend([ '-classpath', d ])
+        basecmd.extend([ '-classpath', d ])
 
     if not os.path.isdir(fenv.libsumintegrateddir):
         os.makedirs(fenv.libsumintegrateddir)
@@ -99,7 +115,7 @@ if __name__ == '__main__':
             os.rename(targetname,os.path.join(targetdir,targetname))
         else:
             print('*' * 80)
-            print('Error in creating integrated summary for ' + classname)
+            print('Error in creating integrated summary for '  + classname)
             print('*' * 80)
             exit(1)
 
@@ -117,5 +133,14 @@ if __name__ == '__main__':
         print('*' * 80)
         exit(1)
 
-    exportdir = os.path.join(fenv.exportdir,fenv.get_export(fenv.refjar))
+    try:
+        exportdir = os.path.join(fenv.exportdir,fenv.get_export(fenv.refjar))
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
+
     os.rename(fenv.libsumjar,os.path.join(exportdir,os.path.basename(fenv.libsumjar)))
+
+    print('=' * 80)
+    print('Exported ' + str(len(classnames)) + ' class summaries')
+    print('=' * 80)

@@ -1,6 +1,3 @@
-import argparse
-import os
-import subprocess
 # ------------------------------------------------------------------------------
 # CodeHawk Java Analyzer
 # Author: Henny Sipma
@@ -30,6 +27,9 @@ import subprocess
 """Creates jars for the api, profile, and supplement summaries for a third-party library."""
 
 import argparse
+import os
+import subprocess
+
 import FileEnvironment as F
 
 def parse():
@@ -46,22 +46,33 @@ def parse():
     args = parser.parse_args()
     return args
 
+def changedir(d):
+    try:
+        F.check_directory(d)
+        os.chdir(d)
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
+
 if __name__ == '__main__':
 
     args = parse()
 
-    fenv = F.FileEnvironment()
-    libname = fenv.get_libname(args.libversion + '.jar')
-
-    fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
+    try:
+        fenv = F.FileEnvironment()
+        libjar = args.libversion + '.jar'
+        libname = fenv.get_libname(libjar)
+        fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
+        directories = fenv.get_directories(libjar)
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
 
     allsupport = not (args.integrate or args.api or args.supplement or args.profile)
 
-    directories = fenv.get_directories(fenv.refjar)
-
     if allsupport or args.api:
         apidir = fenv.get_lib_api_dir(libname)
-        os.chdir(apidir)
+        changedir(apidir)
         cmd = [ 'jar', 'cfm', fenv.apijar, fenv.manifestfile, '-C', apidir ]
         cmd.extend(directories)
         result = subprocess.call(cmd, cwd=fenv.apidir, stderr=subprocess.STDOUT)
@@ -73,8 +84,9 @@ if __name__ == '__main__':
 
     if allsupport or args.profile:
 
-        os.chdir(fenv.libsumprofiledir)
-        cmd = [ 'jar', 'cfm', fenv.libsumprofilejar, fenv.manifestfile, '-C', fenv.libsumprofiledir ]
+        changedir(fenv.libsumprofiledir)
+        cmd = [ 'jar', 'cfm', fenv.libsumprofilejar,
+                    fenv.manifestfile, '-C', fenv.libsumprofiledir ]
         cmd.extend(directories)
         result = subprocess.call(cmd, cwd=fenv.libsumprofiledir, stderr=subprocess.STDOUT)
         if not (result == 0):
@@ -85,8 +97,9 @@ if __name__ == '__main__':
 
     if allsupport or args.supplement:
 
-        os.chdir(fenv.libsumsupplementdir)
-        cmd = [ 'jar', 'cfm', fenv.libsumsupplementjar, fenv.manifestfile, '-C', fenv.libsumsupplementdir ]
+        changedir(fenv.libsumsupplementdir)
+        cmd = [ 'jar', 'cfm', fenv.libsumsupplementjar,
+                    fenv.manifestfile, '-C', fenv.libsumsupplementdir ]
         cmd.extend(directories)
         result = subprocess.call(cmd, cwd=fenv.libsumsupplementdir, stderr=subprocess.STDOUT)
         if not (result == 0):
@@ -97,7 +110,7 @@ if __name__ == '__main__':
 
     if args.integrate:
 
-        os.chdir(fenv.libsumintegrateddir)
+        changedir(fenv.libsumintegrateddir)
         cmd = [ 'jar', 'cfm', fenv.libsumjar, fenv.manifestfile, '-C', fenv.libsumintegrateddir ]
         cmd.extend(directories)
         print(' '.join(cmd))

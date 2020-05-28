@@ -57,7 +57,12 @@ if __name__ == '__main__':
     args = parse()
 
     fenv = F.FileEnvironment()
-    libname = fenv.get_libname(args.libversion + '.jar')
+
+    try:
+        libname = fenv.get_libname(args.libversion + '.jar')
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
 
     fenv = F.PlatformLibFileEnvironment('ref_8.0_121',libname,args.libversion)
 
@@ -71,10 +76,13 @@ if __name__ == '__main__':
     if not args.legacysummaries is None:
         basecmd.extend([ '-summaries', os.path.abspath(args.legacysummaries) ])
 
-    targetdir = fenv.get_target_dir(args.classname)
-    targetname = fenv.get_target_name(args.classname)
-        
-    deps = fenv.get_dependencies(fenv.refjar)
+    try:
+        targetdir = fenv.get_target_dir(args.classname)
+        targetname = fenv.get_target_name(args.classname)
+        deps = fenv.get_dependencies(fenv.refjar)
+    except F.CHJError as e:
+        print(str(e.wrap()))
+        exit(1)
 
     basecmd.extend([ '-classpath', fenv.refjar ])
     for d in deps:
