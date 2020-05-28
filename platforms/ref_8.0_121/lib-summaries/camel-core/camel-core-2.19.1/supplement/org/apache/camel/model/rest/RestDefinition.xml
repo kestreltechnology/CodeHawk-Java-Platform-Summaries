@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 18:12:53"/>
+  <class name="RestDefinition" package="org.apache.camel.model.rest">
+    <superclass>org.apache.camel.model.OptionalIdentifiedDefinition</superclass>
+    <interfaces>
+      <implements>org.apache.camel.NamedNode</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:path -->
+      <field access="private" name="path">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:tag -->
+      <field access="private" name="tag">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:consumes -->
+      <field access="private" name="consumes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:produces -->
+      <field access="private" name="produces">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:bindingMode -->
+      <field access="private" name="bindingMode">
+        <signature>
+          <object>org.apache.camel.model.rest.RestBindingMode</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:skipBindingOnErrorCode -->
+      <field access="private" name="skipBindingOnErrorCode">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:enableCORS -->
+      <field access="private" name="enableCORS">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:apiDocs -->
+      <field access="private" name="apiDocs">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:verbs -->
+      <field access="private" name="verbs">
+        <signature>
+          <object>java.util.List</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:shortName -->
+      <field from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="shortName">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:description -->
+      <field from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="description">
+        <signature>
+          <object>org.apache.camel.model.DescriptionDefinition</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:customId -->
+      <field from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="customId">
+        <signature>
+          <object>java.lang.Boolean</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (inherited) field:id -->
+      <field from="org.apache.camel.model.OptionalIdentifiedDefinition" inherited="yes" name="id">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="8" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addRouteDefinition -->
+      <method access="private" instrs="511" name="addRouteDefinition" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.CamelContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addVerb -->
+      <method access="private" instrs="83" name="addVerb" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ apiDocs -->
+      <method access="public" instrs="23" name="apiDocs" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ asRouteApiDefinition -->
+      <method access="public" instrs="92" name="asRouteApiDefinition" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.CamelContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.spi.RestConfiguration</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.RouteDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ asRouteDefinition -->
+      <method access="public" instrs="37" name="asRouteDefinition" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.CamelContext</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ asRouteDefinition -->
+      <method access="public" instrs="22" name="asRouteDefinition" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.CamelContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.spi.RestConfiguration</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bindingMode -->
+      <method access="public" instrs="23" name="bindingMode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.RestBindingMode</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ buildUri -->
+      <method access="private" instrs="33" name="buildUri" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.VerbDefinition</object>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ consumes -->
+      <method access="public" instrs="23" name="consumes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method access="public" instrs="5" name="delete" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ delete -->
+      <method access="public" instrs="5" name="delete" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ description -->
+      <method access="public" instrs="25" name="description" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ description -->
+      <method access="public" instrs="29" name="description" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ description -->
+      <method access="public" bridge="yes" instrs="6" name="description" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ description -->
+      <method access="public" bridge="yes" instrs="4" name="description" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ enableCORS -->
+      <method access="public" instrs="25" name="enableCORS" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ findParam -->
+      <method access="private" instrs="21" name="findParam" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.VerbDefinition</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestOperationParamDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" instrs="5" name="get" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" instrs="5" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getApiDocs -->
+      <method access="public" instrs="3" name="getApiDocs" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getBindingMode -->
+      <method access="public" instrs="3" name="getBindingMode" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestBindingMode</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConsumes -->
+      <method access="public" instrs="3" name="getConsumes" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEnableCORS -->
+      <method access="public" instrs="3" name="getEnableCORS" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLabel -->
+      <method access="public" instrs="2" name="getLabel" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPath -->
+      <method access="public" instrs="3" name="getPath" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProduces -->
+      <method access="public" instrs="3" name="getProduces" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSkipBindingOnErrorCode -->
+      <method access="public" instrs="3" name="getSkipBindingOnErrorCode" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTag -->
+      <method access="public" instrs="3" name="getTag" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getVerbs -->
+      <method access="public" instrs="3" name="getVerbs" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ head -->
+      <method access="public" instrs="5" name="head" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ head -->
+      <method access="public" instrs="5" name="head" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ id -->
+      <method access="public" instrs="25" name="id" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ id -->
+      <method access="public" bridge="yes" instrs="4" name="id" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.OptionalIdentifiedDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ options -->
+      <method access="public" instrs="5" name="options" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ options -->
+      <method access="public" instrs="5" name="options" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ outType -->
+      <method access="public" instrs="25" name="outType" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ outTypeList -->
+      <method access="public" instrs="32" name="outTypeList" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ param -->
+      <method access="public" instrs="23" name="param" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestOperationParamDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ param -->
+      <method access="public" instrs="26" name="param" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.RestOperationParamDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ param -->
+      <method access="public" instrs="5" name="param" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.VerbDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestOperationParamDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ params -->
+      <method access="public" instrs="26" name="params" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ patch -->
+      <method access="public" instrs="5" name="patch" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ patch -->
+      <method access="public" instrs="5" name="patch" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ path -->
+      <method access="public" instrs="5" name="path" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ post -->
+      <method access="public" instrs="5" name="post" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ post -->
+      <method access="public" instrs="5" name="post" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ produces -->
+      <method access="public" instrs="23" name="produces" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" instrs="5" name="put" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" instrs="5" name="put" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ responseMessage -->
+      <method access="public" instrs="26" name="responseMessage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.RestOperationResponseMsgDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ responseMessage -->
+      <method access="public" instrs="23" name="responseMessage" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.rest.RestOperationResponseMsgDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ responseMessage -->
+      <method access="public" instrs="5" name="responseMessage" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.VerbDefinition</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestOperationResponseMsgDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ responseMessages -->
+      <method access="public" instrs="26" name="responseMessages" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ route -->
+      <method access="public" instrs="31" name="route" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.model.RouteDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setApiDocs -->
+      <method access="public" instrs="4" name="setApiDocs" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setBindingMode -->
+      <method access="public" instrs="4" name="setBindingMode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.model.rest.RestBindingMode</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setConsumes -->
+      <method access="public" instrs="4" name="setConsumes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEnableCORS -->
+      <method access="public" instrs="4" name="setEnableCORS" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPath -->
+      <method access="public" instrs="4" name="setPath" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setProduces -->
+      <method access="public" instrs="4" name="setProduces" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSkipBindingOnErrorCode -->
+      <method access="public" instrs="4" name="setSkipBindingOnErrorCode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Boolean</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setTag -->
+      <method access="public" instrs="4" name="setTag" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setVerbs -->
+      <method access="public" instrs="4" name="setVerbs" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ skipBindingOnErrorCode -->
+      <method access="public" instrs="25" name="skipBindingOnErrorCode" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tag -->
+      <method access="public" instrs="5" name="tag" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ to -->
+      <method access="public" instrs="29" name="to" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toD -->
+      <method access="public" instrs="29" name="toD" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ type -->
+      <method access="public" instrs="25" name="type" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ typeList -->
+      <method access="public" instrs="32" name="typeList" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ validateUniquePaths -->
+      <method access="protected" instrs="51" name="validateUniquePaths" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ verb -->
+      <method access="public" instrs="5" name="verb" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ verb -->
+      <method access="public" instrs="5" name="verb" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>org.apache.camel.model.rest.RestDefinition</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-14 18:05:13"/>
+  <interface dispatch="yes" name="Exchange" package="org.apache.camel">
+    <superinterfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AUTHENTICATION -->
+      <field access="public" final="yes" name="AUTHENTICATION" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAuthentication"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AUTHENTICATION_FAILURE_POLICY_ID -->
+      <field access="public" final="yes" name="AUTHENTICATION_FAILURE_POLICY_ID" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAuthenticationFailurePolicyId"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ACCEPT_CONTENT_TYPE -->
+      <field access="public" final="yes" name="ACCEPT_CONTENT_TYPE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAcceptContentType"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATED_SIZE -->
+      <field access="public" final="yes" name="AGGREGATED_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregatedSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATED_TIMEOUT -->
+      <field access="public" final="yes" name="AGGREGATED_TIMEOUT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregatedTimeout"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATED_COMPLETED_BY -->
+      <field access="public" final="yes" name="AGGREGATED_COMPLETED_BY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregatedCompletedBy"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATED_CORRELATION_KEY -->
+      <field access="public" final="yes" name="AGGREGATED_CORRELATION_KEY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregatedCorrelationKey"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATED_COLLECTION_GUARD -->
+      <field access="public" final="yes" name="AGGREGATED_COLLECTION_GUARD" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregatedCollectionGuard"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATION_STRATEGY -->
+      <field access="public" final="yes" name="AGGREGATION_STRATEGY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregationStrategy"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATION_COMPLETE_CURRENT_GROUP -->
+      <field access="public" final="yes" name="AGGREGATION_COMPLETE_CURRENT_GROUP" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregationCompleteCurrentGroup"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATION_COMPLETE_ALL_GROUPS -->
+      <field access="public" final="yes" name="AGGREGATION_COMPLETE_ALL_GROUPS" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregationCompleteAllGroups"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~ field:AGGREGATION_COMPLETE_ALL_GROUPS_INCLUSIVE -->
+      <field access="public" final="yes" name="AGGREGATION_COMPLETE_ALL_GROUPS_INCLUSIVE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAggregationCompleteAllGroupsInclusive"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ASYNC_WAIT -->
+      <field access="public" final="yes" name="ASYNC_WAIT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelAsyncWait"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BATCH_INDEX -->
+      <field access="public" final="yes" name="BATCH_INDEX" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBatchIndex"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BATCH_SIZE -->
+      <field access="public" final="yes" name="BATCH_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBatchSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BATCH_COMPLETE -->
+      <field access="public" final="yes" name="BATCH_COMPLETE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBatchComplete"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BEAN_METHOD_NAME -->
+      <field access="public" final="yes" name="BEAN_METHOD_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBeanMethodName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BEAN_MULTI_PARAMETER_ARRAY -->
+      <field access="public" final="yes" name="BEAN_MULTI_PARAMETER_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBeanMultiParameterArray"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BINDING -->
+      <field access="public" final="yes" name="BINDING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelBinding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BREADCRUMB_ID -->
+      <field access="public" final="yes" name="BREADCRUMB_ID" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="breadcrumbId"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CHARSET_NAME -->
+      <field access="public" final="yes" name="CHARSET_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCharsetName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CIRCUIT_BREAKER_STATE -->
+      <field access="public" final="yes" name="CIRCUIT_BREAKER_STATE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCircuitBreakerState"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CREATED_TIMESTAMP -->
+      <field access="public" final="yes" name="CREATED_TIMESTAMP" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCreatedTimestamp"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_ENCODING -->
+      <field access="public" final="yes" name="CONTENT_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="Content-Encoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_LENGTH -->
+      <field access="public" final="yes" name="CONTENT_LENGTH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="Content-Length"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CONTENT_TYPE -->
+      <field access="public" final="yes" name="CONTENT_TYPE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="Content-Type"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:COOKIE_HANDLER -->
+      <field access="public" final="yes" name="COOKIE_HANDLER" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCookieHandler"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CORRELATION_ID -->
+      <field access="public" final="yes" name="CORRELATION_ID" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCorrelationId"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DATASET_INDEX -->
+      <field access="public" final="yes" name="DATASET_INDEX" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelDataSetIndex"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DEFAULT_CHARSET_PROPERTY -->
+      <field access="public" final="yes" name="DEFAULT_CHARSET_PROPERTY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="org.apache.camel.default.charset"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DESTINATION_OVERRIDE_URL -->
+      <field access="public" final="yes" name="DESTINATION_OVERRIDE_URL" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelDestinationOverrideUrl"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DISABLE_HTTP_STREAM_CACHE -->
+      <field access="public" final="yes" name="DISABLE_HTTP_STREAM_CACHE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelDisableHttpStreamCache"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DUPLICATE_MESSAGE -->
+      <field access="public" final="yes" name="DUPLICATE_MESSAGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelDuplicateMessage"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DOCUMENT_BUILDER_FACTORY -->
+      <field access="public" final="yes" name="DOCUMENT_BUILDER_FACTORY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelDocumentBuilderFactory"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EXCEPTION_CAUGHT -->
+      <field access="public" final="yes" name="EXCEPTION_CAUGHT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelExceptionCaught"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EXCEPTION_HANDLED -->
+      <field access="public" final="yes" name="EXCEPTION_HANDLED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelExceptionHandled"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EVALUATE_EXPRESSION_RESULT -->
+      <field access="public" final="yes" name="EVALUATE_EXPRESSION_RESULT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelEvaluateExpressionResult"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ERRORHANDLER_CIRCUIT_DETECTED -->
+      <field access="public" final="yes" name="ERRORHANDLER_CIRCUIT_DETECTED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFErrorHandlerCircuitDetected"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ERRORHANDLER_HANDLED -->
+      <field access="public" final="yes" name="ERRORHANDLER_HANDLED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelErrorHandlerHandled"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:EXTERNAL_REDELIVERED -->
+      <field access="public" final="yes" name="EXTERNAL_REDELIVERED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelExternalRedelivered"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FAILURE_HANDLED -->
+      <field access="public" final="yes" name="FAILURE_HANDLED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFailureHandled"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FAILURE_ENDPOINT -->
+      <field access="public" final="yes" name="FAILURE_ENDPOINT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFailureEndpoint"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FAILURE_ROUTE_ID -->
+      <field access="public" final="yes" name="FAILURE_ROUTE_ID" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFailureRouteId"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FATAL_FALLBACK_ERROR_HANDLER -->
+      <field access="public" final="yes" name="FATAL_FALLBACK_ERROR_HANDLER" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFatalFallbackErrorHandler"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_CONTENT_TYPE -->
+      <field access="public" final="yes" name="FILE_CONTENT_TYPE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileContentType"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LOCAL_WORK_PATH -->
+      <field access="public" final="yes" name="FILE_LOCAL_WORK_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLocalWorkPath"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_NAME -->
+      <field access="public" final="yes" name="FILE_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_NAME_ONLY -->
+      <field access="public" final="yes" name="FILE_NAME_ONLY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileNameOnly"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_NAME_PRODUCED -->
+      <field access="public" final="yes" name="FILE_NAME_PRODUCED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileNameProduced"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_NAME_CONSUMED -->
+      <field access="public" final="yes" name="FILE_NAME_CONSUMED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileNameConsumed"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_PATH -->
+      <field access="public" final="yes" name="FILE_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFilePath"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_PARENT -->
+      <field access="public" final="yes" name="FILE_PARENT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileParent"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LAST_MODIFIED -->
+      <field access="public" final="yes" name="FILE_LAST_MODIFIED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLastModified"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LENGTH -->
+      <field access="public" final="yes" name="FILE_LENGTH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLength"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LOCK_FILE_ACQUIRED -->
+      <field access="public" final="yes" name="FILE_LOCK_FILE_ACQUIRED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLockFileAcquired"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LOCK_FILE_NAME -->
+      <field access="public" final="yes" name="FILE_LOCK_FILE_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLockFileName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LOCK_EXCLUSIVE_LOCK -->
+      <field access="public" final="yes" name="FILE_LOCK_EXCLUSIVE_LOCK" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLockExclusiveLock"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILE_LOCK_RANDOM_ACCESS_FILE -->
+      <field access="public" final="yes" name="FILE_LOCK_RANDOM_ACCESS_FILE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFileLockRandomAccessFile"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILTER_MATCHED -->
+      <field access="public" final="yes" name="FILTER_MATCHED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFilterMatched"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FILTER_NON_XML_CHARS -->
+      <field access="public" final="yes" name="FILTER_NON_XML_CHARS" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelFilterNonXmlChars"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:GROUPED_EXCHANGE -->
+      <field access="public" final="yes" name="GROUPED_EXCHANGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelGroupedExchange"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_BASE_URI -->
+      <field access="public" final="yes" name="HTTP_BASE_URI" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpBaseUri"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_CHARACTER_ENCODING -->
+      <field access="public" final="yes" name="HTTP_CHARACTER_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpCharacterEncoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_METHOD -->
+      <field access="public" final="yes" name="HTTP_METHOD" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpMethod"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_PATH -->
+      <field access="public" final="yes" name="HTTP_PATH" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpPath"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_PROTOCOL_VERSION -->
+      <field access="public" final="yes" name="HTTP_PROTOCOL_VERSION" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpProtocolVersion"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_QUERY -->
+      <field access="public" final="yes" name="HTTP_QUERY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpQuery"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_RAW_QUERY -->
+      <field access="public" final="yes" name="HTTP_RAW_QUERY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpRawQuery"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_RESPONSE_CODE -->
+      <field access="public" final="yes" name="HTTP_RESPONSE_CODE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpResponseCode"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_RESPONSE_TEXT -->
+      <field access="public" final="yes" name="HTTP_RESPONSE_TEXT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpResponseText"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_URI -->
+      <field access="public" final="yes" name="HTTP_URI" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpUri"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_URL -->
+      <field access="public" final="yes" name="HTTP_URL" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpUrl"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_CHUNKED -->
+      <field access="public" final="yes" name="HTTP_CHUNKED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpChunked"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_SERVLET_REQUEST -->
+      <field access="public" final="yes" name="HTTP_SERVLET_REQUEST" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpServletRequest"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:HTTP_SERVLET_RESPONSE -->
+      <field access="public" final="yes" name="HTTP_SERVLET_RESPONSE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelHttpServletResponse"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INTERCEPTED_ENDPOINT -->
+      <field access="public" final="yes" name="INTERCEPTED_ENDPOINT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelInterceptedEndpoint"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~ field:INTERCEPT_SEND_TO_ENDPOINT_WHEN_MATCHED -->
+      <field access="public" final="yes" name="INTERCEPT_SEND_TO_ENDPOINT_WHEN_MATCHED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelInterceptSendToEndpointWhenMatched"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LANGUAGE_SCRIPT -->
+      <field access="public" final="yes" name="LANGUAGE_SCRIPT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLanguageScript"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG_DEBUG_BODY_MAX_CHARS -->
+      <field access="public" final="yes" name="LOG_DEBUG_BODY_MAX_CHARS" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLogDebugBodyMaxChars"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG_DEBUG_BODY_STREAMS -->
+      <field access="public" final="yes" name="LOG_DEBUG_BODY_STREAMS" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLogDebugStreams"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG_EIP_NAME -->
+      <field access="public" final="yes" name="LOG_EIP_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLogEipName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOOP_INDEX -->
+      <field access="public" final="yes" name="LOOP_INDEX" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLoopIndex"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOOP_SIZE -->
+      <field access="public" final="yes" name="LOOP_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelLoopSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAXIMUM_CACHE_POOL_SIZE -->
+      <field access="public" final="yes" name="MAXIMUM_CACHE_POOL_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMaximumCachePoolSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAXIMUM_ENDPOINT_CACHE_SIZE -->
+      <field access="public" final="yes" name="MAXIMUM_ENDPOINT_CACHE_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMaximumEndpointCacheSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAXIMUM_TRANSFORMER_CACHE_SIZE -->
+      <field access="public" final="yes" name="MAXIMUM_TRANSFORMER_CACHE_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMaximumTransformerCacheSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MAXIMUM_VALIDATOR_CACHE_SIZE -->
+      <field access="public" final="yes" name="MAXIMUM_VALIDATOR_CACHE_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMaximumValidatorCacheSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MESSAGE_HISTORY -->
+      <field access="public" final="yes" name="MESSAGE_HISTORY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMessageHistory"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MESSAGE_HISTORY_HEADER_FORMAT -->
+      <field access="public" final="yes" name="MESSAGE_HISTORY_HEADER_FORMAT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMessageHistoryHeaderFormat"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MESSAGE_HISTORY_OUTPUT_FORMAT -->
+      <field access="public" final="yes" name="MESSAGE_HISTORY_OUTPUT_FORMAT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMessageHistoryOutputFormat"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MULTICAST_INDEX -->
+      <field access="public" final="yes" name="MULTICAST_INDEX" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMulticastIndex"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MULTICAST_COMPLETE -->
+      <field access="public" final="yes" name="MULTICAST_COMPLETE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelMulticastComplete"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NOTIFY_EVENT -->
+      <field access="public" final="yes" name="NOTIFY_EVENT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelNotifyEvent"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ON_COMPLETION -->
+      <field access="public" final="yes" name="ON_COMPLETION" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelOnCompletion"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:OVERRULE_FILE_NAME -->
+      <field access="public" final="yes" name="OVERRULE_FILE_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelOverruleFileName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PARENT_UNIT_OF_WORK -->
+      <field access="public" final="yes" name="PARENT_UNIT_OF_WORK" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelParentUnitOfWork"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STREAM_CACHE_UNIT_OF_WORK -->
+      <field access="public" final="yes" name="STREAM_CACHE_UNIT_OF_WORK" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelStreamCacheUnitOfWork"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RECIPIENT_LIST_ENDPOINT -->
+      <field access="public" final="yes" name="RECIPIENT_LIST_ENDPOINT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRecipientListEndpoint"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RECEIVED_TIMESTAMP -->
+      <field access="public" final="yes" name="RECEIVED_TIMESTAMP" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelReceivedTimestamp"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REDELIVERED -->
+      <field access="public" final="yes" name="REDELIVERED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRedelivered"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REDELIVERY_COUNTER -->
+      <field access="public" final="yes" name="REDELIVERY_COUNTER" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRedeliveryCounter"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REDELIVERY_MAX_COUNTER -->
+      <field access="public" final="yes" name="REDELIVERY_MAX_COUNTER" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRedeliveryMaxCounter"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REDELIVERY_EXHAUSTED -->
+      <field access="public" final="yes" name="REDELIVERY_EXHAUSTED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRedeliveryExhausted"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REDELIVERY_DELAY -->
+      <field access="public" final="yes" name="REDELIVERY_DELAY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRedeliveryDelay"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REST_HTTP_URI -->
+      <field access="public" final="yes" name="REST_HTTP_URI" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRestHttpUri"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REST_HTTP_QUERY -->
+      <field access="public" final="yes" name="REST_HTTP_QUERY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRestHttpQuery"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ROLLBACK_ONLY -->
+      <field access="public" final="yes" name="ROLLBACK_ONLY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRollbackOnly"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ROLLBACK_ONLY_LAST -->
+      <field access="public" final="yes" name="ROLLBACK_ONLY_LAST" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRollbackOnlyLast"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ROUTE_STOP -->
+      <field access="public" final="yes" name="ROUTE_STOP" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelRouteStop"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:REUSE_SCRIPT_ENGINE -->
+      <field access="public" final="yes" name="REUSE_SCRIPT_ENGINE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelReuseScripteEngine"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:COMPILE_SCRIPT -->
+      <field access="public" final="yes" name="COMPILE_SCRIPT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelCompileScript"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SAXPARSER_FACTORY -->
+      <field access="public" final="yes" name="SAXPARSER_FACTORY" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSAXParserFactory"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SCHEDULER_POLLED_MESSAGES -->
+      <field access="public" final="yes" name="SCHEDULER_POLLED_MESSAGES" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSchedulerPolledMessages"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SOAP_ACTION -->
+      <field access="public" final="yes" name="SOAP_ACTION" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSoapAction"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SKIP_GZIP_ENCODING -->
+      <field access="public" final="yes" name="SKIP_GZIP_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSkipGzipEncoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SKIP_WWW_FORM_URLENCODED -->
+      <field access="public" final="yes" name="SKIP_WWW_FORM_URLENCODED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSkipWwwFormUrlEncoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SLIP_ENDPOINT -->
+      <field access="public" final="yes" name="SLIP_ENDPOINT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSlipEndpoint"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SPLIT_INDEX -->
+      <field access="public" final="yes" name="SPLIT_INDEX" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSplitIndex"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SPLIT_COMPLETE -->
+      <field access="public" final="yes" name="SPLIT_COMPLETE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSplitComplete"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SPLIT_SIZE -->
+      <field access="public" final="yes" name="SPLIT_SIZE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelSplitSize"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TIMER_COUNTER -->
+      <field access="public" final="yes" name="TIMER_COUNTER" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTimerCounter"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TIMER_FIRED_TIME -->
+      <field access="public" final="yes" name="TIMER_FIRED_TIME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTimerFiredTime"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TIMER_NAME -->
+      <field access="public" final="yes" name="TIMER_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTimerName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TIMER_PERIOD -->
+      <field access="public" final="yes" name="TIMER_PERIOD" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTimerPeriod"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TIMER_TIME -->
+      <field access="public" final="yes" name="TIMER_TIME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTimerTime"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TO_ENDPOINT -->
+      <field access="public" final="yes" name="TO_ENDPOINT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelToEndpoint"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRACE_EVENT -->
+      <field access="public" final="yes" name="TRACE_EVENT" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTraceEvent"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRACE_EVENT_NODE_ID -->
+      <field access="public" final="yes" name="TRACE_EVENT_NODE_ID" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTraceEventNodeId"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRACE_EVENT_TIMESTAMP -->
+      <field access="public" final="yes" name="TRACE_EVENT_TIMESTAMP" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTraceEventTimestamp"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRACE_EVENT_EXCHANGE -->
+      <field access="public" final="yes" name="TRACE_EVENT_EXCHANGE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelTraceEventExchange"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRY_ROUTE_BLOCK -->
+      <field access="public" final="yes" name="TRY_ROUTE_BLOCK" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="TryRouteBlock"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRANSFER_ENCODING -->
+      <field access="public" final="yes" name="TRANSFER_ENCODING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="Transfer-Encoding"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNIT_OF_WORK_EXHAUSTED -->
+      <field access="public" final="yes" name="UNIT_OF_WORK_EXHAUSTED" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelUnitOfWorkExhausted"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UNIT_OF_WORK_PROCESS_SYNC -->
+      <field access="public" final="yes" name="UNIT_OF_WORK_PROCESS_SYNC" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelUnitOfWorkProcessSync"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:XSLT_FILE_NAME -->
+      <field access="public" final="yes" name="XSLT_FILE_NAME" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelXsltFileName"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:XSLT_ERROR -->
+      <field access="public" final="yes" name="XSLT_ERROR" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelXsltError"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:XSLT_FATAL_ERROR -->
+      <field access="public" final="yes" name="XSLT_FATAL_ERROR" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelXsltFatalError"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:XSLT_WARNING -->
+      <field access="public" final="yes" name="XSLT_WARNING" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="CamelXsltWarning"/>
+        </value>
+      </field>
+    </fields>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addOnCompletion -->
+      <method abstract="yes" access="public" name="addOnCompletion" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.Synchronization</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsOnCompletion -->
+      <method abstract="yes" access="public" name="containsOnCompletion" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.Synchronization</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method abstract="yes" access="public" name="copy" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.Exchange</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method abstract="yes" access="public" name="copy" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+          <return>
+            <object>org.apache.camel.Exchange</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getContext -->
+      <method abstract="yes" access="public" name="getContext" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.CamelContext</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getException -->
+      <method abstract="yes" access="public" name="getException" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Exception</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getException -->
+      <method abstract="yes" access="public" name="getException" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExchangeId -->
+      <method abstract="yes" access="public" name="getExchangeId" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFromEndpoint -->
+      <method abstract="yes" access="public" name="getFromEndpoint" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.Endpoint</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getFromRouteId -->
+      <method abstract="yes" access="public" name="getFromRouteId" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIn -->
+      <method abstract="yes" access="public" name="getIn" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.Message</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIn -->
+      <method abstract="yes" access="public" name="getIn" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOut -->
+      <method abstract="yes" access="public" name="getOut" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.Message</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getOut -->
+      <method abstract="yes" access="public" name="getOut" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPattern -->
+      <method abstract="yes" access="public" name="getPattern" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.ExchangePattern</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperties -->
+      <method abstract="yes" access="public" name="getProperties" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method abstract="yes" access="public" name="getProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method abstract="yes" access="public" name="getProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method abstract="yes" access="public" name="getProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getProperty -->
+      <method abstract="yes" access="public" name="getProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Class</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getUnitOfWork -->
+      <method abstract="yes" access="public" name="getUnitOfWork" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.spi.UnitOfWork</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handoverCompletions -->
+      <method abstract="yes" access="public" name="handoverCompletions" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Exchange</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ handoverCompletions -->
+      <method abstract="yes" access="public" name="handoverCompletions" valid="no">
+        <signature>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasOut -->
+      <method abstract="yes" access="public" name="hasOut" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hasProperties -->
+      <method abstract="yes" access="public" name="hasProperties" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isExternalRedelivered -->
+      <method abstract="yes" access="public" name="isExternalRedelivered" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Boolean</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isFailed -->
+      <method abstract="yes" access="public" name="isFailed" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isRollbackOnly -->
+      <method abstract="yes" access="public" name="isRollbackOnly" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTransacted -->
+      <method abstract="yes" access="public" name="isTransacted" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeProperties -->
+      <method abstract="yes" access="public" name="removeProperties" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeProperties -->
+      <method abstract="yes" access="public" name="removeProperties" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>java.lang.String</object>
+            </array>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeProperty -->
+      <method abstract="yes" access="public" name="removeProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setException -->
+      <method abstract="yes" access="public" name="setException" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Throwable</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setExchangeId -->
+      <method abstract="yes" access="public" name="setExchangeId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFromEndpoint -->
+      <method abstract="yes" access="public" name="setFromEndpoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Endpoint</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setFromRouteId -->
+      <method abstract="yes" access="public" name="setFromRouteId" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setIn -->
+      <method abstract="yes" access="public" name="setIn" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Message</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setOut -->
+      <method abstract="yes" access="public" name="setOut" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.Message</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setPattern -->
+      <method abstract="yes" access="public" name="setPattern" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.ExchangePattern</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setProperty -->
+      <method abstract="yes" access="public" name="setProperty" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.String</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setUnitOfWork -->
+      <method abstract="yes" access="public" name="setUnitOfWork" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.UnitOfWork</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

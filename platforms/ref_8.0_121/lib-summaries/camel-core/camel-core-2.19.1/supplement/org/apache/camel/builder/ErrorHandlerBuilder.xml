@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-14 18:12:43"/>
+  <interface dispatch="yes" name="ErrorHandlerBuilder" package="org.apache.camel.builder">
+    <superinterfaces>
+      <superinterface>org.apache.camel.ErrorHandlerFactory</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields/>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addErrorHandlers -->
+      <method abstract="yes" access="public" name="addErrorHandlers" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.model.OnExceptionDefinition</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cloneBuilder -->
+      <method abstract="yes" access="public" name="cloneBuilder" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.builder.ErrorHandlerBuilder</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ configure -->
+      <method abstract="yes" access="public" name="configure" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.camel.processor.ErrorHandler</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getErrorHandlers -->
+      <method abstract="yes" access="public" name="getErrorHandlers" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <return>
+            <object>java.util.List</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExceptionPolicyStrategy -->
+      <method abstract="yes" access="public" name="getExceptionPolicyStrategy" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.camel.processor.exceptionpolicy.ExceptionPolicyStrategy</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setErrorHandlers -->
+      <method abstract="yes" access="public" name="setErrorHandlers" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.spi.RouteContext</object>
+          </arg>
+          <arg nr="2">
+            <object>java.util.List</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setExceptionPolicyStrategy -->
+      <method abstract="yes" access="public" name="setExceptionPolicyStrategy" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.camel.processor.exceptionpolicy.ExceptionPolicyStrategy</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ supportTransacted -->
+      <method abstract="yes" access="public" name="supportTransacted" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
