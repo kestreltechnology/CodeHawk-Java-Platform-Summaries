@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 15:09:18"/>
+  <class name="PolynomialSplineFunction" package="org.apache.commons.math3.analysis.polynomials">
+    <interfaces>
+      <implements>org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction</implements>
+      <implements>org.apache.commons.math3.analysis.DifferentiableUnivariateFunction</implements>
+      <implements>org.apache.commons.math3.analysis.UnivariateFunction</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:knots -->
+      <field access="private" final="yes" name="knots">
+        <signature>
+          <array>
+            <double/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:polynomials -->
+      <field access="private" final="yes" name="polynomials">
+        <signature>
+          <array>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:n -->
+      <field access="private" final="yes" name="n">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (double[],org.apache.commons.math3.analysis.polynomials.PolynomialFunction[]) -->
+      <method access="public" instrs="79" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.NullArgumentException</throws>
+          <throws>org.apache.commons.math3.exception.NumberIsTooSmallException</throws>
+          <throws>org.apache.commons.math3.exception.DimensionMismatchException</throws>
+          <throws>org.apache.commons.math3.exception.NonMonotonicSequenceException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ derivative -->
+      <method access="public" instrs="3" name="derivative" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKnots -->
+      <method access="public" instrs="18" name="getKnots" valid="no">
+        <signature>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getN -->
+      <method access="public" instrs="3" name="getN" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPolynomials -->
+      <method access="public" instrs="14" name="getPolynomials" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isValidPoint -->
+      <method access="public" instrs="19" name="isValidPoint" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ polynomialSplineDerivative -->
+      <method access="public" instrs="27" name="polynomialSplineDerivative" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ value -->
+      <method access="public" instrs="62" name="value" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ value -->
+      <method access="public" instrs="65" name="value" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.differentiation.DerivativeStructure</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.analysis.differentiation.DerivativeStructure</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

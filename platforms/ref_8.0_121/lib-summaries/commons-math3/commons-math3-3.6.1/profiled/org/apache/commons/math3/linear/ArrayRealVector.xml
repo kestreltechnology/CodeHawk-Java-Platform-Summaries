@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 15:23:27"/>
+  <class name="ArrayRealVector" package="org.apache.commons.math3.linear">
+    <superclass>org.apache.commons.math3.linear.RealVector</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (int,double) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[]) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[],boolean) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[],int,int) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.Double[]) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Double</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.lang.Double[],int,int) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>java.lang.Double</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.linear.RealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.linear.ArrayRealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~ (org.apache.commons.math3.linear.ArrayRealVector,boolean) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (org.apache.commons.math3.linear.ArrayRealVector,org.apache.commons.math3.linear.ArrayRealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (org.apache.commons.math3.linear.ArrayRealVector,org.apache.commons.math3.linear.RealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (org.apache.commons.math3.linear.RealVector,org.apache.commons.math3.linear.ArrayRealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~ (org.apache.commons.math3.linear.ArrayRealVector,double[]) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~ (double[],org.apache.commons.math3.linear.ArrayRealVector) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[],double[]) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" bridge="yes" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addToEntry -->
+      <method access="public" name="addToEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" name="append">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" name="append">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ append -->
+      <method access="public" name="append">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkVectorDimensions -->
+      <method access="protected" name="checkVectorDimensions">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkVectorDimensions -->
+      <method access="protected" name="checkVectorDimensions">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combine -->
+      <method access="public" name="combine">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combine -->
+      <method access="public" bridge="yes" name="combine">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combineToSelf -->
+      <method access="public" name="combineToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ combineToSelf -->
+      <method access="public" bridge="yes" name="combineToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" name="copy">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" bridge="yes" name="copy">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dotProduct -->
+      <method access="public" name="dotProduct">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeDivide -->
+      <method access="public" name="ebeDivide">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeDivide -->
+      <method access="public" bridge="yes" name="ebeDivide">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeMultiply -->
+      <method access="public" name="ebeMultiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ebeMultiply -->
+      <method access="public" bridge="yes" name="ebeMultiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataRef -->
+      <method access="public" name="getDataRef">
+        <signature>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDimension -->
+      <method access="public" name="getDimension">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDistance -->
+      <method access="public" name="getDistance">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method access="public" name="getEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getL1Distance -->
+      <method access="public" name="getL1Distance">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getL1Norm -->
+      <method access="public" name="getL1Norm">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLInfDistance -->
+      <method access="public" name="getLInfDistance">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLInfNorm -->
+      <method access="public" name="getLInfNorm">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getNorm -->
+      <method access="public" name="getNorm">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSubVector -->
+      <method access="public" name="getSubVector">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isInfinite -->
+      <method access="public" name="isInfinite">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNaN -->
+      <method access="public" name="isNaN">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ map -->
+      <method access="public" name="map">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ map -->
+      <method access="public" bridge="yes" name="map">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapAddToSelf -->
+      <method access="public" name="mapAddToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapDivideToSelf -->
+      <method access="public" name="mapDivideToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapMultiplyToSelf -->
+      <method access="public" name="mapMultiplyToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapSubtractToSelf -->
+      <method access="public" name="mapSubtractToSelf">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapToSelf -->
+      <method access="public" name="mapToSelf">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ mapToSelf -->
+      <method access="public" bridge="yes" name="mapToSelf">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ outerProduct -->
+      <method access="public" name="outerProduct">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ set -->
+      <method access="public" name="set">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEntry -->
+      <method access="public" name="setEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubVector -->
+      <method access="public" name="setSubVector">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubVector -->
+      <method access="public" name="setSubVector">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.ArrayRealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" bridge="yes" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.RealVector</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toArray -->
+      <method access="public" name="toArray">
+        <signature>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInDefaultOrder -->
+      <method access="public" name="walkInDefaultOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInOptimizedOrder -->
+      <method access="public" name="walkInOptimizedOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.RealVectorChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

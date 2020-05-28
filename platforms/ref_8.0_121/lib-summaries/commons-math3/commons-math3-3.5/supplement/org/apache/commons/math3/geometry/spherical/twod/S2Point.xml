@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2020-03-16 19:14:40"/>
+  <class name="S2Point" package="org.apache.commons.math3.geometry.spherical.twod">
+    <interfaces>
+      <implements>org.apache.commons.math3.geometry.Point</implements>
+      <implements>java.io.Serializable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PLUS_I -->
+      <field access="public" final="yes" name="PLUS_I" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PLUS_J -->
+      <field access="public" final="yes" name="PLUS_J" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:PLUS_K -->
+      <field access="public" final="yes" name="PLUS_K" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MINUS_I -->
+      <field access="public" final="yes" name="MINUS_I" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MINUS_J -->
+      <field access="public" final="yes" name="MINUS_J" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:MINUS_K -->
+      <field access="public" final="yes" name="MINUS_K" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:NaN -->
+      <field access="public" final="yes" name="NaN" not-null="yes" static="yes">
+        <signature>
+          <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:serialVersionUID -->
+      <field access="private" final="yes" name="serialVersionUID" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="20131218"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:theta -->
+      <field access="private" final="yes" name="theta">
+        <signature>
+          <double/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:phi -->
+      <field access="private" final="yes" name="phi">
+        <signature>
+          <double/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:vector -->
+      <field access="private" final="yes" name="vector">
+        <signature>
+          <object>org.apache.commons.math3.geometry.euclidean.threed.Vector3D</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double,double) -->
+      <constructor access="public" instrs="8" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~ (org.apache.commons.math3.geometry.euclidean.threed.Vector3D) -->
+      <constructor access="public" instrs="13" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.geometry.euclidean.threed.Vector3D</object>
+          </arg>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.MathArithmeticException</throws>
+        </exceptions>
+        <summary/>
+      </constructor>
+      <!--  (double,double,org.apache.commons.math3.geometry.euclidean.threed.Vector3D) -->
+      <constructor access="private" instrs="12" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.geometry.euclidean.threed.Vector3D</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ distance -->
+      <method access="public" instrs="5" name="distance" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.geometry.Point</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ distance -->
+      <method access="public" instrs="6" name="distance" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+          </arg>
+          <arg nr="2">
+            <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" instrs="35" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getPhi -->
+      <method access="public" instrs="3" name="getPhi" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSpace -->
+      <method access="public" instrs="2" name="getSpace" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.geometry.Space</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getTheta -->
+      <method access="public" instrs="3" name="getTheta" valid="no">
+        <signature>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getVector -->
+      <method access="public" instrs="3" name="getVector" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.geometry.euclidean.threed.Vector3D</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="17" name="hashCode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isNaN -->
+      <method access="public" instrs="12" name="isNaN" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" instrs="14" name="negate" valid="no">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.geometry.spherical.twod.S2Point</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ vector -->
+      <method access="private" instrs="41" name="vector" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.geometry.euclidean.threed.Vector3D</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>org.apache.commons.math3.exception.OutOfRangeException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2020, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

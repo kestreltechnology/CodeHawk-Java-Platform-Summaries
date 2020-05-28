@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-28 22:53:05"/>
+  <class name="Array2DRowFieldMatrix" package="org.apache.commons.math3.linear">
+    <superclass>org.apache.commons.math3.linear.AbstractFieldMatrix</superclass>
+    <interfaces>
+      <implements>java.io.Serializable</implements>
+      <implements>org.apache.commons.math3.linear.FieldMatrix</implements>
+      <implements>org.apache.commons.math3.linear.AnyMatrix</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.Field) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.Field</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.Field,int,int) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.Field</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.FieldElement[][]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.apache.commons.math3.Field,org.apache.commons.math3.FieldElement[][]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.Field</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.FieldElement[][],boolean) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.apache.commons.math3.Field,org.apache.commons.math3.FieldElement[][],boolean) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.Field</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ (org.apache.commons.math3.FieldElement[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+      <!--  (org.apache.commons.math3.Field,org.apache.commons.math3.FieldElement[]) -->
+      <constructor access="public">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.Field</object>
+          </arg>
+          <arg nr="2">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </constructor>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addToEntry -->
+      <method access="public" name="addToEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copy -->
+      <method access="public" name="copy">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copyIn -->
+      <method access="private" name="copyIn">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copyOut -->
+      <method access="private" name="copyOut">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ createMatrix -->
+      <method access="public" name="createMatrix">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.FieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getColumnDimension -->
+      <method access="public" name="getColumnDimension">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getData -->
+      <method access="public" name="getData">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDataRef -->
+      <method access="public" name="getDataRef">
+        <signature>
+          <return>
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntry -->
+      <method access="public" name="getEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getRowDimension -->
+      <method access="public" name="getRowDimension">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyEntry -->
+      <method access="public" name="multiplyEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ operate -->
+      <method access="public" name="operate">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preMultiply -->
+      <method access="public" name="preMultiply">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <object>org.apache.commons.math3.FieldElement</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setEntry -->
+      <method access="public" name="setEntry">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>org.apache.commons.math3.FieldElement</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ setSubMatrix -->
+      <method access="public" name="setSubMatrix">
+        <signature>
+          <arg nr="1">
+            <array>
+              <array>
+                <object>org.apache.commons.math3.FieldElement</object>
+              </array>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.linear.Array2DRowFieldMatrix</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInColumnOrder -->
+      <method access="public" name="walkInColumnOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixChangingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ walkInRowOrder -->
+      <method access="public" name="walkInRowOrder">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.linear.FieldMatrixPreservingVisitor</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.FieldElement</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

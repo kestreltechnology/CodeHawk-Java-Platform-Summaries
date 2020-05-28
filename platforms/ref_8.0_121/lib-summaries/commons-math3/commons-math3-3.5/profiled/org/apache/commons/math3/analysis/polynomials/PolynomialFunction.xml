@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-14 15:11:47"/>
+  <class name="PolynomialFunction" package="org.apache.commons.math3.analysis.polynomials">
+    <interfaces>
+      <implements>org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction</implements>
+      <implements>org.apache.commons.math3.analysis.DifferentiableUnivariateFunction</implements>
+      <implements>java.io.Serializable</implements>
+      <implements>org.apache.commons.math3.analysis.UnivariateFunction</implements>
+    </interfaces>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double[]) -->
+      <method access="public">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
+      <method access="public" name="add">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ degree -->
+      <method access="public" name="degree">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ derivative -->
+      <method access="public" name="derivative">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.analysis.UnivariateFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ differentiate -->
+      <method access="protected" name="differentiate" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" name="equals">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ evaluate -->
+      <method access="protected" name="evaluate" static="yes">
+        <signature>
+          <arg nr="1">
+            <array>
+              <double/>
+            </array>
+          </arg>
+          <arg nr="2">
+            <double/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCoefficients -->
+      <method access="public" name="getCoefficients">
+        <signature>
+          <return>
+            <array>
+              <double/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" name="hashCode">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiply -->
+      <method access="public" name="multiply">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ negate -->
+      <method access="public" name="negate">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ polynomialDerivative -->
+      <method access="public" name="polynomialDerivative">
+        <signature>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subtract -->
+      <method access="public" name="subtract">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.analysis.polynomials.PolynomialFunction</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="public" name="toString">
+        <signature>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ toString -->
+      <method access="private" name="toString" static="yes">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>java.lang.String</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ value -->
+      <method access="public" name="value">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <double/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ value -->
+      <method access="public" name="value">
+        <signature>
+          <arg nr="1">
+            <object>org.apache.commons.math3.analysis.differentiation.DerivativeStructure</object>
+          </arg>
+          <return>
+            <object>org.apache.commons.math3.analysis.differentiation.DerivativeStructure</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
