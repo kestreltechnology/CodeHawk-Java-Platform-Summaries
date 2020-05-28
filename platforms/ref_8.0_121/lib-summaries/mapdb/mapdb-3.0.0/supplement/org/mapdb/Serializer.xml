@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="interface" time="2019-01-17 15:06:58"/>
+  <interface dispatch="yes" name="Serializer" package="org.mapdb">
+    <superinterfaces>
+      <superinterface>java.util.Comparator</superinterface>
+    </superinterfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CHAR -->
+      <field access="public" final="yes" name="CHAR" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_ORIGHASH -->
+      <field access="public" final="yes" name="STRING_ORIGHASH" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING -->
+      <field access="public" final="yes" name="STRING" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_DELTA -->
+      <field access="public" final="yes" name="STRING_DELTA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_DELTA2 -->
+      <field access="public" final="yes" name="STRING_DELTA2" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_INTERN -->
+      <field access="public" final="yes" name="STRING_INTERN" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_ASCII -->
+      <field access="public" final="yes" name="STRING_ASCII" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:STRING_NOSIZE -->
+      <field access="public" final="yes" name="STRING_NOSIZE" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.Serializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LONG -->
+      <field access="public" final="yes" name="LONG" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LONG_PACKED -->
+      <field access="public" final="yes" name="LONG_PACKED" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LONG_DELTA -->
+      <field access="public" final="yes" name="LONG_DELTA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INTEGER -->
+      <field access="public" final="yes" name="INTEGER" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INTEGER_PACKED -->
+      <field access="public" final="yes" name="INTEGER_PACKED" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INTEGER_DELTA -->
+      <field access="public" final="yes" name="INTEGER_DELTA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BOOLEAN -->
+      <field access="public" final="yes" name="BOOLEAN" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RECID -->
+      <field access="public" final="yes" name="RECID" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:RECID_ARRAY -->
+      <field access="public" final="yes" name="RECID_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ILLEGAL_ACCESS -->
+      <field access="public" final="yes" name="ILLEGAL_ACCESS" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTE_ARRAY -->
+      <field access="public" final="yes" name="BYTE_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTE_ARRAY_DELTA -->
+      <field access="public" final="yes" name="BYTE_ARRAY_DELTA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTE_ARRAY_DELTA2 -->
+      <field access="public" final="yes" name="BYTE_ARRAY_DELTA2" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTE_ARRAY_NOSIZE -->
+      <field access="public" final="yes" name="BYTE_ARRAY_NOSIZE" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.Serializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CHAR_ARRAY -->
+      <field access="public" final="yes" name="CHAR_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:INT_ARRAY -->
+      <field access="public" final="yes" name="INT_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LONG_ARRAY -->
+      <field access="public" final="yes" name="LONG_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DOUBLE_ARRAY -->
+      <field access="public" final="yes" name="DOUBLE_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:JAVA -->
+      <field access="public" final="yes" name="JAVA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:ELSA -->
+      <field access="public" final="yes" name="ELSA" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:UUID -->
+      <field access="public" final="yes" name="UUID" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BYTE -->
+      <field access="public" final="yes" name="BYTE" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FLOAT -->
+      <field access="public" final="yes" name="FLOAT" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DOUBLE -->
+      <field access="public" final="yes" name="DOUBLE" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SHORT -->
+      <field access="public" final="yes" name="SHORT" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:SHORT_ARRAY -->
+      <field access="public" final="yes" name="SHORT_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:FLOAT_ARRAY -->
+      <field access="public" final="yes" name="FLOAT_ARRAY" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BIG_INTEGER -->
+      <field access="public" final="yes" name="BIG_INTEGER" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:BIG_DECIMAL -->
+      <field access="public" final="yes" name="BIG_DECIMAL" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:CLASS -->
+      <field access="public" final="yes" name="CLASS" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:DATE -->
+      <field access="public" final="yes" name="DATE" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.serializer.GroupSerializer</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clone -->
+      <method access="public" instrs="20" name="clone" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
+      <method access="public" instrs="5" name="compare" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deserialize -->
+      <method abstract="yes" access="public" name="deserialize" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DataInput2</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ deserializeFromLong -->
+      <method access="public" instrs="25" name="deserializeFromLong" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" instrs="4" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fixedSize -->
+      <method access="public" instrs="2" name="fixedSize" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="6" name="hashCode" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isTrusted -->
+      <method access="public" instrs="2" name="isTrusted" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ needsAvailableSizeHint -->
+      <method access="public" instrs="2" name="needsAvailableSizeHint" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ serialize -->
+      <method abstract="yes" access="public" name="serialize" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DataOutput2</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <summary/>
+      </method>
+    </methods>
+  </interface>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

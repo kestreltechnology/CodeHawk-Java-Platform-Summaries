@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-17 15:06:57"/>
+  <class final="yes" name="HTreeMap" package="org.mapdb">
+    <interfaces>
+      <implements>java.util.concurrent.ConcurrentMap</implements>
+      <implements>org.mapdb.ConcurrencyAware</implements>
+      <implements>org.mapdb.MapExtra</implements>
+      <implements>org.mapdb.Verifiable</implements>
+      <implements>java.io.Closeable</implements>
+      <implements>java.util.Map</implements>
+      <implements>java.lang.AutoCloseable</implements>
+    </interfaces>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:segmentCount -->
+      <field access="private" final="yes" name="segmentCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:storesUniqueCount -->
+      <field access="private" final="yes" name="storesUniqueCount">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:locks -->
+      <field access="private" final="yes" name="locks">
+        <signature>
+          <array>
+            <object>java.util.concurrent.locks.ReadWriteLock</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:isForegroundEviction -->
+      <field access="private" final="yes" name="isForegroundEviction">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:leafSerializer -->
+      <field access="private" final="yes" name="leafSerializer">
+        <signature>
+          <object>org.mapdb.Serializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:indexMask -->
+      <field access="private" final="yes" name="indexMask">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:concMask -->
+      <field access="private" final="yes" name="concMask">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:checkHashAfterSerialization -->
+      <field access="private" name="checkHashAfterSerialization">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:entries -->
+      <field access="private" final="yes" name="entries">
+        <signature>
+          <object>java.util.Set</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:keys -->
+      <field access="private" final="yes" name="keys">
+        <signature>
+          <object>org.mapdb.HTreeMap$KeySet</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:values -->
+      <field access="private" final="yes" name="values">
+        <signature>
+          <object>java.util.Collection</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:keySerializer -->
+      <field access="private" final="yes" name="keySerializer">
+        <signature>
+          <object>org.mapdb.Serializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:valueSerializer -->
+      <field access="private" final="yes" name="valueSerializer">
+        <signature>
+          <object>org.mapdb.Serializer</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:valueInline -->
+      <field access="private" final="yes" name="valueInline">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:concShift -->
+      <field access="private" final="yes" name="concShift">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:dirShift -->
+      <field access="private" final="yes" name="dirShift">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:levels -->
+      <field access="private" final="yes" name="levels">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:stores -->
+      <field access="private" final="yes" name="stores">
+        <signature>
+          <array>
+            <object>org.mapdb.Store</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:indexTrees -->
+      <field access="private" final="yes" name="indexTrees">
+        <signature>
+          <array>
+            <object>org.eclipse.collections.api.map.primitive.MutableLongLongMap</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:hashSeed -->
+      <field access="private" final="yes" name="hashSeed">
+        <signature>
+          <int/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:counterRecids -->
+      <field access="private" final="yes" name="counterRecids">
+        <signature>
+          <array>
+            <long/>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireCreateTTL -->
+      <field access="private" final="yes" name="expireCreateTTL">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireUpdateTTL -->
+      <field access="private" final="yes" name="expireUpdateTTL">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireGetTTL -->
+      <field access="private" final="yes" name="expireGetTTL">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireMaxSize -->
+      <field access="private" final="yes" name="expireMaxSize">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireStoreSize -->
+      <field access="private" final="yes" name="expireStoreSize">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireCreateQueues -->
+      <field access="private" final="yes" name="expireCreateQueues">
+        <signature>
+          <array>
+            <object>org.mapdb.QueueLong</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireUpdateQueues -->
+      <field access="private" final="yes" name="expireUpdateQueues">
+        <signature>
+          <array>
+            <object>org.mapdb.QueueLong</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireGetQueues -->
+      <field access="private" final="yes" name="expireGetQueues">
+        <signature>
+          <array>
+            <object>org.mapdb.QueueLong</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireExecutor -->
+      <field access="private" final="yes" name="expireExecutor">
+        <signature>
+          <object>java.util.concurrent.ScheduledExecutorService</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireExecutorPeriod -->
+      <field access="private" final="yes" name="expireExecutorPeriod">
+        <signature>
+          <long/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:expireCompactThreshold -->
+      <field access="private" final="yes" name="expireCompactThreshold">
+        <signature>
+          <object>java.lang.Double</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:isThreadSafe -->
+      <field access="private" final="yes" name="isThreadSafe">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:valueLoader -->
+      <field access="private" final="yes" name="valueLoader">
+        <signature>
+          <object>kotlin.jvm.functions.Function1</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:modificationListeners -->
+      <field access="private" final="yes" name="modificationListeners">
+        <signature>
+          <array>
+            <object>org.mapdb.MapModificationListener</object>
+          </array>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:closeable -->
+      <field access="private" final="yes" name="closeable">
+        <signature>
+          <object>java.io.Closeable</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:hasValues -->
+      <field access="private" final="yes" name="hasValues">
+        <signature>
+          <boolean/>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:QUEUE_CREATE -->
+      <field access="protected" final="yes" name="QUEUE_CREATE" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="1"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:QUEUE_UPDATE -->
+      <field access="protected" final="yes" name="QUEUE_UPDATE" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="2"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:QUEUE_GET -->
+      <field access="protected" final="yes" name="QUEUE_GET" static="yes">
+        <signature>
+          <long/>
+        </signature>
+        <value>
+          <long value="3"/>
+        </value>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:Companion -->
+      <field access="public" final="yes" name="Companion" not-null="yes" static="yes">
+        <signature>
+          <object>org.mapdb.HTreeMap$Companion</object>
+        </signature>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!--  (org.mapdb.Serializer,org.mapdb.Serializer,boolean,int,int,int,org.mapdb.Store[],org.eclipse.collections.api.map.primitive.MutableLongLongMap[],int,long[],long,long,long,long,long,org.mapdb.QueueLong[],org.mapdb.QueueLong[],org.mapdb.QueueLong[],java.util.concurrent.ScheduledExecutorService,long,java.lang.Double,boolean,kotlin.jvm.functions.Function1,org.mapdb.MapModificationListener[],java.io.Closeable,boolean) -->
+      <method access="public" instrs="462" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <array>
+              <object>org.mapdb.Store</object>
+            </array>
+          </arg>
+          <arg nr="8">
+            <array>
+              <object>org.eclipse.collections.api.map.primitive.MutableLongLongMap</object>
+            </array>
+          </arg>
+          <arg nr="9">
+            <int/>
+          </arg>
+          <arg nr="10">
+            <array>
+              <long/>
+            </array>
+          </arg>
+          <arg nr="11">
+            <long/>
+          </arg>
+          <arg nr="12">
+            <long/>
+          </arg>
+          <arg nr="13">
+            <long/>
+          </arg>
+          <arg nr="14">
+            <long/>
+          </arg>
+          <arg nr="15">
+            <long/>
+          </arg>
+          <arg nr="16">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="17">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="18">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="19">
+            <object>java.util.concurrent.ScheduledExecutorService</object>
+          </arg>
+          <arg nr="20">
+            <long/>
+          </arg>
+          <arg nr="21">
+            <object>java.lang.Double</object>
+          </arg>
+          <arg nr="22">
+            <boolean/>
+          </arg>
+          <arg nr="23">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+          <arg nr="24">
+            <array>
+              <object>org.mapdb.MapModificationListener</object>
+            </array>
+          </arg>
+          <arg nr="25">
+            <object>java.io.Closeable</object>
+          </arg>
+          <arg nr="26">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!--  (org.mapdb.Serializer,org.mapdb.Serializer,boolean,int,int,int,org.mapdb.Store[],org.eclipse.collections.api.map.primitive.MutableLongLongMap[],int,long[],long,long,long,long,long,org.mapdb.QueueLong[],org.mapdb.QueueLong[],org.mapdb.QueueLong[],java.util.concurrent.ScheduledExecutorService,long,java.lang.Double,boolean,kotlin.jvm.functions.Function1,org.mapdb.MapModificationListener[],java.io.Closeable,boolean,int,kotlin.jvm.internal.DefaultConstructorMarker) -->
+      <method access="public" instrs="35" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <arg nr="2">
+            <object>org.mapdb.Serializer</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <arg nr="4">
+            <int/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <int/>
+          </arg>
+          <arg nr="7">
+            <array>
+              <object>org.mapdb.Store</object>
+            </array>
+          </arg>
+          <arg nr="8">
+            <array>
+              <object>org.eclipse.collections.api.map.primitive.MutableLongLongMap</object>
+            </array>
+          </arg>
+          <arg nr="9">
+            <int/>
+          </arg>
+          <arg nr="10">
+            <array>
+              <long/>
+            </array>
+          </arg>
+          <arg nr="11">
+            <long/>
+          </arg>
+          <arg nr="12">
+            <long/>
+          </arg>
+          <arg nr="13">
+            <long/>
+          </arg>
+          <arg nr="14">
+            <long/>
+          </arg>
+          <arg nr="15">
+            <long/>
+          </arg>
+          <arg nr="16">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="17">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="18">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="19">
+            <object>java.util.concurrent.ScheduledExecutorService</object>
+          </arg>
+          <arg nr="20">
+            <long/>
+          </arg>
+          <arg nr="21">
+            <object>java.lang.Double</object>
+          </arg>
+          <arg nr="22">
+            <boolean/>
+          </arg>
+          <arg nr="23">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+          <arg nr="24">
+            <array>
+              <object>org.mapdb.MapModificationListener</object>
+            </array>
+          </arg>
+          <arg nr="25">
+            <object>java.io.Closeable</object>
+          </arg>
+          <arg nr="26">
+            <boolean/>
+          </arg>
+          <arg nr="27">
+            <int/>
+          </arg>
+          <arg nr="28">
+            <object>kotlin.jvm.internal.DefaultConstructorMarker</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$getHashSeed$p -->
+      <method access="public" final="yes" instrs="3" name="access$getHashSeed$p" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$getLocks$p -->
+      <method access="public" final="yes" instrs="3" name="access$getLocks$p" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.util.concurrent.locks.ReadWriteLock</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$getSegmentCount$p -->
+      <method access="public" final="yes" instrs="3" name="access$getSegmentCount$p" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ access$segmentWrite -->
+      <method access="public" final="yes" instrs="5" name="access$segmentWrite" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <object>kotlin.jvm.functions.Function0</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ calculateCollisionSize -->
+      <method access="public" final="yes" instrs="86" name="calculateCollisionSize" valid="no">
+        <signature>
+          <return>
+            <object>kotlin.Pair</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ checkThreadSafe -->
+      <method access="public" instrs="20" name="checkThreadSafe" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="public" instrs="4" name="clear" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear -->
+      <method access="protected" final="yes" instrs="166" name="clear" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear$default -->
+      <method access="protected" bridge="yes" instrs="17" name="clear$default" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear2 -->
+      <method access="public" final="yes" instrs="8" name="clear2" valid="no">
+        <signature>
+          <arg nr="1">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clear2$default -->
+      <method access="public" bridge="yes" instrs="17" name="clear2$default" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.HTreeMap</object>
+          </arg>
+          <arg nr="2">
+            <boolean/>
+          </arg>
+          <arg nr="3">
+            <int/>
+          </arg>
+          <arg nr="4">
+            <object>java.lang.Object</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearWithExpire -->
+      <method access="public" final="yes" instrs="4" name="clearWithExpire" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ clearWithoutNotification -->
+      <method access="public" final="yes" instrs="4" name="clearWithoutNotification" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ close -->
+      <method access="public" instrs="28" name="close" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsKey -->
+      <method access="public" instrs="89" name="containsKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ containsValue -->
+      <method access="public" instrs="12" name="containsValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ counter -->
+      <method access="private" final="yes" instrs="59" name="counter" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ entrySet -->
+      <method access="public" bridge="yes" final="yes" instrs="3" name="entrySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
+      <method access="public" instrs="73" name="equals" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireEvict -->
+      <method access="public" final="yes" instrs="71" name="expireEvict" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireEvictEntry -->
+      <method access="protected" final="yes" instrs="122" name="expireEvictEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <arg nr="3">
+            <long/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireEvictSegment -->
+      <method access="protected" final="yes" instrs="181" name="expireEvictSegment" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireId -->
+      <method access="protected" final="yes" instrs="45" name="expireId" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireNodeRecidFor -->
+      <method access="protected" final="yes" instrs="4" name="expireNodeRecidFor" valid="no">
+        <signature>
+          <arg nr="1">
+            <long/>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ expireQueueFor -->
+      <method access="protected" final="yes" instrs="69" name="expireQueueFor" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <object>org.mapdb.QueueLong</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
+      <method access="public" instrs="111" name="forEach" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.function.BiConsumer</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEachKey -->
+      <method access="public" instrs="106" name="forEachKey" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEachValue -->
+      <method access="public" instrs="106" name="forEachValue" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>kotlin.jvm.functions.Function1</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ get -->
+      <method access="public" instrs="118" name="get" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getConcShift -->
+      <method access="public" final="yes" instrs="3" name="getConcShift" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getCounterRecids -->
+      <method access="public" final="yes" instrs="3" name="getCounterRecids" valid="no">
+        <signature>
+          <return>
+            <array>
+              <long/>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getDirShift -->
+      <method access="public" final="yes" instrs="3" name="getDirShift" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getEntries -->
+      <method access="public" instrs="3" name="getEntries" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireCompactThreshold -->
+      <method access="public" final="yes" instrs="3" name="getExpireCompactThreshold" valid="no">
+        <signature>
+          <return>
+            <object>java.lang.Double</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireCreateQueues -->
+      <method access="public" final="yes" instrs="3" name="getExpireCreateQueues" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireCreateTTL -->
+      <method access="public" final="yes" instrs="3" name="getExpireCreateTTL" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireExecutor -->
+      <method access="public" final="yes" instrs="3" name="getExpireExecutor" valid="no">
+        <signature>
+          <return>
+            <object>java.util.concurrent.ScheduledExecutorService</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireExecutorPeriod -->
+      <method access="public" final="yes" instrs="3" name="getExpireExecutorPeriod" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireGetQueues -->
+      <method access="public" final="yes" instrs="3" name="getExpireGetQueues" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireGetTTL -->
+      <method access="public" final="yes" instrs="3" name="getExpireGetTTL" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireMaxSize -->
+      <method access="public" final="yes" instrs="3" name="getExpireMaxSize" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireStoreSize -->
+      <method access="public" final="yes" instrs="3" name="getExpireStoreSize" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireUpdateQueues -->
+      <method access="public" final="yes" instrs="3" name="getExpireUpdateQueues" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExpireUpdateTTL -->
+      <method access="public" final="yes" instrs="3" name="getExpireUpdateTTL" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getHasValues -->
+      <method access="public" final="yes" instrs="3" name="getHasValues" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getIndexTrees -->
+      <method access="public" final="yes" instrs="3" name="getIndexTrees" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.eclipse.collections.api.map.primitive.MutableLongLongMap</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKeySerializer -->
+      <method access="public" instrs="3" name="getKeySerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKeys -->
+      <method access="public" instrs="3" name="getKeys" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap$KeySet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLeafSerializer -->
+      <method access="protected" final="yes" instrs="3" name="getLeafSerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLevels -->
+      <method access="public" final="yes" instrs="3" name="getLevels" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getLocks -->
+      <method access="protected" final="yes" instrs="3" name="getLocks" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>java.util.concurrent.locks.ReadWriteLock</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getSize -->
+      <method access="public" instrs="6" name="getSize" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getStores -->
+      <method access="public" final="yes" instrs="3" name="getStores" valid="no">
+        <signature>
+          <return>
+            <array>
+              <object>org.mapdb.Store</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueInline -->
+      <method access="public" final="yes" instrs="3" name="getValueInline" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueLoader -->
+      <method access="public" final="yes" instrs="3" name="getValueLoader" valid="no">
+        <signature>
+          <return>
+            <object>kotlin.jvm.functions.Function1</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValueSerializer -->
+      <method access="public" instrs="3" name="getValueSerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.Serializer</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValues -->
+      <method access="public" instrs="3" name="getValues" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getprotected -->
+      <method access="protected" final="yes" instrs="130" name="getprotected" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getprotectedQueues -->
+      <method access="private" final="yes" instrs="149" name="getprotectedQueues" valid="no">
+        <signature>
+          <arg nr="1">
+            <array>
+              <object>org.mapdb.QueueLong</object>
+            </array>
+          </arg>
+          <arg nr="2">
+            <int/>
+          </arg>
+          <arg nr="3">
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </arg>
+          <arg nr="4">
+            <long/>
+          </arg>
+          <arg nr="5">
+            <int/>
+          </arg>
+          <arg nr="6">
+            <object>org.mapdb.Store</object>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hash -->
+      <method access="protected" final="yes" instrs="6" name="hash" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
+      <method access="public" instrs="18" name="hashCode" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashToIndex -->
+      <method access="protected" final="yes" instrs="6" name="hashToIndex" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashToSegment -->
+      <method access="protected" final="yes" instrs="11" name="hashToSegment" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ htreeEntry -->
+      <method access="protected" final="yes" instrs="8" name="htreeEntry" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.util.Map$Entry</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ htreeIterator -->
+      <method access="protected" final="yes" instrs="11" name="htreeIterator" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>kotlin.jvm.functions.Function2</object>
+          </arg>
+          <return>
+            <object>java.util.Iterator</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isClosed -->
+      <method access="public" instrs="6" name="isClosed" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isEmpty -->
+      <method access="public" instrs="66" name="isEmpty" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isForegroundEviction -->
+      <method access="public" final="yes" instrs="3" name="isForegroundEviction" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isThreadSafe -->
+      <method access="public" instrs="3" name="isThreadSafe" valid="no">
+        <signature>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ keySet -->
+      <method access="public" bridge="yes" final="yes" instrs="4" name="keySet" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leafGet -->
+      <method access="protected" final="yes" instrs="45" name="leafGet" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.Store</object>
+          </arg>
+          <arg nr="2">
+            <long/>
+          </arg>
+          <return>
+            <array>
+              <object>java.lang.Object</object>
+            </array>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leafKeySetSerializer -->
+      <method access="private" final="yes" instrs="5" name="leafKeySetSerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap$leafKeySetSerializer$1</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leafValueExternalSerializer -->
+      <method access="private" final="yes" instrs="5" name="leafValueExternalSerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap$leafValueExternalSerializer$1</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ leafValueInlineSerializer -->
+      <method access="private" final="yes" instrs="5" name="leafValueInlineSerializer" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap$leafValueInlineSerializer$1</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ listenerNotify -->
+      <method access="protected" final="yes" instrs="25" name="listenerNotify" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ put -->
+      <method access="public" instrs="102" name="put" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putAll -->
+      <method access="public" instrs="23" name="putAll" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.util.Map</object>
+          </arg>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putIfAbsent -->
+      <method access="public" instrs="86" name="putIfAbsent" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putIfAbsentBoolean -->
+      <method access="public" instrs="98" name="putIfAbsentBoolean" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ putprotected -->
+      <method access="protected" final="yes" instrs="513" name="putprotected" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="4">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="74" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
+      <method access="public" instrs="107" name="remove" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ removeprotected -->
+      <method access="protected" final="yes" instrs="216" name="removeprotected" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <boolean/>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="108" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="3">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <boolean/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ replace -->
+      <method access="public" instrs="96" name="replace" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.lang.Object</object>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ segmentRead -->
+      <method access="private" final="yes" instrs="72" name="segmentRead" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>kotlin.jvm.functions.Function0</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ segmentWrite -->
+      <method access="private" final="yes" instrs="55" name="segmentWrite" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>kotlin.jvm.functions.Function0</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
+      <method access="public" bridge="yes" final="yes" instrs="3" name="size" valid="no">
+        <signature>
+          <return>
+            <int/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sizeLong -->
+      <method access="public" instrs="107" name="sizeLong" valid="no">
+        <signature>
+          <return>
+            <long/>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueUnwrap -->
+      <method access="protected" final="yes" instrs="46" name="valueUnwrap" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ valueWrap -->
+      <method access="protected" final="yes" instrs="32" name="valueWrap" valid="no">
+        <signature>
+          <arg nr="1">
+            <int/>
+          </arg>
+          <arg nr="2">
+            <object>java.lang.Object</object>
+          </arg>
+          <return>
+            <object>java.lang.Object</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ values -->
+      <method access="public" bridge="yes" final="yes" instrs="3" name="values" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Collection</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ verify -->
+      <method access="public" instrs="162" name="verify" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>

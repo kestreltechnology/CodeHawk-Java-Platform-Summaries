@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codehawk-java-analyzer>
+  <header info="class" time="2019-01-17 14:39:18"/>
+  <class final="yes" name="DBMaker" package="org.mapdb">
+    <interfaces/>
+    <!-- =============================== FIELDS ===============================  -->
+    <fields>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:LOG -->
+      <field access="protected" final="yes" name="LOG" not-null="yes" static="yes">
+        <signature>
+          <object>java.util.logging.Logger</object>
+        </signature>
+      </field>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ field:TRUE -->
+      <field access="protected" final="yes" name="TRUE" not-null="yes" static="yes">
+        <signature>
+          <object>java.lang.String</object>
+        </signature>
+        <value>
+          <string value="true"/>
+        </value>
+      </field>
+    </fields>
+    <!-- ============================ CONSTRUCTORS ============================  -->
+    <constructors>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ () -->
+      <method access="public" instrs="3" valid="no">
+        <signature/>
+        <exceptions/>
+        <summary/>
+      </method>
+    </constructors>
+    <!-- ============================== METHODS ==============================  -->
+    <methods>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CC -->
+      <method access="public" instrs="36" name="CC" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Map</object>
+          </return>
+        </signature>
+        <exceptions>
+          <throws>java.lang.IllegalAccessException</throws>
+        </exceptions>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ appendFileDB -->
+      <method access="public" instrs="6" name="appendFileDB" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ archiveFileDB -->
+      <method access="public" instrs="6" name="archiveFileDB" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ fileDB -->
+      <method access="public" instrs="5" name="fileDB" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashMapSegmented -->
+      <method access="public" instrs="37" name="hashMapSegmented" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>org.mapdb.DBMaker$Maker</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DB$HTreeMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashMapSegmentedMemory -->
+      <method access="public" instrs="3" name="hashMapSegmentedMemory" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HTreeMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashMapSegmentedMemoryDirect -->
+      <method access="public" instrs="3" name="hashMapSegmentedMemoryDirect" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DB$HTreeMapMaker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ heapDB -->
+      <method access="public" instrs="5" name="heapDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ memoryDB -->
+      <method access="public" instrs="5" name="memoryDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ memoryDirectDB -->
+      <method access="public" instrs="5" name="memoryDirectDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ memoryUnsafeDB -->
+      <method access="public" instrs="5" name="memoryUnsafeDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newAppendFileDB -->
+      <method access="public" instrs="3" name="newAppendFileDB" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newCache -->
+      <method access="public" instrs="10" name="newCache" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newCacheDirect -->
+      <method access="public" instrs="10" name="newCacheDirect" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <double/>
+          </arg>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newFileDB -->
+      <method access="public" instrs="3" name="newFileDB" static="yes" valid="no">
+        <signature>
+          <arg nr="1">
+            <object>java.io.File</object>
+          </arg>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newHeapDB -->
+      <method access="public" instrs="2" name="newHeapDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newMemoryDB -->
+      <method access="public" instrs="2" name="newMemoryDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newMemoryDirectDB -->
+      <method access="public" instrs="2" name="newMemoryDirectDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newMemoryUnsafeDB -->
+      <method access="public" instrs="2" name="newMemoryUnsafeDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newTempFileDB -->
+      <method access="public" instrs="2" name="newTempFileDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newTempHashMap -->
+      <method access="public" instrs="2" name="newTempHashMap" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newTempHashSet -->
+      <method access="public" instrs="2" name="newTempHashSet" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newTempTreeMap -->
+      <method access="public" instrs="2" name="newTempTreeMap" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.BTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ newTempTreeSet -->
+      <method access="public" instrs="2" name="newTempTreeSet" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tempFileDB -->
+      <method access="public" instrs="11" name="tempFileDB" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.DBMaker$Maker</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tempHashMap -->
+      <method access="public" instrs="10" name="tempHashMap" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.HTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tempHashSet -->
+      <method access="public" instrs="10" name="tempHashSet" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.Set</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tempTreeMap -->
+      <method access="public" instrs="10" name="tempTreeMap" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>org.mapdb.BTreeMap</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ tempTreeSet -->
+      <method access="public" instrs="10" name="tempTreeSet" static="yes" valid="no">
+        <signature>
+          <return>
+            <object>java.util.NavigableSet</object>
+          </return>
+        </signature>
+        <exceptions/>
+        <summary/>
+      </method>
+    </methods>
+  </class>
+  <copyright-notice>Copyright 2012-2019, Kestrel Technology LLC, Palo Alto, CA 94304</copyright-notice>
+</codehawk-java-analyzer>
