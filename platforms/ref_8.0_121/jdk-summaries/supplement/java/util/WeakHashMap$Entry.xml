@@ -104,14 +104,21 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getKey -->
-      <method access="public" instrs="4" name="getKey" valid="no">
+      <method access="public" instrs="4" name="getKey">
         <signature>
           <return>
             <object>java.lang.Object</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getValue -->
       <method access="public" instrs="3" name="getValue">

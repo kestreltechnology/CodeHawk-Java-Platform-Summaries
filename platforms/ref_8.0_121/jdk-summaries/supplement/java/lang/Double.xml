@@ -134,7 +134,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>36</cn>
+	      <cn>42</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -147,7 +147,6 @@
           </arg>
         </signature>
         <exceptions>
-          <throws>java.lang.NumberFormatException</throws>
           <throws>java.lang.NumberFormatException</throws>
         </exceptions>
         <summary/>
@@ -166,13 +165,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>8</cn>
+	      <cn>14</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
-      <method access="public" instrs="32" name="compare" static="yes" valid="no">
+      <method access="public" instrs="32" name="compare" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -185,10 +184,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="33" ub="980"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
-      <method access="public" instrs="6" name="compareTo" valid="no">
+      <method access="public" instrs="6" name="compareTo">
         <signature>
           <arg nr="1">
             <object>java.lang.Double</object>
@@ -210,10 +213,14 @@
             <exn>java.lang.NullPointerException</exn>
           </c-throws>
         </exceptions>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="205" ub="1152"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
-      <method access="public" bridge="yes" instrs="5" name="compareTo" valid="no">
+      <method access="public" bridge="yes" instrs="5" name="compareTo">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -235,10 +242,14 @@
             <exn>java.lang.NullPointerException</exn>
           </c-throws>
         </exceptions>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="237" ub="1184"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doubleToLongBits -->
-      <method access="public" instrs="19" name="doubleToLongBits" static="yes" valid="no">
+      <method access="public" instrs="19" name="doubleToLongBits" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -248,10 +259,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="247" ub="276"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doubleToRawLongBits -->
-      <method access="public" name="doubleToRawLongBits" native="yes" static="yes" valid="no">
+      <method access="public" name="doubleToRawLongBits" native="yes" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -261,7 +276,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <!-- guess -->
+	      <cn>50</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doubleValue -->
       <method access="public" instrs="3" name="doubleValue">
@@ -274,13 +296,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>4</cn>
+	      <cn>10</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
-      <method access="public" instrs="16" name="equals" valid="no">
+      <method access="public" instrs="16" name="equals">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -290,7 +312,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="19" ub="925"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floatValue -->
       <method access="public" instrs="4" name="floatValue">
@@ -303,23 +329,27 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>4</cn>
+	      <cn>12</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" instrs="4" name="hashCode" valid="no">
+      <method access="public" instrs="4" name="hashCode">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="592" ub="621"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" instrs="10" name="hashCode" static="yes" valid="no">
+      <method access="public" instrs="10" name="hashCode" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -329,7 +359,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="424" ub="453"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intValue -->
       <method access="public" instrs="4" name="intValue">
@@ -342,7 +376,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -360,7 +394,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="212" ub="217"/>
+	    <cost lb="224" ub="229"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -377,7 +411,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="25" ub="50"/>
+	    <cost lb="31" ub="56"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -391,7 +425,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="187" ub="212"/>
+	    <cost lb="199" ub="224"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -409,7 +443,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>25</cn>
+	      <cn>31</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -425,7 +459,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>187</cn>
+	      <cn>199</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -454,13 +488,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ max -->
-      <method access="public" instrs="4" name="max" static="yes" valid="no">
+      <method access="public" instrs="4" name="max" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -473,10 +507,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="199" ub="510"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
-      <method access="public" instrs="4" name="min" static="yes" valid="no">
+      <method access="public" instrs="4" name="min" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -489,7 +527,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="199" ub="510"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseDouble -->
       <method access="public" instrs="3" name="parseDouble" static="yes" valid="no">
@@ -518,7 +560,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>8</cn>
+	      <cn>14</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -540,7 +582,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -611,7 +653,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>62</cn>
+	      <cn>74</cn>
 	    </cost>
 	  </time-cost>
 	</summary>

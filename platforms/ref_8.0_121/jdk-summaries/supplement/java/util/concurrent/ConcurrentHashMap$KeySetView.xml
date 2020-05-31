@@ -70,7 +70,7 @@
     <!-- ============================== METHODS ==============================  -->
     <methods>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ add -->
-      <method access="public" instrs="20" name="add" valid="no">
+      <method access="public" instrs="20" name="add">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -80,10 +80,25 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ addAll -->
-      <method access="public" instrs="32" name="addAll" valid="no">
+      <method access="public" instrs="32" name="addAll">
         <signature>
           <arg nr="1">
             <object>java.util.Collection</object>
@@ -93,10 +108,25 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
-      <method access="public" instrs="5" name="contains" valid="no">
+      <method access="public" instrs="5" name="contains">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -106,10 +136,21 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
-      <method access="public" instrs="21" name="equals" valid="no">
+      <method access="public" instrs="21" name="equals">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -119,17 +160,35 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ forEach -->
-      <method access="public" instrs="33" name="forEach" valid="no">
+      <method access="public" instrs="33" name="forEach">
         <signature>
           <arg nr="1">
             <object>java.util.function.Consumer</object>
           </arg>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getMap -->
       <method access="public" bridge="yes" instrs="3" name="getMap">
@@ -140,6 +199,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>18</cn>
@@ -156,6 +221,12 @@
         </signature>
         <exceptions/>
         <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
 	  <time-cost>
 	    <cost>
 	      <cn>4</cn>
@@ -164,27 +235,41 @@
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" instrs="19" name="hashCode" valid="no">
+      <method access="public" instrs="19" name="hashCode">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
-      <method access="public" instrs="22" name="iterator" valid="no">
+      <method access="public" instrs="22" name="iterator">
         <signature>
           <return>
             <object>java.util.Iterator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
-      <method access="public" instrs="9" name="remove" valid="no">
+      <method access="public" instrs="9" name="remove">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -194,17 +279,39 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
-      <method access="public" instrs="31" name="spliterator" valid="no">
+      <method access="public" instrs="31" name="spliterator">
         <signature>
           <return>
             <object>java.util.Spliterator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
     </methods>
   </class>

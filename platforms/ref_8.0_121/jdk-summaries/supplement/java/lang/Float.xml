@@ -134,13 +134,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>36</cn>
+	      <cn>42</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </constructor>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (double) -->
-      <constructor access="public" instrs="7" valid="no">
+      <constructor access="public" instrs="7">
         <signature>
           <arg nr="1">
             <double/>
@@ -150,7 +150,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>38</cn>
+	      <cn>42</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -182,13 +182,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>8</cn>
+	      <cn>14</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compare -->
-      <method access="public" instrs="30" name="compare" static="yes" valid="no">
+      <method access="public" instrs="30" name="compare" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -201,10 +201,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="33" ub="838"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
-      <method access="public" instrs="6" name="compareTo" valid="no">
+      <method access="public" instrs="6" name="compareTo">
         <signature>
           <arg nr="1">
             <object>java.lang.Float</object>
@@ -226,10 +230,14 @@
             <exn>java.lang.NullPointerException</exn>
           </c-throws>
         </exceptions>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="205" ub="1010"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ compareTo -->
-      <method access="public" bridge="yes" instrs="5" name="compareTo" valid="no">
+      <method access="public" bridge="yes" instrs="5" name="compareTo">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -251,7 +259,11 @@
             <exn>java.lang.NullPointerException</exn>
           </c-throws>
         </exceptions>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="237" ub="1042"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ doubleValue -->
       <method access="public" instrs="4" name="doubleValue">
@@ -264,13 +276,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>4</cn>
+	      <cn>12</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ equals -->
-      <method access="public" instrs="15" name="equals" valid="no">
+      <method access="public" instrs="15" name="equals">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -280,10 +292,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="19" ub="797"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floatToIntBits -->
-      <method access="public" instrs="16" name="floatToIntBits" static="yes" valid="no">
+      <method access="public" instrs="16" name="floatToIntBits" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -293,10 +309,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="207" ub="220"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floatToRawIntBits -->
-      <method access="public" name="floatToRawIntBits" native="yes" static="yes" valid="no">
+      <method access="public" name="floatToRawIntBits" native="yes" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -306,7 +326,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <!-- guess -->
+	      <cn>25</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floatValue -->
       <method access="public" instrs="3" name="floatValue">
@@ -319,23 +346,27 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>4</cn>
+	      <cn>10</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" instrs="4" name="hashCode" valid="no">
+      <method access="public" instrs="4" name="hashCode">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="541" ub="554"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hashCode -->
-      <method access="public" instrs="3" name="hashCode" static="yes" valid="no">
+      <method access="public" instrs="3" name="hashCode" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -345,7 +376,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="373" ub="386"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ intBitsToFloat -->
       <method access="public" name="intBitsToFloat" native="yes" static="yes" valid="no">
@@ -371,7 +406,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -389,7 +424,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="212" ub="217"/>
+	    <cost lb="224" ub="229"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -406,7 +441,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="25" ub="50"/>
+	    <cost lb="31" ub="56"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -420,7 +455,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="187" ub="212"/>
+	    <cost lb="199" ub="224"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -438,7 +473,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>25</cn>
+	      <cn>31</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -454,7 +489,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>187</cn>
+	      <cn>199</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -470,13 +505,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ max -->
-      <method access="public" instrs="4" name="max" static="yes" valid="no">
+      <method access="public" instrs="4" name="max" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -489,10 +524,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="199" ub="486"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
-      <method access="public" instrs="4" name="min" static="yes" valid="no">
+      <method access="public" instrs="4" name="min" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -505,7 +544,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="199" ub="486"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ parseFloat -->
       <method access="public" instrs="3" name="parseFloat" static="yes" valid="no">
@@ -534,7 +577,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>8</cn>
+	      <cn>14</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -556,7 +599,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>7</cn>
+	      <cn>13</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -627,7 +670,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>62</cn>
+	      <cn>74</cn>
 	    </cost>
 	  </time-cost>
 	</summary>

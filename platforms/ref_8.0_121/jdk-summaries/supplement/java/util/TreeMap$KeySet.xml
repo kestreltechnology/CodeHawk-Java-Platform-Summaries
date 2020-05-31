@@ -28,14 +28,21 @@
     <!-- ============================ CONSTRUCTORS ============================  -->
     <constructors>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ (java.util.NavigableMap) -->
-      <method access="default" instrs="6" valid="no">
+      <method access="default" instrs="6">
         <signature>
           <arg nr="1">
             <object>java.util.NavigableMap</object>
           </arg>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <this/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
     </constructors>
     <!-- ============================== METHODS ==============================  -->
@@ -66,17 +73,24 @@
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ comparator -->
-      <method access="public" instrs="4" name="comparator" valid="no">
+      <method access="public" instrs="4" name="comparator">
         <signature>
           <return>
             <object>java.util.Comparator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ contains -->
-      <method access="public" instrs="5" name="contains" valid="no">
+      <method access="public" instrs="5" name="contains">
         <signature>
           <arg nr="1">
             <object>java.lang.Object</object>
@@ -86,37 +100,69 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <arg nr="1"/>
+	      <return/>
+	    </transfer>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingIterator -->
-      <method access="public" instrs="14" name="descendingIterator" valid="no">
+      <method access="public" instrs="14" name="descendingIterator">
         <signature>
           <return>
             <object>java.util.Iterator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ descendingSet -->
-      <method access="public" instrs="7" name="descendingSet" valid="no">
+      <method access="public" instrs="7" name="descendingSet">
         <signature>
           <return>
             <object>java.util.NavigableSet</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ first -->
-      <method access="public" instrs="4" name="first" valid="no">
+      <method access="public" instrs="4" name="first">
         <signature>
           <return>
             <object>java.lang.Object</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ floor -->
       <method access="public" instrs="5" name="floor" valid="no">
@@ -220,34 +266,55 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ isEmpty -->
-      <method access="public" instrs="4" name="isEmpty" valid="no">
+      <method access="public" instrs="4" name="isEmpty">
         <signature>
           <return>
             <boolean/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iterator -->
-      <method access="public" instrs="14" name="iterator" valid="no">
+      <method access="public" instrs="14" name="iterator">
         <signature>
           <return>
             <object>java.util.Iterator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ last -->
-      <method access="public" instrs="4" name="last" valid="no">
+      <method access="public" instrs="4" name="last">
         <signature>
           <return>
             <object>java.lang.Object</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ lower -->
       <method access="public" instrs="5" name="lower" valid="no">
@@ -263,24 +330,38 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollFirst -->
-      <method access="public" instrs="11" name="pollFirst" valid="no">
+      <method access="public" instrs="11" name="pollFirst">
         <signature>
           <return>
             <object>java.lang.Object</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pollLast -->
-      <method access="public" instrs="11" name="pollLast" valid="no">
+      <method access="public" instrs="11" name="pollLast">
         <signature>
           <return>
             <object>java.lang.Object</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ remove -->
       <method access="public" instrs="16" name="remove" valid="no">
@@ -296,24 +377,49 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ size -->
-      <method access="public" instrs="4" name="size" valid="no">
+      <method access="public" instrs="4" name="size">
         <signature>
           <return>
             <int/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	  <postconditions>
+	    <post>
+	      <math>
+		<apply>
+		  <geq/>
+		  <return/>
+		  <cn>0</cn>
+		</apply>
+	      </math>
+	    </post>
+	  </postconditions>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ spliterator -->
-      <method access="public" instrs="4" name="spliterator" valid="no">
+      <method access="public" instrs="4" name="spliterator">
         <signature>
           <return>
             <object>java.util.Spliterator</object>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <taint>
+	    <transfer>
+	      <this/>
+	      <return/>
+	    </transfer>
+	  </taint>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ subSet -->
       <method access="public" instrs="11" name="subSet">

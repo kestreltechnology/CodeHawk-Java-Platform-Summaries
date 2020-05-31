@@ -63,7 +63,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>14</cn>
+	      <cn>20</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -100,7 +100,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="9" ub="11"/>
+	    <cost lb="15" ub="17"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -117,7 +117,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="25" ub="28"/>
+	    <cost lb="33" ub="38"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -134,12 +134,12 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="27" ub="32"/>
+	    <cost lb="33" ub="38"/>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ abs -->
-      <method access="public" instrs="10" name="abs" static="yes" valid="no">
+      <method access="public" instrs="10" name="abs" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -149,7 +149,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="33" ub="38"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ acos -->
       <method access="public" instrs="3" name="acos" static="yes">
@@ -269,7 +273,7 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copySign -->
-      <method access="public" instrs="11" name="copySign" static="yes" valid="no">
+      <method access="public" instrs="11" name="copySign" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -282,10 +286,16 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>641</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copySign -->
-      <method access="public" instrs="11" name="copySign" static="yes" valid="no">
+      <method access="public" instrs="11" name="copySign" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -298,7 +308,13 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>569</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cos -->
       <method access="public" instrs="3" name="cos" static="yes" valid="no">
@@ -407,7 +423,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="22" ub="36"/>
+	    <cost lb="28" ub="41"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -427,7 +443,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="59" ub="95"/>
+	    <cost lb="62" ub="98"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -447,7 +463,7 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="195" ub="200"/>
+	    <cost lb="207" ub="220"/>
 	  </time-cost>
 	</summary>
       </method>
@@ -467,12 +483,12 @@
         <exceptions/>
         <summary>
 	  <time-cost>
-	    <cost lb="231" ub="267"/>
+	    <cost lb="240" ub="276"/>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExponent -->
-      <method access="public" instrs="9" name="getExponent" static="yes" valid="no">
+      <method access="public" instrs="9" name="getExponent" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -482,10 +498,16 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>202</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ getExponent -->
-      <method access="public" instrs="10" name="getExponent" static="yes" valid="no">
+      <method access="public" instrs="10" name="getExponent" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -495,7 +517,13 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>228</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ hypot -->
       <method access="public" instrs="4" name="hypot" static="yes" valid="no">
@@ -595,7 +623,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>10</cn>
+	      <cn>16</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -617,13 +645,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>26</cn>
+	      <cn>32</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ max -->
-      <method access="public" instrs="30" name="max" static="yes" valid="no">
+      <method access="public" instrs="30" name="max" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -636,10 +664,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="318"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ max -->
-      <method access="public" instrs="29" name="max" static="yes" valid="no">
+      <method access="public" instrs="29" name="max" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -652,7 +684,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="342"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
       <method access="public" instrs="7" name="min" static="yes">
@@ -671,7 +707,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>10</cn>
+	      <cn>16</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -693,13 +729,13 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>26</cn>
+	      <cn>32</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
-      <method access="public" instrs="30" name="min" static="yes" valid="no">
+      <method access="public" instrs="30" name="min" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -712,10 +748,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="318"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ min -->
-      <method access="public" instrs="29" name="min" static="yes" valid="no">
+      <method access="public" instrs="29" name="min" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -728,7 +768,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="342"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ multiplyExact -->
       <method access="public" instrs="20" name="multiplyExact" static="yes" valid="no">
@@ -821,7 +865,7 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextDown -->
-      <method access="public" instrs="27" name="nextDown" static="yes" valid="no">
+      <method access="public" instrs="27" name="nextDown" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -831,10 +875,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="204" ub="698"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextDown -->
-      <method access="public" instrs="27" name="nextDown" static="yes" valid="no">
+      <method access="public" instrs="27" name="nextDown" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -844,10 +892,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="204" ub="647"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextUp -->
-      <method access="public" instrs="25" name="nextUp" static="yes" valid="no">
+      <method access="public" instrs="25" name="nextUp" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -857,10 +909,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="204" ub="684"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nextUp -->
-      <method access="public" instrs="25" name="nextUp" static="yes" valid="no">
+      <method access="public" instrs="25" name="nextUp" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -870,7 +926,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="204" ub="633"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pow -->
       <method access="public" instrs="4" name="pow" static="yes" valid="no">
@@ -915,14 +975,20 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ random -->
-      <method access="public" instrs="3" name="random" static="yes" valid="no">
+      <method access="public" instrs="3" name="random" static="yes">
         <signature>
           <return>
             <double/>
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost>
+	      <cn>850</cn>
+	    </cost>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rint -->
       <method access="public" instrs="3" name="rint" static="yes" valid="no">
@@ -938,7 +1004,7 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ round -->
-      <method access="public" instrs="39" name="round" static="yes" valid="no">
+      <method access="public" instrs="39" name="round" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -948,10 +1014,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="228" ub="260"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ round -->
-      <method access="public" instrs="44" name="round" static="yes" valid="no">
+      <method access="public" instrs="44" name="round" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -961,7 +1031,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="269" ub="318"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ scalb -->
       <method access="public" instrs="61" name="scalb" static="yes" valid="no">
@@ -996,7 +1070,7 @@
         <summary/>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signum -->
-      <method access="public" instrs="13" name="signum" static="yes" valid="no">
+      <method access="public" instrs="13" name="signum" static="yes">
         <signature>
           <arg nr="1">
             <double/>
@@ -1006,10 +1080,14 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="1026"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ signum -->
-      <method access="public" instrs="13" name="signum" static="yes" valid="no">
+      <method access="public" instrs="13" name="signum" static="yes">
         <signature>
           <arg nr="1">
             <float/>
@@ -1019,7 +1097,11 @@
           </return>
         </signature>
         <exceptions/>
-        <summary/>
+        <summary>
+	  <time-cost>
+	    <cost lb="31" ub="954"/>
+	  </time-cost>
+	</summary>
       </method>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sin -->
       <method access="public" instrs="3" name="sin" static="yes" valid="no">
@@ -1132,7 +1214,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>12</cn>
+	      <cn>18</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
@@ -1164,7 +1246,7 @@
         <summary>
 	  <time-cost>
 	    <cost>
-	      <cn>12</cn>
+	      <cn>18</cn>
 	    </cost>
 	  </time-cost>
 	</summary>
